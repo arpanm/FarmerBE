@@ -1,0 +1,10 @@
+{
+  "farmerBeApp": {
+    "DocumentFormat": {
+      "null": "",
+      "Pdf": "Pdf",
+      "Image": "Image",
+      "Other": "Other"
+    }
+  }
+}

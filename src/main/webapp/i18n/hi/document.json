@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "document": {
+      "home": {
+        "title": "Documents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Document बनाएँ",
+        "createOrEditLabel": "Document बनाएँ या संपादित करें",
+        "notFound": "No Documents found"
+      },
+      "created": "एक नया Document [identifier: {{ param }}] तैयार है",
+      "updated": "एक Document [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Document [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Document [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Document"
+      },
+      "id": "ID",
+      "docPath": "Doc Path",
+      "docType": "Doc Type",
+      "docFormat": "Doc Format",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}
