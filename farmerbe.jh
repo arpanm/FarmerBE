@@ -1,0 +1,116 @@
+entity SessionContext {
+	session String,
+    language Language,
+    isLoggedIn Boolean,
+    farmerId String,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum Language {
+	English,
+    Hindi,
+    Bengali,
+    Marathi,
+    Tamil,
+    Telegu,
+    Kanada,
+    Malyalam,
+    Panjabi,
+    Kashmiri
+}
+
+entity Farmer {
+	name String,
+    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    phone Long required min (1000000000) max(9999999999),
+    preferedLanguage Language,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+entity Address {
+	line1 String required,
+    line2 String,
+    state String required,
+    country String required,
+	pincode Long required,
+	lat Long,
+    lon Long,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farmer to Address{farmer}
+}
+
+entity Document {
+	path String,
+    docType DocumentType,
+    docFormat DocumentFormat,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum DocumentType {
+	AddressProof,
+    IdProof,
+    Other
+}
+
+enum DocumentFormat {
+	Pdf,
+    Image,
+    Other
+}
+
+relationship OneToMany {
+	Farmer to Document{farmer}
+}
+
+entity Otp {
+	otp Long min(1000) max(9999)
+    isValidated Bollean,
+    expiryTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farmer to Otp{farmer}
+}
+
+application {
+  config {
+    baseName FarmerBE
+    applicationType monolith
+    serverPort 9001
+    prodDatabaseType mysql
+    clientFramework react
+    clientPackageManager npm
+    authenticationType jwt
+    buildTool maven
+    enableSwaggerCodegen true
+    packageName com.farmer.be
+  }
+  entities *
+  dto * with mapstruct
+  paginate * with infinite-scroll
+  service all with serviceImpl
+}
