@@ -107,12 +107,16 @@ application {
     baseName FarmerBE
     applicationType monolith
     serverPort 9001
+    devDatabaseType h2Disk
     prodDatabaseType mysql
     clientFramework react
     clientPackageManager npm
     authenticationType jwt
     buildTool maven
     enableSwaggerCodegen true
+    enableTranslation true
+    languages	[en, hi]
+    nativeLanguage	en
     packageName com.farmer.be
   }
   entities *
