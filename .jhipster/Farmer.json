@@ -68,6 +68,13 @@
       "relationshipName": "document",
       "relationshipSide": "left",
       "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "otp",
+      "otherEntityRelationshipName": "farmer",
+      "relationshipName": "otp",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
     }
   ],
   "searchEngine": "no",

@@ -28,7 +28,8 @@
       "updatedBy": "Updated By",
       "updatedTime": "Updated Time",
       "address": "Address",
-      "document": "Document"
+      "document": "Document",
+      "otp": "Otp"
     }
   }
 }
