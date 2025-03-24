@@ -1,0 +1,36 @@
+{
+  "farmerBeApp": {
+    "address": {
+      "home": {
+        "title": "Addresses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Address बनाएँ",
+        "createOrEditLabel": "Address बनाएँ या संपादित करें",
+        "notFound": "No Addresses found"
+      },
+      "created": "एक नया Address [identifier: {{ param }}] तैयार है",
+      "updated": "एक Address [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Address [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Address [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Address"
+      },
+      "id": "ID",
+      "line1": "Line 1",
+      "line2": "Line 2",
+      "state": "State",
+      "country": "Country",
+      "pincode": "Pincode",
+      "lat": "Lat",
+      "lon": "Lon",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}
