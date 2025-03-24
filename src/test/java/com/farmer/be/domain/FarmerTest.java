@@ -3,6 +3,7 @@ package com.farmer.be.domain;
 import static com.farmer.be.domain.AddressTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
+import static com.farmer.be.domain.OtpTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -68,5 +69,27 @@ class FarmerTest {
         farmer.setDocuments(new HashSet<>());
         assertThat(farmer.getDocuments()).doesNotContain(documentBack);
         assertThat(documentBack.getFarmer()).isNull();
+    }
+
+    @Test
+    void otpTest() {
+        Farmer farmer = getFarmerRandomSampleGenerator();
+        Otp otpBack = getOtpRandomSampleGenerator();
+
+        farmer.addOtp(otpBack);
+        assertThat(farmer.getOtps()).containsOnly(otpBack);
+        assertThat(otpBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.removeOtp(otpBack);
+        assertThat(farmer.getOtps()).doesNotContain(otpBack);
+        assertThat(otpBack.getFarmer()).isNull();
+
+        farmer.otps(new HashSet<>(Set.of(otpBack)));
+        assertThat(farmer.getOtps()).containsOnly(otpBack);
+        assertThat(otpBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.setOtps(new HashSet<>());
+        assertThat(farmer.getOtps()).doesNotContain(otpBack);
+        assertThat(otpBack.getFarmer()).isNull();
     }
 }

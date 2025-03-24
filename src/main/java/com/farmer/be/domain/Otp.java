@@ -1,7 +1,5 @@
 package com.farmer.be.domain;
 
-import com.farmer.be.domain.enumeration.DocumentFormat;
-import com.farmer.be.domain.enumeration.DocumentType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -11,13 +9,13 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
- * A Document.
+ * A Otp.
  */
 @Entity
-@Table(name = "document")
+@Table(name = "otp")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @SuppressWarnings("common-java:DuplicatedBlocks")
-public class Document implements Serializable {
+public class Otp implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -26,16 +24,24 @@ public class Document implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "doc_path")
-    private String docPath;
+    @Pattern(regexp = "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")
+    @Column(name = "email")
+    private String email;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "doc_type")
-    private DocumentType docType;
+    @Column(name = "email_otp")
+    private Integer emailOtp;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "doc_format")
-    private DocumentFormat docFormat;
+    @Column(name = "phone")
+    private Long phone;
+
+    @Column(name = "phone_otp")
+    private Integer phoneOtp;
+
+    @Column(name = "is_validated")
+    private Boolean isValidated;
+
+    @Column(name = "expiry_time")
+    private Instant expiryTime;
 
     @Column(name = "is_active")
     private Boolean isActive;
@@ -66,7 +72,7 @@ public class Document implements Serializable {
         return this.id;
     }
 
-    public Document id(Long id) {
+    public Otp id(Long id) {
         this.setId(id);
         return this;
     }
@@ -75,50 +81,89 @@ public class Document implements Serializable {
         this.id = id;
     }
 
-    public String getDocPath() {
-        return this.docPath;
+    public String getEmail() {
+        return this.email;
     }
 
-    public Document docPath(String docPath) {
-        this.setDocPath(docPath);
+    public Otp email(String email) {
+        this.setEmail(email);
         return this;
     }
 
-    public void setDocPath(String docPath) {
-        this.docPath = docPath;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public DocumentType getDocType() {
-        return this.docType;
+    public Integer getEmailOtp() {
+        return this.emailOtp;
     }
 
-    public Document docType(DocumentType docType) {
-        this.setDocType(docType);
+    public Otp emailOtp(Integer emailOtp) {
+        this.setEmailOtp(emailOtp);
         return this;
     }
 
-    public void setDocType(DocumentType docType) {
-        this.docType = docType;
+    public void setEmailOtp(Integer emailOtp) {
+        this.emailOtp = emailOtp;
     }
 
-    public DocumentFormat getDocFormat() {
-        return this.docFormat;
+    public Long getPhone() {
+        return this.phone;
     }
 
-    public Document docFormat(DocumentFormat docFormat) {
-        this.setDocFormat(docFormat);
+    public Otp phone(Long phone) {
+        this.setPhone(phone);
         return this;
     }
 
-    public void setDocFormat(DocumentFormat docFormat) {
-        this.docFormat = docFormat;
+    public void setPhone(Long phone) {
+        this.phone = phone;
+    }
+
+    public Integer getPhoneOtp() {
+        return this.phoneOtp;
+    }
+
+    public Otp phoneOtp(Integer phoneOtp) {
+        this.setPhoneOtp(phoneOtp);
+        return this;
+    }
+
+    public void setPhoneOtp(Integer phoneOtp) {
+        this.phoneOtp = phoneOtp;
+    }
+
+    public Boolean getIsValidated() {
+        return this.isValidated;
+    }
+
+    public Otp isValidated(Boolean isValidated) {
+        this.setIsValidated(isValidated);
+        return this;
+    }
+
+    public void setIsValidated(Boolean isValidated) {
+        this.isValidated = isValidated;
+    }
+
+    public Instant getExpiryTime() {
+        return this.expiryTime;
+    }
+
+    public Otp expiryTime(Instant expiryTime) {
+        this.setExpiryTime(expiryTime);
+        return this;
+    }
+
+    public void setExpiryTime(Instant expiryTime) {
+        this.expiryTime = expiryTime;
     }
 
     public Boolean getIsActive() {
         return this.isActive;
     }
 
-    public Document isActive(Boolean isActive) {
+    public Otp isActive(Boolean isActive) {
         this.setIsActive(isActive);
         return this;
     }
@@ -131,7 +176,7 @@ public class Document implements Serializable {
         return this.createddBy;
     }
 
-    public Document createddBy(String createddBy) {
+    public Otp createddBy(String createddBy) {
         this.setCreateddBy(createddBy);
         return this;
     }
@@ -144,7 +189,7 @@ public class Document implements Serializable {
         return this.createdTime;
     }
 
-    public Document createdTime(Instant createdTime) {
+    public Otp createdTime(Instant createdTime) {
         this.setCreatedTime(createdTime);
         return this;
     }
@@ -157,7 +202,7 @@ public class Document implements Serializable {
         return this.updatedBy;
     }
 
-    public Document updatedBy(String updatedBy) {
+    public Otp updatedBy(String updatedBy) {
         this.setUpdatedBy(updatedBy);
         return this;
     }
@@ -170,7 +215,7 @@ public class Document implements Serializable {
         return this.updatedTime;
     }
 
-    public Document updatedTime(Instant updatedTime) {
+    public Otp updatedTime(Instant updatedTime) {
         this.setUpdatedTime(updatedTime);
         return this;
     }
@@ -187,7 +232,7 @@ public class Document implements Serializable {
         this.farmer = farmer;
     }
 
-    public Document farmer(Farmer farmer) {
+    public Otp farmer(Farmer farmer) {
         this.setFarmer(farmer);
         return this;
     }
@@ -199,10 +244,10 @@ public class Document implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Document)) {
+        if (!(o instanceof Otp)) {
             return false;
         }
-        return getId() != null && getId().equals(((Document) o).getId());
+        return getId() != null && getId().equals(((Otp) o).getId());
     }
 
     @Override
@@ -214,11 +259,14 @@ public class Document implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "Document{" +
+        return "Otp{" +
             "id=" + getId() +
-            ", docPath='" + getDocPath() + "'" +
-            ", docType='" + getDocType() + "'" +
-            ", docFormat='" + getDocFormat() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", emailOtp=" + getEmailOtp() +
+            ", phone=" + getPhone() +
+            ", phoneOtp=" + getPhoneOtp() +
+            ", isValidated='" + getIsValidated() + "'" +
+            ", expiryTime='" + getExpiryTime() + "'" +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +

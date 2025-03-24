@@ -11,7 +11,8 @@
         "sessionContext": "Session Context",
         "farmer": "Farmer",
         "address": "Address",
-        "document": "Document"
+        "document": "Document",
+        "otp": "Otp"
       },
       "account": {
         "main": "Account",
