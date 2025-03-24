@@ -1,0 +1,33 @@
+{
+  "farmerBeApp": {
+    "farmer": {
+      "home": {
+        "title": "Farmers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Farmer",
+        "createOrEditLabel": "Create or edit a Farmer",
+        "notFound": "No Farmers found"
+      },
+      "created": "A new Farmer is created with identifier {{ param }}",
+      "updated": "A Farmer is updated with identifier {{ param }}",
+      "deleted": "A Farmer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Farmer {{ id }}?"
+      },
+      "detail": {
+        "title": "Farmer"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "preferedLanguage": "Prefered Language",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address"
+    }
+  }
+}
