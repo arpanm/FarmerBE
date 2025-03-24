@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "sessionContext": {
+      "home": {
+        "title": "Session Contexts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Session Context",
+        "createOrEditLabel": "Create or edit a Session Context",
+        "notFound": "No Session Contexts found"
+      },
+      "created": "A new Session Context is created with identifier {{ param }}",
+      "updated": "A Session Context is updated with identifier {{ param }}",
+      "deleted": "A Session Context is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Session Context {{ id }}?"
+      },
+      "detail": {
+        "title": "Session Context"
+      },
+      "id": "ID",
+      "sessionId": "Session Id",
+      "language": "Language",
+      "isLoggedIn": "Is Logged In",
+      "farmerId": "Farmer Id",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time"
+    }
+  }
+}

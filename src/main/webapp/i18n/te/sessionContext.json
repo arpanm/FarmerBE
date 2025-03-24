@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "sessionContext": {
+      "home": {
+        "title": "Session Contexts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Session Context  సృష్టించండి",
+        "createOrEditLabel": "Session Context సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Session Contexts found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Session Context సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Session Context సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Session Context తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Session Context {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Session Context"
+      },
+      "id": "ID",
+      "sessionId": "Session Id",
+      "language": "Language",
+      "isLoggedIn": "Is Logged In",
+      "farmerId": "Farmer Id",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time"
+    }
+  }
+}

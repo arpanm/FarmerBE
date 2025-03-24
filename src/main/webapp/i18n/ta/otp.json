@@ -1,0 +1,35 @@
+{
+  "farmerBeApp": {
+    "otp": {
+      "home": {
+        "title": "Otps",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Otp-ஐ உருவாக்கு",
+        "createOrEditLabel": "Otp -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Otps found"
+      },
+      "created": "Otp புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Otp மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Otp நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Otp {{ id }}?"
+      },
+      "detail": {
+        "title": "Otp"
+      },
+      "id": "ID",
+      "email": "Email",
+      "emailOtp": "Email Otp",
+      "phone": "Phone",
+      "phoneOtp": "Phone Otp",
+      "isValidated": "Is Validated",
+      "expiryTime": "Expiry Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}

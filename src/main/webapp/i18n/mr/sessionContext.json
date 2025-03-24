@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "sessionContext": {
+      "home": {
+        "title": "Session Contexts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Session Context तयार करा",
+        "createOrEditLabel": "Session Context तयार किंवा संपादित करा",
+        "notFound": "No Session Contexts found"
+      },
+      "created": "Session Context [identifier: {{ param }}] तयार आहे",
+      "updated": "Session Context [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Session Context [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Session Context [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Session Context"
+      },
+      "id": "ID",
+      "sessionId": "Session Id",
+      "language": "Language",
+      "isLoggedIn": "Is Logged In",
+      "farmerId": "Farmer Id",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time"
+    }
+  }
+}

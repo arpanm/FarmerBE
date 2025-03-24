@@ -1,0 +1,10 @@
+{
+  "farmerBeApp": {
+    "DocumentType": {
+      "null": "",
+      "AddressProof": "AddressProof",
+      "IdProof": "IdProof",
+      "Other": "Other"
+    }
+  }
+}

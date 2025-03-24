@@ -1,0 +1,35 @@
+{
+  "farmerBeApp": {
+    "farmer": {
+      "home": {
+        "title": "Farmers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Farmer तयार करा",
+        "createOrEditLabel": "Farmer तयार किंवा संपादित करा",
+        "notFound": "No Farmers found"
+      },
+      "created": "Farmer [identifier: {{ param }}] तयार आहे",
+      "updated": "Farmer [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Farmer [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Farmer [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Farmer"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "preferedLanguage": "Prefered Language",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address",
+      "document": "Document",
+      "otp": "Otp"
+    }
+  }
+}
