@@ -8,7 +8,9 @@
       "entities": {
         "main": "Entities",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "sessionContext": "Session Context"
+        "sessionContext": "Session Context",
+        "farmer": "Farmer",
+        "address": "Address"
       },
       "account": {
         "main": "Account",
