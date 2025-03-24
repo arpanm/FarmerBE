@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "document": {
+      "home": {
+        "title": "Documents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Document-ஐ உருவாக்கு",
+        "createOrEditLabel": "Document -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Documents found"
+      },
+      "created": "Document புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Document மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Document நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Document {{ id }}?"
+      },
+      "detail": {
+        "title": "Document"
+      },
+      "id": "ID",
+      "docPath": "Doc Path",
+      "docType": "Doc Type",
+      "docFormat": "Doc Format",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}

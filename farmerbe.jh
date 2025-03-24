@@ -115,7 +115,7 @@ application {
     buildTool maven
     enableSwaggerCodegen true
     enableTranslation true
-    languages	[en, hi]
+    languages	[bn, hi, en, mr, ta, te]
     nativeLanguage	en
     packageName com.farmer.be
   }

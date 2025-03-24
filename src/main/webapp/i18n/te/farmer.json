@@ -1,0 +1,35 @@
+{
+  "farmerBeApp": {
+    "farmer": {
+      "home": {
+        "title": "Farmers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Farmer  సృష్టించండి",
+        "createOrEditLabel": "Farmer సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Farmers found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Farmer సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Farmer సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Farmer తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Farmer {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Farmer"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "preferedLanguage": "Prefered Language",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address",
+      "document": "Document",
+      "otp": "Otp"
+    }
+  }
+}
