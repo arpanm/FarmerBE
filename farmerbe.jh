@@ -1,5 +1,5 @@
 entity SessionContext {
-	session String,
+	sessionId String,
     language Language,
     isLoggedIn Boolean,
     farmerId String,
