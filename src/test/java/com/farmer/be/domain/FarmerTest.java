@@ -1,6 +1,7 @@
 package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -45,5 +46,27 @@ class FarmerTest {
         farmer.setAddresses(new HashSet<>());
         assertThat(farmer.getAddresses()).doesNotContain(addressBack);
         assertThat(addressBack.getFarmer()).isNull();
+    }
+
+    @Test
+    void documentTest() {
+        Farmer farmer = getFarmerRandomSampleGenerator();
+        Document documentBack = getDocumentRandomSampleGenerator();
+
+        farmer.addDocument(documentBack);
+        assertThat(farmer.getDocuments()).containsOnly(documentBack);
+        assertThat(documentBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.removeDocument(documentBack);
+        assertThat(farmer.getDocuments()).doesNotContain(documentBack);
+        assertThat(documentBack.getFarmer()).isNull();
+
+        farmer.documents(new HashSet<>(Set.of(documentBack)));
+        assertThat(farmer.getDocuments()).containsOnly(documentBack);
+        assertThat(documentBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.setDocuments(new HashSet<>());
+        assertThat(farmer.getDocuments()).doesNotContain(documentBack);
+        assertThat(documentBack.getFarmer()).isNull();
     }
 }

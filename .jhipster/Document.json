@@ -1,0 +1,59 @@
+{
+  "annotations": {
+    "changelogDate": "20250324172305"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "docPath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docType",
+      "fieldType": "DocumentType",
+      "fieldValues": "AddressProof,IdProof,Other"
+    },
+    {
+      "fieldName": "docFormat",
+      "fieldType": "DocumentFormat",
+      "fieldValues": "Pdf,Image,Other"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Document",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "farmer",
+      "relationshipName": "farmer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
