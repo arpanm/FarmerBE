@@ -26,7 +26,7 @@ enum Language {
 
 entity Farmer {
 	name String,
-    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
     phone Long required min (1000000000) max(9999999999),
     preferedLanguage Language,
     isActive Boolean,
@@ -83,6 +83,24 @@ relationship OneToMany {
 	Farmer to Document{farmer}
 }
 
+
+entity Otp {
+	email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+	emailOtp Integer,
+    phone Long,
+    mobileOtp Integer,
+    isValidated Bollean,
+    expiryTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farmer to Otp{farmer}
+}
 
 application {
   config {
