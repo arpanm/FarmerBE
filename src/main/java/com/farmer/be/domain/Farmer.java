@@ -68,6 +68,11 @@ public class Farmer implements Serializable {
     @JsonIgnoreProperties(value = { "farmer" }, allowSetters = true)
     private Set<Address> addresses = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farmer" }, allowSetters = true)
+    private Set<Document> documents = new HashSet<>();
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -228,6 +233,37 @@ public class Farmer implements Serializable {
     public Farmer removeAddress(Address address) {
         this.addresses.remove(address);
         address.setFarmer(null);
+        return this;
+    }
+
+    public Set<Document> getDocuments() {
+        return this.documents;
+    }
+
+    public void setDocuments(Set<Document> documents) {
+        if (this.documents != null) {
+            this.documents.forEach(i -> i.setFarmer(null));
+        }
+        if (documents != null) {
+            documents.forEach(i -> i.setFarmer(this));
+        }
+        this.documents = documents;
+    }
+
+    public Farmer documents(Set<Document> documents) {
+        this.setDocuments(documents);
+        return this;
+    }
+
+    public Farmer addDocument(Document document) {
+        this.documents.add(document);
+        document.setFarmer(this);
+        return this;
+    }
+
+    public Farmer removeDocument(Document document) {
+        this.documents.remove(document);
+        document.setFarmer(null);
         return this;
     }
 

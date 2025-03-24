@@ -56,6 +56,34 @@ relationship OneToMany {
 }
 
 
+entity Document {
+	docPath String,
+    docType DocumentType,
+    docFormat DocumentFormat,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum DocumentType {
+	AddressProof,
+    IdProof,
+    Other
+}
+
+enum DocumentFormat {
+	Pdf,
+    Image,
+    Other
+}
+
+relationship OneToMany {
+	Farmer to Document{farmer}
+}
+
+
 application {
   config {
     baseName FarmerBE

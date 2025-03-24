@@ -1,5 +1,7 @@
 package com.farmer.be.domain;
 
+import com.farmer.be.domain.enumeration.DocumentFormat;
+import com.farmer.be.domain.enumeration.DocumentType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -9,13 +11,13 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
- * A Address.
+ * A Document.
  */
 @Entity
-@Table(name = "address")
+@Table(name = "document")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @SuppressWarnings("common-java:DuplicatedBlocks")
-public class Address implements Serializable {
+public class Document implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -24,30 +26,16 @@ public class Address implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @Column(name = "line_1", nullable = false)
-    private String line1;
+    @Column(name = "doc_path")
+    private String docPath;
 
-    @Column(name = "line_2")
-    private String line2;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "doc_type")
+    private DocumentType docType;
 
-    @NotNull
-    @Column(name = "state", nullable = false)
-    private String state;
-
-    @NotNull
-    @Column(name = "country", nullable = false)
-    private String country;
-
-    @NotNull
-    @Column(name = "pincode", nullable = false)
-    private Long pincode;
-
-    @Column(name = "lat")
-    private Long lat;
-
-    @Column(name = "lon")
-    private Long lon;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "doc_format")
+    private DocumentFormat docFormat;
 
     @Column(name = "is_active")
     private Boolean isActive;
@@ -78,7 +66,7 @@ public class Address implements Serializable {
         return this.id;
     }
 
-    public Address id(Long id) {
+    public Document id(Long id) {
         this.setId(id);
         return this;
     }
@@ -87,102 +75,50 @@ public class Address implements Serializable {
         this.id = id;
     }
 
-    public String getLine1() {
-        return this.line1;
+    public String getDocPath() {
+        return this.docPath;
     }
 
-    public Address line1(String line1) {
-        this.setLine1(line1);
+    public Document docPath(String docPath) {
+        this.setDocPath(docPath);
         return this;
     }
 
-    public void setLine1(String line1) {
-        this.line1 = line1;
+    public void setDocPath(String docPath) {
+        this.docPath = docPath;
     }
 
-    public String getLine2() {
-        return this.line2;
+    public DocumentType getDocType() {
+        return this.docType;
     }
 
-    public Address line2(String line2) {
-        this.setLine2(line2);
+    public Document docType(DocumentType docType) {
+        this.setDocType(docType);
         return this;
     }
 
-    public void setLine2(String line2) {
-        this.line2 = line2;
+    public void setDocType(DocumentType docType) {
+        this.docType = docType;
     }
 
-    public String getState() {
-        return this.state;
+    public DocumentFormat getDocFormat() {
+        return this.docFormat;
     }
 
-    public Address state(String state) {
-        this.setState(state);
+    public Document docFormat(DocumentFormat docFormat) {
+        this.setDocFormat(docFormat);
         return this;
     }
 
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getCountry() {
-        return this.country;
-    }
-
-    public Address country(String country) {
-        this.setCountry(country);
-        return this;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public Long getPincode() {
-        return this.pincode;
-    }
-
-    public Address pincode(Long pincode) {
-        this.setPincode(pincode);
-        return this;
-    }
-
-    public void setPincode(Long pincode) {
-        this.pincode = pincode;
-    }
-
-    public Long getLat() {
-        return this.lat;
-    }
-
-    public Address lat(Long lat) {
-        this.setLat(lat);
-        return this;
-    }
-
-    public void setLat(Long lat) {
-        this.lat = lat;
-    }
-
-    public Long getLon() {
-        return this.lon;
-    }
-
-    public Address lon(Long lon) {
-        this.setLon(lon);
-        return this;
-    }
-
-    public void setLon(Long lon) {
-        this.lon = lon;
+    public void setDocFormat(DocumentFormat docFormat) {
+        this.docFormat = docFormat;
     }
 
     public Boolean getIsActive() {
         return this.isActive;
     }
 
-    public Address isActive(Boolean isActive) {
+    public Document isActive(Boolean isActive) {
         this.setIsActive(isActive);
         return this;
     }
@@ -195,7 +131,7 @@ public class Address implements Serializable {
         return this.createddBy;
     }
 
-    public Address createddBy(String createddBy) {
+    public Document createddBy(String createddBy) {
         this.setCreateddBy(createddBy);
         return this;
     }
@@ -208,7 +144,7 @@ public class Address implements Serializable {
         return this.createdTime;
     }
 
-    public Address createdTime(Instant createdTime) {
+    public Document createdTime(Instant createdTime) {
         this.setCreatedTime(createdTime);
         return this;
     }
@@ -221,7 +157,7 @@ public class Address implements Serializable {
         return this.updatedBy;
     }
 
-    public Address updatedBy(String updatedBy) {
+    public Document updatedBy(String updatedBy) {
         this.setUpdatedBy(updatedBy);
         return this;
     }
@@ -234,7 +170,7 @@ public class Address implements Serializable {
         return this.updatedTime;
     }
 
-    public Address updatedTime(Instant updatedTime) {
+    public Document updatedTime(Instant updatedTime) {
         this.setUpdatedTime(updatedTime);
         return this;
     }
@@ -251,7 +187,7 @@ public class Address implements Serializable {
         this.farmer = farmer;
     }
 
-    public Address farmer(Farmer farmer) {
+    public Document farmer(Farmer farmer) {
         this.setFarmer(farmer);
         return this;
     }
@@ -263,10 +199,10 @@ public class Address implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Address)) {
+        if (!(o instanceof Document)) {
             return false;
         }
-        return getId() != null && getId().equals(((Address) o).getId());
+        return getId() != null && getId().equals(((Document) o).getId());
     }
 
     @Override
@@ -278,15 +214,11 @@ public class Address implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "Address{" +
+        return "Document{" +
             "id=" + getId() +
-            ", line1='" + getLine1() + "'" +
-            ", line2='" + getLine2() + "'" +
-            ", state='" + getState() + "'" +
-            ", country='" + getCountry() + "'" +
-            ", pincode=" + getPincode() +
-            ", lat=" + getLat() +
-            ", lon=" + getLon() +
+            ", docPath='" + getDocPath() + "'" +
+            ", docType='" + getDocType() + "'" +
+            ", docFormat='" + getDocFormat() + "'" +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +

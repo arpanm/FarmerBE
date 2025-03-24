@@ -61,6 +61,13 @@
       "relationshipName": "address",
       "relationshipSide": "left",
       "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "document",
+      "otherEntityRelationshipName": "farmer",
+      "relationshipName": "document",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
     }
   ],
   "searchEngine": "no",
