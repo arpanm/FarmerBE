@@ -84,7 +84,7 @@ relationship OneToMany {
 }
 
 
-entity Otp {
+entity OneTimePassword {
 	email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
 	emailOtp Integer,
     phone Long,
@@ -99,7 +99,7 @@ entity Otp {
 }
 
 relationship OneToMany {
-	Farmer to Otp{farmer}
+	Farmer to OneTimePassword{farmer}
 }
 
 application {
