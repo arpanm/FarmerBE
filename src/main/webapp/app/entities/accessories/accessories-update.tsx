@@ -138,6 +138,13 @@ export const AccessoriesUpdate = () => {
                 type="text"
               />
               <ValidatedField
+                label={translate('farmerBeApp.accessories.skuId')}
+                id="accessories-skuId"
+                name="skuId"
+                data-cy="skuId"
+                type="text"
+              />
+              <ValidatedField
                 label={translate('farmerBeApp.accessories.isActive')}
                 id="accessories-isActive"
                 name="isActive"

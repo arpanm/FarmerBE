@@ -145,6 +145,10 @@ export const Crop = () => {
                     <Translate contentKey="farmerBeApp.crop.orderNo">Order No</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('orderNo')} />
                   </th>
+                  <th className="hand" onClick={sort('skuId')}>
+                    <Translate contentKey="farmerBeApp.crop.skuId">Sku Id</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('skuId')} />
+                  </th>
                   <th className="hand" onClick={sort('isActive')}>
                     <Translate contentKey="farmerBeApp.crop.isActive">Is Active</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('isActive')} />
@@ -183,6 +187,7 @@ export const Crop = () => {
                     <td>{crop.imagePath}</td>
                     <td>{crop.description}</td>
                     <td>{crop.orderNo}</td>
+                    <td>{crop.skuId}</td>
                     <td>{crop.isActive ? 'true' : 'false'}</td>
                     <td>{crop.createddBy}</td>
                     <td>{crop.createdTime ? <TextFormat type="date" value={crop.createdTime} format={APP_DATE_FORMAT} /> : null}</td>

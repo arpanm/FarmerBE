@@ -26,6 +26,9 @@
             <column name="order_no" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="sku_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="is_active" type="boolean">
                 <constraints nullable="true" />
             </column>
@@ -71,6 +74,7 @@
             <column name="image_path" type="string"/>
             <column name="description" type="string"/>
             <column name="order_no" type="numeric"/>
+            <column name="sku_id" type="string"/>
             <column name="is_active" type="boolean"/>
             <column name="createdd_by" type="string"/>
             <column name="created_time" type="date"/>

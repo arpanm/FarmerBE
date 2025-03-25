@@ -1,11 +1,11 @@
-id;name;image_path;description;order_no;is_active;createdd_by;created_time;updated_by;updated_time
-1;tangible as;gah narrowcast;gee fen;15441;true;reproachfully fairly shrilly;2025-03-24T15:18:53;meh assail wafer;2025-03-24T14:10:03
-2;inure worth uh-huh;linseed for oh;as overdub on;4755;true;key fill descent;2025-03-24T23:01:43;beside under eek;2025-03-25T07:47:15
-3;absent catalyze;bowed far;eek canter;13136;false;mmm platypus solder;2025-03-24T11:49:12;hospitable times wheel;2025-03-25T08:44:32
-4;toward after pearl;function;lustrous charter;20526;false;masticate;2025-03-25T07:27:14;and wherever;2025-03-24T22:50:14
-5;slime whoever;pfft hm minty;nougat kindly;10004;true;progress;2025-03-24T20:12:07;oof;2025-03-24T14:47:24
-6;curiously median yahoo;afore enormously meh;intervention atop;18177;true;busily that muddy;2025-03-24T18:46:22;out till;2025-03-24T13:49:53
-7;punctual;while;or;27171;false;inasmuch;2025-03-25T06:46:41;second;2025-03-24T12:41:45
-8;supposing bidet deliberately;who joshingly of;catch;12222;true;fondly;2025-03-24T17:28:00;cavernous opposite;2025-03-24T15:31:59
-9;by aha vice;concerning oof;anti crest;21078;false;geez pretend;2025-03-24T19:40:08;chainstay;2025-03-24T20:54:03
-10;freight pish;er deserted hence;circulate far quarrelsomely;21299;false;excepting as;2025-03-25T08:40:13;pish;2025-03-24T18:41:28
+id;name;image_path;description;order_no;sku_id;is_active;createdd_by;created_time;updated_by;updated_time
+1;tangible as;gah narrowcast;gee fen;15441;little;false;inquisitively boohoo;2025-03-25T10:11:07;meh consequently;2025-03-25T02:39:02
+2;filter finally deploy;by bob;cop without ride;1712;too toothpick key;false;miskey;2025-03-24T21:31:50;cute;2025-03-25T00:04:49
+3;eek mmm range;indeed;youthfully meaningfully;31892;yum impact;false;beneath foretell;2025-03-24T16:37:04;versus aha pish;2025-03-25T07:56:54
+4;capitalise phew;hm degenerate;apud up since;1368;since masterpiece;false;diagram;2025-03-24T15:15:25;yet;2025-03-24T17:17:26
+5;hence new;but whoever whoa;exhausted brr;17549;recovery circumference destock;true;notwithstanding;2025-03-25T03:53:48;on;2025-03-25T07:30:37
+6;railway ugh hm;ugh;monumental;25024;when stormy;false;vacation bowler why;2025-03-24T21:40:02;energetically fondly slipper;2025-03-24T13:13:08
+7;uh-huh onto after;round;hydrolyse;5526;who joshingly of;true;yahoo descent inveigle;2025-03-25T03:56:10;dime usefully;2025-03-25T06:03:57
+8;past usefully;phew burdensome shady;geez appreciate;15283;beside once;true;instead;2025-03-24T16:58:53;yahoo upside-down;2025-03-24T12:18:24
+9;since geez;bleach because mmm;since bah;164;banish in;true;colonialism consequently roughly;2025-03-25T07:16:00;certainly;2025-03-24T23:23:11
+10;hmph authorized;next sturdy;until unit;21270;mockingly;false;uh-huh until when;2025-03-24T22:07:27;briskly;2025-03-25T09:41:35
