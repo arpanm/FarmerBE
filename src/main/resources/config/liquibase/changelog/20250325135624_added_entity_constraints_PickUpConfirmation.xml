@@ -17,6 +17,13 @@
                                  referencedTableName="pickup_gradation"
                                  />
 
+        <addForeignKeyConstraint baseColumnNames="item_payment_id"
+                                 baseTableName="pick_up_confirmation"
+                                 constraintName="fk_pick_up_confirmation__item_payment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pickup_payment"
+                                 />
+
         <addForeignKeyConstraint baseColumnNames="farm_id"
                                  baseTableName="pick_up_confirmation"
                                  constraintName="fk_pick_up_confirmation__farm_id"

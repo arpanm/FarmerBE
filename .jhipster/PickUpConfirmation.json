@@ -57,6 +57,13 @@
       "relationshipType": "one-to-one"
     },
     {
+      "otherEntityName": "pickupPayment",
+      "otherEntityRelationshipName": "pickupItems",
+      "relationshipName": "itemPayment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
       "otherEntityName": "farm",
       "relationshipName": "farm",
       "relationshipSide": "right",

@@ -103,6 +103,10 @@ export const PickUpConfirmationDetail = () => {
           </dt>
           <dd>{pickUpConfirmationEntity.grade ? pickUpConfirmationEntity.grade.id : ''}</dd>
           <dt>
+            <Translate contentKey="farmerBeApp.pickUpConfirmation.itemPayment">Item Payment</Translate>
+          </dt>
+          <dd>{pickUpConfirmationEntity.itemPayment ? pickUpConfirmationEntity.itemPayment.id : ''}</dd>
+          <dt>
             <Translate contentKey="farmerBeApp.pickUpConfirmation.farm">Farm</Translate>
           </dt>
           <dd>{pickUpConfirmationEntity.farm ? pickUpConfirmationEntity.farm.id : ''}</dd>

@@ -62,6 +62,10 @@ public class PickUpConfirmation implements Serializable {
     private PickupGradation grade;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "pickupItems" }, allowSetters = true)
+    private PickupPayment itemPayment;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
         value = {
             "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
@@ -219,6 +223,19 @@ public class PickUpConfirmation implements Serializable {
 
     public PickUpConfirmation grade(PickupGradation pickupGradation) {
         this.setGrade(pickupGradation);
+        return this;
+    }
+
+    public PickupPayment getItemPayment() {
+        return this.itemPayment;
+    }
+
+    public void setItemPayment(PickupPayment pickupPayment) {
+        this.itemPayment = pickupPayment;
+    }
+
+    public PickUpConfirmation itemPayment(PickupPayment pickupPayment) {
+        this.setItemPayment(pickupPayment);
         return this;
     }
 

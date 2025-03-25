@@ -16,6 +16,7 @@ import hervestPlan from 'app/entities/hervest-plan/hervest-plan.reducer';
 import supplyConfirmation from 'app/entities/supply-confirmation/supply-confirmation.reducer';
 import pickUpConfirmation from 'app/entities/pick-up-confirmation/pick-up-confirmation.reducer';
 import pickupGradation from 'app/entities/pickup-gradation/pickup-gradation.reducer';
+import pickupPayment from 'app/entities/pickup-payment/pickup-payment.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -37,6 +38,7 @@ const entitiesReducers = {
   supplyConfirmation,
   pickUpConfirmation,
   pickupGradation,
+  pickupPayment,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

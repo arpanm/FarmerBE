@@ -38,6 +38,8 @@ public class PickUpConfirmationDTO implements Serializable {
 
     private PickupGradationDTO grade;
 
+    private PickupPaymentDTO itemPayment;
+
     private FarmDTO farm;
 
     private CropDTO crop;
@@ -130,6 +132,14 @@ public class PickUpConfirmationDTO implements Serializable {
         this.grade = grade;
     }
 
+    public PickupPaymentDTO getItemPayment() {
+        return itemPayment;
+    }
+
+    public void setItemPayment(PickupPaymentDTO itemPayment) {
+        this.itemPayment = itemPayment;
+    }
+
     public FarmDTO getFarm() {
         return farm;
     }
@@ -182,6 +192,7 @@ public class PickUpConfirmationDTO implements Serializable {
             ", updatedBy='" + getUpdatedBy() + "'" +
             ", updatedTime='" + getUpdatedTime() + "'" +
             ", grade=" + getGrade() +
+            ", itemPayment=" + getItemPayment() +
             ", farm=" + getFarm() +
             ", crop=" + getCrop() +
             "}";
