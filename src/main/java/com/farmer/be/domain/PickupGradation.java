@@ -54,7 +54,7 @@ public class PickupGradation implements Serializable {
     @Column(name = "updated_time", nullable = false)
     private Instant updatedTime;
 
-    @JsonIgnoreProperties(value = { "grade", "farm", "crop" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "grade", "itemPayment", "farm", "crop" }, allowSetters = true)
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "grade")
     private PickUpConfirmation pickupItem;
 

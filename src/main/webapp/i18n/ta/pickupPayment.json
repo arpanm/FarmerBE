@@ -1,0 +1,35 @@
+{
+  "farmerBeApp": {
+    "pickupPayment": {
+      "home": {
+        "title": "Pickup Payments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Pickup Payment-ஐ உருவாக்கு",
+        "createOrEditLabel": "Pickup Payment -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Pickup Payments found"
+      },
+      "created": "Pickup Payment புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Pickup Payment மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Pickup Payment நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Pickup Payment {{ id }}?"
+      },
+      "detail": {
+        "title": "Pickup Payment"
+      },
+      "id": "ID",
+      "paymentStatus": "Payment Status",
+      "transactionId": "Transaction Id",
+      "paymentDate": "Payment Date",
+      "details": "Details",
+      "paymentUpdatedBy": "Payment Updated By",
+      "paymentUpdatedTime": "Payment Updated Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "pickupItems": "Pickup Items"
+    }
+  }
+}

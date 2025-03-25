@@ -384,6 +384,33 @@ relationship OneToOne {
 	PickUpConfirmation{grade} to PickupGradation{pickupItem}
 }
 
+
+entity PickupPayment {
+	paymentStatus PaymentStatus,
+    transactionId String,
+    paymentDate LocalDate,
+    details String,
+    paymentUpdatedBy String,
+    paymentUpdatedTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum PaymentStatus {
+	Good,
+    Moderate,
+    Bad,
+    Reject,
+    Other
+}
+
+relationship ManyToOne {
+	PickUpConfirmation{itemPayment} to PickupPayment{pickupItems}
+}
+
 application {
   config {
     baseName FarmerBE

@@ -1,0 +1,35 @@
+{
+  "farmerBeApp": {
+    "pickupPayment": {
+      "home": {
+        "title": "Pickup Payments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Pickup Payment",
+        "createOrEditLabel": "Create or edit a Pickup Payment",
+        "notFound": "No Pickup Payments found"
+      },
+      "created": "A new Pickup Payment is created with identifier {{ param }}",
+      "updated": "A Pickup Payment is updated with identifier {{ param }}",
+      "deleted": "A Pickup Payment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pickup Payment {{ id }}?"
+      },
+      "detail": {
+        "title": "Pickup Payment"
+      },
+      "id": "ID",
+      "paymentStatus": "Payment Status",
+      "transactionId": "Transaction Id",
+      "paymentDate": "Payment Date",
+      "details": "Details",
+      "paymentUpdatedBy": "Payment Updated By",
+      "paymentUpdatedTime": "Payment Updated Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "pickupItems": "Pickup Items"
+    }
+  }
+}

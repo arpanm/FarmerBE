@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { IPickupGradation } from 'app/shared/model/pickup-gradation.model';
+import { IPickupPayment } from 'app/shared/model/pickup-payment.model';
 import { IFarm } from 'app/shared/model/farm.model';
 import { ICrop } from 'app/shared/model/crop.model';
 
@@ -15,6 +16,7 @@ export interface IPickUpConfirmation {
   updatedBy?: string;
   updatedTime?: dayjs.Dayjs;
   grade?: IPickupGradation | null;
+  itemPayment?: IPickupPayment | null;
   farm?: IFarm | null;
   crop?: ICrop | null;
 }

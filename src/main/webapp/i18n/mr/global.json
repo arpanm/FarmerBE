@@ -25,7 +25,8 @@
         "hervestPlan": "Hervest Plan",
         "supplyConfirmation": "Supply Confirmation",
         "pickUpConfirmation": "Pick Up Confirmation",
-        "pickupGradation": "Pickup Gradation"
+        "pickupGradation": "Pickup Gradation",
+        "pickupPayment": "Pickup Payment"
       },
       "account": {
         "main": "खाते",

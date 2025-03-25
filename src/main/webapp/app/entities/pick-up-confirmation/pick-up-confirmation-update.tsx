@@ -8,6 +8,7 @@ import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateT
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getPickupGradations } from 'app/entities/pickup-gradation/pickup-gradation.reducer';
+import { getEntities as getPickupPayments } from 'app/entities/pickup-payment/pickup-payment.reducer';
 import { getEntities as getFarms } from 'app/entities/farm/farm.reducer';
 import { getEntities as getCrops } from 'app/entities/crop/crop.reducer';
 import { createEntity, getEntity, updateEntity } from './pick-up-confirmation.reducer';
@@ -21,6 +22,7 @@ export const PickUpConfirmationUpdate = () => {
   const isNew = id === undefined;
 
   const pickupGradations = useAppSelector(state => state.pickupGradation.entities);
+  const pickupPayments = useAppSelector(state => state.pickupPayment.entities);
   const farms = useAppSelector(state => state.farm.entities);
   const crops = useAppSelector(state => state.crop.entities);
   const pickUpConfirmationEntity = useAppSelector(state => state.pickUpConfirmation.entity);
@@ -38,6 +40,7 @@ export const PickUpConfirmationUpdate = () => {
     }
 
     dispatch(getPickupGradations({}));
+    dispatch(getPickupPayments({}));
     dispatch(getFarms({}));
     dispatch(getCrops({}));
   }, []);
@@ -62,6 +65,7 @@ export const PickUpConfirmationUpdate = () => {
       ...pickUpConfirmationEntity,
       ...values,
       grade: pickupGradations.find(it => it.id.toString() === values.grade?.toString()),
+      itemPayment: pickupPayments.find(it => it.id.toString() === values.itemPayment?.toString()),
       farm: farms.find(it => it.id.toString() === values.farm?.toString()),
       crop: crops.find(it => it.id.toString() === values.crop?.toString()),
     };
@@ -84,6 +88,7 @@ export const PickUpConfirmationUpdate = () => {
           createdTime: convertDateTimeFromServer(pickUpConfirmationEntity.createdTime),
           updatedTime: convertDateTimeFromServer(pickUpConfirmationEntity.updatedTime),
           grade: pickUpConfirmationEntity?.grade?.id,
+          itemPayment: pickUpConfirmationEntity?.itemPayment?.id,
           farm: pickUpConfirmationEntity?.farm?.id,
           crop: pickUpConfirmationEntity?.crop?.id,
         };
@@ -201,6 +206,22 @@ export const PickUpConfirmationUpdate = () => {
                 <option value="" key="0" />
                 {pickupGradations
                   ? pickupGradations.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                id="pick-up-confirmation-itemPayment"
+                name="itemPayment"
+                data-cy="itemPayment"
+                label={translate('farmerBeApp.pickUpConfirmation.itemPayment')}
+                type="select"
+              >
+                <option value="" key="0" />
+                {pickupPayments
+                  ? pickupPayments.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

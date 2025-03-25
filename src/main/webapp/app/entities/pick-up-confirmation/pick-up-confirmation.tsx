@@ -176,6 +176,10 @@ export const PickUpConfirmation = () => {
                     <Translate contentKey="farmerBeApp.pickUpConfirmation.grade">Grade</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
+                    <Translate contentKey="farmerBeApp.pickUpConfirmation.itemPayment">Item Payment</Translate>{' '}
+                    <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
                     <Translate contentKey="farmerBeApp.pickUpConfirmation.farm">Farm</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
@@ -216,6 +220,13 @@ export const PickUpConfirmation = () => {
                     <td>
                       {pickUpConfirmation.grade ? (
                         <Link to={`/pickup-gradation/${pickUpConfirmation.grade.id}`}>{pickUpConfirmation.grade.id}</Link>
+                      ) : (
+                        ''
+                      )}
+                    </td>
+                    <td>
+                      {pickUpConfirmation.itemPayment ? (
+                        <Link to={`/pickup-payment/${pickUpConfirmation.itemPayment.id}`}>{pickUpConfirmation.itemPayment.id}</Link>
                       ) : (
                         ''
                       )}

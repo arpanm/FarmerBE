@@ -21,6 +21,7 @@ import HervestPlan from './hervest-plan';
 import SupplyConfirmation from './supply-confirmation';
 import PickUpConfirmation from './pick-up-confirmation';
 import PickupGradation from './pickup-gradation';
+import PickupPayment from './pickup-payment';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -46,6 +47,7 @@ export default () => {
         <Route path="supply-confirmation/*" element={<SupplyConfirmation />} />
         <Route path="pick-up-confirmation/*" element={<PickUpConfirmation />} />
         <Route path="pickup-gradation/*" element={<PickupGradation />} />
+        <Route path="pickup-payment/*" element={<PickupPayment />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

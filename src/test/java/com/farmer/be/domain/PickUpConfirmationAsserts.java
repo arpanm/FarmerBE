@@ -68,6 +68,7 @@ public class PickUpConfirmationAsserts {
         assertThat(actual)
             .as("Verify PickUpConfirmation relationships")
             .satisfies(a -> assertThat(a.getGrade()).as("check grade").isEqualTo(expected.getGrade()))
+            .satisfies(a -> assertThat(a.getItemPayment()).as("check itemPayment").isEqualTo(expected.getItemPayment()))
             .satisfies(a -> assertThat(a.getFarm()).as("check farm").isEqualTo(expected.getFarm()))
             .satisfies(a -> assertThat(a.getCrop()).as("check crop").isEqualTo(expected.getCrop()));
     }

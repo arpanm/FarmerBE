@@ -4,6 +4,7 @@ import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.PickUpConfirmationTestSamples.*;
 import static com.farmer.be.domain.PickupGradationTestSamples.*;
+import static com.farmer.be.domain.PickupPaymentTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -35,6 +36,18 @@ class PickUpConfirmationTest {
 
         pickUpConfirmation.grade(null);
         assertThat(pickUpConfirmation.getGrade()).isNull();
+    }
+
+    @Test
+    void itemPaymentTest() {
+        PickUpConfirmation pickUpConfirmation = getPickUpConfirmationRandomSampleGenerator();
+        PickupPayment pickupPaymentBack = getPickupPaymentRandomSampleGenerator();
+
+        pickUpConfirmation.setItemPayment(pickupPaymentBack);
+        assertThat(pickUpConfirmation.getItemPayment()).isEqualTo(pickupPaymentBack);
+
+        pickUpConfirmation.itemPayment(null);
+        assertThat(pickUpConfirmation.getItemPayment()).isNull();
     }
 
     @Test
