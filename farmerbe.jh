@@ -23,6 +23,35 @@ enum Language {
     Kashmiri
 }
 
+entity BannerContent {
+	bannerTag String required,
+    logoPath String,
+    imagePath String,
+    heading String,
+    subHeading String,
+    description String,
+    link String,
+    startTime Instant,
+    endTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+entity Carousel {
+	carouselTag String required,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Caraosel to BannerContent{carousel}
+}
 
 entity Farmer {
 	name String,
@@ -239,6 +268,7 @@ entity Crop {
     imagePath String,
     description String,
     orderNo Long,
+    skuId String,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
@@ -259,6 +289,7 @@ entity Accessories {
     imagePath String,
     description String,
     orderNo Long,
+    skuId String,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
