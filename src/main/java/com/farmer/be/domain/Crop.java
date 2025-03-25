@@ -73,6 +73,11 @@ public class Crop implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    private Set<HervestPlanRule> hervestPlanRules = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
     private Set<HervestPlan> hervestPlans = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
@@ -93,7 +98,15 @@ public class Crop implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
         value = {
-            "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
+            "addresses",
+            "documents",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "crops",
+            "accessories",
+            "farmer",
         },
         allowSetters = true
     )
@@ -303,6 +316,37 @@ public class Crop implements Serializable {
     public Crop removePrice(Price price) {
         this.prices.remove(price);
         price.setCrop(null);
+        return this;
+    }
+
+    public Set<HervestPlanRule> getHervestPlanRules() {
+        return this.hervestPlanRules;
+    }
+
+    public void setHervestPlanRules(Set<HervestPlanRule> hervestPlanRules) {
+        if (this.hervestPlanRules != null) {
+            this.hervestPlanRules.forEach(i -> i.setCrop(null));
+        }
+        if (hervestPlanRules != null) {
+            hervestPlanRules.forEach(i -> i.setCrop(this));
+        }
+        this.hervestPlanRules = hervestPlanRules;
+    }
+
+    public Crop hervestPlanRules(Set<HervestPlanRule> hervestPlanRules) {
+        this.setHervestPlanRules(hervestPlanRules);
+        return this;
+    }
+
+    public Crop addHervestPlanRule(HervestPlanRule hervestPlanRule) {
+        this.hervestPlanRules.add(hervestPlanRule);
+        hervestPlanRule.setCrop(this);
+        return this;
+    }
+
+    public Crop removeHervestPlanRule(HervestPlanRule hervestPlanRule) {
+        this.hervestPlanRules.remove(hervestPlanRule);
+        hervestPlanRule.setCrop(null);
         return this;
     }
 

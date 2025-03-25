@@ -44,6 +44,12 @@ class HervestPlanResourceIT {
     private static final Float DEFAULT_HERVEST_PLAN_VALUE = 1F;
     private static final Float UPDATED_HERVEST_PLAN_VALUE = 2F;
 
+    private static final Float DEFAULT_HERVEST_PLAN_VALUE_MIN = 1F;
+    private static final Float UPDATED_HERVEST_PLAN_VALUE_MIN = 2F;
+
+    private static final Float DEFAULT_HERVEST_PLAN_VALUE_MAX = 1F;
+    private static final Float UPDATED_HERVEST_PLAN_VALUE_MAX = 2F;
+
     private static final Boolean DEFAULT_IS_ACTIVE = false;
     private static final Boolean UPDATED_IS_ACTIVE = true;
 
@@ -94,6 +100,8 @@ class HervestPlanResourceIT {
         return new HervestPlan()
             .hervestPlanDate(DEFAULT_HERVEST_PLAN_DATE)
             .hervestPlanValue(DEFAULT_HERVEST_PLAN_VALUE)
+            .hervestPlanValueMin(DEFAULT_HERVEST_PLAN_VALUE_MIN)
+            .hervestPlanValueMax(DEFAULT_HERVEST_PLAN_VALUE_MAX)
             .isActive(DEFAULT_IS_ACTIVE)
             .createddBy(DEFAULT_CREATEDD_BY)
             .createdTime(DEFAULT_CREATED_TIME)
@@ -111,6 +119,8 @@ class HervestPlanResourceIT {
         return new HervestPlan()
             .hervestPlanDate(UPDATED_HERVEST_PLAN_DATE)
             .hervestPlanValue(UPDATED_HERVEST_PLAN_VALUE)
+            .hervestPlanValueMin(UPDATED_HERVEST_PLAN_VALUE_MIN)
+            .hervestPlanValueMax(UPDATED_HERVEST_PLAN_VALUE_MAX)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
             .createdTime(UPDATED_CREATED_TIME)
@@ -255,6 +265,8 @@ class HervestPlanResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(hervestPlan.getId().intValue())))
             .andExpect(jsonPath("$.[*].hervestPlanDate").value(hasItem(DEFAULT_HERVEST_PLAN_DATE.toString())))
             .andExpect(jsonPath("$.[*].hervestPlanValue").value(hasItem(DEFAULT_HERVEST_PLAN_VALUE.doubleValue())))
+            .andExpect(jsonPath("$.[*].hervestPlanValueMin").value(hasItem(DEFAULT_HERVEST_PLAN_VALUE_MIN.doubleValue())))
+            .andExpect(jsonPath("$.[*].hervestPlanValueMax").value(hasItem(DEFAULT_HERVEST_PLAN_VALUE_MAX.doubleValue())))
             .andExpect(jsonPath("$.[*].isActive").value(hasItem(DEFAULT_IS_ACTIVE)))
             .andExpect(jsonPath("$.[*].createddBy").value(hasItem(DEFAULT_CREATEDD_BY)))
             .andExpect(jsonPath("$.[*].createdTime").value(hasItem(DEFAULT_CREATED_TIME.toString())))
@@ -276,6 +288,8 @@ class HervestPlanResourceIT {
             .andExpect(jsonPath("$.id").value(hervestPlan.getId().intValue()))
             .andExpect(jsonPath("$.hervestPlanDate").value(DEFAULT_HERVEST_PLAN_DATE.toString()))
             .andExpect(jsonPath("$.hervestPlanValue").value(DEFAULT_HERVEST_PLAN_VALUE.doubleValue()))
+            .andExpect(jsonPath("$.hervestPlanValueMin").value(DEFAULT_HERVEST_PLAN_VALUE_MIN.doubleValue()))
+            .andExpect(jsonPath("$.hervestPlanValueMax").value(DEFAULT_HERVEST_PLAN_VALUE_MAX.doubleValue()))
             .andExpect(jsonPath("$.isActive").value(DEFAULT_IS_ACTIVE))
             .andExpect(jsonPath("$.createddBy").value(DEFAULT_CREATEDD_BY))
             .andExpect(jsonPath("$.createdTime").value(DEFAULT_CREATED_TIME.toString()))
@@ -305,6 +319,8 @@ class HervestPlanResourceIT {
         updatedHervestPlan
             .hervestPlanDate(UPDATED_HERVEST_PLAN_DATE)
             .hervestPlanValue(UPDATED_HERVEST_PLAN_VALUE)
+            .hervestPlanValueMin(UPDATED_HERVEST_PLAN_VALUE_MIN)
+            .hervestPlanValueMax(UPDATED_HERVEST_PLAN_VALUE_MAX)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
             .createdTime(UPDATED_CREATED_TIME)
@@ -431,6 +447,8 @@ class HervestPlanResourceIT {
         partialUpdatedHervestPlan
             .hervestPlanDate(UPDATED_HERVEST_PLAN_DATE)
             .hervestPlanValue(UPDATED_HERVEST_PLAN_VALUE)
+            .hervestPlanValueMin(UPDATED_HERVEST_PLAN_VALUE_MIN)
+            .hervestPlanValueMax(UPDATED_HERVEST_PLAN_VALUE_MAX)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
             .createdTime(UPDATED_CREATED_TIME)

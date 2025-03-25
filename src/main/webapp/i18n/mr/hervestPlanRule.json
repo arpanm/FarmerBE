@@ -1,0 +1,41 @@
+{
+  "farmerBeApp": {
+    "hervestPlanRule": {
+      "home": {
+        "title": "Hervest Plan Rules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Hervest Plan Rule तयार करा",
+        "createOrEditLabel": "Hervest Plan Rule तयार किंवा संपादित करा",
+        "notFound": "No Hervest Plan Rules found"
+      },
+      "created": "Hervest Plan Rule [identifier: {{ param }}] तयार आहे",
+      "updated": "Hervest Plan Rule [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Hervest Plan Rule [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Hervest Plan Rule [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Hervest Plan Rule"
+      },
+      "id": "ID",
+      "frequencyType": "Frequency Type",
+      "hervestPlanValue": "Hervest Plan Value",
+      "hervestPlanValueMin": "Hervest Plan Value Min",
+      "hervestPlanValueMax": "Hervest Plan Value Max",
+      "daysOfWeek": "Days Of Week",
+      "daysOfMonth": "Days Of Month",
+      "daysOfYear": "Days Of Year",
+      "alternateXdays": "Alternate Xdays",
+      "startDate": "Start Date",
+      "hasEndDate": "Has End Date",
+      "endDate": "End Date",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

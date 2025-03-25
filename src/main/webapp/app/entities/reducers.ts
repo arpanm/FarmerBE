@@ -19,6 +19,7 @@ import pickupGradation from 'app/entities/pickup-gradation/pickup-gradation.redu
 import pickupPayment from 'app/entities/pickup-payment/pickup-payment.reducer';
 import bannerContent from 'app/entities/banner-content/banner-content.reducer';
 import carouselContent from 'app/entities/carousel-content/carousel-content.reducer';
+import hervestPlanRule from 'app/entities/hervest-plan-rule/hervest-plan-rule.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -43,6 +44,7 @@ const entitiesReducers = {
   pickupPayment,
   bannerContent,
   carouselContent,
+  hervestPlanRule,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

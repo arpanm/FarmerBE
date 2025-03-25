@@ -341,9 +341,48 @@ relationship OneToMany {
 	Crop to Price{crop}
 }
 
+entity HervestPlanRule {
+	frequencyType FrequencyType,
+    hervestPlanValue Float,
+    hervestPlanValueMin Float,
+    hervestPlanValueMax Float,
+    daysOfWeek String,
+    daysOfMonth String,
+    daysOfYear String,
+    alternateXdays Long,
+    startDate LocalDate,
+    hasEndDate Boolean,
+    endDate LocalDate,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farm to HervestPlanRule{farm}
+}
+
+relationship OneToMany {
+	Crop to HervestPlanRule{crop}
+}
+
+enum FrequencyType {
+	DaysOfWeek,
+    DaysOfMonth,
+    DaysOfYear,
+    EveryDay,
+    AlternateDate,
+    AlternateXDays,
+    Other
+}
+
 entity HervestPlan {
 	hervestPlanDate LocalDate,
     hervestPlanValue Float,
+    hervestPlanValueMin Float,
+    hervestPlanValueMax Float,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,

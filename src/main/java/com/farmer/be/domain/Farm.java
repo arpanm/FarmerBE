@@ -75,6 +75,11 @@ public class Farm implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    private Set<HervestPlanRule> hervestPlanRules = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
     private Set<HervestPlan> hervestPlans = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
@@ -91,7 +96,9 @@ public class Farm implements Serializable {
     @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
-        value = { "demands", "prices", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms" },
+        value = {
+            "demands", "prices", "hervestPlanRules", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms",
+        },
         allowSetters = true
     )
     private Set<Crop> crops = new HashSet<>();
@@ -317,6 +324,37 @@ public class Farm implements Serializable {
     public Farm removeDocument(Document document) {
         this.documents.remove(document);
         document.setFarm(null);
+        return this;
+    }
+
+    public Set<HervestPlanRule> getHervestPlanRules() {
+        return this.hervestPlanRules;
+    }
+
+    public void setHervestPlanRules(Set<HervestPlanRule> hervestPlanRules) {
+        if (this.hervestPlanRules != null) {
+            this.hervestPlanRules.forEach(i -> i.setFarm(null));
+        }
+        if (hervestPlanRules != null) {
+            hervestPlanRules.forEach(i -> i.setFarm(this));
+        }
+        this.hervestPlanRules = hervestPlanRules;
+    }
+
+    public Farm hervestPlanRules(Set<HervestPlanRule> hervestPlanRules) {
+        this.setHervestPlanRules(hervestPlanRules);
+        return this;
+    }
+
+    public Farm addHervestPlanRule(HervestPlanRule hervestPlanRule) {
+        this.hervestPlanRules.add(hervestPlanRule);
+        hervestPlanRule.setFarm(this);
+        return this;
+    }
+
+    public Farm removeHervestPlanRule(HervestPlanRule hervestPlanRule) {
+        this.hervestPlanRules.remove(hervestPlanRule);
+        hervestPlanRule.setFarm(null);
         return this;
     }
 

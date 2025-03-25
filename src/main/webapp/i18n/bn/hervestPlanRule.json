@@ -1,0 +1,41 @@
+{
+  "farmerBeApp": {
+    "hervestPlanRule": {
+      "home": {
+        "title": "Hervest Plan Rules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hervest Plan Rule",
+        "createOrEditLabel": "Create or edit a Hervest Plan Rule",
+        "notFound": "No Hervest Plan Rules found"
+      },
+      "created": "A new Hervest Plan Rule is created with identifier {{ param }}",
+      "updated": "A Hervest Plan Rule is updated with identifier {{ param }}",
+      "deleted": "A Hervest Plan Rule is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hervest Plan Rule {{ id }}?"
+      },
+      "detail": {
+        "title": "Hervest Plan Rule"
+      },
+      "id": "ID",
+      "frequencyType": "Frequency Type",
+      "hervestPlanValue": "Hervest Plan Value",
+      "hervestPlanValueMin": "Hervest Plan Value Min",
+      "hervestPlanValueMax": "Hervest Plan Value Max",
+      "daysOfWeek": "Days Of Week",
+      "daysOfMonth": "Days Of Month",
+      "daysOfYear": "Days Of Year",
+      "alternateXdays": "Alternate Xdays",
+      "startDate": "Start Date",
+      "hasEndDate": "Has End Date",
+      "endDate": "End Date",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import static com.farmer.be.domain.CategoryTestSamples.*;
 import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.DemandTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
+import static com.farmer.be.domain.HervestPlanRuleTestSamples.*;
 import static com.farmer.be.domain.HervestPlanTestSamples.*;
 import static com.farmer.be.domain.PickUpConfirmationTestSamples.*;
 import static com.farmer.be.domain.PriceTestSamples.*;
@@ -73,6 +74,28 @@ class CropTest {
         crop.setPrices(new HashSet<>());
         assertThat(crop.getPrices()).doesNotContain(priceBack);
         assertThat(priceBack.getCrop()).isNull();
+    }
+
+    @Test
+    void hervestPlanRuleTest() {
+        Crop crop = getCropRandomSampleGenerator();
+        HervestPlanRule hervestPlanRuleBack = getHervestPlanRuleRandomSampleGenerator();
+
+        crop.addHervestPlanRule(hervestPlanRuleBack);
+        assertThat(crop.getHervestPlanRules()).containsOnly(hervestPlanRuleBack);
+        assertThat(hervestPlanRuleBack.getCrop()).isEqualTo(crop);
+
+        crop.removeHervestPlanRule(hervestPlanRuleBack);
+        assertThat(crop.getHervestPlanRules()).doesNotContain(hervestPlanRuleBack);
+        assertThat(hervestPlanRuleBack.getCrop()).isNull();
+
+        crop.hervestPlanRules(new HashSet<>(Set.of(hervestPlanRuleBack)));
+        assertThat(crop.getHervestPlanRules()).containsOnly(hervestPlanRuleBack);
+        assertThat(hervestPlanRuleBack.getCrop()).isEqualTo(crop);
+
+        crop.setHervestPlanRules(new HashSet<>());
+        assertThat(crop.getHervestPlanRules()).doesNotContain(hervestPlanRuleBack);
+        assertThat(hervestPlanRuleBack.getCrop()).isNull();
     }
 
     @Test

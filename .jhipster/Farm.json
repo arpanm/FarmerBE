@@ -69,6 +69,13 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "hervestPlanRule",
+      "otherEntityRelationshipName": "farm",
+      "relationshipName": "hervestPlanRule",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "hervestPlan",
       "otherEntityRelationshipName": "farm",
       "relationshipName": "hervestPlan",

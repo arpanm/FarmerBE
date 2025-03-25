@@ -6,6 +6,8 @@ export interface IHervestPlan {
   id?: number;
   hervestPlanDate?: dayjs.Dayjs | null;
   hervestPlanValue?: number | null;
+  hervestPlanValueMin?: number | null;
+  hervestPlanValueMax?: number | null;
   isActive?: boolean | null;
   createddBy?: string;
   createdTime?: dayjs.Dayjs;

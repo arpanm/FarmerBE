@@ -18,6 +18,10 @@ public class HervestPlanDTO implements Serializable {
 
     private Float hervestPlanValue;
 
+    private Float hervestPlanValueMin;
+
+    private Float hervestPlanValueMax;
+
     private Boolean isActive;
 
     @NotNull
@@ -58,6 +62,22 @@ public class HervestPlanDTO implements Serializable {
 
     public void setHervestPlanValue(Float hervestPlanValue) {
         this.hervestPlanValue = hervestPlanValue;
+    }
+
+    public Float getHervestPlanValueMin() {
+        return hervestPlanValueMin;
+    }
+
+    public void setHervestPlanValueMin(Float hervestPlanValueMin) {
+        this.hervestPlanValueMin = hervestPlanValueMin;
+    }
+
+    public Float getHervestPlanValueMax() {
+        return hervestPlanValueMax;
+    }
+
+    public void setHervestPlanValueMax(Float hervestPlanValueMax) {
+        this.hervestPlanValueMax = hervestPlanValueMax;
     }
 
     public Boolean getIsActive() {
@@ -144,6 +164,8 @@ public class HervestPlanDTO implements Serializable {
             "id=" + getId() +
             ", hervestPlanDate='" + getHervestPlanDate() + "'" +
             ", hervestPlanValue=" + getHervestPlanValue() +
+            ", hervestPlanValueMin=" + getHervestPlanValueMin() +
+            ", hervestPlanValueMax=" + getHervestPlanValueMax() +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +
