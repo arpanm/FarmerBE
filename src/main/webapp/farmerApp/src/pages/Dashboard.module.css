@@ -1,0 +1,354 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  position: relative;
+  padding-bottom: 64px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #006b33;
+  gap: 12px;
+}
+
+.menuButton,
+.cartButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.menuIcon::before {
+  content: '☰';
+  color: white;
+  font-size: 20px;
+}
+
+.cartIcon::before {
+  content: '🛒';
+  color: white;
+  font-size: 20px;
+}
+
+.searchBar {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.searchBar input {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 16px;
+}
+
+.searchBar input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.deliveryStatus {
+  margin-bottom: 16px;
+}
+
+.pendingDelivery {
+  background: #ffe4b5;
+  color: #b8860b;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.deliveryInfo {
+  margin-bottom: 16px;
+}
+
+.deliveryInfo p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.deliveryInfo h3 {
+  margin: 4px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.deliveryItems,
+.demandItems {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.deliveryItem,
+.demandItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  min-width: 120px;
+}
+
+.itemImage {
+  width: 40px;
+  height: 40px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.quantity {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.name {
+  color: #666;
+  font-size: 12px;
+}
+
+.priceTable {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f8f8f8;
+  font-weight: 500;
+}
+
+.priceAwaiting {
+  color: #ff4444;
+}
+
+.viewMore {
+  width: 100%;
+  padding: 12px;
+  background: none;
+  border: none;
+  color: #006b33;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.moreItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.planHarvestButton {
+  width: 100%;
+  padding: 12px;
+  background: #006b33;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 70px;
+}
+
+.navButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 12px;
+}
+
+.navButton.active {
+  color: #006b33;
+}
+
+.homeIcon::before {
+  content: '🏠';
+  font-size: 20px;
+}
+
+.manageIcon::before {
+  content: '🌾';
+  font-size: 20px;
+}
+
+.ledgerIcon::before {
+  content: '📒';
+  font-size: 20px;
+}
+
+.farmsIcon::before {
+  content: '🚜';
+  font-size: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.viewAllButton {
+  background: none;
+  border: none;
+  color: #006b33;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.produceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+}
+
+.produceCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.produceImage {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.produceName {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.addButton {
+  background: none;
+  border: 1px solid #006b33;
+  color: #006b33;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.bottomNav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 8px;
+  background: white;
+  border-top: 1px solid #eee;
+}
+
+.navButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 8px;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.navButton.active {
+  color: #006b33;
+}
+
+.homeIcon::before {
+  content: '🏠';
+  font-size: 20px;
+}
+
+.manageIcon::before {
+  content: '🌾';
+  font-size: 20px;
+}
+
+.ledgerIcon::before {
+  content: '📒';
+  font-size: 20px;
+}
+
+.farmsIcon::before {
+  content: '🚜';
+  font-size: 20px;
+}

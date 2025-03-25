@@ -1,0 +1,108 @@
+.container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 32px;
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.changeNumber {
+  color: #006838;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.otpContainer {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.otpInput {
+  flex: 1;
+  width: 64px;
+  height: 64px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  outline: none;
+}
+
+.otpInput:focus {
+  border-color: #006838;
+}
+
+.resendText {
+  text-align: center;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.resendButton {
+  color: #006838;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.resendButton:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.verifyButton {
+  background-color: #006838;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.verifyButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.verifyButton:not(:disabled):hover {
+  background-color: #005730;
+}

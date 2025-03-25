@@ -15,7 +15,7 @@ export const Brand = () => (
   <NavbarBrand tag={Link} to="/" className="brand-logo">
     <BrandIcon />
     <span className="brand-title">
-      <Translate contentKey="global.title">FarmerBE</Translate>
+      <Translate contentKey="global.title">Farmer App Backoffice</Translate>
     </span>
     <span className="navbar-version">{VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`}</span>
   </NavbarBrand>
@@ -27,6 +27,17 @@ export const Home = () => (
       <FontAwesomeIcon icon="home" />
       <span>
         <Translate contentKey="global.menu.home">Home</Translate>
+      </span>
+    </NavLink>
+  </NavItem>
+);
+
+export const FarmerApp = () => (
+  <NavItem>
+    <NavLink tag={Link} to="/farmerapp" className="d-flex align-items-center">
+      <FontAwesomeIcon icon="home" />
+      <span>
+        <Translate contentKey="global.menu.farmerApp">Farmer App</Translate>
       </span>
     </NavLink>
   </NavItem>
