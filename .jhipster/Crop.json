@@ -54,6 +54,20 @@
   "pagination": "infinite-scroll",
   "relationships": [
     {
+      "otherEntityName": "demand",
+      "otherEntityRelationshipName": "crop",
+      "relationshipName": "demand",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "price",
+      "otherEntityRelationshipName": "crop",
+      "relationshipName": "price",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "category",
       "relationshipName": "category",
       "relationshipSide": "right",

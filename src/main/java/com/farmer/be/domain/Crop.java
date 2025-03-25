@@ -60,6 +60,16 @@ public class Crop implements Serializable {
     @Column(name = "updated_time", nullable = false)
     private Instant updatedTime;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "crop" }, allowSetters = true)
+    private Set<Demand> demands = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "crop" }, allowSetters = true)
+    private Set<Price> prices = new HashSet<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "categories", "crops", "accessories", "parent" }, allowSetters = true)
     private Category category;
@@ -212,6 +222,68 @@ public class Crop implements Serializable {
 
     public void setUpdatedTime(Instant updatedTime) {
         this.updatedTime = updatedTime;
+    }
+
+    public Set<Demand> getDemands() {
+        return this.demands;
+    }
+
+    public void setDemands(Set<Demand> demands) {
+        if (this.demands != null) {
+            this.demands.forEach(i -> i.setCrop(null));
+        }
+        if (demands != null) {
+            demands.forEach(i -> i.setCrop(this));
+        }
+        this.demands = demands;
+    }
+
+    public Crop demands(Set<Demand> demands) {
+        this.setDemands(demands);
+        return this;
+    }
+
+    public Crop addDemand(Demand demand) {
+        this.demands.add(demand);
+        demand.setCrop(this);
+        return this;
+    }
+
+    public Crop removeDemand(Demand demand) {
+        this.demands.remove(demand);
+        demand.setCrop(null);
+        return this;
+    }
+
+    public Set<Price> getPrices() {
+        return this.prices;
+    }
+
+    public void setPrices(Set<Price> prices) {
+        if (this.prices != null) {
+            this.prices.forEach(i -> i.setCrop(null));
+        }
+        if (prices != null) {
+            prices.forEach(i -> i.setCrop(this));
+        }
+        this.prices = prices;
+    }
+
+    public Crop prices(Set<Price> prices) {
+        this.setPrices(prices);
+        return this;
+    }
+
+    public Crop addPrice(Price price) {
+        this.prices.add(price);
+        price.setCrop(this);
+        return this;
+    }
+
+    public Crop removePrice(Price price) {
+        this.prices.remove(price);
+        price.setCrop(null);
+        return this;
     }
 
     public Category getCategory() {

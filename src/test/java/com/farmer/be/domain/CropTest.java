@@ -2,7 +2,9 @@ package com.farmer.be.domain;
 
 import static com.farmer.be.domain.CategoryTestSamples.*;
 import static com.farmer.be.domain.CropTestSamples.*;
+import static com.farmer.be.domain.DemandTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
+import static com.farmer.be.domain.PriceTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -24,6 +26,50 @@ class CropTest {
 
         crop2 = getCropSample2();
         assertThat(crop1).isNotEqualTo(crop2);
+    }
+
+    @Test
+    void demandTest() {
+        Crop crop = getCropRandomSampleGenerator();
+        Demand demandBack = getDemandRandomSampleGenerator();
+
+        crop.addDemand(demandBack);
+        assertThat(crop.getDemands()).containsOnly(demandBack);
+        assertThat(demandBack.getCrop()).isEqualTo(crop);
+
+        crop.removeDemand(demandBack);
+        assertThat(crop.getDemands()).doesNotContain(demandBack);
+        assertThat(demandBack.getCrop()).isNull();
+
+        crop.demands(new HashSet<>(Set.of(demandBack)));
+        assertThat(crop.getDemands()).containsOnly(demandBack);
+        assertThat(demandBack.getCrop()).isEqualTo(crop);
+
+        crop.setDemands(new HashSet<>());
+        assertThat(crop.getDemands()).doesNotContain(demandBack);
+        assertThat(demandBack.getCrop()).isNull();
+    }
+
+    @Test
+    void priceTest() {
+        Crop crop = getCropRandomSampleGenerator();
+        Price priceBack = getPriceRandomSampleGenerator();
+
+        crop.addPrice(priceBack);
+        assertThat(crop.getPrices()).containsOnly(priceBack);
+        assertThat(priceBack.getCrop()).isEqualTo(crop);
+
+        crop.removePrice(priceBack);
+        assertThat(crop.getPrices()).doesNotContain(priceBack);
+        assertThat(priceBack.getCrop()).isNull();
+
+        crop.prices(new HashSet<>(Set.of(priceBack)));
+        assertThat(crop.getPrices()).containsOnly(priceBack);
+        assertThat(priceBack.getCrop()).isEqualTo(crop);
+
+        crop.setPrices(new HashSet<>());
+        assertThat(crop.getPrices()).doesNotContain(priceBack);
+        assertThat(priceBack.getCrop()).isNull();
     }
 
     @Test
