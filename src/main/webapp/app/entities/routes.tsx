@@ -11,6 +11,7 @@ import Otp from './otp';
 import PanDetails from './pan-details';
 import TermsAndCondition from './terms-and-condition';
 import Farm from './farm';
+import Category from './category';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -26,6 +27,7 @@ export default () => {
         <Route path="pan-details/*" element={<PanDetails />} />
         <Route path="terms-and-condition/*" element={<TermsAndCondition />} />
         <Route path="farm/*" element={<Farm />} />
+        <Route path="category/*" element={<Category />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

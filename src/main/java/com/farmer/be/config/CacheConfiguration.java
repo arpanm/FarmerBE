@@ -66,6 +66,8 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.Farm.class.getName());
             createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".addresses");
             createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".documents");
+            createCache(cm, com.farmer.be.domain.Category.class.getName());
+            createCache(cm, com.farmer.be.domain.Category.class.getName() + ".categories");
             // jhipster-needle-ehcache-add-entry
         };
     }
