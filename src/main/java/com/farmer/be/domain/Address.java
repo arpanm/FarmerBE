@@ -91,7 +91,15 @@ public class Address implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
         value = {
-            "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
+            "addresses",
+            "documents",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "crops",
+            "accessories",
+            "farmer",
         },
         allowSetters = true
     )

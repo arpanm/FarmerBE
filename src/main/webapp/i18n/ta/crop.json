@@ -30,6 +30,7 @@
       "updatedTime": "Updated Time",
       "demand": "Demand",
       "price": "Price",
+      "hervestPlanRule": "Hervest Plan Rule",
       "hervestPlan": "Hervest Plan",
       "supplyConfirmation": "Supply Confirmation",
       "pickUpConfirmation": "Pick Up Confirmation",

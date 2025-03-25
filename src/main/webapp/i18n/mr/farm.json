@@ -30,6 +30,7 @@
       "updatedTime": "Updated Time",
       "address": "Address",
       "document": "Document",
+      "hervestPlanRule": "Hervest Plan Rule",
       "hervestPlan": "Hervest Plan",
       "supplyConfirmation": "Supply Confirmation",
       "pickUpConfirmation": "Pick Up Confirmation",

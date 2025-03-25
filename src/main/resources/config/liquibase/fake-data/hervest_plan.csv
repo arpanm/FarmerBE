@@ -1,11 +1,11 @@
-id;hervest_plan_date;hervest_plan_value;is_active;createdd_by;created_time;updated_by;updated_time
-1;2025-03-24;21527.87;false;when approximate;2025-03-25T11:32:13;aha quaver;2025-03-24T17:09:46
-2;2025-03-24;2375.66;true;fairly;2025-03-25T11:06:11;wheel absolve tousle;2025-03-25T10:10:49
-3;2025-03-24;29254.52;true;lest aha;2025-03-25T07:42:15;bah hence sweet;2025-03-24T18:54:44
-4;2025-03-25;1244.15;false;backbone meh;2025-03-24T16:48:38;greedily unfreeze octave;2025-03-24T14:56:36
-5;2025-03-25;26264.98;true;ack brr pushy;2025-03-24T18:54:11;gadzooks regarding nautical;2025-03-24T17:23:12
-6;2025-03-25;12268.51;true;fairly aw;2025-03-24T17:59:47;incidentally granny underneath;2025-03-25T03:59:24
-7;2025-03-24;2951.6;true;ill-fated euphonium owlishly;2025-03-25T05:14:32;grim rationalize;2025-03-25T02:03:14
-8;2025-03-24;29950.8;true;miserably warmly inasmuch;2025-03-24T21:46:14;pike bah;2025-03-25T03:10:24
-9;2025-03-25;17825.45;false;joyous;2025-03-24T23:00:12;genuine zowie;2025-03-24T21:21:38
-10;2025-03-25;22020.33;false;even besides supposing;2025-03-25T06:44:08;good-natured truthfully confide;2025-03-25T08:44:20
+id;hervest_plan_date;hervest_plan_value;hervest_plan_value_min;hervest_plan_value_max;is_active;createdd_by;created_time;updated_by;updated_time
+1;2025-03-24;21527.87;23845.14;11492.2;false;ha once aha;2025-03-25T03:59:02;inasmuch mesh;2025-03-24T19:49:37
+2;2025-03-24;7449.79;28958.26;23927.45;true;accentuate ferociously;2025-03-24T22:08:52;although;2025-03-25T05:45:29
+3;2025-03-24;3422.72;29846.8;22873.4;false;how eek lonely;2025-03-24T15:54:35;suburban likewise considering;2025-03-24T18:13:53
+4;2025-03-24;8463.28;5768.51;15455.65;true;fabricate;2025-03-24T21:20:39;expert approach;2025-03-25T06:32:37
+5;2025-03-25;2962.75;24440.71;13269.94;true;provided drag heating;2025-03-25T13:21:21;too filter jaggedly;2025-03-25T01:46:50
+6;2025-03-25;19538.31;16737.89;20010.77;false;microchip bonnet furthermore;2025-03-25T02:24:38;altruistic;2025-03-25T11:03:02
+7;2025-03-25;19246.92;427.16;2951.6;true;ill-fated euphonium owlishly;2025-03-25T05:14:32;grim rationalize;2025-03-25T02:03:14
+8;2025-03-24;29950.8;8119.42;26468.66;false;oof maul;2025-03-24T18:46:33;iterate;2025-03-25T12:19:27
+9;2025-03-25;16603.9;29937.08;20006.91;false;into inasmuch spotless;2025-03-25T07:49:20;frozen;2025-03-25T09:42:00
+10;2025-03-24;29516.81;10195.81;19339.23;false;as glider quietly;2025-03-25T04:11:56;optimistic blah solidly;2025-03-24T17:44:36

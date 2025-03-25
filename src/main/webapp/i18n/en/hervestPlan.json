@@ -20,6 +20,8 @@
       "id": "ID",
       "hervestPlanDate": "Hervest Plan Date",
       "hervestPlanValue": "Hervest Plan Value",
+      "hervestPlanValueMin": "Hervest Plan Value Min",
+      "hervestPlanValueMax": "Hervest Plan Value Max",
       "isActive": "Is Active",
       "createddBy": "Createdd By",
       "createdTime": "Created Time",

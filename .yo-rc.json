@@ -31,12 +31,13 @@
       "PickupGradation",
       "PickupPayment",
       "BannerContent",
-      "CarouselContent"
+      "CarouselContent",
+      "HervestPlanRule"
     ],
     "jhipsterVersion": "8.9.0",
     "jwtSecretKey": "ZjZjYmQyMjRhNGYxZmUzOGFjZmJkNDk1NTM5YjBjOWU5YmY4NjIzMGQ1ZTg3YjU5YzQ4YzQ0OGIwMDU0NzEwM2EyM2E0NDczZWQxYTA2ZjNiZWI2YWFhNmRmNjhiNDJkMjgzZDQ4NWQ3Mzk0YTlhNzYxNWY1ZTI0MjhkNzNlMDc=",
     "languages": ["en", "bn", "hi", "mr", "ta", "te"],
-    "lastLiquibaseTimestamp": 1742912038000,
+    "lastLiquibaseTimestamp": 1742912797000,
     "nativeLanguage": "en",
     "packageName": "com.farmer.be",
     "prodDatabaseType": "mysql",

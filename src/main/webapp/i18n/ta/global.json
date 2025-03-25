@@ -28,7 +28,8 @@
         "pickupGradation": "Pickup Gradation",
         "pickupPayment": "Pickup Payment",
         "bannerContent": "Banner Content",
-        "carouselContent": "Carousel Content"
+        "carouselContent": "Carousel Content",
+        "hervestPlanRule": "Hervest Plan Rule"
       },
       "account": {
         "main": "கணக்கு",

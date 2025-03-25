@@ -68,7 +68,15 @@ public class PickUpConfirmation implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
         value = {
-            "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
+            "addresses",
+            "documents",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "crops",
+            "accessories",
+            "farmer",
         },
         allowSetters = true
     )
@@ -76,7 +84,9 @@ public class PickUpConfirmation implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
-        value = { "demands", "prices", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms" },
+        value = {
+            "demands", "prices", "hervestPlanRules", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms",
+        },
         allowSetters = true
     )
     private Crop crop;

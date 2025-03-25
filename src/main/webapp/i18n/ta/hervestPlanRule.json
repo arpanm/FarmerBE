@@ -1,0 +1,41 @@
+{
+  "farmerBeApp": {
+    "hervestPlanRule": {
+      "home": {
+        "title": "Hervest Plan Rules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Hervest Plan Rule-ஐ உருவாக்கு",
+        "createOrEditLabel": "Hervest Plan Rule -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Hervest Plan Rules found"
+      },
+      "created": "Hervest Plan Rule புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Hervest Plan Rule மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Hervest Plan Rule நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Hervest Plan Rule {{ id }}?"
+      },
+      "detail": {
+        "title": "Hervest Plan Rule"
+      },
+      "id": "ID",
+      "frequencyType": "Frequency Type",
+      "hervestPlanValue": "Hervest Plan Value",
+      "hervestPlanValueMin": "Hervest Plan Value Min",
+      "hervestPlanValueMax": "Hervest Plan Value Max",
+      "daysOfWeek": "Days Of Week",
+      "daysOfMonth": "Days Of Month",
+      "daysOfYear": "Days Of Year",
+      "alternateXdays": "Alternate Xdays",
+      "startDate": "Start Date",
+      "hasEndDate": "Has End Date",
+      "endDate": "End Date",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

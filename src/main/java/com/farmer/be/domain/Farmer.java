@@ -75,7 +75,15 @@ public class Farmer implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
         value = {
-            "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
+            "addresses",
+            "documents",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "crops",
+            "accessories",
+            "farmer",
         },
         allowSetters = true
     )

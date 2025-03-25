@@ -49,6 +49,18 @@ export const HervestPlanDetail = () => {
           </dt>
           <dd>{hervestPlanEntity.hervestPlanValue}</dd>
           <dt>
+            <span id="hervestPlanValueMin">
+              <Translate contentKey="farmerBeApp.hervestPlan.hervestPlanValueMin">Hervest Plan Value Min</Translate>
+            </span>
+          </dt>
+          <dd>{hervestPlanEntity.hervestPlanValueMin}</dd>
+          <dt>
+            <span id="hervestPlanValueMax">
+              <Translate contentKey="farmerBeApp.hervestPlan.hervestPlanValueMax">Hervest Plan Value Max</Translate>
+            </span>
+          </dt>
+          <dd>{hervestPlanEntity.hervestPlanValueMax}</dd>
+          <dt>
             <span id="isActive">
               <Translate contentKey="farmerBeApp.hervestPlan.isActive">Is Active</Translate>
             </span>

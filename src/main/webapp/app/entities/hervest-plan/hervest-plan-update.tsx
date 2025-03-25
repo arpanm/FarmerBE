@@ -52,6 +52,12 @@ export const HervestPlanUpdate = () => {
     if (values.hervestPlanValue !== undefined && typeof values.hervestPlanValue !== 'number') {
       values.hervestPlanValue = Number(values.hervestPlanValue);
     }
+    if (values.hervestPlanValueMin !== undefined && typeof values.hervestPlanValueMin !== 'number') {
+      values.hervestPlanValueMin = Number(values.hervestPlanValueMin);
+    }
+    if (values.hervestPlanValueMax !== undefined && typeof values.hervestPlanValueMax !== 'number') {
+      values.hervestPlanValueMax = Number(values.hervestPlanValueMax);
+    }
     values.createdTime = convertDateTimeToServer(values.createdTime);
     values.updatedTime = convertDateTimeToServer(values.updatedTime);
 
@@ -120,6 +126,20 @@ export const HervestPlanUpdate = () => {
                 id="hervest-plan-hervestPlanValue"
                 name="hervestPlanValue"
                 data-cy="hervestPlanValue"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('farmerBeApp.hervestPlan.hervestPlanValueMin')}
+                id="hervest-plan-hervestPlanValueMin"
+                name="hervestPlanValueMin"
+                data-cy="hervestPlanValueMin"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('farmerBeApp.hervestPlan.hervestPlanValueMax')}
+                id="hervest-plan-hervestPlanValueMax"
+                name="hervestPlanValueMax"
+                data-cy="hervestPlanValueMax"
                 type="text"
               />
               <ValidatedField

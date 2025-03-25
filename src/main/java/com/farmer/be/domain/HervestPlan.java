@@ -31,6 +31,12 @@ public class HervestPlan implements Serializable {
     @Column(name = "hervest_plan_value")
     private Float hervestPlanValue;
 
+    @Column(name = "hervest_plan_value_min")
+    private Float hervestPlanValueMin;
+
+    @Column(name = "hervest_plan_value_max")
+    private Float hervestPlanValueMax;
+
     @Column(name = "is_active")
     private Boolean isActive;
 
@@ -53,7 +59,15 @@ public class HervestPlan implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
         value = {
-            "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
+            "addresses",
+            "documents",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "crops",
+            "accessories",
+            "farmer",
         },
         allowSetters = true
     )
@@ -61,7 +75,9 @@ public class HervestPlan implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
-        value = { "demands", "prices", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms" },
+        value = {
+            "demands", "prices", "hervestPlanRules", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms",
+        },
         allowSetters = true
     )
     private Crop crop;
@@ -105,6 +121,32 @@ public class HervestPlan implements Serializable {
 
     public void setHervestPlanValue(Float hervestPlanValue) {
         this.hervestPlanValue = hervestPlanValue;
+    }
+
+    public Float getHervestPlanValueMin() {
+        return this.hervestPlanValueMin;
+    }
+
+    public HervestPlan hervestPlanValueMin(Float hervestPlanValueMin) {
+        this.setHervestPlanValueMin(hervestPlanValueMin);
+        return this;
+    }
+
+    public void setHervestPlanValueMin(Float hervestPlanValueMin) {
+        this.hervestPlanValueMin = hervestPlanValueMin;
+    }
+
+    public Float getHervestPlanValueMax() {
+        return this.hervestPlanValueMax;
+    }
+
+    public HervestPlan hervestPlanValueMax(Float hervestPlanValueMax) {
+        this.setHervestPlanValueMax(hervestPlanValueMax);
+        return this;
+    }
+
+    public void setHervestPlanValueMax(Float hervestPlanValueMax) {
+        this.hervestPlanValueMax = hervestPlanValueMax;
     }
 
     public Boolean getIsActive() {
@@ -224,6 +266,8 @@ public class HervestPlan implements Serializable {
             "id=" + getId() +
             ", hervestPlanDate='" + getHervestPlanDate() + "'" +
             ", hervestPlanValue=" + getHervestPlanValue() +
+            ", hervestPlanValueMin=" + getHervestPlanValueMin() +
+            ", hervestPlanValueMax=" + getHervestPlanValueMax() +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +

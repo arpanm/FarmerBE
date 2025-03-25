@@ -1,0 +1,96 @@
+{
+  "annotations": {
+    "changelogDate": "20250325142637"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "frequencyType",
+      "fieldType": "FrequencyType",
+      "fieldValues": "DaysOfWeek,DaysOfMonth,DaysOfYear,EveryDay,AlternateDate,AlternateXDays,Other"
+    },
+    {
+      "fieldName": "hervestPlanValue",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "hervestPlanValueMin",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "hervestPlanValueMax",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "daysOfWeek",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "daysOfMonth",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "daysOfYear",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "alternateXdays",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "hasEndDate",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "HervestPlanRule",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "farm",
+      "relationshipName": "farm",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "crop",
+      "relationshipName": "crop",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

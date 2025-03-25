@@ -14,6 +14,14 @@
       "fieldType": "Float"
     },
     {
+      "fieldName": "hervestPlanValueMin",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "hervestPlanValueMax",
+      "fieldType": "Float"
+    },
+    {
       "fieldName": "isActive",
       "fieldType": "Boolean"
     },

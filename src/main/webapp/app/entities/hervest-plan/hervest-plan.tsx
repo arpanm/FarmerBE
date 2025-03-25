@@ -139,6 +139,14 @@ export const HervestPlan = () => {
                     <Translate contentKey="farmerBeApp.hervestPlan.hervestPlanValue">Hervest Plan Value</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('hervestPlanValue')} />
                   </th>
+                  <th className="hand" onClick={sort('hervestPlanValueMin')}>
+                    <Translate contentKey="farmerBeApp.hervestPlan.hervestPlanValueMin">Hervest Plan Value Min</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('hervestPlanValueMin')} />
+                  </th>
+                  <th className="hand" onClick={sort('hervestPlanValueMax')}>
+                    <Translate contentKey="farmerBeApp.hervestPlan.hervestPlanValueMax">Hervest Plan Value Max</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('hervestPlanValueMax')} />
+                  </th>
                   <th className="hand" onClick={sort('isActive')}>
                     <Translate contentKey="farmerBeApp.hervestPlan.isActive">Is Active</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('isActive')} />
@@ -182,6 +190,8 @@ export const HervestPlan = () => {
                       ) : null}
                     </td>
                     <td>{hervestPlan.hervestPlanValue}</td>
+                    <td>{hervestPlan.hervestPlanValueMin}</td>
+                    <td>{hervestPlan.hervestPlanValueMax}</td>
                     <td>{hervestPlan.isActive ? 'true' : 'false'}</td>
                     <td>{hervestPlan.createddBy}</td>
                     <td>

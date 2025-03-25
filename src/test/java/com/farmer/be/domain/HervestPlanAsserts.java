@@ -49,6 +49,12 @@ public class HervestPlanAsserts {
             .as("Verify HervestPlan relevant properties")
             .satisfies(a -> assertThat(a.getHervestPlanDate()).as("check hervestPlanDate").isEqualTo(expected.getHervestPlanDate()))
             .satisfies(a -> assertThat(a.getHervestPlanValue()).as("check hervestPlanValue").isEqualTo(expected.getHervestPlanValue()))
+            .satisfies(a ->
+                assertThat(a.getHervestPlanValueMin()).as("check hervestPlanValueMin").isEqualTo(expected.getHervestPlanValueMin())
+            )
+            .satisfies(a ->
+                assertThat(a.getHervestPlanValueMax()).as("check hervestPlanValueMax").isEqualTo(expected.getHervestPlanValueMax())
+            )
             .satisfies(a -> assertThat(a.getIsActive()).as("check isActive").isEqualTo(expected.getIsActive()))
             .satisfies(a -> assertThat(a.getCreateddBy()).as("check createddBy").isEqualTo(expected.getCreateddBy()))
             .satisfies(a -> assertThat(a.getCreatedTime()).as("check createdTime").isEqualTo(expected.getCreatedTime()))

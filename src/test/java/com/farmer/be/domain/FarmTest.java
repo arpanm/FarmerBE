@@ -6,6 +6,7 @@ import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
+import static com.farmer.be.domain.HervestPlanRuleTestSamples.*;
 import static com.farmer.be.domain.HervestPlanTestSamples.*;
 import static com.farmer.be.domain.PickUpConfirmationTestSamples.*;
 import static com.farmer.be.domain.SupplyConfirmationTestSamples.*;
@@ -74,6 +75,28 @@ class FarmTest {
         farm.setDocuments(new HashSet<>());
         assertThat(farm.getDocuments()).doesNotContain(documentBack);
         assertThat(documentBack.getFarm()).isNull();
+    }
+
+    @Test
+    void hervestPlanRuleTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        HervestPlanRule hervestPlanRuleBack = getHervestPlanRuleRandomSampleGenerator();
+
+        farm.addHervestPlanRule(hervestPlanRuleBack);
+        assertThat(farm.getHervestPlanRules()).containsOnly(hervestPlanRuleBack);
+        assertThat(hervestPlanRuleBack.getFarm()).isEqualTo(farm);
+
+        farm.removeHervestPlanRule(hervestPlanRuleBack);
+        assertThat(farm.getHervestPlanRules()).doesNotContain(hervestPlanRuleBack);
+        assertThat(hervestPlanRuleBack.getFarm()).isNull();
+
+        farm.hervestPlanRules(new HashSet<>(Set.of(hervestPlanRuleBack)));
+        assertThat(farm.getHervestPlanRules()).containsOnly(hervestPlanRuleBack);
+        assertThat(hervestPlanRuleBack.getFarm()).isEqualTo(farm);
+
+        farm.setHervestPlanRules(new HashSet<>());
+        assertThat(farm.getHervestPlanRules()).doesNotContain(hervestPlanRuleBack);
+        assertThat(hervestPlanRuleBack.getFarm()).isNull();
     }
 
     @Test

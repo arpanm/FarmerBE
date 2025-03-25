@@ -24,6 +24,7 @@ import PickupGradation from './pickup-gradation';
 import PickupPayment from './pickup-payment';
 import BannerContent from './banner-content';
 import CarouselContent from './carousel-content';
+import HervestPlanRule from './hervest-plan-rule';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -52,6 +53,7 @@ export default () => {
         <Route path="pickup-payment/*" element={<PickupPayment />} />
         <Route path="banner-content/*" element={<BannerContent />} />
         <Route path="carousel-content/*" element={<CarouselContent />} />
+        <Route path="hervest-plan-rule/*" element={<HervestPlanRule />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>
