@@ -173,6 +173,9 @@ export const PickUpConfirmation = () => {
                     <FontAwesomeIcon icon={getSortIconByFieldName('updatedTime')} />
                   </th>
                   <th>
+                    <Translate contentKey="farmerBeApp.pickUpConfirmation.grade">Grade</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
                     <Translate contentKey="farmerBeApp.pickUpConfirmation.farm">Farm</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
@@ -209,6 +212,13 @@ export const PickUpConfirmation = () => {
                       {pickUpConfirmation.updatedTime ? (
                         <TextFormat type="date" value={pickUpConfirmation.updatedTime} format={APP_DATE_FORMAT} />
                       ) : null}
+                    </td>
+                    <td>
+                      {pickUpConfirmation.grade ? (
+                        <Link to={`/pickup-gradation/${pickUpConfirmation.grade.id}`}>{pickUpConfirmation.grade.id}</Link>
+                      ) : (
+                        ''
+                      )}
                     </td>
                     <td>
                       {pickUpConfirmation.farm ? <Link to={`/farm/${pickUpConfirmation.farm.id}`}>{pickUpConfirmation.farm.id}</Link> : ''}

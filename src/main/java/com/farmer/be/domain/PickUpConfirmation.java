@@ -56,6 +56,11 @@ public class PickUpConfirmation implements Serializable {
     @Column(name = "updated_time", nullable = false)
     private Instant updatedTime;
 
+    @JsonIgnoreProperties(value = { "pickupItem" }, allowSetters = true)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(unique = true)
+    private PickupGradation grade;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
         value = {
@@ -202,6 +207,19 @@ public class PickUpConfirmation implements Serializable {
 
     public void setUpdatedTime(Instant updatedTime) {
         this.updatedTime = updatedTime;
+    }
+
+    public PickupGradation getGrade() {
+        return this.grade;
+    }
+
+    public void setGrade(PickupGradation pickupGradation) {
+        this.grade = pickupGradation;
+    }
+
+    public PickUpConfirmation grade(PickupGradation pickupGradation) {
+        this.setGrade(pickupGradation);
+        return this;
     }
 
     public Farm getFarm() {

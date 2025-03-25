@@ -41,6 +41,9 @@
             <column name="updated_time" type="${datetimeType}">
                 <constraints nullable="false" />
             </column>
+            <column name="grade_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_pick_up_confirmation__grade_id" />
+            </column>
             <column name="farm_id" type="bigint">
                 <constraints nullable="true" />
             </column>

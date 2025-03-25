@@ -50,6 +50,13 @@
   "pagination": "infinite-scroll",
   "relationships": [
     {
+      "otherEntityName": "pickupGradation",
+      "otherEntityRelationshipName": "pickupItem",
+      "relationshipName": "grade",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
       "otherEntityName": "farm",
       "relationshipName": "farm",
       "relationshipSide": "right",

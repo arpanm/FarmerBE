@@ -3,6 +3,7 @@ package com.farmer.be.domain;
 import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.PickUpConfirmationTestSamples.*;
+import static com.farmer.be.domain.PickupGradationTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -22,6 +23,18 @@ class PickUpConfirmationTest {
 
         pickUpConfirmation2 = getPickUpConfirmationSample2();
         assertThat(pickUpConfirmation1).isNotEqualTo(pickUpConfirmation2);
+    }
+
+    @Test
+    void gradeTest() {
+        PickUpConfirmation pickUpConfirmation = getPickUpConfirmationRandomSampleGenerator();
+        PickupGradation pickupGradationBack = getPickupGradationRandomSampleGenerator();
+
+        pickUpConfirmation.setGrade(pickupGradationBack);
+        assertThat(pickUpConfirmation.getGrade()).isEqualTo(pickupGradationBack);
+
+        pickUpConfirmation.grade(null);
+        assertThat(pickUpConfirmation.getGrade()).isNull();
     }
 
     @Test

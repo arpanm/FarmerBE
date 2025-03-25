@@ -10,6 +10,13 @@
     -->
     <changeSet id="20250325135624-2" author="jhipster">
 
+        <addForeignKeyConstraint baseColumnNames="grade_id"
+                                 baseTableName="pick_up_confirmation"
+                                 constraintName="fk_pick_up_confirmation__grade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pickup_gradation"
+                                 />
+
         <addForeignKeyConstraint baseColumnNames="farm_id"
                                  baseTableName="pick_up_confirmation"
                                  constraintName="fk_pick_up_confirmation__farm_id"

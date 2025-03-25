@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
+import { getEntities as getPickupGradations } from 'app/entities/pickup-gradation/pickup-gradation.reducer';
 import { getEntities as getFarms } from 'app/entities/farm/farm.reducer';
 import { getEntities as getCrops } from 'app/entities/crop/crop.reducer';
 import { createEntity, getEntity, updateEntity } from './pick-up-confirmation.reducer';
@@ -19,6 +20,7 @@ export const PickUpConfirmationUpdate = () => {
   const { id } = useParams<'id'>();
   const isNew = id === undefined;
 
+  const pickupGradations = useAppSelector(state => state.pickupGradation.entities);
   const farms = useAppSelector(state => state.farm.entities);
   const crops = useAppSelector(state => state.crop.entities);
   const pickUpConfirmationEntity = useAppSelector(state => state.pickUpConfirmation.entity);
@@ -35,6 +37,7 @@ export const PickUpConfirmationUpdate = () => {
       dispatch(getEntity(id));
     }
 
+    dispatch(getPickupGradations({}));
     dispatch(getFarms({}));
     dispatch(getCrops({}));
   }, []);
@@ -58,6 +61,7 @@ export const PickUpConfirmationUpdate = () => {
     const entity = {
       ...pickUpConfirmationEntity,
       ...values,
+      grade: pickupGradations.find(it => it.id.toString() === values.grade?.toString()),
       farm: farms.find(it => it.id.toString() === values.farm?.toString()),
       crop: crops.find(it => it.id.toString() === values.crop?.toString()),
     };
@@ -79,6 +83,7 @@ export const PickUpConfirmationUpdate = () => {
           ...pickUpConfirmationEntity,
           createdTime: convertDateTimeFromServer(pickUpConfirmationEntity.createdTime),
           updatedTime: convertDateTimeFromServer(pickUpConfirmationEntity.updatedTime),
+          grade: pickUpConfirmationEntity?.grade?.id,
           farm: pickUpConfirmationEntity?.farm?.id,
           crop: pickUpConfirmationEntity?.crop?.id,
         };
@@ -186,6 +191,22 @@ export const PickUpConfirmationUpdate = () => {
                   required: { value: true, message: translate('entity.validation.required') },
                 }}
               />
+              <ValidatedField
+                id="pick-up-confirmation-grade"
+                name="grade"
+                data-cy="grade"
+                label={translate('farmerBeApp.pickUpConfirmation.grade')}
+                type="select"
+              >
+                <option value="" key="0" />
+                {pickupGradations
+                  ? pickupGradations.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
               <ValidatedField
                 id="pick-up-confirmation-farm"
                 name="farm"

@@ -58,6 +58,9 @@ const EntitiesMenu = () => {
       <MenuItem icon="asterisk" to="/pick-up-confirmation">
         <Translate contentKey="global.menu.entities.pickUpConfirmation" />
       </MenuItem>
+      <MenuItem icon="asterisk" to="/pickup-gradation">
+        <Translate contentKey="global.menu.entities.pickupGradation" />
+      </MenuItem>
       {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
     </>
   );

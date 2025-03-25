@@ -36,6 +36,7 @@
     <include file="config/liquibase/changelog/20250325135335_added_entity_HervestPlan.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250325135336_added_entity_SupplyConfirmation.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250325135624_added_entity_PickUpConfirmation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250325140213_added_entity_PickupGradation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20250324171916_added_entity_constraints_Address.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250324172305_added_entity_constraints_Document.xml" relativeToChangelogFile="false"/>

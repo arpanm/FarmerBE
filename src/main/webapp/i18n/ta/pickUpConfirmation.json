@@ -27,6 +27,7 @@
       "createdTime": "Created Time",
       "updatedBy": "Updated By",
       "updatedTime": "Updated Time",
+      "grade": "Grade",
       "farm": "Farm",
       "crop": "Crop"
     }

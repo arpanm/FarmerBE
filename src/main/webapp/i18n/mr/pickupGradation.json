@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "pickupGradation": {
+      "home": {
+        "title": "Pickup Gradations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Pickup Gradation तयार करा",
+        "createOrEditLabel": "Pickup Gradation तयार किंवा संपादित करा",
+        "notFound": "No Pickup Gradations found"
+      },
+      "created": "Pickup Gradation [identifier: {{ param }}] तयार आहे",
+      "updated": "Pickup Gradation [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Pickup Gradation [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Pickup Gradation [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Pickup Gradation"
+      },
+      "id": "ID",
+      "itemGrade": "Item Grade",
+      "gradedBy": "Graded By",
+      "gradedTime": "Graded Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "pickupItem": "Pickup Item"
+    }
+  }
+}

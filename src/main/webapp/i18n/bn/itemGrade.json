@@ -1,0 +1,12 @@
+{
+  "farmerBeApp": {
+    "ItemGrade": {
+      "null": "",
+      "GoodQuality": "GoodQuality",
+      "ModerateQuality": "ModerateQuality",
+      "BadQuality": "BadQuality",
+      "RejectQuality": "RejectQuality",
+      "Other": "Other"
+    }
+  }
+}

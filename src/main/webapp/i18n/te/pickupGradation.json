@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "pickupGradation": {
+      "home": {
+        "title": "Pickup Gradations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Pickup Gradation  సృష్టించండి",
+        "createOrEditLabel": "Pickup Gradation సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Pickup Gradations found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Pickup Gradation సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Pickup Gradation సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Pickup Gradation తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Pickup Gradation {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Pickup Gradation"
+      },
+      "id": "ID",
+      "itemGrade": "Item Grade",
+      "gradedBy": "Graded By",
+      "gradedTime": "Graded Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "pickupItem": "Pickup Item"
+    }
+  }
+}
