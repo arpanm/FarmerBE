@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "hervestPlan": {
+      "home": {
+        "title": "Hervest Plans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hervest Plan",
+        "createOrEditLabel": "Create or edit a Hervest Plan",
+        "notFound": "No Hervest Plans found"
+      },
+      "created": "A new Hervest Plan is created with identifier {{ param }}",
+      "updated": "A Hervest Plan is updated with identifier {{ param }}",
+      "deleted": "A Hervest Plan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hervest Plan {{ id }}?"
+      },
+      "detail": {
+        "title": "Hervest Plan"
+      },
+      "id": "ID",
+      "hervestPlanDate": "Hervest Plan Date",
+      "hervestPlanValue": "Hervest Plan Value",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

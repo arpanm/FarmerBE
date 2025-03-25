@@ -4,7 +4,9 @@ import static com.farmer.be.domain.CategoryTestSamples.*;
 import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.DemandTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
+import static com.farmer.be.domain.HervestPlanTestSamples.*;
 import static com.farmer.be.domain.PriceTestSamples.*;
+import static com.farmer.be.domain.SupplyConfirmationTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -70,6 +72,50 @@ class CropTest {
         crop.setPrices(new HashSet<>());
         assertThat(crop.getPrices()).doesNotContain(priceBack);
         assertThat(priceBack.getCrop()).isNull();
+    }
+
+    @Test
+    void hervestPlanTest() {
+        Crop crop = getCropRandomSampleGenerator();
+        HervestPlan hervestPlanBack = getHervestPlanRandomSampleGenerator();
+
+        crop.addHervestPlan(hervestPlanBack);
+        assertThat(crop.getHervestPlans()).containsOnly(hervestPlanBack);
+        assertThat(hervestPlanBack.getCrop()).isEqualTo(crop);
+
+        crop.removeHervestPlan(hervestPlanBack);
+        assertThat(crop.getHervestPlans()).doesNotContain(hervestPlanBack);
+        assertThat(hervestPlanBack.getCrop()).isNull();
+
+        crop.hervestPlans(new HashSet<>(Set.of(hervestPlanBack)));
+        assertThat(crop.getHervestPlans()).containsOnly(hervestPlanBack);
+        assertThat(hervestPlanBack.getCrop()).isEqualTo(crop);
+
+        crop.setHervestPlans(new HashSet<>());
+        assertThat(crop.getHervestPlans()).doesNotContain(hervestPlanBack);
+        assertThat(hervestPlanBack.getCrop()).isNull();
+    }
+
+    @Test
+    void supplyConfirmationTest() {
+        Crop crop = getCropRandomSampleGenerator();
+        SupplyConfirmation supplyConfirmationBack = getSupplyConfirmationRandomSampleGenerator();
+
+        crop.addSupplyConfirmation(supplyConfirmationBack);
+        assertThat(crop.getSupplyConfirmations()).containsOnly(supplyConfirmationBack);
+        assertThat(supplyConfirmationBack.getCrop()).isEqualTo(crop);
+
+        crop.removeSupplyConfirmation(supplyConfirmationBack);
+        assertThat(crop.getSupplyConfirmations()).doesNotContain(supplyConfirmationBack);
+        assertThat(supplyConfirmationBack.getCrop()).isNull();
+
+        crop.supplyConfirmations(new HashSet<>(Set.of(supplyConfirmationBack)));
+        assertThat(crop.getSupplyConfirmations()).containsOnly(supplyConfirmationBack);
+        assertThat(supplyConfirmationBack.getCrop()).isEqualTo(crop);
+
+        crop.setSupplyConfirmations(new HashSet<>());
+        assertThat(crop.getSupplyConfirmations()).doesNotContain(supplyConfirmationBack);
+        assertThat(supplyConfirmationBack.getCrop()).isNull();
     }
 
     @Test

@@ -6,6 +6,8 @@ import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
+import static com.farmer.be.domain.HervestPlanTestSamples.*;
+import static com.farmer.be.domain.SupplyConfirmationTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -71,6 +73,50 @@ class FarmTest {
         farm.setDocuments(new HashSet<>());
         assertThat(farm.getDocuments()).doesNotContain(documentBack);
         assertThat(documentBack.getFarm()).isNull();
+    }
+
+    @Test
+    void hervestPlanTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        HervestPlan hervestPlanBack = getHervestPlanRandomSampleGenerator();
+
+        farm.addHervestPlan(hervestPlanBack);
+        assertThat(farm.getHervestPlans()).containsOnly(hervestPlanBack);
+        assertThat(hervestPlanBack.getFarm()).isEqualTo(farm);
+
+        farm.removeHervestPlan(hervestPlanBack);
+        assertThat(farm.getHervestPlans()).doesNotContain(hervestPlanBack);
+        assertThat(hervestPlanBack.getFarm()).isNull();
+
+        farm.hervestPlans(new HashSet<>(Set.of(hervestPlanBack)));
+        assertThat(farm.getHervestPlans()).containsOnly(hervestPlanBack);
+        assertThat(hervestPlanBack.getFarm()).isEqualTo(farm);
+
+        farm.setHervestPlans(new HashSet<>());
+        assertThat(farm.getHervestPlans()).doesNotContain(hervestPlanBack);
+        assertThat(hervestPlanBack.getFarm()).isNull();
+    }
+
+    @Test
+    void supplyConfirmationTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        SupplyConfirmation supplyConfirmationBack = getSupplyConfirmationRandomSampleGenerator();
+
+        farm.addSupplyConfirmation(supplyConfirmationBack);
+        assertThat(farm.getSupplyConfirmations()).containsOnly(supplyConfirmationBack);
+        assertThat(supplyConfirmationBack.getFarm()).isEqualTo(farm);
+
+        farm.removeSupplyConfirmation(supplyConfirmationBack);
+        assertThat(farm.getSupplyConfirmations()).doesNotContain(supplyConfirmationBack);
+        assertThat(supplyConfirmationBack.getFarm()).isNull();
+
+        farm.supplyConfirmations(new HashSet<>(Set.of(supplyConfirmationBack)));
+        assertThat(farm.getSupplyConfirmations()).containsOnly(supplyConfirmationBack);
+        assertThat(supplyConfirmationBack.getFarm()).isEqualTo(farm);
+
+        farm.setSupplyConfirmations(new HashSet<>());
+        assertThat(farm.getSupplyConfirmations()).doesNotContain(supplyConfirmationBack);
+        assertThat(supplyConfirmationBack.getFarm()).isNull();
     }
 
     @Test

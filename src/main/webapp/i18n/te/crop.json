@@ -30,6 +30,8 @@
       "updatedTime": "Updated Time",
       "demand": "Demand",
       "price": "Price",
+      "hervestPlan": "Hervest Plan",
+      "supplyConfirmation": "Supply Confirmation",
       "category": "Category",
       "farm": "Farm"
     }

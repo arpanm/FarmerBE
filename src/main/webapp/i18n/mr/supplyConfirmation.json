@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "supplyConfirmation": {
+      "home": {
+        "title": "Supply Confirmations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Supply Confirmation तयार करा",
+        "createOrEditLabel": "Supply Confirmation तयार किंवा संपादित करा",
+        "notFound": "No Supply Confirmations found"
+      },
+      "created": "Supply Confirmation [identifier: {{ param }}] तयार आहे",
+      "updated": "Supply Confirmation [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Supply Confirmation [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Supply Confirmation [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Supply Confirmation"
+      },
+      "id": "ID",
+      "confirmDate": "Confirm Date",
+      "confirmValue": "Confirm Value",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

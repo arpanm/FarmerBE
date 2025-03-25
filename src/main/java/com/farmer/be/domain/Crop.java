@@ -70,13 +70,26 @@ public class Crop implements Serializable {
     @JsonIgnoreProperties(value = { "crop" }, allowSetters = true)
     private Set<Price> prices = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    private Set<HervestPlan> hervestPlans = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    private Set<SupplyConfirmation> supplyConfirmations = new HashSet<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "categories", "crops", "accessories", "parent" }, allowSetters = true)
     private Category category;
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "crops")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "addresses", "documents", "crops", "accessories", "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "addresses", "documents", "hervestPlans", "supplyConfirmations", "crops", "accessories", "farmer" },
+        allowSetters = true
+    )
     private Set<Farm> farms = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -283,6 +296,68 @@ public class Crop implements Serializable {
     public Crop removePrice(Price price) {
         this.prices.remove(price);
         price.setCrop(null);
+        return this;
+    }
+
+    public Set<HervestPlan> getHervestPlans() {
+        return this.hervestPlans;
+    }
+
+    public void setHervestPlans(Set<HervestPlan> hervestPlans) {
+        if (this.hervestPlans != null) {
+            this.hervestPlans.forEach(i -> i.setCrop(null));
+        }
+        if (hervestPlans != null) {
+            hervestPlans.forEach(i -> i.setCrop(this));
+        }
+        this.hervestPlans = hervestPlans;
+    }
+
+    public Crop hervestPlans(Set<HervestPlan> hervestPlans) {
+        this.setHervestPlans(hervestPlans);
+        return this;
+    }
+
+    public Crop addHervestPlan(HervestPlan hervestPlan) {
+        this.hervestPlans.add(hervestPlan);
+        hervestPlan.setCrop(this);
+        return this;
+    }
+
+    public Crop removeHervestPlan(HervestPlan hervestPlan) {
+        this.hervestPlans.remove(hervestPlan);
+        hervestPlan.setCrop(null);
+        return this;
+    }
+
+    public Set<SupplyConfirmation> getSupplyConfirmations() {
+        return this.supplyConfirmations;
+    }
+
+    public void setSupplyConfirmations(Set<SupplyConfirmation> supplyConfirmations) {
+        if (this.supplyConfirmations != null) {
+            this.supplyConfirmations.forEach(i -> i.setCrop(null));
+        }
+        if (supplyConfirmations != null) {
+            supplyConfirmations.forEach(i -> i.setCrop(this));
+        }
+        this.supplyConfirmations = supplyConfirmations;
+    }
+
+    public Crop supplyConfirmations(Set<SupplyConfirmation> supplyConfirmations) {
+        this.setSupplyConfirmations(supplyConfirmations);
+        return this;
+    }
+
+    public Crop addSupplyConfirmation(SupplyConfirmation supplyConfirmation) {
+        this.supplyConfirmations.add(supplyConfirmation);
+        supplyConfirmation.setCrop(this);
+        return this;
+    }
+
+    public Crop removeSupplyConfirmation(SupplyConfirmation supplyConfirmation) {
+        this.supplyConfirmations.remove(supplyConfirmation);
+        supplyConfirmation.setCrop(null);
         return this;
     }
 

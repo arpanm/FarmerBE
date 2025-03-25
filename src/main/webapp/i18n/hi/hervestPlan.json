@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "hervestPlan": {
+      "home": {
+        "title": "HervestPlans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Hervest Plan बनाएँ",
+        "createOrEditLabel": "Hervest Plan बनाएँ या संपादित करें",
+        "notFound": "No Hervest Plans found"
+      },
+      "created": "एक नया Hervest Plan [identifier: {{ param }}] तैयार है",
+      "updated": "एक Hervest Plan [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Hervest Plan [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Hervest Plan [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Hervest Plan"
+      },
+      "id": "ID",
+      "hervestPlanDate": "Hervest Plan Date",
+      "hervestPlanValue": "Hervest Plan Value",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}
