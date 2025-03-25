@@ -82,10 +82,18 @@ public class Farm implements Serializable {
     @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
     private Set<SupplyConfirmation> supplyConfirmations = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    private Set<PickUpConfirmation> pickUpConfirmations = new HashSet<>();
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "demands", "prices", "hervestPlans", "supplyConfirmations", "category", "farms" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "demands", "prices", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms" },
+        allowSetters = true
+    )
     private Set<Crop> crops = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -371,6 +379,37 @@ public class Farm implements Serializable {
     public Farm removeSupplyConfirmation(SupplyConfirmation supplyConfirmation) {
         this.supplyConfirmations.remove(supplyConfirmation);
         supplyConfirmation.setFarm(null);
+        return this;
+    }
+
+    public Set<PickUpConfirmation> getPickUpConfirmations() {
+        return this.pickUpConfirmations;
+    }
+
+    public void setPickUpConfirmations(Set<PickUpConfirmation> pickUpConfirmations) {
+        if (this.pickUpConfirmations != null) {
+            this.pickUpConfirmations.forEach(i -> i.setFarm(null));
+        }
+        if (pickUpConfirmations != null) {
+            pickUpConfirmations.forEach(i -> i.setFarm(this));
+        }
+        this.pickUpConfirmations = pickUpConfirmations;
+    }
+
+    public Farm pickUpConfirmations(Set<PickUpConfirmation> pickUpConfirmations) {
+        this.setPickUpConfirmations(pickUpConfirmations);
+        return this;
+    }
+
+    public Farm addPickUpConfirmation(PickUpConfirmation pickUpConfirmation) {
+        this.pickUpConfirmations.add(pickUpConfirmation);
+        pickUpConfirmation.setFarm(this);
+        return this;
+    }
+
+    public Farm removePickUpConfirmation(PickUpConfirmation pickUpConfirmation) {
+        this.pickUpConfirmations.remove(pickUpConfirmation);
+        pickUpConfirmation.setFarm(null);
         return this;
     }
 

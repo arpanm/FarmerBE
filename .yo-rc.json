@@ -26,12 +26,13 @@
       "Demand",
       "Price",
       "HervestPlan",
-      "SupplyConfirmation"
+      "SupplyConfirmation",
+      "PickUpConfirmation"
     ],
     "jhipsterVersion": "8.9.0",
     "jwtSecretKey": "ZjZjYmQyMjRhNGYxZmUzOGFjZmJkNDk1NTM5YjBjOWU5YmY4NjIzMGQ1ZTg3YjU5YzQ4YzQ0OGIwMDU0NzEwM2EyM2E0NDczZWQxYTA2ZjNiZWI2YWFhNmRmNjhiNDJkMjgzZDQ4NWQ3Mzk0YTlhNzYxNWY1ZTI0MjhkNzNlMDc=",
     "languages": ["en", "bn", "hi", "mr", "ta", "te"],
-    "lastLiquibaseTimestamp": 1742910816000,
+    "lastLiquibaseTimestamp": 1742910984000,
     "nativeLanguage": "en",
     "packageName": "com.farmer.be",
     "prodDatabaseType": "mysql",

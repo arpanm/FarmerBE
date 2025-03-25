@@ -23,7 +23,8 @@
         "demand": "Demand",
         "price": "Price",
         "hervestPlan": "Hervest Plan",
-        "supplyConfirmation": "Supply Confirmation"
+        "supplyConfirmation": "Supply Confirmation",
+        "pickUpConfirmation": "Pick Up Confirmation"
       },
       "account": {
         "main": "கணக்கு",

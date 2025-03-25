@@ -1,0 +1,34 @@
+{
+  "farmerBeApp": {
+    "pickUpConfirmation": {
+      "home": {
+        "title": "Pick Up Confirmations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Pick Up Confirmation तयार करा",
+        "createOrEditLabel": "Pick Up Confirmation तयार किंवा संपादित करा",
+        "notFound": "No Pick Up Confirmations found"
+      },
+      "created": "Pick Up Confirmation [identifier: {{ param }}] तयार आहे",
+      "updated": "Pick Up Confirmation [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Pick Up Confirmation [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Pick Up Confirmation [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Pick Up Confirmation"
+      },
+      "id": "ID",
+      "confirmDate": "Confirm Date",
+      "confirmValue": "Confirm Value",
+      "pickupBy": "Pickup By",
+      "pickupTime": "Pickup Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

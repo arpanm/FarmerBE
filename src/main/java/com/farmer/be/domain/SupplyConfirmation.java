@@ -52,13 +52,18 @@ public class SupplyConfirmation implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
-        value = { "addresses", "documents", "hervestPlans", "supplyConfirmations", "crops", "accessories", "farmer" },
+        value = {
+            "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
+        },
         allowSetters = true
     )
     private Farm farm;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "demands", "prices", "hervestPlans", "supplyConfirmations", "category", "farms" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "demands", "prices", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms" },
+        allowSetters = true
+    )
     private Crop crop;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

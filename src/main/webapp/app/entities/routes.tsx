@@ -19,6 +19,7 @@ import Demand from './demand';
 import Price from './price';
 import HervestPlan from './hervest-plan';
 import SupplyConfirmation from './supply-confirmation';
+import PickUpConfirmation from './pick-up-confirmation';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -42,6 +43,7 @@ export default () => {
         <Route path="price/*" element={<Price />} />
         <Route path="hervest-plan/*" element={<HervestPlan />} />
         <Route path="supply-confirmation/*" element={<SupplyConfirmation />} />
+        <Route path="pick-up-confirmation/*" element={<PickUpConfirmation />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

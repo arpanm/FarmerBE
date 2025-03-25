@@ -83,6 +83,13 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "pickUpConfirmation",
+      "otherEntityRelationshipName": "farm",
+      "relationshipName": "pickUpConfirmation",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "crop",
       "otherEntityRelationshipName": "farm",
       "relationshipName": "crop",
