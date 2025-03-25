@@ -1,0 +1,59 @@
+{
+  "annotations": {
+    "changelogDate": "20250325140213"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "itemGrade",
+      "fieldType": "ItemGrade",
+      "fieldValues": "GoodQuality,ModerateQuality,BadQuality,RejectQuality,Other"
+    },
+    {
+      "fieldName": "gradedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gradedTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "PickupGradation",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "pickUpConfirmation",
+      "otherEntityRelationshipName": "grade",
+      "relationshipName": "pickupItem",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

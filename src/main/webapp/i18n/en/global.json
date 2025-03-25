@@ -24,7 +24,8 @@
         "price": "Price",
         "hervestPlan": "Hervest Plan",
         "supplyConfirmation": "Supply Confirmation",
-        "pickUpConfirmation": "Pick Up Confirmation"
+        "pickUpConfirmation": "Pick Up Confirmation",
+        "pickupGradation": "Pickup Gradation"
       },
       "account": {
         "main": "Account",

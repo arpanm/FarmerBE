@@ -94,6 +94,7 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.HervestPlan.class.getName());
             createCache(cm, com.farmer.be.domain.SupplyConfirmation.class.getName());
             createCache(cm, com.farmer.be.domain.PickUpConfirmation.class.getName());
+            createCache(cm, com.farmer.be.domain.PickupGradation.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

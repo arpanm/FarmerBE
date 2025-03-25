@@ -82,7 +82,7 @@ public class Crop implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "grade", "farm", "crop" }, allowSetters = true)
     private Set<PickUpConfirmation> pickUpConfirmations = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
