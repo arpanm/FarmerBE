@@ -29,6 +29,7 @@ entity Farmer {
     email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
     phone Long required min (1000000000) max(9999999999),
     isWhatsAppEnabled Boolean,
+    farmerType FarmerType,
     preferedLanguage Language,
     isActive Boolean,
     createddBy String required,
@@ -37,9 +38,42 @@ entity Farmer {
     updatedTime Instant required
 }
 
+enum FarmerType {
+	Farmer,
+    Trader,
+    FPO,
+    Other
+}
+
+entity Farm {
+	farmType FarmType,
+    ownerName String,
+  	relationshipWithOwner String,
+    areaInAcres Float,
+    farmDocumentNo String
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum FarmType {
+	Own,
+    Family,
+    Leased,
+    Other
+}
+
+relationship OneToMany {
+	Farmer to Farm{farmer}
+}
+
 entity Address {
 	line1 String required,
     line2 String,
+    landmark String,
+    city String,
     state String required,
     country String required,
 	pincode Long required,
@@ -54,6 +88,10 @@ entity Address {
 
 relationship OneToMany {
 	Farmer to Address{farmer}
+}
+
+relationship OneToMany {
+	Farm to Address{farm}
 }
 
 entity PanDetails {
@@ -108,7 +146,10 @@ entity Document {
 
 enum DocumentType {
 	AddressProof,
+    RelationshipProof,
+    FarmDocument,
     IdProof,
+    ProfileImage,
     Other
 }
 
@@ -122,6 +163,9 @@ relationship OneToMany {
 	Farmer to Document{farmer}
 }
 
+relationship OneToMany {
+	Farm to Document{farm}
+}
 
 entity Otp {
 	email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
