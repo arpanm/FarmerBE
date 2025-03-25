@@ -57,6 +57,12 @@ export const FarmerDetail = () => {
           </dt>
           <dd>{farmerEntity.isWhatsAppEnabled ? 'true' : 'false'}</dd>
           <dt>
+            <span id="farmerType">
+              <Translate contentKey="farmerBeApp.farmer.farmerType">Farmer Type</Translate>
+            </span>
+          </dt>
+          <dd>{farmerEntity.farmerType}</dd>
+          <dt>
             <span id="preferedLanguage">
               <Translate contentKey="farmerBeApp.farmer.preferedLanguage">Prefered Language</Translate>
             </span>

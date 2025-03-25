@@ -1,0 +1,36 @@
+{
+  "farmerBeApp": {
+    "farm": {
+      "home": {
+        "title": "Farms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Farm  సృష్టించండి",
+        "createOrEditLabel": "Farm సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Farms found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Farm సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Farm సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Farm తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Farm {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Farm"
+      },
+      "id": "ID",
+      "farmType": "Farm Type",
+      "ownerName": "Owner Name",
+      "relationshipWithOwner": "Relationship With Owner",
+      "areaInAcres": "Area In Acres",
+      "farmDocumentNo": "Farm Document No",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address",
+      "document": "Document",
+      "farmer": "Farmer"
+    }
+  }
+}

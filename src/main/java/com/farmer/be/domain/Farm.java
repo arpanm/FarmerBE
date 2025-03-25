@@ -1,0 +1,335 @@
+package com.farmer.be.domain;
+
+import com.farmer.be.domain.enumeration.FarmType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+/**
+ * A Farm.
+ */
+@Entity
+@Table(name = "farm")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@SuppressWarnings("common-java:DuplicatedBlocks")
+public class Farm implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "farm_type")
+    private FarmType farmType;
+
+    @Column(name = "owner_name")
+    private String ownerName;
+
+    @Column(name = "relationship_with_owner")
+    private String relationshipWithOwner;
+
+    @Column(name = "area_in_acres")
+    private Float areaInAcres;
+
+    @Column(name = "farm_document_no")
+    private String farmDocumentNo;
+
+    @Column(name = "is_active")
+    private Boolean isActive;
+
+    @NotNull
+    @Column(name = "createdd_by", nullable = false)
+    private String createddBy;
+
+    @NotNull
+    @Column(name = "created_time", nullable = false)
+    private Instant createdTime;
+
+    @NotNull
+    @Column(name = "updated_by", nullable = false)
+    private String updatedBy;
+
+    @NotNull
+    @Column(name = "updated_time", nullable = false)
+    private Instant updatedTime;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
+    private Set<Address> addresses = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
+    private Set<Document> documents = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "farms", "addresses", "panDetails", "termsAndConditions", "documents", "otps" }, allowSetters = true)
+    private Farmer farmer;
+
+    // jhipster-needle-entity-add-field - JHipster will add fields here
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public Farm id(Long id) {
+        this.setId(id);
+        return this;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public FarmType getFarmType() {
+        return this.farmType;
+    }
+
+    public Farm farmType(FarmType farmType) {
+        this.setFarmType(farmType);
+        return this;
+    }
+
+    public void setFarmType(FarmType farmType) {
+        this.farmType = farmType;
+    }
+
+    public String getOwnerName() {
+        return this.ownerName;
+    }
+
+    public Farm ownerName(String ownerName) {
+        this.setOwnerName(ownerName);
+        return this;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public String getRelationshipWithOwner() {
+        return this.relationshipWithOwner;
+    }
+
+    public Farm relationshipWithOwner(String relationshipWithOwner) {
+        this.setRelationshipWithOwner(relationshipWithOwner);
+        return this;
+    }
+
+    public void setRelationshipWithOwner(String relationshipWithOwner) {
+        this.relationshipWithOwner = relationshipWithOwner;
+    }
+
+    public Float getAreaInAcres() {
+        return this.areaInAcres;
+    }
+
+    public Farm areaInAcres(Float areaInAcres) {
+        this.setAreaInAcres(areaInAcres);
+        return this;
+    }
+
+    public void setAreaInAcres(Float areaInAcres) {
+        this.areaInAcres = areaInAcres;
+    }
+
+    public String getFarmDocumentNo() {
+        return this.farmDocumentNo;
+    }
+
+    public Farm farmDocumentNo(String farmDocumentNo) {
+        this.setFarmDocumentNo(farmDocumentNo);
+        return this;
+    }
+
+    public void setFarmDocumentNo(String farmDocumentNo) {
+        this.farmDocumentNo = farmDocumentNo;
+    }
+
+    public Boolean getIsActive() {
+        return this.isActive;
+    }
+
+    public Farm isActive(Boolean isActive) {
+        this.setIsActive(isActive);
+        return this;
+    }
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public String getCreateddBy() {
+        return this.createddBy;
+    }
+
+    public Farm createddBy(String createddBy) {
+        this.setCreateddBy(createddBy);
+        return this;
+    }
+
+    public void setCreateddBy(String createddBy) {
+        this.createddBy = createddBy;
+    }
+
+    public Instant getCreatedTime() {
+        return this.createdTime;
+    }
+
+    public Farm createdTime(Instant createdTime) {
+        this.setCreatedTime(createdTime);
+        return this;
+    }
+
+    public void setCreatedTime(Instant createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public String getUpdatedBy() {
+        return this.updatedBy;
+    }
+
+    public Farm updatedBy(String updatedBy) {
+        this.setUpdatedBy(updatedBy);
+        return this;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    public Instant getUpdatedTime() {
+        return this.updatedTime;
+    }
+
+    public Farm updatedTime(Instant updatedTime) {
+        this.setUpdatedTime(updatedTime);
+        return this;
+    }
+
+    public void setUpdatedTime(Instant updatedTime) {
+        this.updatedTime = updatedTime;
+    }
+
+    public Set<Address> getAddresses() {
+        return this.addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        if (this.addresses != null) {
+            this.addresses.forEach(i -> i.setFarm(null));
+        }
+        if (addresses != null) {
+            addresses.forEach(i -> i.setFarm(this));
+        }
+        this.addresses = addresses;
+    }
+
+    public Farm addresses(Set<Address> addresses) {
+        this.setAddresses(addresses);
+        return this;
+    }
+
+    public Farm addAddress(Address address) {
+        this.addresses.add(address);
+        address.setFarm(this);
+        return this;
+    }
+
+    public Farm removeAddress(Address address) {
+        this.addresses.remove(address);
+        address.setFarm(null);
+        return this;
+    }
+
+    public Set<Document> getDocuments() {
+        return this.documents;
+    }
+
+    public void setDocuments(Set<Document> documents) {
+        if (this.documents != null) {
+            this.documents.forEach(i -> i.setFarm(null));
+        }
+        if (documents != null) {
+            documents.forEach(i -> i.setFarm(this));
+        }
+        this.documents = documents;
+    }
+
+    public Farm documents(Set<Document> documents) {
+        this.setDocuments(documents);
+        return this;
+    }
+
+    public Farm addDocument(Document document) {
+        this.documents.add(document);
+        document.setFarm(this);
+        return this;
+    }
+
+    public Farm removeDocument(Document document) {
+        this.documents.remove(document);
+        document.setFarm(null);
+        return this;
+    }
+
+    public Farmer getFarmer() {
+        return this.farmer;
+    }
+
+    public void setFarmer(Farmer farmer) {
+        this.farmer = farmer;
+    }
+
+    public Farm farmer(Farmer farmer) {
+        this.setFarmer(farmer);
+        return this;
+    }
+
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Farm)) {
+            return false;
+        }
+        return getId() != null && getId().equals(((Farm) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+        return getClass().hashCode();
+    }
+
+    // prettier-ignore
+    @Override
+    public String toString() {
+        return "Farm{" +
+            "id=" + getId() +
+            ", farmType='" + getFarmType() + "'" +
+            ", ownerName='" + getOwnerName() + "'" +
+            ", relationshipWithOwner='" + getRelationshipWithOwner() + "'" +
+            ", areaInAcres=" + getAreaInAcres() +
+            ", farmDocumentNo='" + getFarmDocumentNo() + "'" +
+            ", isActive='" + getIsActive() + "'" +
+            ", createddBy='" + getCreateddBy() + "'" +
+            ", createdTime='" + getCreatedTime() + "'" +
+            ", updatedBy='" + getUpdatedBy() + "'" +
+            ", updatedTime='" + getUpdatedTime() + "'" +
+            "}";
+    }
+}

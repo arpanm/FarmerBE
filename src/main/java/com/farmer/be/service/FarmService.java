@@ -1,0 +1,58 @@
+package com.farmer.be.service;
+
+import com.farmer.be.service.dto.FarmDTO;
+import java.util.Optional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+/**
+ * Service Interface for managing {@link com.farmer.be.domain.Farm}.
+ */
+public interface FarmService {
+    /**
+     * Save a farm.
+     *
+     * @param farmDTO the entity to save.
+     * @return the persisted entity.
+     */
+    FarmDTO save(FarmDTO farmDTO);
+
+    /**
+     * Updates a farm.
+     *
+     * @param farmDTO the entity to update.
+     * @return the persisted entity.
+     */
+    FarmDTO update(FarmDTO farmDTO);
+
+    /**
+     * Partially updates a farm.
+     *
+     * @param farmDTO the entity to update partially.
+     * @return the persisted entity.
+     */
+    Optional<FarmDTO> partialUpdate(FarmDTO farmDTO);
+
+    /**
+     * Get all the farms.
+     *
+     * @param pageable the pagination information.
+     * @return the list of entities.
+     */
+    Page<FarmDTO> findAll(Pageable pageable);
+
+    /**
+     * Get the "id" farm.
+     *
+     * @param id the id of the entity.
+     * @return the entity.
+     */
+    Optional<FarmDTO> findOne(Long id);
+
+    /**
+     * Delete the "id" farm.
+     *
+     * @param id the id of the entity.
+     */
+    void delete(Long id);
+}

@@ -12,7 +12,7 @@
     {
       "fieldName": "docType",
       "fieldType": "DocumentType",
-      "fieldValues": "AddressProof,IdProof,Other"
+      "fieldValues": "AddressProof,RelationshipProof,FarmDocument,IdProof,ProfileImage,Other"
     },
     {
       "fieldName": "docFormat",
@@ -50,6 +50,12 @@
     {
       "otherEntityName": "farmer",
       "relationshipName": "farmer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "farm",
+      "relationshipName": "farm",
       "relationshipSide": "right",
       "relationshipType": "many-to-one"
     }

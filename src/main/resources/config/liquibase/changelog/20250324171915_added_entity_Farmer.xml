@@ -26,6 +26,9 @@
             <column name="is_whats_app_enabled" type="boolean">
                 <constraints nullable="true" />
             </column>
+            <column name="farmer_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="prefered_language" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -71,6 +74,7 @@
             <column name="email" type="string"/>
             <column name="phone" type="numeric"/>
             <column name="is_whats_app_enabled" type="boolean"/>
+            <column name="farmer_type" type="string"/>
             <column name="prefered_language" type="string"/>
             <column name="is_active" type="boolean"/>
             <column name="createdd_by" type="string"/>

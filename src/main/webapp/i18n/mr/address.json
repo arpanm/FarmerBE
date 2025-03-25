@@ -20,6 +20,8 @@
       "id": "ID",
       "line1": "Line 1",
       "line2": "Line 2",
+      "landmark": "Landmark",
+      "city": "City",
       "state": "State",
       "country": "Country",
       "pincode": "Pincode",
@@ -30,7 +32,8 @@
       "createdTime": "Created Time",
       "updatedBy": "Updated By",
       "updatedTime": "Updated Time",
-      "farmer": "Farmer"
+      "farmer": "Farmer",
+      "farm": "Farm"
     }
   }
 }

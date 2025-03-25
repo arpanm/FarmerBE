@@ -1,6 +1,7 @@
 package com.farmer.be.domain;
 
 import static com.farmer.be.domain.DocumentTestSamples.*;
+import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -33,5 +34,17 @@ class DocumentTest {
 
         document.farmer(null);
         assertThat(document.getFarmer()).isNull();
+    }
+
+    @Test
+    void farmTest() {
+        Document document = getDocumentRandomSampleGenerator();
+        Farm farmBack = getFarmRandomSampleGenerator();
+
+        document.setFarm(farmBack);
+        assertThat(document.getFarm()).isEqualTo(farmBack);
+
+        document.farm(null);
+        assertThat(document.getFarm()).isNull();
     }
 }

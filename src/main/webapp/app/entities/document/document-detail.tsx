@@ -88,6 +88,10 @@ export const DocumentDetail = () => {
             <Translate contentKey="farmerBeApp.document.farmer">Farmer</Translate>
           </dt>
           <dd>{documentEntity.farmer ? documentEntity.farmer.id : ''}</dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.document.farm">Farm</Translate>
+          </dt>
+          <dd>{documentEntity.farm ? documentEntity.farm.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/document" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

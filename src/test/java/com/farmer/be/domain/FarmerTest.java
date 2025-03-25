@@ -2,6 +2,7 @@ package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AddressTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
+import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
 import static com.farmer.be.domain.OtpTestSamples.*;
 import static com.farmer.be.domain.PanDetailsTestSamples.*;
@@ -27,6 +28,28 @@ class FarmerTest {
 
         farmer2 = getFarmerSample2();
         assertThat(farmer1).isNotEqualTo(farmer2);
+    }
+
+    @Test
+    void farmTest() {
+        Farmer farmer = getFarmerRandomSampleGenerator();
+        Farm farmBack = getFarmRandomSampleGenerator();
+
+        farmer.addFarm(farmBack);
+        assertThat(farmer.getFarms()).containsOnly(farmBack);
+        assertThat(farmBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.removeFarm(farmBack);
+        assertThat(farmer.getFarms()).doesNotContain(farmBack);
+        assertThat(farmBack.getFarmer()).isNull();
+
+        farmer.farms(new HashSet<>(Set.of(farmBack)));
+        assertThat(farmer.getFarms()).containsOnly(farmBack);
+        assertThat(farmBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.setFarms(new HashSet<>());
+        assertThat(farmer.getFarms()).doesNotContain(farmBack);
+        assertThat(farmBack.getFarmer()).isNull();
     }
 
     @Test

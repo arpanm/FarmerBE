@@ -42,7 +42,7 @@ class DocumentResourceIT {
     private static final String UPDATED_DOC_PATH = "BBBBBBBBBB";
 
     private static final DocumentType DEFAULT_DOC_TYPE = DocumentType.AddressProof;
-    private static final DocumentType UPDATED_DOC_TYPE = DocumentType.IdProof;
+    private static final DocumentType UPDATED_DOC_TYPE = DocumentType.RelationshipProof;
 
     private static final DocumentFormat DEFAULT_DOC_FORMAT = DocumentFormat.Pdf;
     private static final DocumentFormat UPDATED_DOC_FORMAT = DocumentFormat.Image;

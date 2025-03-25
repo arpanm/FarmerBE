@@ -31,6 +31,12 @@ public class Address implements Serializable {
     @Column(name = "line_2")
     private String line2;
 
+    @Column(name = "landmark")
+    private String landmark;
+
+    @Column(name = "city")
+    private String city;
+
     @NotNull
     @Column(name = "state", nullable = false)
     private String state;
@@ -69,8 +75,12 @@ public class Address implements Serializable {
     private Instant updatedTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "addresses", "panDetails", "termsAndConditions", "documents", "otps" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "farms", "addresses", "panDetails", "termsAndConditions", "documents", "otps" }, allowSetters = true)
     private Farmer farmer;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "addresses", "documents", "farmer" }, allowSetters = true)
+    private Farm farm;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -111,6 +121,32 @@ public class Address implements Serializable {
 
     public void setLine2(String line2) {
         this.line2 = line2;
+    }
+
+    public String getLandmark() {
+        return this.landmark;
+    }
+
+    public Address landmark(String landmark) {
+        this.setLandmark(landmark);
+        return this;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
+    }
+
+    public String getCity() {
+        return this.city;
+    }
+
+    public Address city(String city) {
+        this.setCity(city);
+        return this;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getState() {
@@ -256,6 +292,19 @@ public class Address implements Serializable {
         return this;
     }
 
+    public Farm getFarm() {
+        return this.farm;
+    }
+
+    public void setFarm(Farm farm) {
+        this.farm = farm;
+    }
+
+    public Address farm(Farm farm) {
+        this.setFarm(farm);
+        return this;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -282,6 +331,8 @@ public class Address implements Serializable {
             "id=" + getId() +
             ", line1='" + getLine1() + "'" +
             ", line2='" + getLine2() + "'" +
+            ", landmark='" + getLandmark() + "'" +
+            ", city='" + getCity() + "'" +
             ", state='" + getState() + "'" +
             ", country='" + getCountry() + "'" +
             ", pincode=" + getPincode() +

@@ -1,0 +1,11 @@
+{
+  "farmerBeApp": {
+    "FarmerType": {
+      "null": "",
+      "Farmer": "Farmer",
+      "Trader": "Trader",
+      "FPO": "FPO",
+      "Other": "Other"
+    }
+  }
+}

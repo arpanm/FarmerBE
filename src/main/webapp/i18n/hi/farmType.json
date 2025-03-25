@@ -1,0 +1,11 @@
+{
+  "farmerBeApp": {
+    "FarmType": {
+      "null": "",
+      "Own": "Own",
+      "Family": "Family",
+      "Leased": "Leased",
+      "Other": "Other"
+    }
+  }
+}

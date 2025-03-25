@@ -16,5 +16,12 @@
                                  referencedColumnNames="id"
                                  referencedTableName="farmer"
                                  />
+
+        <addForeignKeyConstraint baseColumnNames="farm_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__farm_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="farm"
+                                 />
     </changeSet>
 </databaseChangeLog>

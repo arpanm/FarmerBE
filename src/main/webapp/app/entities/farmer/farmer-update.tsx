@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
+import { FarmerType } from 'app/shared/model/enumerations/farmer-type.model';
 import { Language } from 'app/shared/model/enumerations/language.model';
 import { createEntity, getEntity, updateEntity } from './farmer.reducer';
 
@@ -22,6 +23,7 @@ export const FarmerUpdate = () => {
   const loading = useAppSelector(state => state.farmer.loading);
   const updating = useAppSelector(state => state.farmer.updating);
   const updateSuccess = useAppSelector(state => state.farmer.updateSuccess);
+  const farmerTypeValues = Object.keys(FarmerType);
   const languageValues = Object.keys(Language);
 
   const handleClose = () => {
@@ -69,6 +71,7 @@ export const FarmerUpdate = () => {
           updatedTime: displayDefaultDateTime(),
         }
       : {
+          farmerType: 'Farmer',
           preferedLanguage: 'English',
           ...farmerEntity,
           createdTime: convertDateTimeFromServer(farmerEntity.createdTime),
@@ -135,6 +138,19 @@ export const FarmerUpdate = () => {
                 check
                 type="checkbox"
               />
+              <ValidatedField
+                label={translate('farmerBeApp.farmer.farmerType')}
+                id="farmer-farmerType"
+                name="farmerType"
+                data-cy="farmerType"
+                type="select"
+              >
+                {farmerTypeValues.map(farmerType => (
+                  <option value={farmerType} key={farmerType}>
+                    {translate(`farmerBeApp.FarmerType.${farmerType}`)}
+                  </option>
+                ))}
+              </ValidatedField>
               <ValidatedField
                 label={translate('farmerBeApp.farmer.preferedLanguage')}
                 id="farmer-preferedLanguage"

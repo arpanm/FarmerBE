@@ -5,6 +5,9 @@ package com.farmer.be.domain.enumeration;
  */
 public enum DocumentType {
     AddressProof,
+    RelationshipProof,
+    FarmDocument,
     IdProof,
+    ProfileImage,
     Other,
 }

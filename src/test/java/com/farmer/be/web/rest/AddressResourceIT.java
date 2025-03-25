@@ -42,6 +42,12 @@ class AddressResourceIT {
     private static final String DEFAULT_LINE_2 = "AAAAAAAAAA";
     private static final String UPDATED_LINE_2 = "BBBBBBBBBB";
 
+    private static final String DEFAULT_LANDMARK = "AAAAAAAAAA";
+    private static final String UPDATED_LANDMARK = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CITY = "AAAAAAAAAA";
+    private static final String UPDATED_CITY = "BBBBBBBBBB";
+
     private static final String DEFAULT_STATE = "AAAAAAAAAA";
     private static final String UPDATED_STATE = "BBBBBBBBBB";
 
@@ -107,6 +113,8 @@ class AddressResourceIT {
         return new Address()
             .line1(DEFAULT_LINE_1)
             .line2(DEFAULT_LINE_2)
+            .landmark(DEFAULT_LANDMARK)
+            .city(DEFAULT_CITY)
             .state(DEFAULT_STATE)
             .country(DEFAULT_COUNTRY)
             .pincode(DEFAULT_PINCODE)
@@ -129,6 +137,8 @@ class AddressResourceIT {
         return new Address()
             .line1(UPDATED_LINE_1)
             .line2(UPDATED_LINE_2)
+            .landmark(UPDATED_LANDMARK)
+            .city(UPDATED_CITY)
             .state(UPDATED_STATE)
             .country(UPDATED_COUNTRY)
             .pincode(UPDATED_PINCODE)
@@ -346,6 +356,8 @@ class AddressResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(address.getId().intValue())))
             .andExpect(jsonPath("$.[*].line1").value(hasItem(DEFAULT_LINE_1)))
             .andExpect(jsonPath("$.[*].line2").value(hasItem(DEFAULT_LINE_2)))
+            .andExpect(jsonPath("$.[*].landmark").value(hasItem(DEFAULT_LANDMARK)))
+            .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY)))
             .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE)))
             .andExpect(jsonPath("$.[*].country").value(hasItem(DEFAULT_COUNTRY)))
             .andExpect(jsonPath("$.[*].pincode").value(hasItem(DEFAULT_PINCODE.intValue())))
@@ -372,6 +384,8 @@ class AddressResourceIT {
             .andExpect(jsonPath("$.id").value(address.getId().intValue()))
             .andExpect(jsonPath("$.line1").value(DEFAULT_LINE_1))
             .andExpect(jsonPath("$.line2").value(DEFAULT_LINE_2))
+            .andExpect(jsonPath("$.landmark").value(DEFAULT_LANDMARK))
+            .andExpect(jsonPath("$.city").value(DEFAULT_CITY))
             .andExpect(jsonPath("$.state").value(DEFAULT_STATE))
             .andExpect(jsonPath("$.country").value(DEFAULT_COUNTRY))
             .andExpect(jsonPath("$.pincode").value(DEFAULT_PINCODE.intValue()))
@@ -406,6 +420,8 @@ class AddressResourceIT {
         updatedAddress
             .line1(UPDATED_LINE_1)
             .line2(UPDATED_LINE_2)
+            .landmark(UPDATED_LANDMARK)
+            .city(UPDATED_CITY)
             .state(UPDATED_STATE)
             .country(UPDATED_COUNTRY)
             .pincode(UPDATED_PINCODE)
@@ -501,7 +517,12 @@ class AddressResourceIT {
         Address partialUpdatedAddress = new Address();
         partialUpdatedAddress.setId(address.getId());
 
-        partialUpdatedAddress.pincode(UPDATED_PINCODE).lat(UPDATED_LAT).createddBy(UPDATED_CREATEDD_BY);
+        partialUpdatedAddress
+            .state(UPDATED_STATE)
+            .country(UPDATED_COUNTRY)
+            .lon(UPDATED_LON)
+            .updatedBy(UPDATED_UPDATED_BY)
+            .updatedTime(UPDATED_UPDATED_TIME);
 
         restAddressMockMvc
             .perform(
@@ -532,6 +553,8 @@ class AddressResourceIT {
         partialUpdatedAddress
             .line1(UPDATED_LINE_1)
             .line2(UPDATED_LINE_2)
+            .landmark(UPDATED_LANDMARK)
+            .city(UPDATED_CITY)
             .state(UPDATED_STATE)
             .country(UPDATED_COUNTRY)
             .pincode(UPDATED_PINCODE)

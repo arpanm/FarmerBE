@@ -1,0 +1,36 @@
+{
+  "farmerBeApp": {
+    "farm": {
+      "home": {
+        "title": "Farms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Farm-ஐ உருவாக்கு",
+        "createOrEditLabel": "Farm -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Farms found"
+      },
+      "created": "Farm புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Farm மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Farm நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Farm {{ id }}?"
+      },
+      "detail": {
+        "title": "Farm"
+      },
+      "id": "ID",
+      "farmType": "Farm Type",
+      "ownerName": "Owner Name",
+      "relationshipWithOwner": "Relationship With Owner",
+      "areaInAcres": "Area In Acres",
+      "farmDocumentNo": "Farm Document No",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address",
+      "document": "Document",
+      "farmer": "Farmer"
+    }
+  }
+}

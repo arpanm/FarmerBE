@@ -49,6 +49,8 @@ public class AddressAsserts {
             .as("Verify Address relevant properties")
             .satisfies(a -> assertThat(a.getLine1()).as("check line1").isEqualTo(expected.getLine1()))
             .satisfies(a -> assertThat(a.getLine2()).as("check line2").isEqualTo(expected.getLine2()))
+            .satisfies(a -> assertThat(a.getLandmark()).as("check landmark").isEqualTo(expected.getLandmark()))
+            .satisfies(a -> assertThat(a.getCity()).as("check city").isEqualTo(expected.getCity()))
             .satisfies(a -> assertThat(a.getState()).as("check state").isEqualTo(expected.getState()))
             .satisfies(a -> assertThat(a.getCountry()).as("check country").isEqualTo(expected.getCountry()))
             .satisfies(a -> assertThat(a.getPincode()).as("check pincode").isEqualTo(expected.getPincode()))
@@ -70,6 +72,7 @@ public class AddressAsserts {
     public static void assertAddressUpdatableRelationshipsEquals(Address expected, Address actual) {
         assertThat(actual)
             .as("Verify Address relationships")
-            .satisfies(a -> assertThat(a.getFarmer()).as("check farmer").isEqualTo(expected.getFarmer()));
+            .satisfies(a -> assertThat(a.getFarmer()).as("check farmer").isEqualTo(expected.getFarmer()))
+            .satisfies(a -> assertThat(a.getFarm()).as("check farm").isEqualTo(expected.getFarm()));
     }
 }

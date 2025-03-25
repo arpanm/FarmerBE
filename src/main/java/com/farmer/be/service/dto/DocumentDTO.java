@@ -37,6 +37,8 @@ public class DocumentDTO implements Serializable {
 
     private FarmerDTO farmer;
 
+    private FarmDTO farm;
+
     public Long getId() {
         return id;
     }
@@ -117,6 +119,14 @@ public class DocumentDTO implements Serializable {
         this.farmer = farmer;
     }
 
+    public FarmDTO getFarm() {
+        return farm;
+    }
+
+    public void setFarm(FarmDTO farm) {
+        this.farm = farm;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -152,6 +162,7 @@ public class DocumentDTO implements Serializable {
             ", updatedBy='" + getUpdatedBy() + "'" +
             ", updatedTime='" + getUpdatedTime() + "'" +
             ", farmer=" + getFarmer() +
+            ", farm=" + getFarm() +
             "}";
     }
 }

@@ -14,7 +14,8 @@
         "document": "Document",
         "otp": "Otp",
         "panDetails": "Pan Details",
-        "termsAndCondition": "Terms And Condition"
+        "termsAndCondition": "Terms And Condition",
+        "farm": "Farm"
       },
       "account": {
         "main": "கணக்கு",
