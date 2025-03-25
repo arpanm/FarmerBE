@@ -138,6 +138,14 @@ export const Address = () => {
                     <Translate contentKey="farmerBeApp.address.line2">Line 2</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('line2')} />
                   </th>
+                  <th className="hand" onClick={sort('landmark')}>
+                    <Translate contentKey="farmerBeApp.address.landmark">Landmark</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('landmark')} />
+                  </th>
+                  <th className="hand" onClick={sort('city')}>
+                    <Translate contentKey="farmerBeApp.address.city">City</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('city')} />
+                  </th>
                   <th className="hand" onClick={sort('state')}>
                     <Translate contentKey="farmerBeApp.address.state">State</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('state')} />
@@ -179,6 +187,9 @@ export const Address = () => {
                   <th>
                     <Translate contentKey="farmerBeApp.address.farmer">Farmer</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
+                  <th>
+                    <Translate contentKey="farmerBeApp.address.farm">Farm</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
                   <th />
                 </tr>
               </thead>
@@ -192,6 +203,8 @@ export const Address = () => {
                     </td>
                     <td>{address.line1}</td>
                     <td>{address.line2}</td>
+                    <td>{address.landmark}</td>
+                    <td>{address.city}</td>
                     <td>{address.state}</td>
                     <td>{address.country}</td>
                     <td>{address.pincode}</td>
@@ -203,6 +216,7 @@ export const Address = () => {
                     <td>{address.updatedBy}</td>
                     <td>{address.updatedTime ? <TextFormat type="date" value={address.updatedTime} format={APP_DATE_FORMAT} /> : null}</td>
                     <td>{address.farmer ? <Link to={`/farmer/${address.farmer.id}`}>{address.farmer.id}</Link> : ''}</td>
+                    <td>{address.farm ? <Link to={`/farm/${address.farm.id}`}>{address.farm.id}</Link> : ''}</td>
                     <td className="text-end">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`/address/${address.id}`} color="info" size="sm" data-cy="entityDetailsButton">

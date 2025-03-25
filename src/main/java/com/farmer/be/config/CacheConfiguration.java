@@ -52,6 +52,7 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.User.class.getName() + ".authorities");
             createCache(cm, com.farmer.be.domain.SessionContext.class.getName());
             createCache(cm, com.farmer.be.domain.Farmer.class.getName());
+            createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".farms");
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".addresses");
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".panDetails");
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".termsAndConditions");
@@ -62,6 +63,9 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.Otp.class.getName());
             createCache(cm, com.farmer.be.domain.PanDetails.class.getName());
             createCache(cm, com.farmer.be.domain.TermsAndCondition.class.getName());
+            createCache(cm, com.farmer.be.domain.Farm.class.getName());
+            createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".addresses");
+            createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".documents");
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -18,6 +18,10 @@ public class AddressDTO implements Serializable {
 
     private String line2;
 
+    private String landmark;
+
+    private String city;
+
     @NotNull
     private String state;
 
@@ -47,6 +51,8 @@ public class AddressDTO implements Serializable {
 
     private FarmerDTO farmer;
 
+    private FarmDTO farm;
+
     public Long getId() {
         return id;
     }
@@ -69,6 +75,22 @@ public class AddressDTO implements Serializable {
 
     public void setLine2(String line2) {
         this.line2 = line2;
+    }
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getState() {
@@ -159,6 +181,14 @@ public class AddressDTO implements Serializable {
         this.farmer = farmer;
     }
 
+    public FarmDTO getFarm() {
+        return farm;
+    }
+
+    public void setFarm(FarmDTO farm) {
+        this.farm = farm;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -187,6 +217,8 @@ public class AddressDTO implements Serializable {
             "id=" + getId() +
             ", line1='" + getLine1() + "'" +
             ", line2='" + getLine2() + "'" +
+            ", landmark='" + getLandmark() + "'" +
+            ", city='" + getCity() + "'" +
             ", state='" + getState() + "'" +
             ", country='" + getCountry() + "'" +
             ", pincode=" + getPincode() +
@@ -198,6 +230,7 @@ public class AddressDTO implements Serializable {
             ", updatedBy='" + getUpdatedBy() + "'" +
             ", updatedTime='" + getUpdatedTime() + "'" +
             ", farmer=" + getFarmer() +
+            ", farm=" + getFarm() +
             "}";
     }
 }

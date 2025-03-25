@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.farmer.be.IntegrationTest;
 import com.farmer.be.domain.Farmer;
+import com.farmer.be.domain.enumeration.FarmerType;
 import com.farmer.be.domain.enumeration.Language;
 import com.farmer.be.repository.FarmerRepository;
 import com.farmer.be.service.dto.FarmerDTO;
@@ -48,6 +49,9 @@ class FarmerResourceIT {
 
     private static final Boolean DEFAULT_IS_WHATS_APP_ENABLED = false;
     private static final Boolean UPDATED_IS_WHATS_APP_ENABLED = true;
+
+    private static final FarmerType DEFAULT_FARMER_TYPE = FarmerType.Farmer;
+    private static final FarmerType UPDATED_FARMER_TYPE = FarmerType.Trader;
 
     private static final Language DEFAULT_PREFERED_LANGUAGE = Language.English;
     private static final Language UPDATED_PREFERED_LANGUAGE = Language.Hindi;
@@ -104,6 +108,7 @@ class FarmerResourceIT {
             .email(DEFAULT_EMAIL)
             .phone(DEFAULT_PHONE)
             .isWhatsAppEnabled(DEFAULT_IS_WHATS_APP_ENABLED)
+            .farmerType(DEFAULT_FARMER_TYPE)
             .preferedLanguage(DEFAULT_PREFERED_LANGUAGE)
             .isActive(DEFAULT_IS_ACTIVE)
             .createddBy(DEFAULT_CREATEDD_BY)
@@ -124,6 +129,7 @@ class FarmerResourceIT {
             .email(UPDATED_EMAIL)
             .phone(UPDATED_PHONE)
             .isWhatsAppEnabled(UPDATED_IS_WHATS_APP_ENABLED)
+            .farmerType(UPDATED_FARMER_TYPE)
             .preferedLanguage(UPDATED_PREFERED_LANGUAGE)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
@@ -288,6 +294,7 @@ class FarmerResourceIT {
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].phone").value(hasItem(DEFAULT_PHONE.intValue())))
             .andExpect(jsonPath("$.[*].isWhatsAppEnabled").value(hasItem(DEFAULT_IS_WHATS_APP_ENABLED)))
+            .andExpect(jsonPath("$.[*].farmerType").value(hasItem(DEFAULT_FARMER_TYPE.toString())))
             .andExpect(jsonPath("$.[*].preferedLanguage").value(hasItem(DEFAULT_PREFERED_LANGUAGE.toString())))
             .andExpect(jsonPath("$.[*].isActive").value(hasItem(DEFAULT_IS_ACTIVE)))
             .andExpect(jsonPath("$.[*].createddBy").value(hasItem(DEFAULT_CREATEDD_BY)))
@@ -312,6 +319,7 @@ class FarmerResourceIT {
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
             .andExpect(jsonPath("$.phone").value(DEFAULT_PHONE.intValue()))
             .andExpect(jsonPath("$.isWhatsAppEnabled").value(DEFAULT_IS_WHATS_APP_ENABLED))
+            .andExpect(jsonPath("$.farmerType").value(DEFAULT_FARMER_TYPE.toString()))
             .andExpect(jsonPath("$.preferedLanguage").value(DEFAULT_PREFERED_LANGUAGE.toString()))
             .andExpect(jsonPath("$.isActive").value(DEFAULT_IS_ACTIVE))
             .andExpect(jsonPath("$.createddBy").value(DEFAULT_CREATEDD_BY))
@@ -344,6 +352,7 @@ class FarmerResourceIT {
             .email(UPDATED_EMAIL)
             .phone(UPDATED_PHONE)
             .isWhatsAppEnabled(UPDATED_IS_WHATS_APP_ENABLED)
+            .farmerType(UPDATED_FARMER_TYPE)
             .preferedLanguage(UPDATED_PREFERED_LANGUAGE)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
@@ -435,7 +444,11 @@ class FarmerResourceIT {
         Farmer partialUpdatedFarmer = new Farmer();
         partialUpdatedFarmer.setId(farmer.getId());
 
-        partialUpdatedFarmer.phone(UPDATED_PHONE).createddBy(UPDATED_CREATEDD_BY).createdTime(UPDATED_CREATED_TIME);
+        partialUpdatedFarmer
+            .phone(UPDATED_PHONE)
+            .isActive(UPDATED_IS_ACTIVE)
+            .createddBy(UPDATED_CREATEDD_BY)
+            .updatedTime(UPDATED_UPDATED_TIME);
 
         restFarmerMockMvc
             .perform(
@@ -468,6 +481,7 @@ class FarmerResourceIT {
             .email(UPDATED_EMAIL)
             .phone(UPDATED_PHONE)
             .isWhatsAppEnabled(UPDATED_IS_WHATS_APP_ENABLED)
+            .farmerType(UPDATED_FARMER_TYPE)
             .preferedLanguage(UPDATED_PREFERED_LANGUAGE)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)

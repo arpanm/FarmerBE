@@ -45,6 +45,18 @@ export const AddressDetail = () => {
           </dt>
           <dd>{addressEntity.line2}</dd>
           <dt>
+            <span id="landmark">
+              <Translate contentKey="farmerBeApp.address.landmark">Landmark</Translate>
+            </span>
+          </dt>
+          <dd>{addressEntity.landmark}</dd>
+          <dt>
+            <span id="city">
+              <Translate contentKey="farmerBeApp.address.city">City</Translate>
+            </span>
+          </dt>
+          <dd>{addressEntity.city}</dd>
+          <dt>
             <span id="state">
               <Translate contentKey="farmerBeApp.address.state">State</Translate>
             </span>
@@ -112,6 +124,10 @@ export const AddressDetail = () => {
             <Translate contentKey="farmerBeApp.address.farmer">Farmer</Translate>
           </dt>
           <dd>{addressEntity.farmer ? addressEntity.farmer.id : ''}</dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.address.farm">Farm</Translate>
+          </dt>
+          <dd>{addressEntity.farm ? addressEntity.farm.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/address" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

@@ -1,0 +1,36 @@
+{
+  "farmerBeApp": {
+    "farm": {
+      "home": {
+        "title": "Farms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Farm तयार करा",
+        "createOrEditLabel": "Farm तयार किंवा संपादित करा",
+        "notFound": "No Farms found"
+      },
+      "created": "Farm [identifier: {{ param }}] तयार आहे",
+      "updated": "Farm [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Farm [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Farm [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Farm"
+      },
+      "id": "ID",
+      "farmType": "Farm Type",
+      "ownerName": "Owner Name",
+      "relationshipWithOwner": "Relationship With Owner",
+      "areaInAcres": "Area In Acres",
+      "farmDocumentNo": "Farm Document No",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address",
+      "document": "Document",
+      "farmer": "Farmer"
+    }
+  }
+}

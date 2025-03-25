@@ -1,6 +1,7 @@
 package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -33,5 +34,17 @@ class AddressTest {
 
         address.farmer(null);
         assertThat(address.getFarmer()).isNull();
+    }
+
+    @Test
+    void farmTest() {
+        Address address = getAddressRandomSampleGenerator();
+        Farm farmBack = getFarmRandomSampleGenerator();
+
+        address.setFarm(farmBack);
+        assertThat(address.getFarm()).isEqualTo(farmBack);
+
+        address.farm(null);
+        assertThat(address.getFarm()).isNull();
     }
 }

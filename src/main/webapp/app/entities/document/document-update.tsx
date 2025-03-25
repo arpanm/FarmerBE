@@ -8,6 +8,7 @@ import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateT
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getFarmers } from 'app/entities/farmer/farmer.reducer';
+import { getEntities as getFarms } from 'app/entities/farm/farm.reducer';
 import { DocumentType } from 'app/shared/model/enumerations/document-type.model';
 import { DocumentFormat } from 'app/shared/model/enumerations/document-format.model';
 import { createEntity, getEntity, updateEntity } from './document.reducer';
@@ -21,6 +22,7 @@ export const DocumentUpdate = () => {
   const isNew = id === undefined;
 
   const farmers = useAppSelector(state => state.farmer.entities);
+  const farms = useAppSelector(state => state.farm.entities);
   const documentEntity = useAppSelector(state => state.document.entity);
   const loading = useAppSelector(state => state.document.loading);
   const updating = useAppSelector(state => state.document.updating);
@@ -38,6 +40,7 @@ export const DocumentUpdate = () => {
     }
 
     dispatch(getFarmers({}));
+    dispatch(getFarms({}));
   }, []);
 
   useEffect(() => {
@@ -57,6 +60,7 @@ export const DocumentUpdate = () => {
       ...documentEntity,
       ...values,
       farmer: farmers.find(it => it.id.toString() === values.farmer?.toString()),
+      farm: farms.find(it => it.id.toString() === values.farm?.toString()),
     };
 
     if (isNew) {
@@ -79,6 +83,7 @@ export const DocumentUpdate = () => {
           createdTime: convertDateTimeFromServer(documentEntity.createdTime),
           updatedTime: convertDateTimeFromServer(documentEntity.updatedTime),
           farmer: documentEntity?.farmer?.id,
+          farm: documentEntity?.farm?.id,
         };
 
   return (
@@ -199,6 +204,16 @@ export const DocumentUpdate = () => {
                 <option value="" key="0" />
                 {farmers
                   ? farmers.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField id="document-farm" name="farm" data-cy="farm" label={translate('farmerBeApp.document.farm')} type="select">
+                <option value="" key="0" />
+                {farms
+                  ? farms.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

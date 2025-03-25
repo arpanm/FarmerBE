@@ -20,6 +20,12 @@
             <column name="line_2" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="landmark" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="city" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="state" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
@@ -53,6 +59,9 @@
             <column name="farmer_id" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="farm_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="address" columnName="created_time" columnDataType="${datetimeType}"/>
@@ -78,6 +87,8 @@
             <column name="id" type="numeric"/>
             <column name="line_1" type="string"/>
             <column name="line_2" type="string"/>
+            <column name="landmark" type="string"/>
+            <column name="city" type="string"/>
             <column name="state" type="string"/>
             <column name="country" type="string"/>
             <column name="pincode" type="numeric"/>

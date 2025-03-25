@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { IFarmer } from 'app/shared/model/farmer.model';
+import { IFarm } from 'app/shared/model/farm.model';
 import { DocumentType } from 'app/shared/model/enumerations/document-type.model';
 import { DocumentFormat } from 'app/shared/model/enumerations/document-format.model';
 
@@ -14,6 +15,7 @@ export interface IDocument {
   updatedBy?: string;
   updatedTime?: dayjs.Dayjs;
   farmer?: IFarmer | null;
+  farm?: IFarm | null;
 }
 
 export const defaultValue: Readonly<IDocument> = {

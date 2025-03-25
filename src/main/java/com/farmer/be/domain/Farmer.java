@@ -1,5 +1,6 @@
 package com.farmer.be.domain;
 
+import com.farmer.be.domain.enumeration.FarmerType;
 import com.farmer.be.domain.enumeration.Language;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -44,6 +45,10 @@ public class Farmer implements Serializable {
     private Boolean isWhatsAppEnabled;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "farmer_type")
+    private FarmerType farmerType;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "prefered_language")
     private Language preferedLanguage;
 
@@ -68,7 +73,12 @@ public class Farmer implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "addresses", "documents", "farmer" }, allowSetters = true)
+    private Set<Farm> farms = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
     private Set<Address> addresses = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
@@ -83,7 +93,7 @@ public class Farmer implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
@@ -156,6 +166,19 @@ public class Farmer implements Serializable {
 
     public void setIsWhatsAppEnabled(Boolean isWhatsAppEnabled) {
         this.isWhatsAppEnabled = isWhatsAppEnabled;
+    }
+
+    public FarmerType getFarmerType() {
+        return this.farmerType;
+    }
+
+    public Farmer farmerType(FarmerType farmerType) {
+        this.setFarmerType(farmerType);
+        return this;
+    }
+
+    public void setFarmerType(FarmerType farmerType) {
+        this.farmerType = farmerType;
     }
 
     public Language getPreferedLanguage() {
@@ -234,6 +257,37 @@ public class Farmer implements Serializable {
 
     public void setUpdatedTime(Instant updatedTime) {
         this.updatedTime = updatedTime;
+    }
+
+    public Set<Farm> getFarms() {
+        return this.farms;
+    }
+
+    public void setFarms(Set<Farm> farms) {
+        if (this.farms != null) {
+            this.farms.forEach(i -> i.setFarmer(null));
+        }
+        if (farms != null) {
+            farms.forEach(i -> i.setFarmer(this));
+        }
+        this.farms = farms;
+    }
+
+    public Farmer farms(Set<Farm> farms) {
+        this.setFarms(farms);
+        return this;
+    }
+
+    public Farmer addFarm(Farm farm) {
+        this.farms.add(farm);
+        farm.setFarmer(this);
+        return this;
+    }
+
+    public Farmer removeFarm(Farm farm) {
+        this.farms.remove(farm);
+        farm.setFarmer(null);
+        return this;
     }
 
     public Set<Address> getAddresses() {
@@ -419,6 +473,7 @@ public class Farmer implements Serializable {
             ", email='" + getEmail() + "'" +
             ", phone=" + getPhone() +
             ", isWhatsAppEnabled='" + getIsWhatsAppEnabled() + "'" +
+            ", farmerType='" + getFarmerType() + "'" +
             ", preferedLanguage='" + getPreferedLanguage() + "'" +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +

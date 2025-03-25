@@ -66,6 +66,7 @@ public class DocumentAsserts {
     public static void assertDocumentUpdatableRelationshipsEquals(Document expected, Document actual) {
         assertThat(actual)
             .as("Verify Document relationships")
-            .satisfies(a -> assertThat(a.getFarmer()).as("check farmer").isEqualTo(expected.getFarmer()));
+            .satisfies(a -> assertThat(a.getFarmer()).as("check farmer").isEqualTo(expected.getFarmer()))
+            .satisfies(a -> assertThat(a.getFarm()).as("check farm").isEqualTo(expected.getFarm()));
     }
 }

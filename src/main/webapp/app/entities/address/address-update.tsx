@@ -8,6 +8,7 @@ import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateT
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getFarmers } from 'app/entities/farmer/farmer.reducer';
+import { getEntities as getFarms } from 'app/entities/farm/farm.reducer';
 import { createEntity, getEntity, updateEntity } from './address.reducer';
 
 export const AddressUpdate = () => {
@@ -19,6 +20,7 @@ export const AddressUpdate = () => {
   const isNew = id === undefined;
 
   const farmers = useAppSelector(state => state.farmer.entities);
+  const farms = useAppSelector(state => state.farm.entities);
   const addressEntity = useAppSelector(state => state.address.entity);
   const loading = useAppSelector(state => state.address.loading);
   const updating = useAppSelector(state => state.address.updating);
@@ -34,6 +36,7 @@ export const AddressUpdate = () => {
     }
 
     dispatch(getFarmers({}));
+    dispatch(getFarms({}));
   }, []);
 
   useEffect(() => {
@@ -62,6 +65,7 @@ export const AddressUpdate = () => {
       ...addressEntity,
       ...values,
       farmer: farmers.find(it => it.id.toString() === values.farmer?.toString()),
+      farm: farms.find(it => it.id.toString() === values.farm?.toString()),
     };
 
     if (isNew) {
@@ -82,6 +86,7 @@ export const AddressUpdate = () => {
           createdTime: convertDateTimeFromServer(addressEntity.createdTime),
           updatedTime: convertDateTimeFromServer(addressEntity.updatedTime),
           farmer: addressEntity?.farmer?.id,
+          farm: addressEntity?.farm?.id,
         };
 
   return (
@@ -120,6 +125,14 @@ export const AddressUpdate = () => {
                 }}
               />
               <ValidatedField label={translate('farmerBeApp.address.line2')} id="address-line2" name="line2" data-cy="line2" type="text" />
+              <ValidatedField
+                label={translate('farmerBeApp.address.landmark')}
+                id="address-landmark"
+                name="landmark"
+                data-cy="landmark"
+                type="text"
+              />
+              <ValidatedField label={translate('farmerBeApp.address.city')} id="address-city" name="city" data-cy="city" type="text" />
               <ValidatedField
                 label={translate('farmerBeApp.address.state')}
                 id="address-state"
@@ -213,6 +226,16 @@ export const AddressUpdate = () => {
                 <option value="" key="0" />
                 {farmers
                   ? farmers.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField id="address-farm" name="farm" data-cy="farm" label={translate('farmerBeApp.address.farm')} type="select">
+                <option value="" key="0" />
+                {farms
+                  ? farms.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

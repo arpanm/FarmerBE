@@ -1,5 +1,6 @@
 package com.farmer.be.service.dto;
 
+import com.farmer.be.domain.enumeration.FarmerType;
 import com.farmer.be.domain.enumeration.Language;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
@@ -25,6 +26,8 @@ public class FarmerDTO implements Serializable {
     private Long phone;
 
     private Boolean isWhatsAppEnabled;
+
+    private FarmerType farmerType;
 
     private Language preferedLanguage;
 
@@ -80,6 +83,14 @@ public class FarmerDTO implements Serializable {
 
     public void setIsWhatsAppEnabled(Boolean isWhatsAppEnabled) {
         this.isWhatsAppEnabled = isWhatsAppEnabled;
+    }
+
+    public FarmerType getFarmerType() {
+        return farmerType;
+    }
+
+    public void setFarmerType(FarmerType farmerType) {
+        this.farmerType = farmerType;
     }
 
     public Language getPreferedLanguage() {
@@ -160,6 +171,7 @@ public class FarmerDTO implements Serializable {
             ", email='" + getEmail() + "'" +
             ", phone=" + getPhone() +
             ", isWhatsAppEnabled='" + getIsWhatsAppEnabled() + "'" +
+            ", farmerType='" + getFarmerType() + "'" +
             ", preferedLanguage='" + getPreferedLanguage() + "'" +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +

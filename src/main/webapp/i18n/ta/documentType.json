@@ -3,7 +3,10 @@
     "DocumentType": {
       "null": "",
       "AddressProof": "AddressProof",
+      "RelationshipProof": "RelationshipProof",
+      "FarmDocument": "FarmDocument",
       "IdProof": "IdProof",
+      "ProfileImage": "ProfileImage",
       "Other": "Other"
     }
   }
