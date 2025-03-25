@@ -341,6 +341,26 @@ relationship OneToMany {
 	Crop to SupplyConfirmation{crop}
 }
 
+entity PickUpConfirmation {
+	confirmDate LocalDate,
+    confirmValue Float,
+    pickupBy String,
+    pickupTime String,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farm to PickUpConfirmation{farm}
+}
+
+relationship OneToMany {
+	Crop to PickUpConfirmation{crop}
+}
+
 application {
   config {
     baseName FarmerBE
