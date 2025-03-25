@@ -1,0 +1,31 @@
+{
+  "farmerBeApp": {
+    "termsAndCondition": {
+      "home": {
+        "title": "Terms And Conditions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Terms And Condition तयार करा",
+        "createOrEditLabel": "Terms And Condition तयार किंवा संपादित करा",
+        "notFound": "No Terms And Conditions found"
+      },
+      "created": "Terms And Condition [identifier: {{ param }}] तयार आहे",
+      "updated": "Terms And Condition [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Terms And Condition [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Terms And Condition [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Terms And Condition"
+      },
+      "id": "ID",
+      "termsLink": "Terms Link",
+      "aggreedOn": "Aggreed On",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}

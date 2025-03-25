@@ -40,6 +40,9 @@ public class Farmer implements Serializable {
     @Column(name = "phone", nullable = false)
     private Long phone;
 
+    @Column(name = "is_whats_app_enabled")
+    private Boolean isWhatsAppEnabled;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "prefered_language")
     private Language preferedLanguage;
@@ -67,6 +70,16 @@ public class Farmer implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "farmer" }, allowSetters = true)
     private Set<Address> addresses = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farmer" }, allowSetters = true)
+    private Set<PanDetails> panDetails = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farmer" }, allowSetters = true)
+    private Set<TermsAndCondition> termsAndConditions = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -130,6 +143,19 @@ public class Farmer implements Serializable {
 
     public void setPhone(Long phone) {
         this.phone = phone;
+    }
+
+    public Boolean getIsWhatsAppEnabled() {
+        return this.isWhatsAppEnabled;
+    }
+
+    public Farmer isWhatsAppEnabled(Boolean isWhatsAppEnabled) {
+        this.setIsWhatsAppEnabled(isWhatsAppEnabled);
+        return this;
+    }
+
+    public void setIsWhatsAppEnabled(Boolean isWhatsAppEnabled) {
+        this.isWhatsAppEnabled = isWhatsAppEnabled;
     }
 
     public Language getPreferedLanguage() {
@@ -241,6 +267,68 @@ public class Farmer implements Serializable {
         return this;
     }
 
+    public Set<PanDetails> getPanDetails() {
+        return this.panDetails;
+    }
+
+    public void setPanDetails(Set<PanDetails> panDetails) {
+        if (this.panDetails != null) {
+            this.panDetails.forEach(i -> i.setFarmer(null));
+        }
+        if (panDetails != null) {
+            panDetails.forEach(i -> i.setFarmer(this));
+        }
+        this.panDetails = panDetails;
+    }
+
+    public Farmer panDetails(Set<PanDetails> panDetails) {
+        this.setPanDetails(panDetails);
+        return this;
+    }
+
+    public Farmer addPanDetails(PanDetails panDetails) {
+        this.panDetails.add(panDetails);
+        panDetails.setFarmer(this);
+        return this;
+    }
+
+    public Farmer removePanDetails(PanDetails panDetails) {
+        this.panDetails.remove(panDetails);
+        panDetails.setFarmer(null);
+        return this;
+    }
+
+    public Set<TermsAndCondition> getTermsAndConditions() {
+        return this.termsAndConditions;
+    }
+
+    public void setTermsAndConditions(Set<TermsAndCondition> termsAndConditions) {
+        if (this.termsAndConditions != null) {
+            this.termsAndConditions.forEach(i -> i.setFarmer(null));
+        }
+        if (termsAndConditions != null) {
+            termsAndConditions.forEach(i -> i.setFarmer(this));
+        }
+        this.termsAndConditions = termsAndConditions;
+    }
+
+    public Farmer termsAndConditions(Set<TermsAndCondition> termsAndConditions) {
+        this.setTermsAndConditions(termsAndConditions);
+        return this;
+    }
+
+    public Farmer addTermsAndCondition(TermsAndCondition termsAndCondition) {
+        this.termsAndConditions.add(termsAndCondition);
+        termsAndCondition.setFarmer(this);
+        return this;
+    }
+
+    public Farmer removeTermsAndCondition(TermsAndCondition termsAndCondition) {
+        this.termsAndConditions.remove(termsAndCondition);
+        termsAndCondition.setFarmer(null);
+        return this;
+    }
+
     public Set<Document> getDocuments() {
         return this.documents;
     }
@@ -330,6 +418,7 @@ public class Farmer implements Serializable {
             ", name='" + getName() + "'" +
             ", email='" + getEmail() + "'" +
             ", phone=" + getPhone() +
+            ", isWhatsAppEnabled='" + getIsWhatsAppEnabled() + "'" +
             ", preferedLanguage='" + getPreferedLanguage() + "'" +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +

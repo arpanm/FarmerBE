@@ -1,0 +1,31 @@
+{
+  "farmerBeApp": {
+    "termsAndCondition": {
+      "home": {
+        "title": "Terms And Conditions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Terms And Condition-ஐ உருவாக்கு",
+        "createOrEditLabel": "Terms And Condition -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Terms And Conditions found"
+      },
+      "created": "Terms And Condition புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Terms And Condition மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Terms And Condition நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Terms And Condition {{ id }}?"
+      },
+      "detail": {
+        "title": "Terms And Condition"
+      },
+      "id": "ID",
+      "termsLink": "Terms Link",
+      "aggreedOn": "Aggreed On",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}

@@ -21,6 +21,7 @@
       "name": "Name",
       "email": "Email",
       "phone": "Phone",
+      "isWhatsAppEnabled": "Is Whats App Enabled",
       "preferedLanguage": "Prefered Language",
       "isActive": "Is Active",
       "createddBy": "Createdd By",
@@ -28,6 +29,8 @@
       "updatedBy": "Updated By",
       "updatedTime": "Updated Time",
       "address": "Address",
+      "panDetails": "Pan Details",
+      "termsAndCondition": "Terms And Condition",
       "document": "Document",
       "otp": "Otp"
     }

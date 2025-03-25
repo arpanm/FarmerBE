@@ -50,6 +50,7 @@ public class FarmerAsserts {
             .satisfies(a -> assertThat(a.getName()).as("check name").isEqualTo(expected.getName()))
             .satisfies(a -> assertThat(a.getEmail()).as("check email").isEqualTo(expected.getEmail()))
             .satisfies(a -> assertThat(a.getPhone()).as("check phone").isEqualTo(expected.getPhone()))
+            .satisfies(a -> assertThat(a.getIsWhatsAppEnabled()).as("check isWhatsAppEnabled").isEqualTo(expected.getIsWhatsAppEnabled()))
             .satisfies(a -> assertThat(a.getPreferedLanguage()).as("check preferedLanguage").isEqualTo(expected.getPreferedLanguage()))
             .satisfies(a -> assertThat(a.getIsActive()).as("check isActive").isEqualTo(expected.getIsActive()))
             .satisfies(a -> assertThat(a.getCreateddBy()).as("check createddBy").isEqualTo(expected.getCreateddBy()))

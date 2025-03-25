@@ -57,7 +57,7 @@ public class Document implements Serializable {
     private Instant updatedTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "addresses", "documents", "otps" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "addresses", "panDetails", "termsAndConditions", "documents", "otps" }, allowSetters = true)
     private Farmer farmer;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
