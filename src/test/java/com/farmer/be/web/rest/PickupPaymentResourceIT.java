@@ -39,8 +39,8 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class PickupPaymentResourceIT {
 
-    private static final PaymentStatus DEFAULT_PAYMENT_STATUS = PaymentStatus.Good;
-    private static final PaymentStatus UPDATED_PAYMENT_STATUS = PaymentStatus.Moderate;
+    private static final PaymentStatus DEFAULT_PAYMENT_STATUS = PaymentStatus.Pending;
+    private static final PaymentStatus UPDATED_PAYMENT_STATUS = PaymentStatus.Initiated;
 
     private static final String DEFAULT_TRANSACTION_ID = "AAAAAAAAAA";
     private static final String UPDATED_TRANSACTION_ID = "BBBBBBBBBB";

@@ -8,7 +8,7 @@
     {
       "fieldName": "paymentStatus",
       "fieldType": "PaymentStatus",
-      "fieldValues": "Good,Moderate,Bad,Reject,Other"
+      "fieldValues": "Pending,Initiated,Paid,Confirmed,Other"
     },
     {
       "fieldName": "transactionId",

@@ -2,10 +2,10 @@
   "farmerBeApp": {
     "PaymentStatus": {
       "null": "",
-      "Good": "Good",
-      "Moderate": "Moderate",
-      "Bad": "Bad",
-      "Reject": "Reject",
+      "Pending": "Pending",
+      "Initiated": "Initiated",
+      "Paid": "Paid",
+      "Confirmed": "Confirmed",
       "Other": "Other"
     }
   }

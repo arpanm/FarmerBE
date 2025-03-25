@@ -1,11 +1,11 @@
 export enum PaymentStatus {
-  Good = 'Good',
+  Pending = 'Pending',
 
-  Moderate = 'Moderate',
+  Initiated = 'Initiated',
 
-  Bad = 'Bad',
+  Paid = 'Paid',
 
-  Reject = 'Reject',
+  Confirmed = 'Confirmed',
 
   Other = 'Other',
 }
