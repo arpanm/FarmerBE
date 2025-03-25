@@ -1,0 +1,34 @@
+{
+  "farmerBeApp": {
+    "pickUpConfirmation": {
+      "home": {
+        "title": "Pick Up Confirmations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Pick Up Confirmation-ஐ உருவாக்கு",
+        "createOrEditLabel": "Pick Up Confirmation -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Pick Up Confirmations found"
+      },
+      "created": "Pick Up Confirmation புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Pick Up Confirmation மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Pick Up Confirmation நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Pick Up Confirmation {{ id }}?"
+      },
+      "detail": {
+        "title": "Pick Up Confirmation"
+      },
+      "id": "ID",
+      "confirmDate": "Confirm Date",
+      "confirmValue": "Confirm Value",
+      "pickupBy": "Pickup By",
+      "pickupTime": "Pickup Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

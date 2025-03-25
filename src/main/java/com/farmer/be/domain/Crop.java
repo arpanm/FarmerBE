@@ -80,6 +80,11 @@ public class Crop implements Serializable {
     @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
     private Set<SupplyConfirmation> supplyConfirmations = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "crop")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    private Set<PickUpConfirmation> pickUpConfirmations = new HashSet<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "categories", "crops", "accessories", "parent" }, allowSetters = true)
     private Category category;
@@ -87,7 +92,9 @@ public class Crop implements Serializable {
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "crops")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
-        value = { "addresses", "documents", "hervestPlans", "supplyConfirmations", "crops", "accessories", "farmer" },
+        value = {
+            "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
+        },
         allowSetters = true
     )
     private Set<Farm> farms = new HashSet<>();
@@ -358,6 +365,37 @@ public class Crop implements Serializable {
     public Crop removeSupplyConfirmation(SupplyConfirmation supplyConfirmation) {
         this.supplyConfirmations.remove(supplyConfirmation);
         supplyConfirmation.setCrop(null);
+        return this;
+    }
+
+    public Set<PickUpConfirmation> getPickUpConfirmations() {
+        return this.pickUpConfirmations;
+    }
+
+    public void setPickUpConfirmations(Set<PickUpConfirmation> pickUpConfirmations) {
+        if (this.pickUpConfirmations != null) {
+            this.pickUpConfirmations.forEach(i -> i.setCrop(null));
+        }
+        if (pickUpConfirmations != null) {
+            pickUpConfirmations.forEach(i -> i.setCrop(this));
+        }
+        this.pickUpConfirmations = pickUpConfirmations;
+    }
+
+    public Crop pickUpConfirmations(Set<PickUpConfirmation> pickUpConfirmations) {
+        this.setPickUpConfirmations(pickUpConfirmations);
+        return this;
+    }
+
+    public Crop addPickUpConfirmation(PickUpConfirmation pickUpConfirmation) {
+        this.pickUpConfirmations.add(pickUpConfirmation);
+        pickUpConfirmation.setCrop(this);
+        return this;
+    }
+
+    public Crop removePickUpConfirmation(PickUpConfirmation pickUpConfirmation) {
+        this.pickUpConfirmations.remove(pickUpConfirmation);
+        pickUpConfirmation.setCrop(null);
         return this;
     }
 

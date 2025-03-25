@@ -67,7 +67,9 @@ public class Accessories implements Serializable {
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "accessories")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
-        value = { "addresses", "documents", "hervestPlans", "supplyConfirmations", "crops", "accessories", "farmer" },
+        value = {
+            "addresses", "documents", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "crops", "accessories", "farmer",
+        },
         allowSetters = true
     )
     private Set<Farm> farms = new HashSet<>();

@@ -32,6 +32,7 @@
       "document": "Document",
       "hervestPlan": "Hervest Plan",
       "supplyConfirmation": "Supply Confirmation",
+      "pickUpConfirmation": "Pick Up Confirmation",
       "crop": "Crop",
       "accessories": "Accessories",
       "farmer": "Farmer"

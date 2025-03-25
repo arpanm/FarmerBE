@@ -7,6 +7,7 @@ import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
 import static com.farmer.be.domain.HervestPlanTestSamples.*;
+import static com.farmer.be.domain.PickUpConfirmationTestSamples.*;
 import static com.farmer.be.domain.SupplyConfirmationTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -117,6 +118,28 @@ class FarmTest {
         farm.setSupplyConfirmations(new HashSet<>());
         assertThat(farm.getSupplyConfirmations()).doesNotContain(supplyConfirmationBack);
         assertThat(supplyConfirmationBack.getFarm()).isNull();
+    }
+
+    @Test
+    void pickUpConfirmationTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        PickUpConfirmation pickUpConfirmationBack = getPickUpConfirmationRandomSampleGenerator();
+
+        farm.addPickUpConfirmation(pickUpConfirmationBack);
+        assertThat(farm.getPickUpConfirmations()).containsOnly(pickUpConfirmationBack);
+        assertThat(pickUpConfirmationBack.getFarm()).isEqualTo(farm);
+
+        farm.removePickUpConfirmation(pickUpConfirmationBack);
+        assertThat(farm.getPickUpConfirmations()).doesNotContain(pickUpConfirmationBack);
+        assertThat(pickUpConfirmationBack.getFarm()).isNull();
+
+        farm.pickUpConfirmations(new HashSet<>(Set.of(pickUpConfirmationBack)));
+        assertThat(farm.getPickUpConfirmations()).containsOnly(pickUpConfirmationBack);
+        assertThat(pickUpConfirmationBack.getFarm()).isEqualTo(farm);
+
+        farm.setPickUpConfirmations(new HashSet<>());
+        assertThat(farm.getPickUpConfirmations()).doesNotContain(pickUpConfirmationBack);
+        assertThat(pickUpConfirmationBack.getFarm()).isNull();
     }
 
     @Test

@@ -32,6 +32,7 @@
       "price": "Price",
       "hervestPlan": "Hervest Plan",
       "supplyConfirmation": "Supply Confirmation",
+      "pickUpConfirmation": "Pick Up Confirmation",
       "category": "Category",
       "farm": "Farm"
     }

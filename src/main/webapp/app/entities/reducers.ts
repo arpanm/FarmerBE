@@ -14,6 +14,7 @@ import demand from 'app/entities/demand/demand.reducer';
 import price from 'app/entities/price/price.reducer';
 import hervestPlan from 'app/entities/hervest-plan/hervest-plan.reducer';
 import supplyConfirmation from 'app/entities/supply-confirmation/supply-confirmation.reducer';
+import pickUpConfirmation from 'app/entities/pick-up-confirmation/pick-up-confirmation.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -33,6 +34,7 @@ const entitiesReducers = {
   price,
   hervestPlan,
   supplyConfirmation,
+  pickUpConfirmation,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

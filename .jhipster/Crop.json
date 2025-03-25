@@ -82,6 +82,13 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "pickUpConfirmation",
+      "otherEntityRelationshipName": "crop",
+      "relationshipName": "pickUpConfirmation",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "category",
       "relationshipName": "category",
       "relationshipSide": "right",
