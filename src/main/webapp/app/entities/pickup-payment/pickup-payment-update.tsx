@@ -68,7 +68,7 @@ export const PickupPaymentUpdate = () => {
           updatedTime: displayDefaultDateTime(),
         }
       : {
-          paymentStatus: 'Good',
+          paymentStatus: 'Pending',
           ...pickupPaymentEntity,
           paymentUpdatedTime: convertDateTimeFromServer(pickupPaymentEntity.paymentUpdatedTime),
           createdTime: convertDateTimeFromServer(pickupPaymentEntity.createdTime),

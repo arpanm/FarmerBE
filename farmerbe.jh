@@ -436,10 +436,10 @@ entity PickupPayment {
 }
 
 enum PaymentStatus {
-	Good,
-    Moderate,
-    Bad,
-    Reject,
+	Pending,
+    Initiated,
+    Paid,
+    Confirmed,
     Other
 }
 
