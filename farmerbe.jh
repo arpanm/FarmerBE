@@ -23,7 +23,6 @@ enum Language {
     Kashmiri
 }
 
-
 entity Farmer {
 	name String,
     email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
@@ -239,6 +238,7 @@ entity Crop {
     imagePath String,
     description String,
     orderNo Long,
+    skuId String,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
@@ -259,6 +259,7 @@ entity Accessories {
     imagePath String,
     description String,
     orderNo Long,
+    skuId String,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
@@ -273,7 +274,6 @@ relationship OneToMany {
 relationship ManyToMany {
 	Farm to Accessories
 }
-
 
 application {
   config {
