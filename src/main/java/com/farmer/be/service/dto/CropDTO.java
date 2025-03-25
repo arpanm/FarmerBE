@@ -21,6 +21,8 @@ public class CropDTO implements Serializable {
 
     private String description;
 
+    private Long orderNo;
+
     private Boolean isActive;
 
     @NotNull
@@ -69,6 +71,14 @@ public class CropDTO implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(Long orderNo) {
+        this.orderNo = orderNo;
     }
 
     public Boolean getIsActive() {
@@ -156,6 +166,7 @@ public class CropDTO implements Serializable {
             ", name='" + getName() + "'" +
             ", imagePath='" + getImagePath() + "'" +
             ", description='" + getDescription() + "'" +
+            ", orderNo=" + getOrderNo() +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +

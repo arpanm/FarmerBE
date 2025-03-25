@@ -35,6 +35,9 @@ public class Accessories implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "order_no")
+    private Long orderNo;
+
     @Column(name = "is_active")
     private Boolean isActive;
 
@@ -60,7 +63,7 @@ public class Accessories implements Serializable {
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "accessories")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "addresses", "documents", "accessories", "crops", "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "addresses", "documents", "crops", "accessories", "farmer" }, allowSetters = true)
     private Set<Farm> farms = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -115,6 +118,19 @@ public class Accessories implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getOrderNo() {
+        return this.orderNo;
+    }
+
+    public Accessories orderNo(Long orderNo) {
+        this.setOrderNo(orderNo);
+        return this;
+    }
+
+    public void setOrderNo(Long orderNo) {
+        this.orderNo = orderNo;
     }
 
     public Boolean getIsActive() {
@@ -253,6 +269,7 @@ public class Accessories implements Serializable {
             ", name='" + getName() + "'" +
             ", imagePath='" + getImagePath() + "'" +
             ", description='" + getDescription() + "'" +
+            ", orderNo=" + getOrderNo() +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +

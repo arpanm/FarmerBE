@@ -86,6 +86,13 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "bankDetails",
+      "otherEntityRelationshipName": "farmer",
+      "relationshipName": "bankDetails",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "termsAndCondition",
       "otherEntityRelationshipName": "farmer",
       "relationshipName": "termsAndCondition",

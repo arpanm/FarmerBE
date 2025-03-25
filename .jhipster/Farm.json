@@ -69,16 +69,16 @@
       "relationshipType": "one-to-many"
     },
     {
-      "otherEntityName": "accessories",
+      "otherEntityName": "crop",
       "otherEntityRelationshipName": "farm",
-      "relationshipName": "accessories",
+      "relationshipName": "crop",
       "relationshipSide": "left",
       "relationshipType": "many-to-many"
     },
     {
-      "otherEntityName": "crop",
+      "otherEntityName": "accessories",
       "otherEntityRelationshipName": "farm",
-      "relationshipName": "crop",
+      "relationshipName": "accessories",
       "relationshipSide": "left",
       "relationshipType": "many-to-many"
     },

@@ -7,6 +7,7 @@ export interface ICrop {
   name?: string | null;
   imagePath?: string | null;
   description?: string | null;
+  orderNo?: number | null;
   isActive?: boolean | null;
   createddBy?: string;
   createdTime?: dayjs.Dayjs;

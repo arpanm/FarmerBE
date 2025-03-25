@@ -12,7 +12,7 @@
     {
       "fieldName": "docType",
       "fieldType": "DocumentType",
-      "fieldValues": "AddressProof,RelationshipProof,FarmDocument,IdProof,ProfileImage,Other"
+      "fieldValues": "AddressProof,RelationshipProof,FarmDocument,IdProof,ProfileImage,CanceledCheque,BankStatement,Other"
     },
     {
       "fieldName": "docFormat",
@@ -56,6 +56,24 @@
     {
       "otherEntityName": "farm",
       "relationshipName": "farm",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "address",
+      "relationshipName": "address",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "panDetails",
+      "relationshipName": "panDetails",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "bankDetails",
+      "relationshipName": "bankDetails",
       "relationshipSide": "right",
       "relationshipType": "many-to-one"
     }

@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -74,12 +76,20 @@ public class Address implements Serializable {
     @Column(name = "updated_time", nullable = false)
     private Instant updatedTime;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "address")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
+    private Set<Document> documents = new HashSet<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "farms", "addresses", "panDetails", "termsAndConditions", "documents", "otps" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "farms", "addresses", "panDetails", "bankDetails", "termsAndConditions", "documents", "otps" },
+        allowSetters = true
+    )
     private Farmer farmer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "addresses", "documents", "accessories", "crops", "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "addresses", "documents", "crops", "accessories", "farmer" }, allowSetters = true)
     private Farm farm;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -277,6 +287,37 @@ public class Address implements Serializable {
 
     public void setUpdatedTime(Instant updatedTime) {
         this.updatedTime = updatedTime;
+    }
+
+    public Set<Document> getDocuments() {
+        return this.documents;
+    }
+
+    public void setDocuments(Set<Document> documents) {
+        if (this.documents != null) {
+            this.documents.forEach(i -> i.setAddress(null));
+        }
+        if (documents != null) {
+            documents.forEach(i -> i.setAddress(this));
+        }
+        this.documents = documents;
+    }
+
+    public Address documents(Set<Document> documents) {
+        this.setDocuments(documents);
+        return this;
+    }
+
+    public Address addDocument(Document document) {
+        this.documents.add(document);
+        document.setAddress(this);
+        return this;
+    }
+
+    public Address removeDocument(Document document) {
+        this.documents.remove(document);
+        document.setAddress(null);
+        return this;
     }
 
     public Farmer getFarmer() {

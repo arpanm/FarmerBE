@@ -21,6 +21,7 @@
       "name": "Name",
       "imagePath": "Image Path",
       "description": "Description",
+      "orderNo": "Order No",
       "isActive": "Is Active",
       "createddBy": "Createdd By",
       "createdTime": "Created Time",

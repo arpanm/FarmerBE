@@ -70,8 +70,8 @@ public class FarmAsserts {
     public static void assertFarmUpdatableRelationshipsEquals(Farm expected, Farm actual) {
         assertThat(actual)
             .as("Verify Farm relationships")
-            .satisfies(a -> assertThat(a.getAccessories()).as("check accessories").isEqualTo(expected.getAccessories()))
             .satisfies(a -> assertThat(a.getCrops()).as("check crops").isEqualTo(expected.getCrops()))
+            .satisfies(a -> assertThat(a.getAccessories()).as("check accessories").isEqualTo(expected.getAccessories()))
             .satisfies(a -> assertThat(a.getFarmer()).as("check farmer").isEqualTo(expected.getFarmer()));
     }
 }

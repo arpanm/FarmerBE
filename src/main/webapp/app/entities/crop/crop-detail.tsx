@@ -51,6 +51,12 @@ export const CropDetail = () => {
           </dt>
           <dd>{cropEntity.description}</dd>
           <dt>
+            <span id="orderNo">
+              <Translate contentKey="farmerBeApp.crop.orderNo">Order No</Translate>
+            </span>
+          </dt>
+          <dd>{cropEntity.orderNo}</dd>
+          <dt>
             <span id="isActive">
               <Translate contentKey="farmerBeApp.crop.isActive">Is Active</Translate>
             </span>

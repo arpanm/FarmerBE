@@ -15,6 +15,7 @@ public class AccessoriesTestSamples {
             .name("name1")
             .imagePath("imagePath1")
             .description("description1")
+            .orderNo(1L)
             .createddBy("createddBy1")
             .updatedBy("updatedBy1");
     }
@@ -25,6 +26,7 @@ public class AccessoriesTestSamples {
             .name("name2")
             .imagePath("imagePath2")
             .description("description2")
+            .orderNo(2L)
             .createddBy("createddBy2")
             .updatedBy("updatedBy2");
     }
@@ -35,6 +37,7 @@ public class AccessoriesTestSamples {
             .name(UUID.randomUUID().toString())
             .imagePath(UUID.randomUUID().toString())
             .description(UUID.randomUUID().toString())
+            .orderNo(longCount.incrementAndGet())
             .createddBy(UUID.randomUUID().toString())
             .updatedBy(UUID.randomUUID().toString());
     }

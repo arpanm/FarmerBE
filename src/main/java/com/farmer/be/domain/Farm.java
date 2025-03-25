@@ -64,13 +64,19 @@ public class Farm implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "documents", "farmer", "farm" }, allowSetters = true)
     private Set<Address> addresses = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "category", "farms" }, allowSetters = true)
+    private Set<Crop> crops = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -82,14 +88,11 @@ public class Farm implements Serializable {
     @JsonIgnoreProperties(value = { "category", "farms" }, allowSetters = true)
     private Set<Accessories> accessories = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "category", "farms" }, allowSetters = true)
-    private Set<Crop> crops = new HashSet<>();
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "farms", "addresses", "panDetails", "termsAndConditions", "documents", "otps" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "farms", "addresses", "panDetails", "bankDetails", "termsAndConditions", "documents", "otps" },
+        allowSetters = true
+    )
     private Farmer farmer;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -299,29 +302,6 @@ public class Farm implements Serializable {
         return this;
     }
 
-    public Set<Accessories> getAccessories() {
-        return this.accessories;
-    }
-
-    public void setAccessories(Set<Accessories> accessories) {
-        this.accessories = accessories;
-    }
-
-    public Farm accessories(Set<Accessories> accessories) {
-        this.setAccessories(accessories);
-        return this;
-    }
-
-    public Farm addAccessories(Accessories accessories) {
-        this.accessories.add(accessories);
-        return this;
-    }
-
-    public Farm removeAccessories(Accessories accessories) {
-        this.accessories.remove(accessories);
-        return this;
-    }
-
     public Set<Crop> getCrops() {
         return this.crops;
     }
@@ -342,6 +322,29 @@ public class Farm implements Serializable {
 
     public Farm removeCrop(Crop crop) {
         this.crops.remove(crop);
+        return this;
+    }
+
+    public Set<Accessories> getAccessories() {
+        return this.accessories;
+    }
+
+    public void setAccessories(Set<Accessories> accessories) {
+        this.accessories = accessories;
+    }
+
+    public Farm accessories(Set<Accessories> accessories) {
+        this.setAccessories(accessories);
+        return this;
+    }
+
+    public Farm addAccessories(Accessories accessories) {
+        this.accessories.add(accessories);
+        return this;
+    }
+
+    public Farm removeAccessories(Accessories accessories) {
+        this.accessories.remove(accessories);
         return this;
     }
 

@@ -1,6 +1,7 @@
 package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.BankDetailsTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
@@ -94,6 +95,28 @@ class FarmerTest {
         farmer.setPanDetails(new HashSet<>());
         assertThat(farmer.getPanDetails()).doesNotContain(panDetailsBack);
         assertThat(panDetailsBack.getFarmer()).isNull();
+    }
+
+    @Test
+    void bankDetailsTest() {
+        Farmer farmer = getFarmerRandomSampleGenerator();
+        BankDetails bankDetailsBack = getBankDetailsRandomSampleGenerator();
+
+        farmer.addBankDetails(bankDetailsBack);
+        assertThat(farmer.getBankDetails()).containsOnly(bankDetailsBack);
+        assertThat(bankDetailsBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.removeBankDetails(bankDetailsBack);
+        assertThat(farmer.getBankDetails()).doesNotContain(bankDetailsBack);
+        assertThat(bankDetailsBack.getFarmer()).isNull();
+
+        farmer.bankDetails(new HashSet<>(Set.of(bankDetailsBack)));
+        assertThat(farmer.getBankDetails()).containsOnly(bankDetailsBack);
+        assertThat(bankDetailsBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.setBankDetails(new HashSet<>());
+        assertThat(farmer.getBankDetails()).doesNotContain(bankDetailsBack);
+        assertThat(bankDetailsBack.getFarmer()).isNull();
     }
 
     @Test

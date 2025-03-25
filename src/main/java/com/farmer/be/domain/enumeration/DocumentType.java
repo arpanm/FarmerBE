@@ -9,5 +9,7 @@ public enum DocumentType {
     FarmDocument,
     IdProof,
     ProfileImage,
+    CanceledCheque,
+    BankStatement,
     Other,
 }

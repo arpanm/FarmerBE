@@ -9,5 +9,9 @@ export enum DocumentType {
 
   ProfileImage = 'ProfileImage',
 
+  CanceledCheque = 'CanceledCheque',
+
+  BankStatement = 'BankStatement',
+
   Other = 'Other',
 }

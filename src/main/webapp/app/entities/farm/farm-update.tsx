@@ -8,8 +8,8 @@ import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateT
 import { mapIdList } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
-import { getEntities as getAccessories } from 'app/entities/accessories/accessories.reducer';
 import { getEntities as getCrops } from 'app/entities/crop/crop.reducer';
+import { getEntities as getAccessories } from 'app/entities/accessories/accessories.reducer';
 import { getEntities as getFarmers } from 'app/entities/farmer/farmer.reducer';
 import { FarmType } from 'app/shared/model/enumerations/farm-type.model';
 import { createEntity, getEntity, updateEntity } from './farm.reducer';
@@ -22,8 +22,8 @@ export const FarmUpdate = () => {
   const { id } = useParams<'id'>();
   const isNew = id === undefined;
 
-  const accessories = useAppSelector(state => state.accessories.entities);
   const crops = useAppSelector(state => state.crop.entities);
+  const accessories = useAppSelector(state => state.accessories.entities);
   const farmers = useAppSelector(state => state.farmer.entities);
   const farmEntity = useAppSelector(state => state.farm.entity);
   const loading = useAppSelector(state => state.farm.loading);
@@ -40,8 +40,8 @@ export const FarmUpdate = () => {
       dispatch(getEntity(id));
     }
 
-    dispatch(getAccessories({}));
     dispatch(getCrops({}));
+    dispatch(getAccessories({}));
     dispatch(getFarmers({}));
   }, []);
 
@@ -64,8 +64,8 @@ export const FarmUpdate = () => {
     const entity = {
       ...farmEntity,
       ...values,
-      accessories: mapIdList(values.accessories),
       crops: mapIdList(values.crops),
+      accessories: mapIdList(values.accessories),
       farmer: farmers.find(it => it.id.toString() === values.farmer?.toString()),
     };
 
@@ -87,8 +87,8 @@ export const FarmUpdate = () => {
           ...farmEntity,
           createdTime: convertDateTimeFromServer(farmEntity.createdTime),
           updatedTime: convertDateTimeFromServer(farmEntity.updatedTime),
-          accessories: farmEntity?.accessories?.map(e => e.id.toString()),
           crops: farmEntity?.crops?.map(e => e.id.toString()),
+          accessories: farmEntity?.accessories?.map(e => e.id.toString()),
           farmer: farmEntity?.farmer?.id,
         };
 
@@ -208,6 +208,16 @@ export const FarmUpdate = () => {
                   required: { value: true, message: translate('entity.validation.required') },
                 }}
               />
+              <ValidatedField label={translate('farmerBeApp.farm.crop')} id="farm-crop" data-cy="crop" type="select" multiple name="crops">
+                <option value="" key="0" />
+                {crops
+                  ? crops.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
               <ValidatedField
                 label={translate('farmerBeApp.farm.accessories')}
                 id="farm-accessories"
@@ -219,16 +229,6 @@ export const FarmUpdate = () => {
                 <option value="" key="0" />
                 {accessories
                   ? accessories.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
-                      </option>
-                    ))
-                  : null}
-              </ValidatedField>
-              <ValidatedField label={translate('farmerBeApp.farm.crop')} id="farm-crop" data-cy="crop" type="select" multiple name="crops">
-                <option value="" key="0" />
-                {crops
-                  ? crops.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

@@ -64,6 +64,13 @@
   "pagination": "infinite-scroll",
   "relationships": [
     {
+      "otherEntityName": "document",
+      "otherEntityRelationshipName": "panDetails",
+      "relationshipName": "document",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "farmer",
       "relationshipName": "farmer",
       "relationshipSide": "right",

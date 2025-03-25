@@ -23,5 +23,26 @@
                                  referencedColumnNames="id"
                                  referencedTableName="farm"
                                  />
+
+        <addForeignKeyConstraint baseColumnNames="address_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="address"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="pan_details_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__pan_details_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pan_details"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="bank_details_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__bank_details_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bank_details"
+                                 />
     </changeSet>
 </databaseChangeLog>

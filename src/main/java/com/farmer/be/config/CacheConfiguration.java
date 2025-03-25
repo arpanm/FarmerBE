@@ -55,19 +55,22 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".farms");
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".addresses");
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".panDetails");
+            createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".bankDetails");
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".termsAndConditions");
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".documents");
             createCache(cm, com.farmer.be.domain.Farmer.class.getName() + ".otps");
             createCache(cm, com.farmer.be.domain.Address.class.getName());
+            createCache(cm, com.farmer.be.domain.Address.class.getName() + ".documents");
             createCache(cm, com.farmer.be.domain.Document.class.getName());
             createCache(cm, com.farmer.be.domain.Otp.class.getName());
             createCache(cm, com.farmer.be.domain.PanDetails.class.getName());
+            createCache(cm, com.farmer.be.domain.PanDetails.class.getName() + ".documents");
             createCache(cm, com.farmer.be.domain.TermsAndCondition.class.getName());
             createCache(cm, com.farmer.be.domain.Farm.class.getName());
             createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".addresses");
             createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".documents");
-            createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".accessories");
             createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".crops");
+            createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".accessories");
             createCache(cm, com.farmer.be.domain.Category.class.getName());
             createCache(cm, com.farmer.be.domain.Category.class.getName() + ".categories");
             createCache(cm, com.farmer.be.domain.Category.class.getName() + ".crops");
@@ -76,6 +79,8 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.Crop.class.getName() + ".farms");
             createCache(cm, com.farmer.be.domain.Accessories.class.getName());
             createCache(cm, com.farmer.be.domain.Accessories.class.getName() + ".farms");
+            createCache(cm, com.farmer.be.domain.BankDetails.class.getName());
+            createCache(cm, com.farmer.be.domain.BankDetails.class.getName() + ".documents");
             // jhipster-needle-ehcache-add-entry
         };
     }

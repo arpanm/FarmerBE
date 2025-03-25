@@ -1,11 +1,14 @@
 package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 class AddressTest {
@@ -22,6 +25,28 @@ class AddressTest {
 
         address2 = getAddressSample2();
         assertThat(address1).isNotEqualTo(address2);
+    }
+
+    @Test
+    void documentTest() {
+        Address address = getAddressRandomSampleGenerator();
+        Document documentBack = getDocumentRandomSampleGenerator();
+
+        address.addDocument(documentBack);
+        assertThat(address.getDocuments()).containsOnly(documentBack);
+        assertThat(documentBack.getAddress()).isEqualTo(address);
+
+        address.removeDocument(documentBack);
+        assertThat(address.getDocuments()).doesNotContain(documentBack);
+        assertThat(documentBack.getAddress()).isNull();
+
+        address.documents(new HashSet<>(Set.of(documentBack)));
+        assertThat(address.getDocuments()).containsOnly(documentBack);
+        assertThat(documentBack.getAddress()).isEqualTo(address);
+
+        address.setDocuments(new HashSet<>());
+        assertThat(address.getDocuments()).doesNotContain(documentBack);
+        assertThat(documentBack.getAddress()).isNull();
     }
 
     @Test

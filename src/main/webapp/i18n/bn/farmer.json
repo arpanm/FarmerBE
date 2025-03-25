@@ -32,6 +32,7 @@
       "farm": "Farm",
       "address": "Address",
       "panDetails": "Pan Details",
+      "bankDetails": "Bank Details",
       "termsAndCondition": "Terms And Condition",
       "document": "Document",
       "otp": "Otp"

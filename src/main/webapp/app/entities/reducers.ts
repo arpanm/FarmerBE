@@ -9,6 +9,7 @@ import farm from 'app/entities/farm/farm.reducer';
 import category from 'app/entities/category/category.reducer';
 import crop from 'app/entities/crop/crop.reducer';
 import accessories from 'app/entities/accessories/accessories.reducer';
+import bankDetails from 'app/entities/bank-details/bank-details.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -23,6 +24,7 @@ const entitiesReducers = {
   category,
   crop,
   accessories,
+  bankDetails,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

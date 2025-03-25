@@ -18,6 +18,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "orderNo",
+      "fieldType": "Long"
+    },
+    {
       "fieldName": "isActive",
       "fieldType": "Boolean"
     },
