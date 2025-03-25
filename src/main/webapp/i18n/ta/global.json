@@ -15,7 +15,8 @@
         "otp": "Otp",
         "panDetails": "Pan Details",
         "termsAndCondition": "Terms And Condition",
-        "farm": "Farm"
+        "farm": "Farm",
+        "category": "Category"
       },
       "account": {
         "main": "கணக்கு",
