@@ -23,6 +23,35 @@ enum Language {
     Kashmiri
 }
 
+entity BannerContent {
+	bannerTag String required,
+    logoPath String,
+    imagePath String,
+    heading String,
+    subHeading String,
+    description String,
+    link String,
+    startTime Instant,
+    endTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+entity Carousel {
+	carouselTag String required,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Caraosel to BannerContent{carousel}
+}
 
 entity Farmer {
 	name String,
@@ -239,6 +268,7 @@ entity Crop {
     imagePath String,
     description String,
     orderNo Long,
+    skuId String,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
@@ -259,6 +289,7 @@ entity Accessories {
     imagePath String,
     description String,
     orderNo Long,
+    skuId String,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
@@ -274,6 +305,139 @@ relationship ManyToMany {
 	Farm to Accessories
 }
 
+entity Demand {
+	demandDate LocalDate,
+    demandValue Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Crop to Demand{crop}
+}
+
+
+entity Price {
+	priceDate LocalDate,
+    priceValue Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Crop to Price{crop}
+}
+
+entity HervestPlan {
+	hervestPlanDate LocalDate,
+    hervestPlanValue Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farm to HervestPlan{farm}
+}
+
+relationship OneToMany {
+	Crop to HervestPlan{crop}
+}
+
+entity SupplyConfirmation {
+	confirmDate LocalDate,
+    confirmValue Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farm to SupplyConfirmation{farm}
+}
+
+relationship OneToMany {
+	Crop to SupplyConfirmation{crop}
+}
+
+entity PickUpConfirmation {
+	confirmDate LocalDate,
+    confirmValue Float,
+    pickupBy String,
+    pickupTime String,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farm to PickUpConfirmation{farm}
+}
+
+relationship OneToMany {
+	Crop to PickUpConfirmation{crop}
+}
+
+entity PickupGradation {
+	grade Grade,
+    gradedBy String,
+    gradedTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum Grade {
+	Good,
+    Moderate,
+    Bad,
+    Reject,
+    Other
+}
+
+relationship OneToOne {
+	PickUpConfirmation to PickupGradation{pickupItem}
+}
+
+entity PickupPayment {
+	paymentStatus PaymentStatus,
+    transactionId String,
+    paymentDate LocalDate,
+    details String,
+    paymentUpdatedBy String,
+    paymentUpdatedTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum PaymentStatus {
+	Good,
+    Moderate,
+    Bad,
+    Reject,
+    Other
+}
+
+relationship OneToOne {
+	PickUpConfirmation to PickupPayment{pickupItem}
+}
 
 application {
   config {
