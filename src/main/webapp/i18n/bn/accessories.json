@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "accessories": {
+      "home": {
+        "title": "Accessories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Accessories",
+        "createOrEditLabel": "Create or edit a Accessories",
+        "notFound": "No Accessories found"
+      },
+      "created": "A new Accessories is created with identifier {{ param }}",
+      "updated": "A Accessories is updated with identifier {{ param }}",
+      "deleted": "A Accessories is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Accessories {{ id }}?"
+      },
+      "detail": {
+        "title": "Accessories"
+      },
+      "id": "ID",
+      "name": "Name",
+      "imagePath": "Image Path",
+      "description": "Description",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "category": "Category"
+    }
+  }
+}

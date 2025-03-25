@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "accessories": {
+      "home": {
+        "title": "Accessories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Accessories-ஐ உருவாக்கு",
+        "createOrEditLabel": "Accessories -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Accessories found"
+      },
+      "created": "Accessories புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Accessories மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Accessories நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Accessories {{ id }}?"
+      },
+      "detail": {
+        "title": "Accessories"
+      },
+      "id": "ID",
+      "name": "Name",
+      "imagePath": "Image Path",
+      "description": "Description",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "category": "Category"
+    }
+  }
+}

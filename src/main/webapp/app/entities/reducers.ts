@@ -7,6 +7,8 @@ import panDetails from 'app/entities/pan-details/pan-details.reducer';
 import termsAndCondition from 'app/entities/terms-and-condition/terms-and-condition.reducer';
 import farm from 'app/entities/farm/farm.reducer';
 import category from 'app/entities/category/category.reducer';
+import crop from 'app/entities/crop/crop.reducer';
+import accessories from 'app/entities/accessories/accessories.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -19,6 +21,8 @@ const entitiesReducers = {
   termsAndCondition,
   farm,
   category,
+  crop,
+  accessories,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

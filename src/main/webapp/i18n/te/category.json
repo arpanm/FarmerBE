@@ -27,6 +27,8 @@
       "updatedBy": "Updated By",
       "updatedTime": "Updated Time",
       "category": "Category",
+      "crop": "Crop",
+      "accessories": "Accessories",
       "parent": "Parent"
     }
   }

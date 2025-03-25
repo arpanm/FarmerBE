@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "accessories": {
+      "home": {
+        "title": "Accessories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Accessories बनाएँ",
+        "createOrEditLabel": "Accessories बनाएँ या संपादित करें",
+        "notFound": "No Accessories found"
+      },
+      "created": "एक नया Accessories [identifier: {{ param }}] तैयार है",
+      "updated": "एक Accessories [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Accessories [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Accessories [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Accessories"
+      },
+      "id": "ID",
+      "name": "Name",
+      "imagePath": "Image Path",
+      "description": "Description",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "category": "Category"
+    }
+  }
+}

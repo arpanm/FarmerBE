@@ -1,7 +1,9 @@
 package com.farmer.be.domain;
 
+import static com.farmer.be.domain.AccessoriesTestSamples.*;
 import static com.farmer.be.domain.CategoryTestSamples.*;
 import static com.farmer.be.domain.CategoryTestSamples.*;
+import static com.farmer.be.domain.CropTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -45,6 +47,50 @@ class CategoryTest {
         category.setCategories(new HashSet<>());
         assertThat(category.getCategories()).doesNotContain(categoryBack);
         assertThat(categoryBack.getParent()).isNull();
+    }
+
+    @Test
+    void cropTest() {
+        Category category = getCategoryRandomSampleGenerator();
+        Crop cropBack = getCropRandomSampleGenerator();
+
+        category.addCrop(cropBack);
+        assertThat(category.getCrops()).containsOnly(cropBack);
+        assertThat(cropBack.getCategory()).isEqualTo(category);
+
+        category.removeCrop(cropBack);
+        assertThat(category.getCrops()).doesNotContain(cropBack);
+        assertThat(cropBack.getCategory()).isNull();
+
+        category.crops(new HashSet<>(Set.of(cropBack)));
+        assertThat(category.getCrops()).containsOnly(cropBack);
+        assertThat(cropBack.getCategory()).isEqualTo(category);
+
+        category.setCrops(new HashSet<>());
+        assertThat(category.getCrops()).doesNotContain(cropBack);
+        assertThat(cropBack.getCategory()).isNull();
+    }
+
+    @Test
+    void accessoriesTest() {
+        Category category = getCategoryRandomSampleGenerator();
+        Accessories accessoriesBack = getAccessoriesRandomSampleGenerator();
+
+        category.addAccessories(accessoriesBack);
+        assertThat(category.getAccessories()).containsOnly(accessoriesBack);
+        assertThat(accessoriesBack.getCategory()).isEqualTo(category);
+
+        category.removeAccessories(accessoriesBack);
+        assertThat(category.getAccessories()).doesNotContain(accessoriesBack);
+        assertThat(accessoriesBack.getCategory()).isNull();
+
+        category.accessories(new HashSet<>(Set.of(accessoriesBack)));
+        assertThat(category.getAccessories()).containsOnly(accessoriesBack);
+        assertThat(accessoriesBack.getCategory()).isEqualTo(category);
+
+        category.setAccessories(new HashSet<>());
+        assertThat(category.getAccessories()).doesNotContain(accessoriesBack);
+        assertThat(accessoriesBack.getCategory()).isNull();
     }
 
     @Test

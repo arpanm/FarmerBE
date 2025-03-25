@@ -53,6 +53,20 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "crop",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "crop",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "accessories",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "accessories",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "category",
       "relationshipName": "parent",
       "relationshipSide": "right",

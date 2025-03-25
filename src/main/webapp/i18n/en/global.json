@@ -16,7 +16,9 @@
         "panDetails": "Pan Details",
         "termsAndCondition": "Terms And Condition",
         "farm": "Farm",
-        "category": "Category"
+        "category": "Category",
+        "crop": "Crop",
+        "accessories": "Accessories"
       },
       "account": {
         "main": "Account",
