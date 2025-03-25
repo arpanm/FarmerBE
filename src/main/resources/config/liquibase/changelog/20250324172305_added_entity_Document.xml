@@ -44,6 +44,15 @@
             <column name="farm_id" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="address_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="pan_details_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="bank_details_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="document" columnName="created_time" columnDataType="${datetimeType}"/>

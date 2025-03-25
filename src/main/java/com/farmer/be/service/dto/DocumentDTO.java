@@ -39,6 +39,12 @@ public class DocumentDTO implements Serializable {
 
     private FarmDTO farm;
 
+    private AddressDTO address;
+
+    private PanDetailsDTO panDetails;
+
+    private BankDetailsDTO bankDetails;
+
     public Long getId() {
         return id;
     }
@@ -127,6 +133,30 @@ public class DocumentDTO implements Serializable {
         this.farm = farm;
     }
 
+    public AddressDTO getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressDTO address) {
+        this.address = address;
+    }
+
+    public PanDetailsDTO getPanDetails() {
+        return panDetails;
+    }
+
+    public void setPanDetails(PanDetailsDTO panDetails) {
+        this.panDetails = panDetails;
+    }
+
+    public BankDetailsDTO getBankDetails() {
+        return bankDetails;
+    }
+
+    public void setBankDetails(BankDetailsDTO bankDetails) {
+        this.bankDetails = bankDetails;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -163,6 +193,9 @@ public class DocumentDTO implements Serializable {
             ", updatedTime='" + getUpdatedTime() + "'" +
             ", farmer=" + getFarmer() +
             ", farm=" + getFarm() +
+            ", address=" + getAddress() +
+            ", panDetails=" + getPanDetails() +
+            ", bankDetails=" + getBankDetails() +
             "}";
     }
 }

@@ -45,6 +45,9 @@ class AccessoriesResourceIT {
     private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
+    private static final Long DEFAULT_ORDER_NO = 1L;
+    private static final Long UPDATED_ORDER_NO = 2L;
+
     private static final Boolean DEFAULT_IS_ACTIVE = false;
     private static final Boolean UPDATED_IS_ACTIVE = true;
 
@@ -96,6 +99,7 @@ class AccessoriesResourceIT {
             .name(DEFAULT_NAME)
             .imagePath(DEFAULT_IMAGE_PATH)
             .description(DEFAULT_DESCRIPTION)
+            .orderNo(DEFAULT_ORDER_NO)
             .isActive(DEFAULT_IS_ACTIVE)
             .createddBy(DEFAULT_CREATEDD_BY)
             .createdTime(DEFAULT_CREATED_TIME)
@@ -114,6 +118,7 @@ class AccessoriesResourceIT {
             .name(UPDATED_NAME)
             .imagePath(UPDATED_IMAGE_PATH)
             .description(UPDATED_DESCRIPTION)
+            .orderNo(UPDATED_ORDER_NO)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
             .createdTime(UPDATED_CREATED_TIME)
@@ -259,6 +264,7 @@ class AccessoriesResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].imagePath").value(hasItem(DEFAULT_IMAGE_PATH)))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)))
+            .andExpect(jsonPath("$.[*].orderNo").value(hasItem(DEFAULT_ORDER_NO.intValue())))
             .andExpect(jsonPath("$.[*].isActive").value(hasItem(DEFAULT_IS_ACTIVE)))
             .andExpect(jsonPath("$.[*].createddBy").value(hasItem(DEFAULT_CREATEDD_BY)))
             .andExpect(jsonPath("$.[*].createdTime").value(hasItem(DEFAULT_CREATED_TIME.toString())))
@@ -281,6 +287,7 @@ class AccessoriesResourceIT {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.imagePath").value(DEFAULT_IMAGE_PATH))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION))
+            .andExpect(jsonPath("$.orderNo").value(DEFAULT_ORDER_NO.intValue()))
             .andExpect(jsonPath("$.isActive").value(DEFAULT_IS_ACTIVE))
             .andExpect(jsonPath("$.createddBy").value(DEFAULT_CREATEDD_BY))
             .andExpect(jsonPath("$.createdTime").value(DEFAULT_CREATED_TIME.toString()))
@@ -311,6 +318,7 @@ class AccessoriesResourceIT {
             .name(UPDATED_NAME)
             .imagePath(UPDATED_IMAGE_PATH)
             .description(UPDATED_DESCRIPTION)
+            .orderNo(UPDATED_ORDER_NO)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
             .createdTime(UPDATED_CREATED_TIME)
@@ -405,7 +413,7 @@ class AccessoriesResourceIT {
         Accessories partialUpdatedAccessories = new Accessories();
         partialUpdatedAccessories.setId(accessories.getId());
 
-        partialUpdatedAccessories.updatedBy(UPDATED_UPDATED_BY);
+        partialUpdatedAccessories.createdTime(UPDATED_CREATED_TIME).updatedTime(UPDATED_UPDATED_TIME);
 
         restAccessoriesMockMvc
             .perform(
@@ -440,6 +448,7 @@ class AccessoriesResourceIT {
             .name(UPDATED_NAME)
             .imagePath(UPDATED_IMAGE_PATH)
             .description(UPDATED_DESCRIPTION)
+            .orderNo(UPDATED_ORDER_NO)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
             .createdTime(UPDATED_CREATED_TIME)

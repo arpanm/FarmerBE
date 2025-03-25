@@ -1,8 +1,11 @@
 package com.farmer.be.domain;
 
+import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.BankDetailsTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
+import static com.farmer.be.domain.PanDetailsTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -46,5 +49,41 @@ class DocumentTest {
 
         document.farm(null);
         assertThat(document.getFarm()).isNull();
+    }
+
+    @Test
+    void addressTest() {
+        Document document = getDocumentRandomSampleGenerator();
+        Address addressBack = getAddressRandomSampleGenerator();
+
+        document.setAddress(addressBack);
+        assertThat(document.getAddress()).isEqualTo(addressBack);
+
+        document.address(null);
+        assertThat(document.getAddress()).isNull();
+    }
+
+    @Test
+    void panDetailsTest() {
+        Document document = getDocumentRandomSampleGenerator();
+        PanDetails panDetailsBack = getPanDetailsRandomSampleGenerator();
+
+        document.setPanDetails(panDetailsBack);
+        assertThat(document.getPanDetails()).isEqualTo(panDetailsBack);
+
+        document.panDetails(null);
+        assertThat(document.getPanDetails()).isNull();
+    }
+
+    @Test
+    void bankDetailsTest() {
+        Document document = getDocumentRandomSampleGenerator();
+        BankDetails bankDetailsBack = getBankDetailsRandomSampleGenerator();
+
+        document.setBankDetails(bankDetailsBack);
+        assertThat(document.getBankDetails()).isEqualTo(bankDetailsBack);
+
+        document.bankDetails(null);
+        assertThat(document.getBankDetails()).isNull();
     }
 }

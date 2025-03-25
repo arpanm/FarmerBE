@@ -51,6 +51,12 @@ export const AccessoriesDetail = () => {
           </dt>
           <dd>{accessoriesEntity.description}</dd>
           <dt>
+            <span id="orderNo">
+              <Translate contentKey="farmerBeApp.accessories.orderNo">Order No</Translate>
+            </span>
+          </dt>
+          <dd>{accessoriesEntity.orderNo}</dd>
+          <dt>
             <span id="isActive">
               <Translate contentKey="farmerBeApp.accessories.isActive">Is Active</Translate>
             </span>

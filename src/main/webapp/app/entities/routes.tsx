@@ -14,6 +14,7 @@ import Farm from './farm';
 import Category from './category';
 import Crop from './crop';
 import Accessories from './accessories';
+import BankDetails from './bank-details';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -32,6 +33,7 @@ export default () => {
         <Route path="category/*" element={<Category />} />
         <Route path="crop/*" element={<Crop />} />
         <Route path="accessories/*" element={<Accessories />} />
+        <Route path="bank-details/*" element={<BankDetails />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

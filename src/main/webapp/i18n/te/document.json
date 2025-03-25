@@ -27,7 +27,10 @@
       "updatedBy": "Updated By",
       "updatedTime": "Updated Time",
       "farmer": "Farmer",
-      "farm": "Farm"
+      "farm": "Farm",
+      "address": "Address",
+      "panDetails": "Pan Details",
+      "bankDetails": "Bank Details"
     }
   }
 }

@@ -74,24 +74,6 @@ class FarmTest {
     }
 
     @Test
-    void accessoriesTest() {
-        Farm farm = getFarmRandomSampleGenerator();
-        Accessories accessoriesBack = getAccessoriesRandomSampleGenerator();
-
-        farm.addAccessories(accessoriesBack);
-        assertThat(farm.getAccessories()).containsOnly(accessoriesBack);
-
-        farm.removeAccessories(accessoriesBack);
-        assertThat(farm.getAccessories()).doesNotContain(accessoriesBack);
-
-        farm.accessories(new HashSet<>(Set.of(accessoriesBack)));
-        assertThat(farm.getAccessories()).containsOnly(accessoriesBack);
-
-        farm.setAccessories(new HashSet<>());
-        assertThat(farm.getAccessories()).doesNotContain(accessoriesBack);
-    }
-
-    @Test
     void cropTest() {
         Farm farm = getFarmRandomSampleGenerator();
         Crop cropBack = getCropRandomSampleGenerator();
@@ -107,6 +89,24 @@ class FarmTest {
 
         farm.setCrops(new HashSet<>());
         assertThat(farm.getCrops()).doesNotContain(cropBack);
+    }
+
+    @Test
+    void accessoriesTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        Accessories accessoriesBack = getAccessoriesRandomSampleGenerator();
+
+        farm.addAccessories(accessoriesBack);
+        assertThat(farm.getAccessories()).containsOnly(accessoriesBack);
+
+        farm.removeAccessories(accessoriesBack);
+        assertThat(farm.getAccessories()).doesNotContain(accessoriesBack);
+
+        farm.accessories(new HashSet<>(Set.of(accessoriesBack)));
+        assertThat(farm.getAccessories()).containsOnly(accessoriesBack);
+
+        farm.setAccessories(new HashSet<>());
+        assertThat(farm.getAccessories()).doesNotContain(accessoriesBack);
     }
 
     @Test

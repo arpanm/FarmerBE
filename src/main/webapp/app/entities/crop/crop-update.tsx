@@ -50,6 +50,9 @@ export const CropUpdate = () => {
     if (values.id !== undefined && typeof values.id !== 'number') {
       values.id = Number(values.id);
     }
+    if (values.orderNo !== undefined && typeof values.orderNo !== 'number') {
+      values.orderNo = Number(values.orderNo);
+    }
     values.createdTime = convertDateTimeToServer(values.createdTime);
     values.updatedTime = convertDateTimeToServer(values.updatedTime);
 
@@ -119,6 +122,13 @@ export const CropUpdate = () => {
                 id="crop-description"
                 name="description"
                 data-cy="description"
+                type="text"
+              />
+              <ValidatedField
+                label={translate('farmerBeApp.crop.orderNo')}
+                id="crop-orderNo"
+                name="orderNo"
+                data-cy="orderNo"
                 type="text"
               />
               <ValidatedField

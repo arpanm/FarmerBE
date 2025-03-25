@@ -73,18 +73,23 @@ public class Farmer implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "addresses", "documents", "accessories", "crops", "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "addresses", "documents", "crops", "accessories", "farmer" }, allowSetters = true)
     private Set<Farm> farms = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "documents", "farmer", "farm" }, allowSetters = true)
     private Set<Address> addresses = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "documents", "farmer" }, allowSetters = true)
     private Set<PanDetails> panDetails = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "documents", "farmer" }, allowSetters = true)
+    private Set<BankDetails> bankDetails = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -93,7 +98,7 @@ public class Farmer implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
@@ -349,6 +354,37 @@ public class Farmer implements Serializable {
     public Farmer removePanDetails(PanDetails panDetails) {
         this.panDetails.remove(panDetails);
         panDetails.setFarmer(null);
+        return this;
+    }
+
+    public Set<BankDetails> getBankDetails() {
+        return this.bankDetails;
+    }
+
+    public void setBankDetails(Set<BankDetails> bankDetails) {
+        if (this.bankDetails != null) {
+            this.bankDetails.forEach(i -> i.setFarmer(null));
+        }
+        if (bankDetails != null) {
+            bankDetails.forEach(i -> i.setFarmer(this));
+        }
+        this.bankDetails = bankDetails;
+    }
+
+    public Farmer bankDetails(Set<BankDetails> bankDetails) {
+        this.setBankDetails(bankDetails);
+        return this;
+    }
+
+    public Farmer addBankDetails(BankDetails bankDetails) {
+        this.bankDetails.add(bankDetails);
+        bankDetails.setFarmer(this);
+        return this;
+    }
+
+    public Farmer removeBankDetails(BankDetails bankDetails) {
+        this.bankDetails.remove(bankDetails);
+        bankDetails.setFarmer(null);
         return this;
     }
 

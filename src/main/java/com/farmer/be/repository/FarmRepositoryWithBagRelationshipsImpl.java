@@ -24,7 +24,7 @@ public class FarmRepositoryWithBagRelationshipsImpl implements FarmRepositoryWit
 
     @Override
     public Optional<Farm> fetchBagRelationships(Optional<Farm> farm) {
-        return farm.map(this::fetchAccessories).map(this::fetchCrops);
+        return farm.map(this::fetchCrops).map(this::fetchAccessories);
     }
 
     @Override
@@ -34,25 +34,7 @@ public class FarmRepositoryWithBagRelationshipsImpl implements FarmRepositoryWit
 
     @Override
     public List<Farm> fetchBagRelationships(List<Farm> farms) {
-        return Optional.of(farms).map(this::fetchAccessories).map(this::fetchCrops).orElse(Collections.emptyList());
-    }
-
-    Farm fetchAccessories(Farm result) {
-        return entityManager
-            .createQuery("select farm from Farm farm left join fetch farm.accessories where farm.id = :id", Farm.class)
-            .setParameter(ID_PARAMETER, result.getId())
-            .getSingleResult();
-    }
-
-    List<Farm> fetchAccessories(List<Farm> farms) {
-        HashMap<Object, Integer> order = new HashMap<>();
-        IntStream.range(0, farms.size()).forEach(index -> order.put(farms.get(index).getId(), index));
-        List<Farm> result = entityManager
-            .createQuery("select farm from Farm farm left join fetch farm.accessories where farm in :farms", Farm.class)
-            .setParameter(FARMS_PARAMETER, farms)
-            .getResultList();
-        Collections.sort(result, (o1, o2) -> Integer.compare(order.get(o1.getId()), order.get(o2.getId())));
-        return result;
+        return Optional.of(farms).map(this::fetchCrops).map(this::fetchAccessories).orElse(Collections.emptyList());
     }
 
     Farm fetchCrops(Farm result) {
@@ -67,6 +49,24 @@ public class FarmRepositoryWithBagRelationshipsImpl implements FarmRepositoryWit
         IntStream.range(0, farms.size()).forEach(index -> order.put(farms.get(index).getId(), index));
         List<Farm> result = entityManager
             .createQuery("select farm from Farm farm left join fetch farm.crops where farm in :farms", Farm.class)
+            .setParameter(FARMS_PARAMETER, farms)
+            .getResultList();
+        Collections.sort(result, (o1, o2) -> Integer.compare(order.get(o1.getId()), order.get(o2.getId())));
+        return result;
+    }
+
+    Farm fetchAccessories(Farm result) {
+        return entityManager
+            .createQuery("select farm from Farm farm left join fetch farm.accessories where farm.id = :id", Farm.class)
+            .setParameter(ID_PARAMETER, result.getId())
+            .getSingleResult();
+    }
+
+    List<Farm> fetchAccessories(List<Farm> farms) {
+        HashMap<Object, Integer> order = new HashMap<>();
+        IntStream.range(0, farms.size()).forEach(index -> order.put(farms.get(index).getId(), index));
+        List<Farm> result = entityManager
+            .createQuery("select farm from Farm farm left join fetch farm.accessories where farm in :farms", Farm.class)
             .setParameter(FARMS_PARAMETER, farms)
             .getResultList();
         Collections.sort(result, (o1, o2) -> Integer.compare(order.get(o1.getId()), order.get(o2.getId())));

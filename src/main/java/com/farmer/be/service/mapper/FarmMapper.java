@@ -17,24 +17,14 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring")
 public interface FarmMapper extends EntityMapper<FarmDTO, Farm> {
-    @Mapping(target = "accessories", source = "accessories", qualifiedByName = "accessoriesIdSet")
     @Mapping(target = "crops", source = "crops", qualifiedByName = "cropIdSet")
+    @Mapping(target = "accessories", source = "accessories", qualifiedByName = "accessoriesIdSet")
     @Mapping(target = "farmer", source = "farmer", qualifiedByName = "farmerId")
     FarmDTO toDto(Farm s);
 
-    @Mapping(target = "removeAccessories", ignore = true)
     @Mapping(target = "removeCrop", ignore = true)
+    @Mapping(target = "removeAccessories", ignore = true)
     Farm toEntity(FarmDTO farmDTO);
-
-    @Named("accessoriesId")
-    @BeanMapping(ignoreByDefault = true)
-    @Mapping(target = "id", source = "id")
-    AccessoriesDTO toDtoAccessoriesId(Accessories accessories);
-
-    @Named("accessoriesIdSet")
-    default Set<AccessoriesDTO> toDtoAccessoriesIdSet(Set<Accessories> accessories) {
-        return accessories.stream().map(this::toDtoAccessoriesId).collect(Collectors.toSet());
-    }
 
     @Named("cropId")
     @BeanMapping(ignoreByDefault = true)
@@ -44,6 +34,16 @@ public interface FarmMapper extends EntityMapper<FarmDTO, Farm> {
     @Named("cropIdSet")
     default Set<CropDTO> toDtoCropIdSet(Set<Crop> crop) {
         return crop.stream().map(this::toDtoCropId).collect(Collectors.toSet());
+    }
+
+    @Named("accessoriesId")
+    @BeanMapping(ignoreByDefault = true)
+    @Mapping(target = "id", source = "id")
+    AccessoriesDTO toDtoAccessoriesId(Accessories accessories);
+
+    @Named("accessoriesIdSet")
+    default Set<AccessoriesDTO> toDtoAccessoriesIdSet(Set<Accessories> accessories) {
+        return accessories.stream().map(this::toDtoAccessoriesId).collect(Collectors.toSet());
     }
 
     @Named("farmerId")

@@ -119,6 +119,26 @@ relationship OneToMany {
 	Farmer to PanDetails{farmer}
 }
 
+
+entity BankDetails {
+	name String,
+    accountNumber String,
+    ifsC String,
+    bankName String,
+    branchName String,
+    isVerified Boolean,
+    verificationTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Farmer to BankDetails{farmer}
+}
+
 entity TermsAndCondition {
 	termsLink String,
     aggreedOn Instant,
@@ -150,6 +170,8 @@ enum DocumentType {
     FarmDocument,
     IdProof,
     ProfileImage,
+    CanceledCheque,
+    BankStatement,
     Other
 }
 
@@ -165,6 +187,18 @@ relationship OneToMany {
 
 relationship OneToMany {
 	Farm to Document{farm}
+}
+
+relationship OneToMany {
+	Address to Document{address}
+}
+
+relationship OneToMany {
+	PanDetails to Document{panDetails}
+}
+
+relationship OneToMany {
+	BankDetails to Document{bankDetails}
 }
 
 entity Otp {
@@ -204,6 +238,7 @@ entity Crop {
 	name String,
     imagePath String,
     description String,
+    orderNo Long,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
@@ -215,10 +250,15 @@ relationship OneToMany {
 	Category to Crop{category}
 }
 
+relationship ManyToMany {
+	Farm to Crop
+}
+
 entity Accessories {
 	name String,
     imagePath String,
     description String,
+    orderNo Long,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
@@ -234,9 +274,6 @@ relationship ManyToMany {
 	Farm to Accessories
 }
 
-relationship ManyToMany {
-	Farm to Crop
-}
 
 application {
   config {

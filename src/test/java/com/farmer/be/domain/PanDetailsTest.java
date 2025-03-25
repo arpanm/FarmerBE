@@ -1,10 +1,13 @@
 package com.farmer.be.domain;
 
+import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
 import static com.farmer.be.domain.PanDetailsTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 class PanDetailsTest {
@@ -21,6 +24,28 @@ class PanDetailsTest {
 
         panDetails2 = getPanDetailsSample2();
         assertThat(panDetails1).isNotEqualTo(panDetails2);
+    }
+
+    @Test
+    void documentTest() {
+        PanDetails panDetails = getPanDetailsRandomSampleGenerator();
+        Document documentBack = getDocumentRandomSampleGenerator();
+
+        panDetails.addDocument(documentBack);
+        assertThat(panDetails.getDocuments()).containsOnly(documentBack);
+        assertThat(documentBack.getPanDetails()).isEqualTo(panDetails);
+
+        panDetails.removeDocument(documentBack);
+        assertThat(panDetails.getDocuments()).doesNotContain(documentBack);
+        assertThat(documentBack.getPanDetails()).isNull();
+
+        panDetails.documents(new HashSet<>(Set.of(documentBack)));
+        assertThat(panDetails.getDocuments()).containsOnly(documentBack);
+        assertThat(documentBack.getPanDetails()).isEqualTo(panDetails);
+
+        panDetails.setDocuments(new HashSet<>());
+        assertThat(panDetails.getDocuments()).doesNotContain(documentBack);
+        assertThat(documentBack.getPanDetails()).isNull();
     }
 
     @Test

@@ -7,6 +7,8 @@ import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -68,8 +70,16 @@ public class PanDetails implements Serializable {
     @Column(name = "updated_time", nullable = false)
     private Instant updatedTime;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "panDetails")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
+    private Set<Document> documents = new HashSet<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "farms", "addresses", "panDetails", "termsAndConditions", "documents", "otps" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "farms", "addresses", "panDetails", "bankDetails", "termsAndConditions", "documents", "otps" },
+        allowSetters = true
+    )
     private Farmer farmer;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -241,6 +251,37 @@ public class PanDetails implements Serializable {
 
     public void setUpdatedTime(Instant updatedTime) {
         this.updatedTime = updatedTime;
+    }
+
+    public Set<Document> getDocuments() {
+        return this.documents;
+    }
+
+    public void setDocuments(Set<Document> documents) {
+        if (this.documents != null) {
+            this.documents.forEach(i -> i.setPanDetails(null));
+        }
+        if (documents != null) {
+            documents.forEach(i -> i.setPanDetails(this));
+        }
+        this.documents = documents;
+    }
+
+    public PanDetails documents(Set<Document> documents) {
+        this.setDocuments(documents);
+        return this;
+    }
+
+    public PanDetails addDocument(Document document) {
+        this.documents.add(document);
+        document.setPanDetails(this);
+        return this;
+    }
+
+    public PanDetails removeDocument(Document document) {
+        this.documents.remove(document);
+        document.setPanDetails(null);
+        return this;
     }
 
     public Farmer getFarmer() {

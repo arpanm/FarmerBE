@@ -11,20 +11,6 @@
     <changeSet id="20250325100302-2" author="jhipster">
 
         <addForeignKeyConstraint baseColumnNames="farm_id"
-                                 baseTableName="rel_farm__accessories"
-                                 constraintName="fk_rel_farm__accessories__farm_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="farm"
-                                 />
-
-        <addForeignKeyConstraint baseColumnNames="accessories_id"
-                                 baseTableName="rel_farm__accessories"
-                                 constraintName="fk_rel_farm__accessories__accessories_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="accessories"
-                                 />
-
-        <addForeignKeyConstraint baseColumnNames="farm_id"
                                  baseTableName="rel_farm__crop"
                                  constraintName="fk_rel_farm__crop__farm_id"
                                  referencedColumnNames="id"
@@ -36,6 +22,20 @@
                                  constraintName="fk_rel_farm__crop__crop_id"
                                  referencedColumnNames="id"
                                  referencedTableName="crop"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="farm_id"
+                                 baseTableName="rel_farm__accessories"
+                                 constraintName="fk_rel_farm__accessories__farm_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="farm"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="accessories_id"
+                                 baseTableName="rel_farm__accessories"
+                                 constraintName="fk_rel_farm__accessories__accessories_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accessories"
                                  />
 
         <addForeignKeyConstraint baseColumnNames="farmer_id"

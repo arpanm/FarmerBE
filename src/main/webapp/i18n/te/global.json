@@ -18,7 +18,8 @@
         "farm": "Farm",
         "category": "Category",
         "crop": "Crop",
-        "accessories": "Accessories"
+        "accessories": "Accessories",
+        "bankDetails": "Bank Details"
       },
       "account": {
         "main": "ఖాతా",

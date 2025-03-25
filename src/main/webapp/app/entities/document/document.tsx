@@ -168,6 +168,15 @@ export const Document = () => {
                   <th>
                     <Translate contentKey="farmerBeApp.document.farm">Farm</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
+                  <th>
+                    <Translate contentKey="farmerBeApp.document.address">Address</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
+                    <Translate contentKey="farmerBeApp.document.panDetails">Pan Details</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
+                    <Translate contentKey="farmerBeApp.document.bankDetails">Bank Details</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
                   <th />
                 </tr>
               </thead>
@@ -197,6 +206,13 @@ export const Document = () => {
                     </td>
                     <td>{document.farmer ? <Link to={`/farmer/${document.farmer.id}`}>{document.farmer.id}</Link> : ''}</td>
                     <td>{document.farm ? <Link to={`/farm/${document.farm.id}`}>{document.farm.id}</Link> : ''}</td>
+                    <td>{document.address ? <Link to={`/address/${document.address.id}`}>{document.address.id}</Link> : ''}</td>
+                    <td>
+                      {document.panDetails ? <Link to={`/pan-details/${document.panDetails.id}`}>{document.panDetails.id}</Link> : ''}
+                    </td>
+                    <td>
+                      {document.bankDetails ? <Link to={`/bank-details/${document.bankDetails.id}`}>{document.bankDetails.id}</Link> : ''}
+                    </td>
                     <td className="text-end">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`/document/${document.id}`} color="info" size="sm" data-cy="entityDetailsButton">

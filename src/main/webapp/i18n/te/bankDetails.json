@@ -1,0 +1,37 @@
+{
+  "farmerBeApp": {
+    "bankDetails": {
+      "home": {
+        "title": "Bank Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Bank Details  సృష్టించండి",
+        "createOrEditLabel": "Bank Details సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Bank Details found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Bank Details సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Bank Details సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Bank Details తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Bank Details {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Bank Details"
+      },
+      "id": "ID",
+      "name": "Name",
+      "accountNumber": "Account Number",
+      "ifsC": "Ifs C",
+      "bankName": "Bank Name",
+      "branchName": "Branch Name",
+      "isVerified": "Is Verified",
+      "verificationTime": "Verification Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "document": "Document",
+      "farmer": "Farmer"
+    }
+  }
+}
