@@ -1,0 +1,40 @@
+{
+  "farmerBeApp": {
+    "bannerContent": {
+      "home": {
+        "title": "Banner Contents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Banner Content-ஐ உருவாக்கு",
+        "createOrEditLabel": "Banner Content -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Banner Contents found"
+      },
+      "created": "Banner Content புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Banner Content மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Banner Content நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Banner Content {{ id }}?"
+      },
+      "detail": {
+        "title": "Banner Content"
+      },
+      "id": "ID",
+      "bannerTag": "Banner Tag",
+      "logoPath": "Logo Path",
+      "imagePath": "Image Path",
+      "heading": "Heading",
+      "subHeading": "Sub Heading",
+      "description": "Description",
+      "landingLink": "Landing Link",
+      "landingUtm": "Landing Utm",
+      "pixelLink": "Pixel Link",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "holdingCarousel": "Holding Carousel"
+    }
+  }
+}
