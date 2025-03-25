@@ -8,6 +8,7 @@ export interface IAccessories {
   imagePath?: string | null;
   description?: string | null;
   orderNo?: number | null;
+  skuId?: string | null;
   isActive?: boolean | null;
   createddBy?: string;
   createdTime?: dayjs.Dayjs;

@@ -22,6 +22,10 @@
       "fieldType": "Long"
     },
     {
+      "fieldName": "skuId",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "isActive",
       "fieldType": "Boolean"
     },

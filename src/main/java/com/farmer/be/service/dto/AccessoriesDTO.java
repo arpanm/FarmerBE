@@ -23,6 +23,8 @@ public class AccessoriesDTO implements Serializable {
 
     private Long orderNo;
 
+    private String skuId;
+
     private Boolean isActive;
 
     @NotNull
@@ -79,6 +81,14 @@ public class AccessoriesDTO implements Serializable {
 
     public void setOrderNo(Long orderNo) {
         this.orderNo = orderNo;
+    }
+
+    public String getSkuId() {
+        return skuId;
+    }
+
+    public void setSkuId(String skuId) {
+        this.skuId = skuId;
     }
 
     public Boolean getIsActive() {
@@ -167,6 +177,7 @@ public class AccessoriesDTO implements Serializable {
             ", imagePath='" + getImagePath() + "'" +
             ", description='" + getDescription() + "'" +
             ", orderNo=" + getOrderNo() +
+            ", skuId='" + getSkuId() + "'" +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +

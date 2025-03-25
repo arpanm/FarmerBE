@@ -131,6 +131,7 @@ export const CropUpdate = () => {
                 data-cy="orderNo"
                 type="text"
               />
+              <ValidatedField label={translate('farmerBeApp.crop.skuId')} id="crop-skuId" name="skuId" data-cy="skuId" type="text" />
               <ValidatedField
                 label={translate('farmerBeApp.crop.isActive')}
                 id="crop-isActive"

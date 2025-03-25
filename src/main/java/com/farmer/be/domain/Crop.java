@@ -38,6 +38,9 @@ public class Crop implements Serializable {
     @Column(name = "order_no")
     private Long orderNo;
 
+    @Column(name = "sku_id")
+    private String skuId;
+
     @Column(name = "is_active")
     private Boolean isActive;
 
@@ -131,6 +134,19 @@ public class Crop implements Serializable {
 
     public void setOrderNo(Long orderNo) {
         this.orderNo = orderNo;
+    }
+
+    public String getSkuId() {
+        return this.skuId;
+    }
+
+    public Crop skuId(String skuId) {
+        this.setSkuId(skuId);
+        return this;
+    }
+
+    public void setSkuId(String skuId) {
+        this.skuId = skuId;
     }
 
     public Boolean getIsActive() {
@@ -270,6 +286,7 @@ public class Crop implements Serializable {
             ", imagePath='" + getImagePath() + "'" +
             ", description='" + getDescription() + "'" +
             ", orderNo=" + getOrderNo() +
+            ", skuId='" + getSkuId() + "'" +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +

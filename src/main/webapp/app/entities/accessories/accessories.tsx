@@ -147,6 +147,10 @@ export const Accessories = () => {
                     <Translate contentKey="farmerBeApp.accessories.orderNo">Order No</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('orderNo')} />
                   </th>
+                  <th className="hand" onClick={sort('skuId')}>
+                    <Translate contentKey="farmerBeApp.accessories.skuId">Sku Id</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('skuId')} />
+                  </th>
                   <th className="hand" onClick={sort('isActive')}>
                     <Translate contentKey="farmerBeApp.accessories.isActive">Is Active</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('isActive')} />
@@ -185,6 +189,7 @@ export const Accessories = () => {
                     <td>{accessories.imagePath}</td>
                     <td>{accessories.description}</td>
                     <td>{accessories.orderNo}</td>
+                    <td>{accessories.skuId}</td>
                     <td>{accessories.isActive ? 'true' : 'false'}</td>
                     <td>{accessories.createddBy}</td>
                     <td>

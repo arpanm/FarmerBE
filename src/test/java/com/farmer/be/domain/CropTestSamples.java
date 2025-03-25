@@ -16,6 +16,7 @@ public class CropTestSamples {
             .imagePath("imagePath1")
             .description("description1")
             .orderNo(1L)
+            .skuId("skuId1")
             .createddBy("createddBy1")
             .updatedBy("updatedBy1");
     }
@@ -27,6 +28,7 @@ public class CropTestSamples {
             .imagePath("imagePath2")
             .description("description2")
             .orderNo(2L)
+            .skuId("skuId2")
             .createddBy("createddBy2")
             .updatedBy("updatedBy2");
     }
@@ -38,6 +40,7 @@ public class CropTestSamples {
             .imagePath(UUID.randomUUID().toString())
             .description(UUID.randomUUID().toString())
             .orderNo(longCount.incrementAndGet())
+            .skuId(UUID.randomUUID().toString())
             .createddBy(UUID.randomUUID().toString())
             .updatedBy(UUID.randomUUID().toString());
     }

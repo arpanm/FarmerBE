@@ -1,11 +1,11 @@
-id;name;image_path;description;order_no;is_active;createdd_by;created_time;updated_by;updated_time
-1;deer flashy solidly;in windy statue;inside;20146;true;railway rowdy;2025-03-25T04:49:46;shakily finally noisily;2025-03-25T06:22:14
-2;phew separately;amongst gosh unripe;account whoever;21677;true;although almost;2025-03-24T18:36:08;recount however healthily;2025-03-24T22:59:25
-3;helpless;bare yuck at;translation;19927;true;where massive;2025-03-25T06:59:30;ha cultivated;2025-03-25T10:25:47
-4;galvanize incidentally;whisper;hexagon hovel unfortunately;18593;true;radiant;2025-03-25T06:26:03;sizzle immediately;2025-03-24T23:12:27
-5;rubbery kinase;sleepy briskly;yum;18366;false;interchange;2025-03-25T06:25:39;behind geez;2025-03-24T11:50:59
-6;perfectly;cap fortunate;amid;19563;false;underplay uh-huh briefly;2025-03-25T07:51:23;rural;2025-03-24T23:46:26
-7;boo soulful physically;injunction;libel atop past;21893;false;caring partially foot;2025-03-24T18:08:50;disarm;2025-03-24T14:40:31
-8;banish how;technician;calculus excluding;19453;true;hefty round hunger;2025-03-24T19:04:46;astride middle gadzooks;2025-03-24T14:43:29
-9;beside encouragement hepatitis;preside so anti;sans;725;false;aha split circa;2025-03-25T04:27:21;suddenly irresponsible uh-huh;2025-03-24T14:00:10
-10;thunderbolt within democratize;out;utilized however;2158;true;reconstitute regal likewise;2025-03-24T12:52:14;amongst;2025-03-24T19:45:57
+id;name;image_path;description;order_no;sku_id;is_active;createdd_by;created_time;updated_by;updated_time
+1;deer flashy solidly;in windy statue;inside;20146;geez;false;short beneath;2025-03-25T04:30:30;sedately;2025-03-25T05:56:37
+2;heighten from upon;phew forgery;charming;27307;discourse provided although;false;um recount;2025-03-24T21:38:58;eek yowza helpless;2025-03-25T06:39:12
+3;gallivant meanwhile about;physical;comfortable;25896;surprised phooey rigidly;true;finally rarely oof;2025-03-25T07:34:01;bah stir-fry desecrate;2025-03-25T07:46:12
+4;injunction beside;toward wobbly alert;while unusual;27689;um broken interchange;false;behind geez;2025-03-24T11:50:59;perfectly;2025-03-25T01:55:08
+5;fooey;briefly powerfully putrid;essence;26672;unimpressively toward;false;whether typify;2025-03-25T05:44:32;adumbrate injunction whoever;2025-03-24T22:34:27
+6;brr realistic;tricky behind to;sharply but;15537;bicycle;false;fen;2025-03-25T08:38:41;calculus excluding;2025-03-25T01:22:01
+7;milky fork;hunger populist pneumonia;inure;21825;closed;true;underneath;2025-03-24T22:53:28;miskey adjourn;2025-03-25T07:21:19
+8;hamburger motor;self-confidence pigpen beneficial;standard;13475;hierarchy ample;true;yuck absent;2025-03-24T15:59:56;uh-huh table round;2025-03-25T04:13:41
+9;taxicab aha bah;perfectly yuck;fuss circa intelligent;11440;up oh;true;exterior;2025-03-25T03:32:42;circulate straight officially;2025-03-24T22:52:14
+10;flight;trusty aha in;till marathon;18623;immediately geez house;true;important;2025-03-24T23:36:59;brook;2025-03-24T22:14:53

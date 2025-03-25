@@ -22,6 +22,7 @@
       "imagePath": "Image Path",
       "description": "Description",
       "orderNo": "Order No",
+      "skuId": "Sku Id",
       "isActive": "Is Active",
       "createddBy": "Createdd By",
       "createdTime": "Created Time",
