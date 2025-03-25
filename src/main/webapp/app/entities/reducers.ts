@@ -10,6 +10,8 @@ import category from 'app/entities/category/category.reducer';
 import crop from 'app/entities/crop/crop.reducer';
 import accessories from 'app/entities/accessories/accessories.reducer';
 import bankDetails from 'app/entities/bank-details/bank-details.reducer';
+import demand from 'app/entities/demand/demand.reducer';
+import price from 'app/entities/price/price.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -25,6 +27,8 @@ const entitiesReducers = {
   crop,
   accessories,
   bankDetails,
+  demand,
+  price,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

@@ -19,7 +19,9 @@
         "category": "Category",
         "crop": "Crop",
         "accessories": "Accessories",
-        "bankDetails": "Bank Details"
+        "bankDetails": "Bank Details",
+        "demand": "Demand",
+        "price": "Price"
       },
       "account": {
         "main": "ఖాతా",

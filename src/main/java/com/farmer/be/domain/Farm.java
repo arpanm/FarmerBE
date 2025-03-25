@@ -75,7 +75,7 @@ public class Farm implements Serializable {
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "category", "farms" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "demands", "prices", "category", "farms" }, allowSetters = true)
     private Set<Crop> crops = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)

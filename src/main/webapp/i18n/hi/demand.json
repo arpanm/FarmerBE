@@ -1,0 +1,31 @@
+{
+  "farmerBeApp": {
+    "demand": {
+      "home": {
+        "title": "Demands",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Demand बनाएँ",
+        "createOrEditLabel": "Demand बनाएँ या संपादित करें",
+        "notFound": "No Demands found"
+      },
+      "created": "एक नया Demand [identifier: {{ param }}] तैयार है",
+      "updated": "एक Demand [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Demand [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Demand [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Demand"
+      },
+      "id": "ID",
+      "demandDate": "Demand Date",
+      "demandValue": "Demand Value",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "crop": "Crop"
+    }
+  }
+}

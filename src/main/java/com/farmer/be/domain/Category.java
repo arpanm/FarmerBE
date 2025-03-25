@@ -61,7 +61,7 @@ public class Category implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "category", "farms" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "demands", "prices", "category", "farms" }, allowSetters = true)
     private Set<Crop> crops = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")

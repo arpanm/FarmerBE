@@ -28,6 +28,8 @@
       "createdTime": "Created Time",
       "updatedBy": "Updated By",
       "updatedTime": "Updated Time",
+      "demand": "Demand",
+      "price": "Price",
       "category": "Category",
       "farm": "Farm"
     }

@@ -1,0 +1,31 @@
+{
+  "farmerBeApp": {
+    "price": {
+      "home": {
+        "title": "Prices",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Price-ஐ உருவாக்கு",
+        "createOrEditLabel": "Price -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Prices found"
+      },
+      "created": "Price புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Price மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Price நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Price {{ id }}?"
+      },
+      "detail": {
+        "title": "Price"
+      },
+      "id": "ID",
+      "priceDate": "Price Date",
+      "priceValue": "Price Value",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "crop": "Crop"
+    }
+  }
+}

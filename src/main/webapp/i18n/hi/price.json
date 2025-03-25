@@ -1,0 +1,31 @@
+{
+  "farmerBeApp": {
+    "price": {
+      "home": {
+        "title": "Prices",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Price बनाएँ",
+        "createOrEditLabel": "Price बनाएँ या संपादित करें",
+        "notFound": "No Prices found"
+      },
+      "created": "एक नया Price [identifier: {{ param }}] तैयार है",
+      "updated": "एक Price [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Price [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Price [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Price"
+      },
+      "id": "ID",
+      "priceDate": "Price Date",
+      "priceValue": "Price Value",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "crop": "Crop"
+    }
+  }
+}
