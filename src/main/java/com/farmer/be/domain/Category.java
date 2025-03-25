@@ -56,11 +56,21 @@ public class Category implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "categories", "parent" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "categories", "crops", "accessories", "parent" }, allowSetters = true)
     private Set<Category> categories = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "category" }, allowSetters = true)
+    private Set<Crop> crops = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "category" }, allowSetters = true)
+    private Set<Accessories> accessories = new HashSet<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "categories", "parent" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "categories", "crops", "accessories", "parent" }, allowSetters = true)
     private Category parent;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -210,6 +220,68 @@ public class Category implements Serializable {
     public Category removeCategory(Category category) {
         this.categories.remove(category);
         category.setParent(null);
+        return this;
+    }
+
+    public Set<Crop> getCrops() {
+        return this.crops;
+    }
+
+    public void setCrops(Set<Crop> crops) {
+        if (this.crops != null) {
+            this.crops.forEach(i -> i.setCategory(null));
+        }
+        if (crops != null) {
+            crops.forEach(i -> i.setCategory(this));
+        }
+        this.crops = crops;
+    }
+
+    public Category crops(Set<Crop> crops) {
+        this.setCrops(crops);
+        return this;
+    }
+
+    public Category addCrop(Crop crop) {
+        this.crops.add(crop);
+        crop.setCategory(this);
+        return this;
+    }
+
+    public Category removeCrop(Crop crop) {
+        this.crops.remove(crop);
+        crop.setCategory(null);
+        return this;
+    }
+
+    public Set<Accessories> getAccessories() {
+        return this.accessories;
+    }
+
+    public void setAccessories(Set<Accessories> accessories) {
+        if (this.accessories != null) {
+            this.accessories.forEach(i -> i.setCategory(null));
+        }
+        if (accessories != null) {
+            accessories.forEach(i -> i.setCategory(this));
+        }
+        this.accessories = accessories;
+    }
+
+    public Category accessories(Set<Accessories> accessories) {
+        this.setAccessories(accessories);
+        return this;
+    }
+
+    public Category addAccessories(Accessories accessories) {
+        this.accessories.add(accessories);
+        accessories.setCategory(this);
+        return this;
+    }
+
+    public Category removeAccessories(Accessories accessories) {
+        this.accessories.remove(accessories);
+        accessories.setCategory(null);
         return this;
     }
 

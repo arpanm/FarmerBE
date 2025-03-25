@@ -12,6 +12,8 @@ import PanDetails from './pan-details';
 import TermsAndCondition from './terms-and-condition';
 import Farm from './farm';
 import Category from './category';
+import Crop from './crop';
+import Accessories from './accessories';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -28,6 +30,8 @@ export default () => {
         <Route path="terms-and-condition/*" element={<TermsAndCondition />} />
         <Route path="farm/*" element={<Farm />} />
         <Route path="category/*" element={<Category />} />
+        <Route path="crop/*" element={<Crop />} />
+        <Route path="accessories/*" element={<Accessories />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

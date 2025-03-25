@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "crop": {
+      "home": {
+        "title": "Crops",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Crop तयार करा",
+        "createOrEditLabel": "Crop तयार किंवा संपादित करा",
+        "notFound": "No Crops found"
+      },
+      "created": "Crop [identifier: {{ param }}] तयार आहे",
+      "updated": "Crop [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Crop [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Crop [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Crop"
+      },
+      "id": "ID",
+      "name": "Name",
+      "imagePath": "Image Path",
+      "description": "Description",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "category": "Category"
+    }
+  }
+}

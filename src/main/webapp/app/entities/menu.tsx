@@ -34,6 +34,12 @@ const EntitiesMenu = () => {
       <MenuItem icon="asterisk" to="/category">
         <Translate contentKey="global.menu.entities.category" />
       </MenuItem>
+      <MenuItem icon="asterisk" to="/crop">
+        <Translate contentKey="global.menu.entities.crop" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/accessories">
+        <Translate contentKey="global.menu.entities.accessories" />
+      </MenuItem>
       {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
     </>
   );

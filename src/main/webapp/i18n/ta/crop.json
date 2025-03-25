@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "crop": {
+      "home": {
+        "title": "Crops",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Crop-ஐ உருவாக்கு",
+        "createOrEditLabel": "Crop -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Crops found"
+      },
+      "created": "Crop புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Crop மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Crop நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Crop {{ id }}?"
+      },
+      "detail": {
+        "title": "Crop"
+      },
+      "id": "ID",
+      "name": "Name",
+      "imagePath": "Image Path",
+      "description": "Description",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "category": "Category"
+    }
+  }
+}
