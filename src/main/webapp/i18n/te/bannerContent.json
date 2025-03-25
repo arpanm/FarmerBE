@@ -1,0 +1,40 @@
+{
+  "farmerBeApp": {
+    "bannerContent": {
+      "home": {
+        "title": "Banner Contents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Banner Content  సృష్టించండి",
+        "createOrEditLabel": "Banner Content సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Banner Contents found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Banner Content సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Banner Content సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Banner Content తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Banner Content {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Banner Content"
+      },
+      "id": "ID",
+      "bannerTag": "Banner Tag",
+      "logoPath": "Logo Path",
+      "imagePath": "Image Path",
+      "heading": "Heading",
+      "subHeading": "Sub Heading",
+      "description": "Description",
+      "landingLink": "Landing Link",
+      "landingUtm": "Landing Utm",
+      "pixelLink": "Pixel Link",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "holdingCarousel": "Holding Carousel"
+    }
+  }
+}

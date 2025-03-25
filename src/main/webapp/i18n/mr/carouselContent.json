@@ -1,0 +1,34 @@
+{
+  "farmerBeApp": {
+    "carouselContent": {
+      "home": {
+        "title": "Carousel Contents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Carousel Content तयार करा",
+        "createOrEditLabel": "Carousel Content तयार किंवा संपादित करा",
+        "notFound": "No Carousel Contents found"
+      },
+      "created": "Carousel Content [identifier: {{ param }}] तयार आहे",
+      "updated": "Carousel Content [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Carousel Content [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Carousel Content [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Carousel Content"
+      },
+      "id": "ID",
+      "carouselTag": "Carousel Tag",
+      "showViewMore": "Show View More",
+      "viewMoreLink": "View More Link",
+      "viewMoreUtm": "View More Utm",
+      "pixelLink": "Pixel Link",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "banners": "Banners"
+    }
+  }
+}

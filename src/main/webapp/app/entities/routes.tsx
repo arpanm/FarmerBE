@@ -22,6 +22,8 @@ import SupplyConfirmation from './supply-confirmation';
 import PickUpConfirmation from './pick-up-confirmation';
 import PickupGradation from './pickup-gradation';
 import PickupPayment from './pickup-payment';
+import BannerContent from './banner-content';
+import CarouselContent from './carousel-content';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -48,6 +50,8 @@ export default () => {
         <Route path="pick-up-confirmation/*" element={<PickUpConfirmation />} />
         <Route path="pickup-gradation/*" element={<PickupGradation />} />
         <Route path="pickup-payment/*" element={<PickupPayment />} />
+        <Route path="banner-content/*" element={<BannerContent />} />
+        <Route path="carousel-content/*" element={<CarouselContent />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

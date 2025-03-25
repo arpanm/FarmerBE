@@ -1,0 +1,67 @@
+{
+  "annotations": {
+    "changelogDate": "20250325141358"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "carouselTag",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "showViewMore",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "viewMoreLink",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "viewMoreUtm",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pixelLink",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "CarouselContent",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "bannerContent",
+      "otherEntityRelationshipName": "holdingCarousel",
+      "relationshipName": "banners",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

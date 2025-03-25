@@ -1,0 +1,34 @@
+{
+  "farmerBeApp": {
+    "carouselContent": {
+      "home": {
+        "title": "Carousel Contents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Carousel Content-ஐ உருவாக்கு",
+        "createOrEditLabel": "Carousel Content -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Carousel Contents found"
+      },
+      "created": "Carousel Content புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Carousel Content மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Carousel Content நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Carousel Content {{ id }}?"
+      },
+      "detail": {
+        "title": "Carousel Content"
+      },
+      "id": "ID",
+      "carouselTag": "Carousel Tag",
+      "showViewMore": "Show View More",
+      "viewMoreLink": "View More Link",
+      "viewMoreUtm": "View More Utm",
+      "pixelLink": "Pixel Link",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "banners": "Banners"
+    }
+  }
+}

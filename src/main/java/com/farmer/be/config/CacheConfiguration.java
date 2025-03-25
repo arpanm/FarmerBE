@@ -97,6 +97,9 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.PickupGradation.class.getName());
             createCache(cm, com.farmer.be.domain.PickupPayment.class.getName());
             createCache(cm, com.farmer.be.domain.PickupPayment.class.getName() + ".pickupItems");
+            createCache(cm, com.farmer.be.domain.BannerContent.class.getName());
+            createCache(cm, com.farmer.be.domain.CarouselContent.class.getName());
+            createCache(cm, com.farmer.be.domain.CarouselContent.class.getName() + ".banners");
             // jhipster-needle-ehcache-add-entry
         };
     }

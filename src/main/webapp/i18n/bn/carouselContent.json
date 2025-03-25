@@ -1,0 +1,34 @@
+{
+  "farmerBeApp": {
+    "carouselContent": {
+      "home": {
+        "title": "Carousel Contents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Carousel Content",
+        "createOrEditLabel": "Create or edit a Carousel Content",
+        "notFound": "No Carousel Contents found"
+      },
+      "created": "A new Carousel Content is created with identifier {{ param }}",
+      "updated": "A Carousel Content is updated with identifier {{ param }}",
+      "deleted": "A Carousel Content is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Carousel Content {{ id }}?"
+      },
+      "detail": {
+        "title": "Carousel Content"
+      },
+      "id": "ID",
+      "carouselTag": "Carousel Tag",
+      "showViewMore": "Show View More",
+      "viewMoreLink": "View More Link",
+      "viewMoreUtm": "View More Utm",
+      "pixelLink": "Pixel Link",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "banners": "Banners"
+    }
+  }
+}

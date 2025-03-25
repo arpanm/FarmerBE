@@ -1,0 +1,40 @@
+{
+  "farmerBeApp": {
+    "bannerContent": {
+      "home": {
+        "title": "Banner Contents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Banner Content तयार करा",
+        "createOrEditLabel": "Banner Content तयार किंवा संपादित करा",
+        "notFound": "No Banner Contents found"
+      },
+      "created": "Banner Content [identifier: {{ param }}] तयार आहे",
+      "updated": "Banner Content [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Banner Content [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Banner Content [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Banner Content"
+      },
+      "id": "ID",
+      "bannerTag": "Banner Tag",
+      "logoPath": "Logo Path",
+      "imagePath": "Image Path",
+      "heading": "Heading",
+      "subHeading": "Sub Heading",
+      "description": "Description",
+      "landingLink": "Landing Link",
+      "landingUtm": "Landing Utm",
+      "pixelLink": "Pixel Link",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "holdingCarousel": "Holding Carousel"
+    }
+  }
+}
