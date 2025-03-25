@@ -275,6 +275,37 @@ relationship ManyToMany {
 	Farm to Accessories
 }
 
+
+entity Demand {
+	demandDate LocalDate,
+    demandValue Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Crop to Demand{crop}
+}
+
+
+entity Price {
+	priceDate LocalDate,
+    priceValue Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Crop to Price{crop}
+}
+
+
 application {
   config {
     baseName FarmerBE
