@@ -1,19 +1,45 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
-    "subtitle": "This is your homepage",
+    "title": "Welcome to Farmer App!",
+    "subtitle": "Your complete farm management solution",
     "logged": {
-      "message": "You are logged in as user \"{{username}}\"."
+      "message": "Welcome back, {{username}}! Manage your farms and crops efficiently."
     },
-    "question": "If you have any question on JHipster:",
+    "features": {
+      "title": "Key Features"
+    },
+    "onboarding": {
+      "title": "Easy Onboarding",
+      "description": "Quick and simple registration process for farmers with support for multiple languages."
+    },
+    "farms": {
+      "title": "Farm Management",
+      "description": "Add and manage multiple farms under your profile with detailed tracking."
+    },
+    "crops": {
+      "title": "Crop Management",
+      "description": "Track different crops for each farm with detailed information."
+    },
+    "demand": {
+      "title": "Market Demand & Pricing",
+      "description": "View daily demand and price updates for your crops in real-time."
+    },
+    "harvest": {
+      "title": "Harvest Planning",
+      "description": "Create and manage harvest plans for each crop with scheduling."
+    },
+    "pickup": {
+      "title": "Pickup & Payments",
+      "description": "Track pickup confirmations, gradation reports, and receive timely payments."
+    },
+    "platform": {
+      "title": "Platform Features"
+    },
     "link": {
-      "homepage": "JHipster homepage",
-      "stackoverflow": "JHipster on Stack Overflow",
-      "bugtracker": "JHipster bug tracker",
-      "chat": "JHipster public chat room",
-      "follow": "follow @jhipster on Twitter"
-    },
-    "like": "If you like JHipster, don't forget to give us a star on",
-    "github": "GitHub"
+      "monitoring": "Application Monitoring",
+      "usermanagement": "User Management",
+      "language": "Language Settings",
+      "documentation": "Documentation"
+    }
   }
 }
