@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "supplyConfirmation": {
+      "home": {
+        "title": "Supply Confirmations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Supply Confirmation",
+        "createOrEditLabel": "Create or edit a Supply Confirmation",
+        "notFound": "No Supply Confirmations found"
+      },
+      "created": "A new Supply Confirmation is created with identifier {{ param }}",
+      "updated": "A Supply Confirmation is updated with identifier {{ param }}",
+      "deleted": "A Supply Confirmation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Supply Confirmation {{ id }}?"
+      },
+      "detail": {
+        "title": "Supply Confirmation"
+      },
+      "id": "ID",
+      "confirmDate": "Confirm Date",
+      "confirmValue": "Confirm Value",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

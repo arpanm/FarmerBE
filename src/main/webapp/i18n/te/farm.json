@@ -30,6 +30,8 @@
       "updatedTime": "Updated Time",
       "address": "Address",
       "document": "Document",
+      "hervestPlan": "Hervest Plan",
+      "supplyConfirmation": "Supply Confirmation",
       "crop": "Crop",
       "accessories": "Accessories",
       "farmer": "Farmer"

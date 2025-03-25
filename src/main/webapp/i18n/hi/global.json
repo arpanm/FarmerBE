@@ -21,7 +21,9 @@
         "accessories": "Accessories",
         "bankDetails": "Bank Details",
         "demand": "Demand",
-        "price": "Price"
+        "price": "Price",
+        "hervestPlan": "Hervest Plan",
+        "supplyConfirmation": "Supply Confirmation"
       },
       "account": {
         "main": "खाता",

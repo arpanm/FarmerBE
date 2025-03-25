@@ -89,7 +89,10 @@ public class Address implements Serializable {
     private Farmer farmer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "addresses", "documents", "crops", "accessories", "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "addresses", "documents", "hervestPlans", "supplyConfirmations", "crops", "accessories", "farmer" },
+        allowSetters = true
+    )
     private Farm farm;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

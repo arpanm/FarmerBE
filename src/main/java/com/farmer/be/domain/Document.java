@@ -64,7 +64,10 @@ public class Document implements Serializable {
     private Farmer farmer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "addresses", "documents", "crops", "accessories", "farmer" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "addresses", "documents", "hervestPlans", "supplyConfirmations", "crops", "accessories", "farmer" },
+        allowSetters = true
+    )
     private Farm farm;
 
     @ManyToOne(fetch = FetchType.LAZY)

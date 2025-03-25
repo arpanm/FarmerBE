@@ -68,6 +68,20 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "hervestPlan",
+      "otherEntityRelationshipName": "crop",
+      "relationshipName": "hervestPlan",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "supplyConfirmation",
+      "otherEntityRelationshipName": "crop",
+      "relationshipName": "supplyConfirmation",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "category",
       "relationshipName": "category",
       "relationshipSide": "right",

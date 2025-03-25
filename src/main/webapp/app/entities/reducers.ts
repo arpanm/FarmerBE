@@ -12,6 +12,8 @@ import accessories from 'app/entities/accessories/accessories.reducer';
 import bankDetails from 'app/entities/bank-details/bank-details.reducer';
 import demand from 'app/entities/demand/demand.reducer';
 import price from 'app/entities/price/price.reducer';
+import hervestPlan from 'app/entities/hervest-plan/hervest-plan.reducer';
+import supplyConfirmation from 'app/entities/supply-confirmation/supply-confirmation.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -29,6 +31,8 @@ const entitiesReducers = {
   bankDetails,
   demand,
   price,
+  hervestPlan,
+  supplyConfirmation,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

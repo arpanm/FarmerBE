@@ -1,0 +1,32 @@
+{
+  "farmerBeApp": {
+    "supplyConfirmation": {
+      "home": {
+        "title": "Supply Confirmations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Supply Confirmation-ஐ உருவாக்கு",
+        "createOrEditLabel": "Supply Confirmation -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Supply Confirmations found"
+      },
+      "created": "Supply Confirmation புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Supply Confirmation மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Supply Confirmation நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Supply Confirmation {{ id }}?"
+      },
+      "detail": {
+        "title": "Supply Confirmation"
+      },
+      "id": "ID",
+      "confirmDate": "Confirm Date",
+      "confirmValue": "Confirm Value",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "crop": "Crop"
+    }
+  }
+}

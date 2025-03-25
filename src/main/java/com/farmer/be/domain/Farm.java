@@ -72,10 +72,20 @@ public class Farm implements Serializable {
     @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    private Set<HervestPlan> hervestPlans = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "farm", "crop" }, allowSetters = true)
+    private Set<SupplyConfirmation> supplyConfirmations = new HashSet<>();
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "demands", "prices", "category", "farms" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "demands", "prices", "hervestPlans", "supplyConfirmations", "category", "farms" }, allowSetters = true)
     private Set<Crop> crops = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -299,6 +309,68 @@ public class Farm implements Serializable {
     public Farm removeDocument(Document document) {
         this.documents.remove(document);
         document.setFarm(null);
+        return this;
+    }
+
+    public Set<HervestPlan> getHervestPlans() {
+        return this.hervestPlans;
+    }
+
+    public void setHervestPlans(Set<HervestPlan> hervestPlans) {
+        if (this.hervestPlans != null) {
+            this.hervestPlans.forEach(i -> i.setFarm(null));
+        }
+        if (hervestPlans != null) {
+            hervestPlans.forEach(i -> i.setFarm(this));
+        }
+        this.hervestPlans = hervestPlans;
+    }
+
+    public Farm hervestPlans(Set<HervestPlan> hervestPlans) {
+        this.setHervestPlans(hervestPlans);
+        return this;
+    }
+
+    public Farm addHervestPlan(HervestPlan hervestPlan) {
+        this.hervestPlans.add(hervestPlan);
+        hervestPlan.setFarm(this);
+        return this;
+    }
+
+    public Farm removeHervestPlan(HervestPlan hervestPlan) {
+        this.hervestPlans.remove(hervestPlan);
+        hervestPlan.setFarm(null);
+        return this;
+    }
+
+    public Set<SupplyConfirmation> getSupplyConfirmations() {
+        return this.supplyConfirmations;
+    }
+
+    public void setSupplyConfirmations(Set<SupplyConfirmation> supplyConfirmations) {
+        if (this.supplyConfirmations != null) {
+            this.supplyConfirmations.forEach(i -> i.setFarm(null));
+        }
+        if (supplyConfirmations != null) {
+            supplyConfirmations.forEach(i -> i.setFarm(this));
+        }
+        this.supplyConfirmations = supplyConfirmations;
+    }
+
+    public Farm supplyConfirmations(Set<SupplyConfirmation> supplyConfirmations) {
+        this.setSupplyConfirmations(supplyConfirmations);
+        return this;
+    }
+
+    public Farm addSupplyConfirmation(SupplyConfirmation supplyConfirmation) {
+        this.supplyConfirmations.add(supplyConfirmation);
+        supplyConfirmation.setFarm(this);
+        return this;
+    }
+
+    public Farm removeSupplyConfirmation(SupplyConfirmation supplyConfirmation) {
+        this.supplyConfirmations.remove(supplyConfirmation);
+        supplyConfirmation.setFarm(null);
         return this;
     }
 
