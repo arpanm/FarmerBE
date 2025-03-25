@@ -2,9 +2,12 @@ package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AccessoriesTestSamples.*;
 import static com.farmer.be.domain.CategoryTestSamples.*;
+import static com.farmer.be.domain.FarmTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 class AccessoriesTest {
@@ -33,5 +36,27 @@ class AccessoriesTest {
 
         accessories.category(null);
         assertThat(accessories.getCategory()).isNull();
+    }
+
+    @Test
+    void farmTest() {
+        Accessories accessories = getAccessoriesRandomSampleGenerator();
+        Farm farmBack = getFarmRandomSampleGenerator();
+
+        accessories.addFarm(farmBack);
+        assertThat(accessories.getFarms()).containsOnly(farmBack);
+        assertThat(farmBack.getAccessories()).containsOnly(accessories);
+
+        accessories.removeFarm(farmBack);
+        assertThat(accessories.getFarms()).doesNotContain(farmBack);
+        assertThat(farmBack.getAccessories()).doesNotContain(accessories);
+
+        accessories.farms(new HashSet<>(Set.of(farmBack)));
+        assertThat(accessories.getFarms()).containsOnly(farmBack);
+        assertThat(farmBack.getAccessories()).containsOnly(accessories);
+
+        accessories.setFarms(new HashSet<>());
+        assertThat(accessories.getFarms()).doesNotContain(farmBack);
+        assertThat(farmBack.getAccessories()).doesNotContain(accessories);
     }
 }

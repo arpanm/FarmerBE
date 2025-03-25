@@ -42,6 +42,14 @@ public interface FarmService {
     Page<FarmDTO> findAll(Pageable pageable);
 
     /**
+     * Get all the farms with eager load of many-to-many relationships.
+     *
+     * @param pageable the pagination information.
+     * @return the list of entities.
+     */
+    Page<FarmDTO> findAllWithEagerRelationships(Pageable pageable);
+
+    /**
      * Get the "id" farm.
      *
      * @param id the id of the entity.

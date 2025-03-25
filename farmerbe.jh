@@ -230,6 +230,14 @@ relationship OneToMany {
 	Category to Accessories{category}
 }
 
+relationship ManyToMany {
+	Farm to Accessories
+}
+
+relationship ManyToMany {
+	Farm to Crop
+}
+
 application {
   config {
     baseName FarmerBE

@@ -69,11 +69,15 @@ public class FarmServiceImpl implements FarmService {
         return farmRepository.findAll(pageable).map(farmMapper::toDto);
     }
 
+    public Page<FarmDTO> findAllWithEagerRelationships(Pageable pageable) {
+        return farmRepository.findAllWithEagerRelationships(pageable).map(farmMapper::toDto);
+    }
+
     @Override
     @Transactional(readOnly = true)
     public Optional<FarmDTO> findOne(Long id) {
         LOG.debug("Request to get Farm : {}", id);
-        return farmRepository.findById(id).map(farmMapper::toDto);
+        return farmRepository.findOneWithEagerRelationships(id).map(farmMapper::toDto);
     }
 
     @Override

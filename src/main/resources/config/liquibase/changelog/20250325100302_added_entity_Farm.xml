@@ -53,6 +53,31 @@
         <dropDefaultValue tableName="farm" columnName="updated_time" columnDataType="${datetimeType}"/>
     </changeSet>
 
+    <changeSet id="20250325100302-1-relations" author="jhipster">
+
+        <createTable tableName="rel_farm__accessories">
+            <column name="accessories_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="farm_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="farm_id, accessories_id" tableName="rel_farm__accessories"/>
+
+        <createTable tableName="rel_farm__crop">
+            <column name="crop_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="farm_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="farm_id, crop_id" tableName="rel_farm__crop"/>
+    </changeSet>
+
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
 
     <!--

@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { ICategory } from 'app/shared/model/category.model';
+import { IFarm } from 'app/shared/model/farm.model';
 
 export interface IAccessories {
   id?: number;
@@ -12,6 +13,7 @@ export interface IAccessories {
   updatedBy?: string;
   updatedTime?: dayjs.Dayjs;
   category?: ICategory | null;
+  farms?: IFarm[] | null;
 }
 
 export const defaultValue: Readonly<IAccessories> = {

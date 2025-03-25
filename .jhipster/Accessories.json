@@ -50,6 +50,13 @@
       "relationshipName": "category",
       "relationshipSide": "right",
       "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "farm",
+      "otherEntityRelationshipName": "accessories",
+      "relationshipName": "farm",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
     }
   ],
   "searchEngine": "no",

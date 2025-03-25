@@ -4,6 +4,7 @@ import static com.farmer.be.domain.FarmAsserts.*;
 import static com.farmer.be.web.rest.TestUtil.createUpdateProxyForBean;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -11,19 +12,26 @@ import com.farmer.be.IntegrationTest;
 import com.farmer.be.domain.Farm;
 import com.farmer.be.domain.enumeration.FarmType;
 import com.farmer.be.repository.FarmRepository;
+import com.farmer.be.service.FarmService;
 import com.farmer.be.service.dto.FarmDTO;
 import com.farmer.be.service.mapper.FarmMapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
@@ -33,6 +41,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Integration tests for the {@link FarmResource} REST controller.
  */
 @IntegrationTest
+@ExtendWith(MockitoExtension.class)
 @AutoConfigureMockMvc
 @WithMockUser
 class FarmResourceIT {
@@ -79,8 +88,14 @@ class FarmResourceIT {
     @Autowired
     private FarmRepository farmRepository;
 
+    @Mock
+    private FarmRepository farmRepositoryMock;
+
     @Autowired
     private FarmMapper farmMapper;
+
+    @Mock
+    private FarmService farmServiceMock;
 
     @Autowired
     private EntityManager em;
@@ -277,6 +292,23 @@ class FarmResourceIT {
             .andExpect(jsonPath("$.[*].createdTime").value(hasItem(DEFAULT_CREATED_TIME.toString())))
             .andExpect(jsonPath("$.[*].updatedBy").value(hasItem(DEFAULT_UPDATED_BY)))
             .andExpect(jsonPath("$.[*].updatedTime").value(hasItem(DEFAULT_UPDATED_TIME.toString())));
+    }
+
+    @SuppressWarnings({ "unchecked" })
+    void getAllFarmsWithEagerRelationshipsIsEnabled() throws Exception {
+        when(farmServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
+
+        restFarmMockMvc.perform(get(ENTITY_API_URL + "?eagerload=true")).andExpect(status().isOk());
+
+        verify(farmServiceMock, times(1)).findAllWithEagerRelationships(any());
+    }
+
+    @SuppressWarnings({ "unchecked" })
+    void getAllFarmsWithEagerRelationshipsIsNotEnabled() throws Exception {
+        when(farmServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
+
+        restFarmMockMvc.perform(get(ENTITY_API_URL + "?eagerload=false")).andExpect(status().isOk());
+        verify(farmRepositoryMock, times(1)).findAll(any(Pageable.class));
     }
 
     @Test

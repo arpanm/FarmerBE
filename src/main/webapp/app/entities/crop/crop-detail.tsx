@@ -84,6 +84,19 @@ export const CropDetail = () => {
             <Translate contentKey="farmerBeApp.crop.category">Category</Translate>
           </dt>
           <dd>{cropEntity.category ? cropEntity.category.id : ''}</dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.crop.farm">Farm</Translate>
+          </dt>
+          <dd>
+            {cropEntity.farms
+              ? cropEntity.farms.map((val, i) => (
+                  <span key={val.id}>
+                    <a>{val.id}</a>
+                    {cropEntity.farms && i === cropEntity.farms.length - 1 ? '' : ', '}
+                  </span>
+                ))
+              : null}
+          </dd>
         </dl>
         <Button tag={Link} to="/crop" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

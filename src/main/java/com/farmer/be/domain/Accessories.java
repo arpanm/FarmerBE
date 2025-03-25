@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -55,6 +57,11 @@ public class Accessories implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "categories", "crops", "accessories", "parent" }, allowSetters = true)
     private Category category;
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "accessories")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "addresses", "documents", "accessories", "crops", "farmer" }, allowSetters = true)
+    private Set<Farm> farms = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -185,6 +192,37 @@ public class Accessories implements Serializable {
 
     public Accessories category(Category category) {
         this.setCategory(category);
+        return this;
+    }
+
+    public Set<Farm> getFarms() {
+        return this.farms;
+    }
+
+    public void setFarms(Set<Farm> farms) {
+        if (this.farms != null) {
+            this.farms.forEach(i -> i.removeAccessories(this));
+        }
+        if (farms != null) {
+            farms.forEach(i -> i.addAccessories(this));
+        }
+        this.farms = farms;
+    }
+
+    public Accessories farms(Set<Farm> farms) {
+        this.setFarms(farms);
+        return this;
+    }
+
+    public Accessories addFarm(Farm farm) {
+        this.farms.add(farm);
+        farm.getAccessories().add(this);
+        return this;
+    }
+
+    public Accessories removeFarm(Farm farm) {
+        this.farms.remove(farm);
+        farm.getAccessories().remove(this);
         return this;
     }
 

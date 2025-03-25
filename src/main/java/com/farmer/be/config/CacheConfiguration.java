@@ -66,12 +66,16 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.Farm.class.getName());
             createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".addresses");
             createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".documents");
+            createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".accessories");
+            createCache(cm, com.farmer.be.domain.Farm.class.getName() + ".crops");
             createCache(cm, com.farmer.be.domain.Category.class.getName());
             createCache(cm, com.farmer.be.domain.Category.class.getName() + ".categories");
             createCache(cm, com.farmer.be.domain.Category.class.getName() + ".crops");
             createCache(cm, com.farmer.be.domain.Category.class.getName() + ".accessories");
             createCache(cm, com.farmer.be.domain.Crop.class.getName());
+            createCache(cm, com.farmer.be.domain.Crop.class.getName() + ".farms");
             createCache(cm, com.farmer.be.domain.Accessories.class.getName());
+            createCache(cm, com.farmer.be.domain.Accessories.class.getName() + ".farms");
             // jhipster-needle-ehcache-add-entry
         };
     }

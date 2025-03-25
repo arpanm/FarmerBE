@@ -66,6 +66,7 @@ public class AccessoriesAsserts {
     public static void assertAccessoriesUpdatableRelationshipsEquals(Accessories expected, Accessories actual) {
         assertThat(actual)
             .as("Verify Accessories relationships")
-            .satisfies(a -> assertThat(a.getCategory()).as("check category").isEqualTo(expected.getCategory()));
+            .satisfies(a -> assertThat(a.getCategory()).as("check category").isEqualTo(expected.getCategory()))
+            .satisfies(a -> assertThat(a.getFarms()).as("check farms").isEqualTo(expected.getFarms()));
     }
 }
