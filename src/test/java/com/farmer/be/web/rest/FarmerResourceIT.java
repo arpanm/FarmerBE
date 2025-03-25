@@ -46,6 +46,9 @@ class FarmerResourceIT {
     private static final Long DEFAULT_PHONE = 1000000000L;
     private static final Long UPDATED_PHONE = 1000000001L;
 
+    private static final Boolean DEFAULT_IS_WHATS_APP_ENABLED = false;
+    private static final Boolean UPDATED_IS_WHATS_APP_ENABLED = true;
+
     private static final Language DEFAULT_PREFERED_LANGUAGE = Language.English;
     private static final Language UPDATED_PREFERED_LANGUAGE = Language.Hindi;
 
@@ -100,6 +103,7 @@ class FarmerResourceIT {
             .name(DEFAULT_NAME)
             .email(DEFAULT_EMAIL)
             .phone(DEFAULT_PHONE)
+            .isWhatsAppEnabled(DEFAULT_IS_WHATS_APP_ENABLED)
             .preferedLanguage(DEFAULT_PREFERED_LANGUAGE)
             .isActive(DEFAULT_IS_ACTIVE)
             .createddBy(DEFAULT_CREATEDD_BY)
@@ -119,6 +123,7 @@ class FarmerResourceIT {
             .name(UPDATED_NAME)
             .email(UPDATED_EMAIL)
             .phone(UPDATED_PHONE)
+            .isWhatsAppEnabled(UPDATED_IS_WHATS_APP_ENABLED)
             .preferedLanguage(UPDATED_PREFERED_LANGUAGE)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
@@ -282,6 +287,7 @@ class FarmerResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].phone").value(hasItem(DEFAULT_PHONE.intValue())))
+            .andExpect(jsonPath("$.[*].isWhatsAppEnabled").value(hasItem(DEFAULT_IS_WHATS_APP_ENABLED)))
             .andExpect(jsonPath("$.[*].preferedLanguage").value(hasItem(DEFAULT_PREFERED_LANGUAGE.toString())))
             .andExpect(jsonPath("$.[*].isActive").value(hasItem(DEFAULT_IS_ACTIVE)))
             .andExpect(jsonPath("$.[*].createddBy").value(hasItem(DEFAULT_CREATEDD_BY)))
@@ -305,6 +311,7 @@ class FarmerResourceIT {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
             .andExpect(jsonPath("$.phone").value(DEFAULT_PHONE.intValue()))
+            .andExpect(jsonPath("$.isWhatsAppEnabled").value(DEFAULT_IS_WHATS_APP_ENABLED))
             .andExpect(jsonPath("$.preferedLanguage").value(DEFAULT_PREFERED_LANGUAGE.toString()))
             .andExpect(jsonPath("$.isActive").value(DEFAULT_IS_ACTIVE))
             .andExpect(jsonPath("$.createddBy").value(DEFAULT_CREATEDD_BY))
@@ -336,6 +343,7 @@ class FarmerResourceIT {
             .name(UPDATED_NAME)
             .email(UPDATED_EMAIL)
             .phone(UPDATED_PHONE)
+            .isWhatsAppEnabled(UPDATED_IS_WHATS_APP_ENABLED)
             .preferedLanguage(UPDATED_PREFERED_LANGUAGE)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)
@@ -427,7 +435,7 @@ class FarmerResourceIT {
         Farmer partialUpdatedFarmer = new Farmer();
         partialUpdatedFarmer.setId(farmer.getId());
 
-        partialUpdatedFarmer.phone(UPDATED_PHONE).createdTime(UPDATED_CREATED_TIME).updatedBy(UPDATED_UPDATED_BY);
+        partialUpdatedFarmer.phone(UPDATED_PHONE).createddBy(UPDATED_CREATEDD_BY).createdTime(UPDATED_CREATED_TIME);
 
         restFarmerMockMvc
             .perform(
@@ -459,6 +467,7 @@ class FarmerResourceIT {
             .name(UPDATED_NAME)
             .email(UPDATED_EMAIL)
             .phone(UPDATED_PHONE)
+            .isWhatsAppEnabled(UPDATED_IS_WHATS_APP_ENABLED)
             .preferedLanguage(UPDATED_PREFERED_LANGUAGE)
             .isActive(UPDATED_IS_ACTIVE)
             .createddBy(UPDATED_CREATEDD_BY)

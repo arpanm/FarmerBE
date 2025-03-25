@@ -1,0 +1,31 @@
+{
+  "farmerBeApp": {
+    "termsAndCondition": {
+      "home": {
+        "title": "Terms And Conditions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Terms And Condition  సృష్టించండి",
+        "createOrEditLabel": "Terms And Condition సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Terms And Conditions found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Terms And Condition సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Terms And Condition సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Terms And Condition తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Terms And Condition {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Terms And Condition"
+      },
+      "id": "ID",
+      "termsLink": "Terms Link",
+      "aggreedOn": "Aggreed On",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}

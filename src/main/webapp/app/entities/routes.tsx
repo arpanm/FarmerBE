@@ -8,6 +8,8 @@ import Farmer from './farmer';
 import Address from './address';
 import Document from './document';
 import Otp from './otp';
+import PanDetails from './pan-details';
+import TermsAndCondition from './terms-and-condition';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -20,6 +22,8 @@ export default () => {
         <Route path="address/*" element={<Address />} />
         <Route path="document/*" element={<Document />} />
         <Route path="otp/*" element={<Otp />} />
+        <Route path="pan-details/*" element={<PanDetails />} />
+        <Route path="terms-and-condition/*" element={<TermsAndCondition />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

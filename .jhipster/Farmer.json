@@ -23,6 +23,10 @@
       "fieldValidateRulesMin": "1000000000"
     },
     {
+      "fieldName": "isWhatsAppEnabled",
+      "fieldType": "Boolean"
+    },
+    {
       "fieldName": "preferedLanguage",
       "fieldType": "Language",
       "fieldValues": "English,Hindi,Bengali,Marathi,Tamil,Telegu,Kanada,Malyalam,Panjabi,Kashmiri"
@@ -59,6 +63,20 @@
       "otherEntityName": "address",
       "otherEntityRelationshipName": "farmer",
       "relationshipName": "address",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "panDetails",
+      "otherEntityRelationshipName": "farmer",
+      "relationshipName": "panDetails",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "termsAndCondition",
+      "otherEntityRelationshipName": "farmer",
+      "relationshipName": "termsAndCondition",
       "relationshipSide": "left",
       "relationshipType": "one-to-many"
     },

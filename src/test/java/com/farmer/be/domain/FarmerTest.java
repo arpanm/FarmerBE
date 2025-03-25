@@ -4,6 +4,8 @@ import static com.farmer.be.domain.AddressTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
 import static com.farmer.be.domain.OtpTestSamples.*;
+import static com.farmer.be.domain.PanDetailsTestSamples.*;
+import static com.farmer.be.domain.TermsAndConditionTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
@@ -47,6 +49,50 @@ class FarmerTest {
         farmer.setAddresses(new HashSet<>());
         assertThat(farmer.getAddresses()).doesNotContain(addressBack);
         assertThat(addressBack.getFarmer()).isNull();
+    }
+
+    @Test
+    void panDetailsTest() {
+        Farmer farmer = getFarmerRandomSampleGenerator();
+        PanDetails panDetailsBack = getPanDetailsRandomSampleGenerator();
+
+        farmer.addPanDetails(panDetailsBack);
+        assertThat(farmer.getPanDetails()).containsOnly(panDetailsBack);
+        assertThat(panDetailsBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.removePanDetails(panDetailsBack);
+        assertThat(farmer.getPanDetails()).doesNotContain(panDetailsBack);
+        assertThat(panDetailsBack.getFarmer()).isNull();
+
+        farmer.panDetails(new HashSet<>(Set.of(panDetailsBack)));
+        assertThat(farmer.getPanDetails()).containsOnly(panDetailsBack);
+        assertThat(panDetailsBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.setPanDetails(new HashSet<>());
+        assertThat(farmer.getPanDetails()).doesNotContain(panDetailsBack);
+        assertThat(panDetailsBack.getFarmer()).isNull();
+    }
+
+    @Test
+    void termsAndConditionTest() {
+        Farmer farmer = getFarmerRandomSampleGenerator();
+        TermsAndCondition termsAndConditionBack = getTermsAndConditionRandomSampleGenerator();
+
+        farmer.addTermsAndCondition(termsAndConditionBack);
+        assertThat(farmer.getTermsAndConditions()).containsOnly(termsAndConditionBack);
+        assertThat(termsAndConditionBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.removeTermsAndCondition(termsAndConditionBack);
+        assertThat(farmer.getTermsAndConditions()).doesNotContain(termsAndConditionBack);
+        assertThat(termsAndConditionBack.getFarmer()).isNull();
+
+        farmer.termsAndConditions(new HashSet<>(Set.of(termsAndConditionBack)));
+        assertThat(farmer.getTermsAndConditions()).containsOnly(termsAndConditionBack);
+        assertThat(termsAndConditionBack.getFarmer()).isEqualTo(farmer);
+
+        farmer.setTermsAndConditions(new HashSet<>());
+        assertThat(farmer.getTermsAndConditions()).doesNotContain(termsAndConditionBack);
+        assertThat(termsAndConditionBack.getFarmer()).isNull();
     }
 
     @Test

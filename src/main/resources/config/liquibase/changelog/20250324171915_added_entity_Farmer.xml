@@ -23,6 +23,9 @@
             <column name="phone" type="bigint">
                 <constraints nullable="false" />
             </column>
+            <column name="is_whats_app_enabled" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="prefered_language" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -67,6 +70,7 @@
             <column name="name" type="string"/>
             <column name="email" type="string"/>
             <column name="phone" type="numeric"/>
+            <column name="is_whats_app_enabled" type="boolean"/>
             <column name="prefered_language" type="string"/>
             <column name="is_active" type="boolean"/>
             <column name="createdd_by" type="string"/>

@@ -1,0 +1,36 @@
+{
+  "farmerBeApp": {
+    "panDetails": {
+      "home": {
+        "title": "Pan Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Pan Details-ஐ உருவாக்கு",
+        "createOrEditLabel": "Pan Details -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Pan Details found"
+      },
+      "created": "Pan Details புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Pan Details மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Pan Details நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Pan Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Pan Details"
+      },
+      "id": "ID",
+      "pan": "Pan",
+      "name": "Name",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "country": "Country",
+      "isVerified": "Is Verified",
+      "verificationTime": "Verification Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}

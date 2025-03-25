@@ -6,6 +6,7 @@ export interface IFarmer {
   name?: string | null;
   email?: string | null;
   phone?: number;
+  isWhatsAppEnabled?: boolean | null;
   preferedLanguage?: keyof typeof Language | null;
   isActive?: boolean | null;
   createddBy?: string;
@@ -15,5 +16,6 @@ export interface IFarmer {
 }
 
 export const defaultValue: Readonly<IFarmer> = {
+  isWhatsAppEnabled: false,
   isActive: false,
 };

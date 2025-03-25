@@ -12,7 +12,9 @@
         "farmer": "Farmer",
         "address": "Address",
         "document": "Document",
-        "otp": "Otp"
+        "otp": "Otp",
+        "panDetails": "Pan Details",
+        "termsAndCondition": "Terms And Condition"
       },
       "account": {
         "main": "கணக்கு",

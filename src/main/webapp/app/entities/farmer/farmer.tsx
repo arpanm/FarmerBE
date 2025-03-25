@@ -142,6 +142,10 @@ export const Farmer = () => {
                     <Translate contentKey="farmerBeApp.farmer.phone">Phone</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('phone')} />
                   </th>
+                  <th className="hand" onClick={sort('isWhatsAppEnabled')}>
+                    <Translate contentKey="farmerBeApp.farmer.isWhatsAppEnabled">Is Whats App Enabled</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('isWhatsAppEnabled')} />
+                  </th>
                   <th className="hand" onClick={sort('preferedLanguage')}>
                     <Translate contentKey="farmerBeApp.farmer.preferedLanguage">Prefered Language</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('preferedLanguage')} />
@@ -180,6 +184,7 @@ export const Farmer = () => {
                     <td>{farmer.name}</td>
                     <td>{farmer.email}</td>
                     <td>{farmer.phone}</td>
+                    <td>{farmer.isWhatsAppEnabled ? 'true' : 'false'}</td>
                     <td>
                       <Translate contentKey={`farmerBeApp.Language.${farmer.preferedLanguage}`} />
                     </td>

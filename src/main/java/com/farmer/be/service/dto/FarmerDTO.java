@@ -24,6 +24,8 @@ public class FarmerDTO implements Serializable {
     @Max(value = 9999999999L)
     private Long phone;
 
+    private Boolean isWhatsAppEnabled;
+
     private Language preferedLanguage;
 
     private Boolean isActive;
@@ -70,6 +72,14 @@ public class FarmerDTO implements Serializable {
 
     public void setPhone(Long phone) {
         this.phone = phone;
+    }
+
+    public Boolean getIsWhatsAppEnabled() {
+        return isWhatsAppEnabled;
+    }
+
+    public void setIsWhatsAppEnabled(Boolean isWhatsAppEnabled) {
+        this.isWhatsAppEnabled = isWhatsAppEnabled;
     }
 
     public Language getPreferedLanguage() {
@@ -149,6 +159,7 @@ public class FarmerDTO implements Serializable {
             ", name='" + getName() + "'" +
             ", email='" + getEmail() + "'" +
             ", phone=" + getPhone() +
+            ", isWhatsAppEnabled='" + getIsWhatsAppEnabled() + "'" +
             ", preferedLanguage='" + getPreferedLanguage() + "'" +
             ", isActive='" + getIsActive() + "'" +
             ", createddBy='" + getCreateddBy() + "'" +

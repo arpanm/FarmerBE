@@ -128,6 +128,14 @@ export const FarmerUpdate = () => {
                 }}
               />
               <ValidatedField
+                label={translate('farmerBeApp.farmer.isWhatsAppEnabled')}
+                id="farmer-isWhatsAppEnabled"
+                name="isWhatsAppEnabled"
+                data-cy="isWhatsAppEnabled"
+                check
+                type="checkbox"
+              />
+              <ValidatedField
                 label={translate('farmerBeApp.farmer.preferedLanguage')}
                 id="farmer-preferedLanguage"
                 name="preferedLanguage"

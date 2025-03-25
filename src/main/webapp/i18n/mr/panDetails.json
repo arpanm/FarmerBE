@@ -1,0 +1,36 @@
+{
+  "farmerBeApp": {
+    "panDetails": {
+      "home": {
+        "title": "Pan Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Pan Details तयार करा",
+        "createOrEditLabel": "Pan Details तयार किंवा संपादित करा",
+        "notFound": "No Pan Details found"
+      },
+      "created": "Pan Details [identifier: {{ param }}] तयार आहे",
+      "updated": "Pan Details [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Pan Details [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Pan Details [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Pan Details"
+      },
+      "id": "ID",
+      "pan": "Pan",
+      "name": "Name",
+      "dateOfBirth": "Date Of Birth",
+      "gender": "Gender",
+      "country": "Country",
+      "isVerified": "Is Verified",
+      "verificationTime": "Verification Time",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farmer": "Farmer"
+    }
+  }
+}
