@@ -185,6 +185,59 @@ relationship OneToMany {
 	Farmer to Otp{farmer}
 }
 
+entity Category {
+	name String,
+    imagePath String,
+    description String,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Category to Category{parent}
+}
+
+entity Crop {
+	name String,
+    imagePath String,
+    description String,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship ManyToMany {
+	Farm{crops} to Crop{farms}
+}
+
+relationship OneToMany {
+	Category to Crop{category}
+}
+
+entity Accessories {
+	name String,
+    imagePath String,
+    description String,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Category to Accessories{category}
+}
+
+relationship ManyToMany {
+	Farm{crops} to Accessories{farms}
+}
+
 application {
   config {
     baseName FarmerBE
