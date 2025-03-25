@@ -361,6 +361,29 @@ relationship OneToMany {
 	Crop to PickUpConfirmation{crop}
 }
 
+entity PickupGradation {
+	grade Grade,
+    gradedBy String,
+    gradedTime Instant,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum Grade {
+	GoodQuality,
+    ModerateQuality,
+    BadQuality,
+    RejectQuality,
+    Other
+}
+
+relationship OneToOne {
+	PickUpConfirmation to PickupGradation{pickupItem}
+}
+
 application {
   config {
     baseName FarmerBE
