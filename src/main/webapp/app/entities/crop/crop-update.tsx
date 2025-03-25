@@ -5,9 +5,11 @@ import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhips
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
+import { mapIdList } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getCategories } from 'app/entities/category/category.reducer';
+import { getEntities as getFarms } from 'app/entities/farm/farm.reducer';
 import { createEntity, getEntity, updateEntity } from './crop.reducer';
 
 export const CropUpdate = () => {
@@ -19,6 +21,7 @@ export const CropUpdate = () => {
   const isNew = id === undefined;
 
   const categories = useAppSelector(state => state.category.entities);
+  const farms = useAppSelector(state => state.farm.entities);
   const cropEntity = useAppSelector(state => state.crop.entity);
   const loading = useAppSelector(state => state.crop.loading);
   const updating = useAppSelector(state => state.crop.updating);
@@ -34,6 +37,7 @@ export const CropUpdate = () => {
     }
 
     dispatch(getCategories({}));
+    dispatch(getFarms({}));
   }, []);
 
   useEffect(() => {
@@ -53,6 +57,7 @@ export const CropUpdate = () => {
       ...cropEntity,
       ...values,
       category: categories.find(it => it.id.toString() === values.category?.toString()),
+      farms: mapIdList(values.farms),
     };
 
     if (isNew) {
@@ -73,6 +78,7 @@ export const CropUpdate = () => {
           createdTime: convertDateTimeFromServer(cropEntity.createdTime),
           updatedTime: convertDateTimeFromServer(cropEntity.updatedTime),
           category: cropEntity?.category?.id,
+          farms: cropEntity?.farms?.map(e => e.id.toString()),
         };
 
   return (
@@ -175,6 +181,16 @@ export const CropUpdate = () => {
                 <option value="" key="0" />
                 {categories
                   ? categories.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField label={translate('farmerBeApp.crop.farm')} id="crop-farm" data-cy="farm" type="select" multiple name="farms">
+                <option value="" key="0" />
+                {farms
+                  ? farms.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

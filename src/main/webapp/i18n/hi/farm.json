@@ -30,6 +30,8 @@
       "updatedTime": "Updated Time",
       "address": "Address",
       "document": "Document",
+      "accessories": "Accessories",
+      "crop": "Crop",
       "farmer": "Farmer"
     }
   }

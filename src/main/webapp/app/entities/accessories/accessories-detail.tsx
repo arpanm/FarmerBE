@@ -92,6 +92,19 @@ export const AccessoriesDetail = () => {
             <Translate contentKey="farmerBeApp.accessories.category">Category</Translate>
           </dt>
           <dd>{accessoriesEntity.category ? accessoriesEntity.category.id : ''}</dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.accessories.farm">Farm</Translate>
+          </dt>
+          <dd>
+            {accessoriesEntity.farms
+              ? accessoriesEntity.farms.map((val, i) => (
+                  <span key={val.id}>
+                    <a>{val.id}</a>
+                    {accessoriesEntity.farms && i === accessoriesEntity.farms.length - 1 ? '' : ', '}
+                  </span>
+                ))
+              : null}
+          </dd>
         </dl>
         <Button tag={Link} to="/accessories" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

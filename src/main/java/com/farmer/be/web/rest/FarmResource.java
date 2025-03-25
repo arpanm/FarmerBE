@@ -139,12 +139,21 @@ public class FarmResource {
      * {@code GET  /farms} : get all the farms.
      *
      * @param pageable the pagination information.
+     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of farms in body.
      */
     @GetMapping("")
-    public ResponseEntity<List<FarmDTO>> getAllFarms(@org.springdoc.core.annotations.ParameterObject Pageable pageable) {
+    public ResponseEntity<List<FarmDTO>> getAllFarms(
+        @org.springdoc.core.annotations.ParameterObject Pageable pageable,
+        @RequestParam(name = "eagerload", required = false, defaultValue = "true") boolean eagerload
+    ) {
         LOG.debug("REST request to get a page of Farms");
-        Page<FarmDTO> page = farmService.findAll(pageable);
+        Page<FarmDTO> page;
+        if (eagerload) {
+            page = farmService.findAllWithEagerRelationships(pageable);
+        } else {
+            page = farmService.findAll(pageable);
+        }
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

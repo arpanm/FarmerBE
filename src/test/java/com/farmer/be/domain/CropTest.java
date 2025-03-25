@@ -2,9 +2,12 @@ package com.farmer.be.domain;
 
 import static com.farmer.be.domain.CategoryTestSamples.*;
 import static com.farmer.be.domain.CropTestSamples.*;
+import static com.farmer.be.domain.FarmTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.farmer.be.web.rest.TestUtil;
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 class CropTest {
@@ -33,5 +36,27 @@ class CropTest {
 
         crop.category(null);
         assertThat(crop.getCategory()).isNull();
+    }
+
+    @Test
+    void farmTest() {
+        Crop crop = getCropRandomSampleGenerator();
+        Farm farmBack = getFarmRandomSampleGenerator();
+
+        crop.addFarm(farmBack);
+        assertThat(crop.getFarms()).containsOnly(farmBack);
+        assertThat(farmBack.getCrops()).containsOnly(crop);
+
+        crop.removeFarm(farmBack);
+        assertThat(crop.getFarms()).doesNotContain(farmBack);
+        assertThat(farmBack.getCrops()).doesNotContain(crop);
+
+        crop.farms(new HashSet<>(Set.of(farmBack)));
+        assertThat(crop.getFarms()).containsOnly(farmBack);
+        assertThat(farmBack.getCrops()).containsOnly(crop);
+
+        crop.setFarms(new HashSet<>());
+        assertThat(crop.getFarms()).doesNotContain(farmBack);
+        assertThat(farmBack.getCrops()).doesNotContain(crop);
     }
 }

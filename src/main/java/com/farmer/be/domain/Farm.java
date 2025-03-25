@@ -72,6 +72,22 @@ public class Farm implements Serializable {
     @JsonIgnoreProperties(value = { "farmer", "farm" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "rel_farm__accessories",
+        joinColumns = @JoinColumn(name = "farm_id"),
+        inverseJoinColumns = @JoinColumn(name = "accessories_id")
+    )
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "category", "farms" }, allowSetters = true)
+    private Set<Accessories> accessories = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "category", "farms" }, allowSetters = true)
+    private Set<Crop> crops = new HashSet<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "farms", "addresses", "panDetails", "termsAndConditions", "documents", "otps" }, allowSetters = true)
     private Farmer farmer;
@@ -280,6 +296,52 @@ public class Farm implements Serializable {
     public Farm removeDocument(Document document) {
         this.documents.remove(document);
         document.setFarm(null);
+        return this;
+    }
+
+    public Set<Accessories> getAccessories() {
+        return this.accessories;
+    }
+
+    public void setAccessories(Set<Accessories> accessories) {
+        this.accessories = accessories;
+    }
+
+    public Farm accessories(Set<Accessories> accessories) {
+        this.setAccessories(accessories);
+        return this;
+    }
+
+    public Farm addAccessories(Accessories accessories) {
+        this.accessories.add(accessories);
+        return this;
+    }
+
+    public Farm removeAccessories(Accessories accessories) {
+        this.accessories.remove(accessories);
+        return this;
+    }
+
+    public Set<Crop> getCrops() {
+        return this.crops;
+    }
+
+    public void setCrops(Set<Crop> crops) {
+        this.crops = crops;
+    }
+
+    public Farm crops(Set<Crop> crops) {
+        this.setCrops(crops);
+        return this;
+    }
+
+    public Farm addCrop(Crop crop) {
+        this.crops.add(crop);
+        return this;
+    }
+
+    public Farm removeCrop(Crop crop) {
+        this.crops.remove(crop);
         return this;
     }
 

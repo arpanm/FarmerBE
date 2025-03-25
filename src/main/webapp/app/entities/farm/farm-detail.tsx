@@ -93,6 +93,32 @@ export const FarmDetail = () => {
           </dt>
           <dd>{farmEntity.updatedTime ? <TextFormat value={farmEntity.updatedTime} type="date" format={APP_DATE_FORMAT} /> : null}</dd>
           <dt>
+            <Translate contentKey="farmerBeApp.farm.accessories">Accessories</Translate>
+          </dt>
+          <dd>
+            {farmEntity.accessories
+              ? farmEntity.accessories.map((val, i) => (
+                  <span key={val.id}>
+                    <a>{val.id}</a>
+                    {farmEntity.accessories && i === farmEntity.accessories.length - 1 ? '' : ', '}
+                  </span>
+                ))
+              : null}
+          </dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.farm.crop">Crop</Translate>
+          </dt>
+          <dd>
+            {farmEntity.crops
+              ? farmEntity.crops.map((val, i) => (
+                  <span key={val.id}>
+                    <a>{val.id}</a>
+                    {farmEntity.crops && i === farmEntity.crops.length - 1 ? '' : ', '}
+                  </span>
+                ))
+              : null}
+          </dd>
+          <dt>
             <Translate contentKey="farmerBeApp.farm.farmer">Farmer</Translate>
           </dt>
           <dd>{farmEntity.farmer ? farmEntity.farmer.id : ''}</dd>

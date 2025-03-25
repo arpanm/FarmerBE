@@ -66,6 +66,7 @@ public class CropAsserts {
     public static void assertCropUpdatableRelationshipsEquals(Crop expected, Crop actual) {
         assertThat(actual)
             .as("Verify Crop relationships")
-            .satisfies(a -> assertThat(a.getCategory()).as("check category").isEqualTo(expected.getCategory()));
+            .satisfies(a -> assertThat(a.getCategory()).as("check category").isEqualTo(expected.getCategory()))
+            .satisfies(a -> assertThat(a.getFarms()).as("check farms").isEqualTo(expected.getFarms()));
     }
 }

@@ -4,7 +4,9 @@ import com.farmer.be.domain.enumeration.FarmType;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A DTO for the {@link com.farmer.be.domain.Farm} entity.
@@ -37,6 +39,10 @@ public class FarmDTO implements Serializable {
 
     @NotNull
     private Instant updatedTime;
+
+    private Set<AccessoriesDTO> accessories = new HashSet<>();
+
+    private Set<CropDTO> crops = new HashSet<>();
 
     private FarmerDTO farmer;
 
@@ -128,6 +134,22 @@ public class FarmDTO implements Serializable {
         this.updatedTime = updatedTime;
     }
 
+    public Set<AccessoriesDTO> getAccessories() {
+        return accessories;
+    }
+
+    public void setAccessories(Set<AccessoriesDTO> accessories) {
+        this.accessories = accessories;
+    }
+
+    public Set<CropDTO> getCrops() {
+        return crops;
+    }
+
+    public void setCrops(Set<CropDTO> crops) {
+        this.crops = crops;
+    }
+
     public FarmerDTO getFarmer() {
         return farmer;
     }
@@ -172,6 +194,8 @@ public class FarmDTO implements Serializable {
             ", createdTime='" + getCreatedTime() + "'" +
             ", updatedBy='" + getUpdatedBy() + "'" +
             ", updatedTime='" + getUpdatedTime() + "'" +
+            ", accessories=" + getAccessories() +
+            ", crops=" + getCrops() +
             ", farmer=" + getFarmer() +
             "}";
     }

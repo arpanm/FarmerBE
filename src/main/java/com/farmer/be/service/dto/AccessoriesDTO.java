@@ -3,7 +3,9 @@ package com.farmer.be.service.dto;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A DTO for the {@link com.farmer.be.domain.Accessories} entity.
@@ -34,6 +36,8 @@ public class AccessoriesDTO implements Serializable {
     private Instant updatedTime;
 
     private CategoryDTO category;
+
+    private Set<FarmDTO> farms = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -115,6 +119,14 @@ public class AccessoriesDTO implements Serializable {
         this.category = category;
     }
 
+    public Set<FarmDTO> getFarms() {
+        return farms;
+    }
+
+    public void setFarms(Set<FarmDTO> farms) {
+        this.farms = farms;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -150,6 +162,7 @@ public class AccessoriesDTO implements Serializable {
             ", updatedBy='" + getUpdatedBy() + "'" +
             ", updatedTime='" + getUpdatedTime() + "'" +
             ", category=" + getCategory() +
+            ", farms=" + getFarms() +
             "}";
     }
 }

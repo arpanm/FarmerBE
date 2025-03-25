@@ -1,6 +1,8 @@
 package com.farmer.be.domain;
 
+import static com.farmer.be.domain.AccessoriesTestSamples.*;
 import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
@@ -69,6 +71,42 @@ class FarmTest {
         farm.setDocuments(new HashSet<>());
         assertThat(farm.getDocuments()).doesNotContain(documentBack);
         assertThat(documentBack.getFarm()).isNull();
+    }
+
+    @Test
+    void accessoriesTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        Accessories accessoriesBack = getAccessoriesRandomSampleGenerator();
+
+        farm.addAccessories(accessoriesBack);
+        assertThat(farm.getAccessories()).containsOnly(accessoriesBack);
+
+        farm.removeAccessories(accessoriesBack);
+        assertThat(farm.getAccessories()).doesNotContain(accessoriesBack);
+
+        farm.accessories(new HashSet<>(Set.of(accessoriesBack)));
+        assertThat(farm.getAccessories()).containsOnly(accessoriesBack);
+
+        farm.setAccessories(new HashSet<>());
+        assertThat(farm.getAccessories()).doesNotContain(accessoriesBack);
+    }
+
+    @Test
+    void cropTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        Crop cropBack = getCropRandomSampleGenerator();
+
+        farm.addCrop(cropBack);
+        assertThat(farm.getCrops()).containsOnly(cropBack);
+
+        farm.removeCrop(cropBack);
+        assertThat(farm.getCrops()).doesNotContain(cropBack);
+
+        farm.crops(new HashSet<>(Set.of(cropBack)));
+        assertThat(farm.getCrops()).containsOnly(cropBack);
+
+        farm.setCrops(new HashSet<>());
+        assertThat(farm.getCrops()).doesNotContain(cropBack);
     }
 
     @Test
