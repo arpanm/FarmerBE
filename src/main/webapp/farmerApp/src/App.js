@@ -6,6 +6,7 @@ import Login from './components/Login';
 import VerifyOTP from './components/VerifyOTP';
 import Dashboard from './pages/Dashboard';
 import HarvestPlanning from './pages/HarvestPlanning';
+import SelectProduce from './pages/SelectProduce';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/verify-otp" element={<VerifyOTP />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/harvest-planning" element={<HarvestPlanning />} />
+        <Route path="/select-produce" element={<SelectProduce />} />
       </Routes>
     </Router>
   );
