@@ -1,0 +1,134 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.infoButton {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: none;
+  color: #666;
+  cursor: pointer;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content h2 {
+  font-size: 1.2rem;
+  margin: 0 0 16px;
+  color: #333;
+}
+
+.receiptCard {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.paymentStatus {
+  color: #006838;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.receiptInfo {
+  margin-bottom: 24px;
+}
+
+.receiptInfo p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.cropTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cropTable th,
+.cropTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.cropTable th {
+  background: #f0f0f0;
+  font-weight: 500;
+  color: #333;
+}
+
+.cropTable td {
+  color: #666;
+}
+
+.totalAmount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid #ddd;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.downloadButton {
+  width: 100%;
+  padding: 12px;
+  background: #006838;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

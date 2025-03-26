@@ -78,6 +78,7 @@ function Dashboard() {
             <table>
               <thead>
                 <tr>
+                  <th></th>
                   <th>Produce</th>
                   <th>Today's Price</th>
                 </tr>
@@ -85,6 +86,7 @@ function Dashboard() {
               <tbody>
                 {priceTable.map(item => (
                   <tr key={item.id}>
+                    <td>{item.image}</td>
                     <td>{item.produce}</td>
                     <td className={item.price.includes('awaiting') ? styles.priceAwaiting : ''}>{item.price}</td>
                   </tr>

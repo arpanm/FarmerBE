@@ -15,15 +15,21 @@ function BottomNav() {
         <span className={styles.homeIcon}>🏠</span>
         <span>Home</span>
       </button>
-      <button className={styles.navButton}>
+      <button
+        className={`${styles.navButton} ${location.pathname === '/select-produce' ? styles.active : ''}`}
+        onClick={() => navigate('/select-produce')}
+      >
         <span className={styles.manageIcon}>🌾</span>
         <span>Manage crops</span>
       </button>
-      <button className={styles.navButton}>
+      <button className={`${styles.navButton} ${location.pathname === '/ledger' ? styles.active : ''}`} onClick={() => navigate('/ledger')}>
         <span className={styles.ledgerIcon}>📒</span>
         <span>Ledger</span>
       </button>
-      <button className={styles.navButton}>
+      <button
+        className={`${styles.navButton} ${location.pathname === '/profile' ? styles.active : ''}`}
+        onClick={() => navigate('/profile')}
+      >
         <span className={styles.farmsIcon}>🏡</span>
         <span>My Farms</span>
       </button>
