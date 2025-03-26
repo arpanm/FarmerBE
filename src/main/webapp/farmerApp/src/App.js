@@ -5,6 +5,7 @@ import Welcome from './components/Welcome';
 import Login from './components/Login';
 import VerifyOTP from './components/VerifyOTP';
 import Dashboard from './pages/Dashboard';
+import HarvestPlanning from './pages/HarvestPlanning';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/verify-otp" element={<VerifyOTP />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/harvest-planning" element={<HarvestPlanning />} />
       </Routes>
     </Router>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Dashboard.module.css';
+import BottomNav from '../components/BottomNav';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -109,7 +110,9 @@ function Dashboard() {
             ))}
             <span className={styles.moreItems}>+2 more</span>
           </div>
-          <button className={styles.planHarvestButton}>Plan harvest for tomorrow</button>
+          <button className={styles.planHarvestButton} onClick={() => navigate('/harvest-planning')}>
+            Plan harvest for tomorrow
+          </button>
         </section>
 
         {/* Add More Produce */}
@@ -130,25 +133,7 @@ function Dashboard() {
         </section>
       </main>
 
-      {/* Bottom Navigation */}
-      <nav className={styles.bottomNav}>
-        <button className={`${styles.navButton} ${styles.active}`}>
-          <span className={styles.homeIcon}></span>
-          <span>Home</span>
-        </button>
-        <button className={styles.navButton}>
-          <span className={styles.manageIcon}></span>
-          <span>Manage crops</span>
-        </button>
-        <button className={styles.navButton}>
-          <span className={styles.ledgerIcon}></span>
-          <span>Ledger</span>
-        </button>
-        <button className={styles.navButton}>
-          <span className={styles.farmsIcon}></span>
-          <span>My Farms</span>
-        </button>
-      </nav>
+      <BottomNav />
     </div>
   );
 }
