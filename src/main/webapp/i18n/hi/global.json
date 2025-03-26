@@ -1,9 +1,10 @@
 {
   "global": {
-    "title": "FarmerBE",
+    "title": "Farmer App Backoffice",
     "browsehappy": "आप एक <strong>पुराने</strong> ब्राउज़र का उपयोग कर रहें हैं। कृपया अपने अनुभव में सुधार करने के लिए अपने <a href=\"http://browsehappy.com/?locale=en\">ब्राउज़र को अपग्रेड करें</a>",
     "menu": {
       "home": "होम",
+      "farmerApp": "किसान ऐप",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "एंटिटीज़",
@@ -172,5 +173,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "यह आपके पाद लेख है"
+  "footer": "सर्वाधिकार सुरक्षित"
 }

@@ -17,81 +17,119 @@ export const Home = () => {
       </Col>
       <Col md="9">
         <h1 className="display-4">
-          <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
+          <Translate contentKey="home.title">Welcome to Farmer App!</Translate>
         </h1>
         <p className="lead">
-          <Translate contentKey="home.subtitle">This is your homepage</Translate>
+          <Translate contentKey="home.subtitle">Your complete farm management solution</Translate>
         </p>
         {account?.login ? (
           <div>
             <Alert color="success">
               <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
-                You are logged in as user {account.login}.
+                Welcome back, {account.login}! Manage your farms and crops efficiently.
               </Translate>
             </Alert>
           </div>
         ) : (
           <div>
             <Alert color="warning">
-              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
-
+              <Translate contentKey="global.messages.info.authenticated.prefix">To get started </Translate>
               <Link to="/login" className="alert-link">
                 <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
               </Link>
               <Translate contentKey="global.messages.info.authenticated.suffix">
-                , you can try the default accounts:
-                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
+                , you can use your registered credentials or contact support for assistance.
               </Translate>
             </Alert>
 
             <Alert color="warning">
-              <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
+              <Translate contentKey="global.messages.info.register.noaccount">New to Farmer App?</Translate>&nbsp;
               <Link to="/account/register" className="alert-link">
-                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
+                <Translate contentKey="global.messages.info.register.link">Register as a farmer</Translate>
               </Link>
             </Alert>
           </div>
         )}
-        <p>
-          <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
-        </p>
+        <h2>
+          <Translate contentKey="home.features.title">Key Features</Translate>
+        </h2>
+        <Row>
+          <Col md="6">
+            <h3>
+              <Translate contentKey="home.onboarding.title">Easy Onboarding</Translate>
+            </h3>
+            <p>
+              <Translate contentKey="home.onboarding.description">
+                Quick and simple registration process for farmers with support for multiple languages.
+              </Translate>
+            </p>
+            <h3>
+              <Translate contentKey="home.farms.title">Farm Management</Translate>
+            </h3>
+            <p>
+              <Translate contentKey="home.farms.description">
+                Add and manage multiple farms under your profile with detailed tracking.
+              </Translate>
+            </p>
 
+            <h3>
+              <Translate contentKey="home.crops.title">Crop Management</Translate>
+            </h3>
+            <p>
+              <Translate contentKey="home.crops.description">Track different crops for each farm with detailed information.</Translate>
+            </p>
+          </Col>
+          <Col md="6">
+            <h3>
+              <Translate contentKey="home.demand.title">Market Demand & Pricing</Translate>
+            </h3>
+            <p>
+              <Translate contentKey="home.demand.description">View daily demand and price updates for your crops in real-time.</Translate>
+            </p>
+
+            <h3>
+              <Translate contentKey="home.harvest.title">Harvest Planning</Translate>
+            </h3>
+            <p>
+              <Translate contentKey="home.harvest.description">Create and manage harvest plans for each crop with scheduling.</Translate>
+            </p>
+
+            <h3>
+              <Translate contentKey="home.pickup.title">Pickup & Payments</Translate>
+            </h3>
+            <p>
+              <Translate contentKey="home.pickup.description">
+                Track pickup confirmations, gradation reports, and receive timely payments.
+              </Translate>
+            </p>
+          </Col>
+        </Row>
+
+        <h2>
+          <Translate contentKey="home.platform.title">Platform Features</Translate>
+        </h2>
         <ul>
           <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
-            </a>
+            <Link to="/admin/metrics" className="feature-link">
+              <Translate contentKey="home.link.monitoring">Application Monitoring</Translate>
+            </Link>
           </li>
           <li>
-            <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.stackoverflow">JHipster on Stack Overflow</Translate>
-            </a>
+            <Link to="/admin/user-management" className="feature-link">
+              <Translate contentKey="home.link.usermanagement">User Management</Translate>
+            </Link>
           </li>
           <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.bugtracker">JHipster bug tracker</Translate>
-            </a>
+            <Link to="/language" className="feature-link">
+              <Translate contentKey="home.link.language">Language Settings</Translate>
+            </Link>
           </li>
           <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.chat">JHipster public chat room</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.follow">follow @jhipster on Twitter</Translate>
-            </a>
+            <Link to="/docs" className="feature-link">
+              <Translate contentKey="home.link.documentation">Documentation</Translate>
+            </Link>
           </li>
         </ul>
-
-        <p>
-          <Translate contentKey="home.like">If you like JHipster, do not forget to give us a star on</Translate>{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          !
-        </p>
       </Col>
     </Row>
   );
