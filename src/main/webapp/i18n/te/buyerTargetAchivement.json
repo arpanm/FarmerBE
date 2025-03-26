@@ -1,0 +1,42 @@
+{
+  "farmerBeApp": {
+    "buyerTargetAchivement": {
+      "home": {
+        "title": "Buyer Target Achivements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Buyer Target Achivement  సృష్టించండి",
+        "createOrEditLabel": "Buyer Target Achivement సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Buyer Target Achivements found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Buyer Target Achivement సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Buyer Target Achivement సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Buyer Target Achivement తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Buyer Target Achivement {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Buyer Target Achivement"
+      },
+      "id": "ID",
+      "labour": "Labour",
+      "farmVisit": "Farm Visit",
+      "totalCollection": "Total Collection",
+      "targetDate": "Target Date",
+      "attendenceHours": "Attendence Hours",
+      "achivementLabour": "Achivement Labour",
+      "achivementFarmVisit": "Achivement Farm Visit",
+      "achivementTotalCollection": "Achivement Total Collection",
+      "achivementAttendenceHours": "Achivement Attendence Hours",
+      "achivementScore": "Achivement Score",
+      "incentive": "Incentive",
+      "kmDriven": "Km Driven",
+      "conveyance": "Conveyance",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "buyer": "Buyer"
+    }
+  }
+}

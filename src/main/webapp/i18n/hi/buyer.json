@@ -1,0 +1,38 @@
+{
+  "farmerBeApp": {
+    "buyer": {
+      "home": {
+        "title": "Buyers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Buyer बनाएँ",
+        "createOrEditLabel": "Buyer बनाएँ या संपादित करें",
+        "notFound": "No Buyers found"
+      },
+      "created": "एक नया Buyer [identifier: {{ param }}] तैयार है",
+      "updated": "एक Buyer [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Buyer [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Buyer [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Buyer"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "isWhatsAppEnabled": "Is Whats App Enabled",
+      "preferedLanguage": "Prefered Language",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "attendence": "Attendence",
+      "fieldVisit": "Field Visit",
+      "buyerTargetAchivement": "Buyer Target Achivement",
+      "collectionCenter": "Collection Center"
+    }
+  }
+}

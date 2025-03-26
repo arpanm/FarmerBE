@@ -64,12 +64,12 @@ public class Farm implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "documents", "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "documents", "farmer", "farm", "collectionCenter" }, allowSetters = true)
     private Set<Address> addresses = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails", "fieldVisit" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
@@ -92,12 +92,25 @@ public class Farm implements Serializable {
     @JsonIgnoreProperties(value = { "grade", "itemPayment", "farm", "crop" }, allowSetters = true)
     private Set<PickUpConfirmation> pickUpConfirmations = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "documents", "buyer", "farm" }, allowSetters = true)
+    private Set<FieldVisit> fieldVisits = new HashSet<>();
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
         value = {
-            "demands", "prices", "hervestPlanRules", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms",
+            "demands",
+            "prices",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "category",
+            "farms",
+            "collectionCenters",
         },
         allowSetters = true
     )
@@ -119,6 +132,17 @@ public class Farm implements Serializable {
         allowSetters = true
     )
     private Farmer farmer;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "addresses", "locationMappings", "demandData", "farms", "buyers", "crops" }, allowSetters = true)
+    private CollectionCenter collectionCenter;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(
+        value = { "farms", "attendences", "fieldVisits", "buyerTargetAchivements", "collectionCenter" },
+        allowSetters = true
+    )
+    private Buyer buyer;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -451,6 +475,37 @@ public class Farm implements Serializable {
         return this;
     }
 
+    public Set<FieldVisit> getFieldVisits() {
+        return this.fieldVisits;
+    }
+
+    public void setFieldVisits(Set<FieldVisit> fieldVisits) {
+        if (this.fieldVisits != null) {
+            this.fieldVisits.forEach(i -> i.setFarm(null));
+        }
+        if (fieldVisits != null) {
+            fieldVisits.forEach(i -> i.setFarm(this));
+        }
+        this.fieldVisits = fieldVisits;
+    }
+
+    public Farm fieldVisits(Set<FieldVisit> fieldVisits) {
+        this.setFieldVisits(fieldVisits);
+        return this;
+    }
+
+    public Farm addFieldVisit(FieldVisit fieldVisit) {
+        this.fieldVisits.add(fieldVisit);
+        fieldVisit.setFarm(this);
+        return this;
+    }
+
+    public Farm removeFieldVisit(FieldVisit fieldVisit) {
+        this.fieldVisits.remove(fieldVisit);
+        fieldVisit.setFarm(null);
+        return this;
+    }
+
     public Set<Crop> getCrops() {
         return this.crops;
     }
@@ -507,6 +562,32 @@ public class Farm implements Serializable {
 
     public Farm farmer(Farmer farmer) {
         this.setFarmer(farmer);
+        return this;
+    }
+
+    public CollectionCenter getCollectionCenter() {
+        return this.collectionCenter;
+    }
+
+    public void setCollectionCenter(CollectionCenter collectionCenter) {
+        this.collectionCenter = collectionCenter;
+    }
+
+    public Farm collectionCenter(CollectionCenter collectionCenter) {
+        this.setCollectionCenter(collectionCenter);
+        return this;
+    }
+
+    public Buyer getBuyer() {
+        return this.buyer;
+    }
+
+    public void setBuyer(Buyer buyer) {
+        this.buyer = buyer;
+    }
+
+    public Farm buyer(Buyer buyer) {
+        this.setBuyer(buyer);
         return this;
     }
 

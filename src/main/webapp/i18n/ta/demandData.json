@@ -1,0 +1,40 @@
+{
+  "farmerBeApp": {
+    "demandData": {
+      "home": {
+        "title": "Demand Data",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Demand Data-ஐ உருவாக்கு",
+        "createOrEditLabel": "Demand Data -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Demand Data found"
+      },
+      "created": "Demand Data புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Demand Data மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Demand Data நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Demand Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Demand Data"
+      },
+      "id": "ID",
+      "fromCPC": "From CPC",
+      "toCC": "To CC",
+      "pCode": "P Code",
+      "article": "Article",
+      "description": "Description",
+      "uom": "Uom",
+      "netWeightGrams": "Net Weight Grams",
+      "crateSize": "Crate Size",
+      "indentUom": "Indent Uom",
+      "indentKg": "Indent Kg",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "file": "File",
+      "collectionCenter": "Collection Center"
+    }
+  }
+}

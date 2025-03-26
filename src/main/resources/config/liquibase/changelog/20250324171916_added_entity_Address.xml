@@ -35,10 +35,10 @@
             <column name="pincode" type="bigint">
                 <constraints nullable="false" />
             </column>
-            <column name="lat" type="bigint">
+            <column name="lat" type="${floatType}">
                 <constraints nullable="true" />
             </column>
-            <column name="lon" type="bigint">
+            <column name="lon" type="${floatType}">
                 <constraints nullable="true" />
             </column>
             <column name="is_active" type="boolean">
@@ -60,6 +60,9 @@
                 <constraints nullable="true" />
             </column>
             <column name="farm_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="collection_center_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

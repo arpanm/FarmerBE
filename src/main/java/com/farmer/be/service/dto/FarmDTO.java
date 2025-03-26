@@ -46,6 +46,10 @@ public class FarmDTO implements Serializable {
 
     private FarmerDTO farmer;
 
+    private CollectionCenterDTO collectionCenter;
+
+    private BuyerDTO buyer;
+
     public Long getId() {
         return id;
     }
@@ -158,6 +162,22 @@ public class FarmDTO implements Serializable {
         this.farmer = farmer;
     }
 
+    public CollectionCenterDTO getCollectionCenter() {
+        return collectionCenter;
+    }
+
+    public void setCollectionCenter(CollectionCenterDTO collectionCenter) {
+        this.collectionCenter = collectionCenter;
+    }
+
+    public BuyerDTO getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(BuyerDTO buyer) {
+        this.buyer = buyer;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -197,6 +217,8 @@ public class FarmDTO implements Serializable {
             ", crops=" + getCrops() +
             ", accessories=" + getAccessories() +
             ", farmer=" + getFarmer() +
+            ", collectionCenter=" + getCollectionCenter() +
+            ", buyer=" + getBuyer() +
             "}";
     }
 }

@@ -97,6 +97,13 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "fieldVisit",
+      "otherEntityRelationshipName": "farm",
+      "relationshipName": "fieldVisit",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
       "otherEntityName": "crop",
       "otherEntityRelationshipName": "farm",
       "relationshipName": "crop",
@@ -113,6 +120,18 @@
     {
       "otherEntityName": "farmer",
       "relationshipName": "farmer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "collectionCenter",
+      "relationshipName": "collectionCenter",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "buyer",
+      "relationshipName": "buyer",
       "relationshipSide": "right",
       "relationshipType": "many-to-one"
     }

@@ -31,9 +31,9 @@ public class AddressDTO implements Serializable {
     @NotNull
     private Long pincode;
 
-    private Long lat;
+    private Float lat;
 
-    private Long lon;
+    private Float lon;
 
     private Boolean isActive;
 
@@ -52,6 +52,8 @@ public class AddressDTO implements Serializable {
     private FarmerDTO farmer;
 
     private FarmDTO farm;
+
+    private CollectionCenterDTO collectionCenter;
 
     public Long getId() {
         return id;
@@ -117,19 +119,19 @@ public class AddressDTO implements Serializable {
         this.pincode = pincode;
     }
 
-    public Long getLat() {
+    public Float getLat() {
         return lat;
     }
 
-    public void setLat(Long lat) {
+    public void setLat(Float lat) {
         this.lat = lat;
     }
 
-    public Long getLon() {
+    public Float getLon() {
         return lon;
     }
 
-    public void setLon(Long lon) {
+    public void setLon(Float lon) {
         this.lon = lon;
     }
 
@@ -189,6 +191,14 @@ public class AddressDTO implements Serializable {
         this.farm = farm;
     }
 
+    public CollectionCenterDTO getCollectionCenter() {
+        return collectionCenter;
+    }
+
+    public void setCollectionCenter(CollectionCenterDTO collectionCenter) {
+        this.collectionCenter = collectionCenter;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -231,6 +241,7 @@ public class AddressDTO implements Serializable {
             ", updatedTime='" + getUpdatedTime() + "'" +
             ", farmer=" + getFarmer() +
             ", farm=" + getFarm() +
+            ", collectionCenter=" + getCollectionCenter() +
             "}";
     }
 }

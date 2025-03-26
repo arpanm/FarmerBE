@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity BuyerTargetAchivement.
+    -->
+    <changeSet id="20250326184237-1" author="jhipster">
+        <createTable tableName="buyer_target_achivement">
+            <column name="id" type="bigint" autoIncrement="true" startWith="1500">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="labour" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="farm_visit" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_collection" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="target_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="attendence_hours" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="achivement_labour" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="achivement_farm_visit" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="achivement_total_collection" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="achivement_attendence_hours" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="achivement_score" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="incentive" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="km_driven" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="conveyance" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="createdd_by" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="buyer_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="buyer_target_achivement" columnName="created_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="buyer_target_achivement" columnName="updated_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20250326184237-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/buyer_target_achivement.csv"
+                  separator=";"
+                  tableName="buyer_target_achivement"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="labour" type="numeric"/>
+            <column name="farm_visit" type="numeric"/>
+            <column name="total_collection" type="numeric"/>
+            <column name="target_date" type="date"/>
+            <column name="attendence_hours" type="numeric"/>
+            <column name="achivement_labour" type="numeric"/>
+            <column name="achivement_farm_visit" type="numeric"/>
+            <column name="achivement_total_collection" type="numeric"/>
+            <column name="achivement_attendence_hours" type="numeric"/>
+            <column name="achivement_score" type="numeric"/>
+            <column name="incentive" type="numeric"/>
+            <column name="km_driven" type="numeric"/>
+            <column name="conveyance" type="numeric"/>
+            <column name="is_active" type="boolean"/>
+            <column name="createdd_by" type="string"/>
+            <column name="created_time" type="date"/>
+            <column name="updated_by" type="string"/>
+            <column name="updated_time" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

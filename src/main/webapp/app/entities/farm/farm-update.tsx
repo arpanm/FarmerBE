@@ -11,6 +11,8 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { getEntities as getCrops } from 'app/entities/crop/crop.reducer';
 import { getEntities as getAccessories } from 'app/entities/accessories/accessories.reducer';
 import { getEntities as getFarmers } from 'app/entities/farmer/farmer.reducer';
+import { getEntities as getCollectionCenters } from 'app/entities/collection-center/collection-center.reducer';
+import { getEntities as getBuyers } from 'app/entities/buyer/buyer.reducer';
 import { FarmType } from 'app/shared/model/enumerations/farm-type.model';
 import { createEntity, getEntity, updateEntity } from './farm.reducer';
 
@@ -25,6 +27,8 @@ export const FarmUpdate = () => {
   const crops = useAppSelector(state => state.crop.entities);
   const accessories = useAppSelector(state => state.accessories.entities);
   const farmers = useAppSelector(state => state.farmer.entities);
+  const collectionCenters = useAppSelector(state => state.collectionCenter.entities);
+  const buyers = useAppSelector(state => state.buyer.entities);
   const farmEntity = useAppSelector(state => state.farm.entity);
   const loading = useAppSelector(state => state.farm.loading);
   const updating = useAppSelector(state => state.farm.updating);
@@ -43,6 +47,8 @@ export const FarmUpdate = () => {
     dispatch(getCrops({}));
     dispatch(getAccessories({}));
     dispatch(getFarmers({}));
+    dispatch(getCollectionCenters({}));
+    dispatch(getBuyers({}));
   }, []);
 
   useEffect(() => {
@@ -67,6 +73,8 @@ export const FarmUpdate = () => {
       crops: mapIdList(values.crops),
       accessories: mapIdList(values.accessories),
       farmer: farmers.find(it => it.id.toString() === values.farmer?.toString()),
+      collectionCenter: collectionCenters.find(it => it.id.toString() === values.collectionCenter?.toString()),
+      buyer: buyers.find(it => it.id.toString() === values.buyer?.toString()),
     };
 
     if (isNew) {
@@ -90,6 +98,8 @@ export const FarmUpdate = () => {
           crops: farmEntity?.crops?.map(e => e.id.toString()),
           accessories: farmEntity?.accessories?.map(e => e.id.toString()),
           farmer: farmEntity?.farmer?.id,
+          collectionCenter: farmEntity?.collectionCenter?.id,
+          buyer: farmEntity?.buyer?.id,
         };
 
   return (
@@ -239,6 +249,32 @@ export const FarmUpdate = () => {
                 <option value="" key="0" />
                 {farmers
                   ? farmers.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                id="farm-collectionCenter"
+                name="collectionCenter"
+                data-cy="collectionCenter"
+                label={translate('farmerBeApp.farm.collectionCenter')}
+                type="select"
+              >
+                <option value="" key="0" />
+                {collectionCenters
+                  ? collectionCenters.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField id="farm-buyer" name="buyer" data-cy="buyer" label={translate('farmerBeApp.farm.buyer')} type="select">
+                <option value="" key="0" />
+                {buyers
+                  ? buyers.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

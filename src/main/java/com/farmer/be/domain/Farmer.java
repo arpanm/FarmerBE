@@ -81,9 +81,12 @@ public class Farmer implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "fieldVisits",
             "crops",
             "accessories",
             "farmer",
+            "collectionCenter",
+            "buyer",
         },
         allowSetters = true
     )
@@ -91,7 +94,7 @@ public class Farmer implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "documents", "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "documents", "farmer", "farm", "collectionCenter" }, allowSetters = true)
     private Set<Address> addresses = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
@@ -111,7 +114,7 @@ public class Farmer implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails", "fieldVisit" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farmer")

@@ -1,10 +1,9 @@
 {
   "global": {
-    "title": "Farmer App Backoffice",
+    "title": "FarmerBE",
     "browsehappy": "நிங்கள் உபயோக்கிப்பது <strong>காலாவதியான</strong> உலாவி. தயவுசெய்து  <a href=\"http://browsehappy.com/?locale=en\">உங்கள் உலாவியை மேம்படுத்தவும்</a>.",
     "menu": {
       "home": "முகப்பு",
-      "farmerApp": "விவசாயி செயலி",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "பொருள்கள்",
@@ -30,7 +29,15 @@
         "pickupPayment": "Pickup Payment",
         "bannerContent": "Banner Content",
         "carouselContent": "Carousel Content",
-        "hervestPlanRule": "Hervest Plan Rule"
+        "hervestPlanRule": "Hervest Plan Rule",
+        "collectionCenter": "Collection Center",
+        "locationMapping": "Location Mapping",
+        "demandData": "Demand Data",
+        "demandDataFile": "Demand Data File",
+        "buyer": "Buyer",
+        "attendence": "Attendence",
+        "fieldVisit": "Field Visit",
+        "buyerTargetAchivement": "Buyer Target Achivement"
       },
       "account": {
         "main": "கணக்கு",
@@ -163,5 +170,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை"
+  "footer": "இது உங்கள் முடிப்பு"
 }

@@ -43,6 +43,8 @@ public class CropDTO implements Serializable {
 
     private Set<FarmDTO> farms = new HashSet<>();
 
+    private Set<CollectionCenterDTO> collectionCenters = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -147,6 +149,14 @@ public class CropDTO implements Serializable {
         this.farms = farms;
     }
 
+    public Set<CollectionCenterDTO> getCollectionCenters() {
+        return collectionCenters;
+    }
+
+    public void setCollectionCenters(Set<CollectionCenterDTO> collectionCenters) {
+        this.collectionCenters = collectionCenters;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -185,6 +195,7 @@ public class CropDTO implements Serializable {
             ", updatedTime='" + getUpdatedTime() + "'" +
             ", category=" + getCategory() +
             ", farms=" + getFarms() +
+            ", collectionCenters=" + getCollectionCenters() +
             "}";
     }
 }

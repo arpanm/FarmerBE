@@ -1,0 +1,34 @@
+{
+  "farmerBeApp": {
+    "attendence": {
+      "home": {
+        "title": "Attendences",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Attendence",
+        "createOrEditLabel": "Create or edit a Attendence",
+        "notFound": "No Attendences found"
+      },
+      "created": "A new Attendence is created with identifier {{ param }}",
+      "updated": "A Attendence is updated with identifier {{ param }}",
+      "deleted": "A Attendence is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Attendence {{ id }}?"
+      },
+      "detail": {
+        "title": "Attendence"
+      },
+      "id": "ID",
+      "attendenceType": "Attendence Type",
+      "attendenceDate": "Attendence Date",
+      "attendenceTime": "Attendence Time",
+      "lat": "Lat",
+      "lon": "Lon",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "buyer": "Buyer"
+    }
+  }
+}

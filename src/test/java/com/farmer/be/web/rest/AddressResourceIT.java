@@ -57,11 +57,11 @@ class AddressResourceIT {
     private static final Long DEFAULT_PINCODE = 1L;
     private static final Long UPDATED_PINCODE = 2L;
 
-    private static final Long DEFAULT_LAT = 1L;
-    private static final Long UPDATED_LAT = 2L;
+    private static final Float DEFAULT_LAT = 1F;
+    private static final Float UPDATED_LAT = 2F;
 
-    private static final Long DEFAULT_LON = 1L;
-    private static final Long UPDATED_LON = 2L;
+    private static final Float DEFAULT_LON = 1F;
+    private static final Float UPDATED_LON = 2F;
 
     private static final Boolean DEFAULT_IS_ACTIVE = false;
     private static final Boolean UPDATED_IS_ACTIVE = true;
@@ -361,8 +361,8 @@ class AddressResourceIT {
             .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE)))
             .andExpect(jsonPath("$.[*].country").value(hasItem(DEFAULT_COUNTRY)))
             .andExpect(jsonPath("$.[*].pincode").value(hasItem(DEFAULT_PINCODE.intValue())))
-            .andExpect(jsonPath("$.[*].lat").value(hasItem(DEFAULT_LAT.intValue())))
-            .andExpect(jsonPath("$.[*].lon").value(hasItem(DEFAULT_LON.intValue())))
+            .andExpect(jsonPath("$.[*].lat").value(hasItem(DEFAULT_LAT.doubleValue())))
+            .andExpect(jsonPath("$.[*].lon").value(hasItem(DEFAULT_LON.doubleValue())))
             .andExpect(jsonPath("$.[*].isActive").value(hasItem(DEFAULT_IS_ACTIVE)))
             .andExpect(jsonPath("$.[*].createddBy").value(hasItem(DEFAULT_CREATEDD_BY)))
             .andExpect(jsonPath("$.[*].createdTime").value(hasItem(DEFAULT_CREATED_TIME.toString())))
@@ -389,8 +389,8 @@ class AddressResourceIT {
             .andExpect(jsonPath("$.state").value(DEFAULT_STATE))
             .andExpect(jsonPath("$.country").value(DEFAULT_COUNTRY))
             .andExpect(jsonPath("$.pincode").value(DEFAULT_PINCODE.intValue()))
-            .andExpect(jsonPath("$.lat").value(DEFAULT_LAT.intValue()))
-            .andExpect(jsonPath("$.lon").value(DEFAULT_LON.intValue()))
+            .andExpect(jsonPath("$.lat").value(DEFAULT_LAT.doubleValue()))
+            .andExpect(jsonPath("$.lon").value(DEFAULT_LON.doubleValue()))
             .andExpect(jsonPath("$.isActive").value(DEFAULT_IS_ACTIVE))
             .andExpect(jsonPath("$.createddBy").value(DEFAULT_CREATEDD_BY))
             .andExpect(jsonPath("$.createdTime").value(DEFAULT_CREATED_TIME.toString()))

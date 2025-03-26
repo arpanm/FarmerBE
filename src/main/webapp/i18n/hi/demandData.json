@@ -1,0 +1,40 @@
+{
+  "farmerBeApp": {
+    "demandData": {
+      "home": {
+        "title": "DemandData",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Demand Data बनाएँ",
+        "createOrEditLabel": "Demand Data बनाएँ या संपादित करें",
+        "notFound": "No Demand Data found"
+      },
+      "created": "एक नया Demand Data [identifier: {{ param }}] तैयार है",
+      "updated": "एक Demand Data [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Demand Data [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Demand Data [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Demand Data"
+      },
+      "id": "ID",
+      "fromCPC": "From CPC",
+      "toCC": "To CC",
+      "pCode": "P Code",
+      "article": "Article",
+      "description": "Description",
+      "uom": "Uom",
+      "netWeightGrams": "Net Weight Grams",
+      "crateSize": "Crate Size",
+      "indentUom": "Indent Uom",
+      "indentKg": "Indent Kg",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "file": "File",
+      "collectionCenter": "Collection Center"
+    }
+  }
+}

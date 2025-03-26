@@ -109,6 +109,19 @@ export const CropDetail = () => {
                 ))
               : null}
           </dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.crop.collectionCenter">Collection Center</Translate>
+          </dt>
+          <dd>
+            {cropEntity.collectionCenters
+              ? cropEntity.collectionCenters.map((val, i) => (
+                  <span key={val.id}>
+                    <a>{val.id}</a>
+                    {cropEntity.collectionCenters && i === cropEntity.collectionCenters.length - 1 ? '' : ', '}
+                  </span>
+                ))
+              : null}
+          </dd>
         </dl>
         <Button tag={Link} to="/crop" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

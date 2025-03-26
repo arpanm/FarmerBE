@@ -72,16 +72,19 @@ public class Document implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "fieldVisits",
             "crops",
             "accessories",
             "farmer",
+            "collectionCenter",
+            "buyer",
         },
         allowSetters = true
     )
     private Farm farm;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "documents", "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "documents", "farmer", "farm", "collectionCenter" }, allowSetters = true)
     private Address address;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -91,6 +94,10 @@ public class Document implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "documents", "farmer" }, allowSetters = true)
     private BankDetails bankDetails;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "documents", "buyer", "farm" }, allowSetters = true)
+    private FieldVisit fieldVisit;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -273,6 +280,19 @@ public class Document implements Serializable {
 
     public Document bankDetails(BankDetails bankDetails) {
         this.setBankDetails(bankDetails);
+        return this;
+    }
+
+    public FieldVisit getFieldVisit() {
+        return this.fieldVisit;
+    }
+
+    public void setFieldVisit(FieldVisit fieldVisit) {
+        this.fieldVisit = fieldVisit;
+    }
+
+    public Document fieldVisit(FieldVisit fieldVisit) {
+        this.setFieldVisit(fieldVisit);
         return this;
     }
 

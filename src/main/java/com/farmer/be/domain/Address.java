@@ -52,10 +52,10 @@ public class Address implements Serializable {
     private Long pincode;
 
     @Column(name = "lat")
-    private Long lat;
+    private Float lat;
 
     @Column(name = "lon")
-    private Long lon;
+    private Float lon;
 
     @Column(name = "is_active")
     private Boolean isActive;
@@ -78,7 +78,7 @@ public class Address implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "address")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails", "fieldVisit" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -97,13 +97,20 @@ public class Address implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "fieldVisits",
             "crops",
             "accessories",
             "farmer",
+            "collectionCenter",
+            "buyer",
         },
         allowSetters = true
     )
     private Farm farm;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "addresses", "locationMappings", "demandData", "farms", "buyers", "crops" }, allowSetters = true)
+    private CollectionCenter collectionCenter;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -211,29 +218,29 @@ public class Address implements Serializable {
         this.pincode = pincode;
     }
 
-    public Long getLat() {
+    public Float getLat() {
         return this.lat;
     }
 
-    public Address lat(Long lat) {
+    public Address lat(Float lat) {
         this.setLat(lat);
         return this;
     }
 
-    public void setLat(Long lat) {
+    public void setLat(Float lat) {
         this.lat = lat;
     }
 
-    public Long getLon() {
+    public Float getLon() {
         return this.lon;
     }
 
-    public Address lon(Long lon) {
+    public Address lon(Float lon) {
         this.setLon(lon);
         return this;
     }
 
-    public void setLon(Long lon) {
+    public void setLon(Float lon) {
         this.lon = lon;
     }
 
@@ -356,6 +363,19 @@ public class Address implements Serializable {
 
     public Address farm(Farm farm) {
         this.setFarm(farm);
+        return this;
+    }
+
+    public CollectionCenter getCollectionCenter() {
+        return this.collectionCenter;
+    }
+
+    public void setCollectionCenter(CollectionCenter collectionCenter) {
+        this.collectionCenter = collectionCenter;
+    }
+
+    public Address collectionCenter(CollectionCenter collectionCenter) {
+        this.setCollectionCenter(collectionCenter);
         return this;
     }
 

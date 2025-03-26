@@ -122,6 +122,14 @@ export const FarmDetail = () => {
             <Translate contentKey="farmerBeApp.farm.farmer">Farmer</Translate>
           </dt>
           <dd>{farmEntity.farmer ? farmEntity.farmer.id : ''}</dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.farm.collectionCenter">Collection Center</Translate>
+          </dt>
+          <dd>{farmEntity.collectionCenter ? farmEntity.collectionCenter.id : ''}</dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.farm.buyer">Buyer</Translate>
+          </dt>
+          <dd>{farmEntity.buyer ? farmEntity.buyer.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/farm" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

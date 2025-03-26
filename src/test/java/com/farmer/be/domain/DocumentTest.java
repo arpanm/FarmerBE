@@ -5,6 +5,7 @@ import static com.farmer.be.domain.BankDetailsTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
+import static com.farmer.be.domain.FieldVisitTestSamples.*;
 import static com.farmer.be.domain.PanDetailsTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -85,5 +86,17 @@ class DocumentTest {
 
         document.bankDetails(null);
         assertThat(document.getBankDetails()).isNull();
+    }
+
+    @Test
+    void fieldVisitTest() {
+        Document document = getDocumentRandomSampleGenerator();
+        FieldVisit fieldVisitBack = getFieldVisitRandomSampleGenerator();
+
+        document.setFieldVisit(fieldVisitBack);
+        assertThat(document.getFieldVisit()).isEqualTo(fieldVisitBack);
+
+        document.fieldVisit(null);
+        assertThat(document.getFieldVisit()).isNull();
     }
 }

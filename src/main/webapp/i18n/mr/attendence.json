@@ -1,0 +1,34 @@
+{
+  "farmerBeApp": {
+    "attendence": {
+      "home": {
+        "title": "Attendences",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Attendence तयार करा",
+        "createOrEditLabel": "Attendence तयार किंवा संपादित करा",
+        "notFound": "No Attendences found"
+      },
+      "created": "Attendence [identifier: {{ param }}] तयार आहे",
+      "updated": "Attendence [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Attendence [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Attendence [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Attendence"
+      },
+      "id": "ID",
+      "attendenceType": "Attendence Type",
+      "attendenceDate": "Attendence Date",
+      "attendenceTime": "Attendence Time",
+      "lat": "Lat",
+      "lon": "Lon",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "buyer": "Buyer"
+    }
+  }
+}

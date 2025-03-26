@@ -39,11 +39,11 @@
     },
     {
       "fieldName": "lat",
-      "fieldType": "Long"
+      "fieldType": "Float"
     },
     {
       "fieldName": "lon",
-      "fieldType": "Long"
+      "fieldType": "Float"
     },
     {
       "fieldName": "isActive",
@@ -89,6 +89,12 @@
     {
       "otherEntityName": "farm",
       "relationshipName": "farm",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "collectionCenter",
+      "relationshipName": "collectionCenter",
       "relationshipSide": "right",
       "relationshipType": "many-to-one"
     }

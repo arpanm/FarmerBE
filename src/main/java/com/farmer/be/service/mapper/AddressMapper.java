@@ -1,9 +1,11 @@
 package com.farmer.be.service.mapper;
 
 import com.farmer.be.domain.Address;
+import com.farmer.be.domain.CollectionCenter;
 import com.farmer.be.domain.Farm;
 import com.farmer.be.domain.Farmer;
 import com.farmer.be.service.dto.AddressDTO;
+import com.farmer.be.service.dto.CollectionCenterDTO;
 import com.farmer.be.service.dto.FarmDTO;
 import com.farmer.be.service.dto.FarmerDTO;
 import org.mapstruct.*;
@@ -15,6 +17,7 @@ import org.mapstruct.*;
 public interface AddressMapper extends EntityMapper<AddressDTO, Address> {
     @Mapping(target = "farmer", source = "farmer", qualifiedByName = "farmerId")
     @Mapping(target = "farm", source = "farm", qualifiedByName = "farmId")
+    @Mapping(target = "collectionCenter", source = "collectionCenter", qualifiedByName = "collectionCenterId")
     AddressDTO toDto(Address s);
 
     @Named("farmerId")
@@ -26,4 +29,9 @@ public interface AddressMapper extends EntityMapper<AddressDTO, Address> {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     FarmDTO toDtoFarmId(Farm farm);
+
+    @Named("collectionCenterId")
+    @BeanMapping(ignoreByDefault = true)
+    @Mapping(target = "id", source = "id")
+    CollectionCenterDTO toDtoCollectionCenterId(CollectionCenter collectionCenter);
 }

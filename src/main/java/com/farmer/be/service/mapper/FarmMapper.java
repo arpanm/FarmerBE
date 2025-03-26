@@ -1,10 +1,14 @@
 package com.farmer.be.service.mapper;
 
 import com.farmer.be.domain.Accessories;
+import com.farmer.be.domain.Buyer;
+import com.farmer.be.domain.CollectionCenter;
 import com.farmer.be.domain.Crop;
 import com.farmer.be.domain.Farm;
 import com.farmer.be.domain.Farmer;
 import com.farmer.be.service.dto.AccessoriesDTO;
+import com.farmer.be.service.dto.BuyerDTO;
+import com.farmer.be.service.dto.CollectionCenterDTO;
 import com.farmer.be.service.dto.CropDTO;
 import com.farmer.be.service.dto.FarmDTO;
 import com.farmer.be.service.dto.FarmerDTO;
@@ -20,6 +24,8 @@ public interface FarmMapper extends EntityMapper<FarmDTO, Farm> {
     @Mapping(target = "crops", source = "crops", qualifiedByName = "cropIdSet")
     @Mapping(target = "accessories", source = "accessories", qualifiedByName = "accessoriesIdSet")
     @Mapping(target = "farmer", source = "farmer", qualifiedByName = "farmerId")
+    @Mapping(target = "collectionCenter", source = "collectionCenter", qualifiedByName = "collectionCenterId")
+    @Mapping(target = "buyer", source = "buyer", qualifiedByName = "buyerId")
     FarmDTO toDto(Farm s);
 
     @Mapping(target = "removeCrop", ignore = true)
@@ -50,4 +56,14 @@ public interface FarmMapper extends EntityMapper<FarmDTO, Farm> {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     FarmerDTO toDtoFarmerId(Farmer farmer);
+
+    @Named("collectionCenterId")
+    @BeanMapping(ignoreByDefault = true)
+    @Mapping(target = "id", source = "id")
+    CollectionCenterDTO toDtoCollectionCenterId(CollectionCenter collectionCenter);
+
+    @Named("buyerId")
+    @BeanMapping(ignoreByDefault = true)
+    @Mapping(target = "id", source = "id")
+    BuyerDTO toDtoBuyerId(Buyer buyer);
 }

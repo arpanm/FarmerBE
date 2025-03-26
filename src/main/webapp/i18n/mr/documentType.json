@@ -7,6 +7,7 @@
       "FarmDocument": "FarmDocument",
       "IdProof": "IdProof",
       "ProfileImage": "ProfileImage",
+      "FarmImage": "FarmImage",
       "CanceledCheque": "CanceledCheque",
       "BankStatement": "BankStatement",
       "Other": "Other"

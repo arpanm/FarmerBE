@@ -2,10 +2,13 @@ package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AccessoriesTestSamples.*;
 import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.BuyerTestSamples.*;
+import static com.farmer.be.domain.CollectionCenterTestSamples.*;
 import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
+import static com.farmer.be.domain.FieldVisitTestSamples.*;
 import static com.farmer.be.domain.HervestPlanRuleTestSamples.*;
 import static com.farmer.be.domain.HervestPlanTestSamples.*;
 import static com.farmer.be.domain.PickUpConfirmationTestSamples.*;
@@ -166,6 +169,28 @@ class FarmTest {
     }
 
     @Test
+    void fieldVisitTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        FieldVisit fieldVisitBack = getFieldVisitRandomSampleGenerator();
+
+        farm.addFieldVisit(fieldVisitBack);
+        assertThat(farm.getFieldVisits()).containsOnly(fieldVisitBack);
+        assertThat(fieldVisitBack.getFarm()).isEqualTo(farm);
+
+        farm.removeFieldVisit(fieldVisitBack);
+        assertThat(farm.getFieldVisits()).doesNotContain(fieldVisitBack);
+        assertThat(fieldVisitBack.getFarm()).isNull();
+
+        farm.fieldVisits(new HashSet<>(Set.of(fieldVisitBack)));
+        assertThat(farm.getFieldVisits()).containsOnly(fieldVisitBack);
+        assertThat(fieldVisitBack.getFarm()).isEqualTo(farm);
+
+        farm.setFieldVisits(new HashSet<>());
+        assertThat(farm.getFieldVisits()).doesNotContain(fieldVisitBack);
+        assertThat(fieldVisitBack.getFarm()).isNull();
+    }
+
+    @Test
     void cropTest() {
         Farm farm = getFarmRandomSampleGenerator();
         Crop cropBack = getCropRandomSampleGenerator();
@@ -211,5 +236,29 @@ class FarmTest {
 
         farm.farmer(null);
         assertThat(farm.getFarmer()).isNull();
+    }
+
+    @Test
+    void collectionCenterTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        CollectionCenter collectionCenterBack = getCollectionCenterRandomSampleGenerator();
+
+        farm.setCollectionCenter(collectionCenterBack);
+        assertThat(farm.getCollectionCenter()).isEqualTo(collectionCenterBack);
+
+        farm.collectionCenter(null);
+        assertThat(farm.getCollectionCenter()).isNull();
+    }
+
+    @Test
+    void buyerTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        Buyer buyerBack = getBuyerRandomSampleGenerator();
+
+        farm.setBuyer(buyerBack);
+        assertThat(farm.getBuyer()).isEqualTo(buyerBack);
+
+        farm.buyer(null);
+        assertThat(farm.getBuyer()).isNull();
     }
 }

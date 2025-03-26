@@ -1,0 +1,35 @@
+{
+  "farmerBeApp": {
+    "fieldVisit": {
+      "home": {
+        "title": "Field Visits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Field Visit-ஐ உருவாக்கு",
+        "createOrEditLabel": "Field Visit -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Field Visits found"
+      },
+      "created": "Field Visit புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Field Visit மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Field Visit நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Field Visit {{ id }}?"
+      },
+      "detail": {
+        "title": "Field Visit"
+      },
+      "id": "ID",
+      "fieldVisitDate": "Field Visit Date",
+      "fieldVisitTime": "Field Visit Time",
+      "lat": "Lat",
+      "lon": "Lon",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "document": "Document",
+      "buyer": "Buyer",
+      "farm": "Farm"
+    }
+  }
+}

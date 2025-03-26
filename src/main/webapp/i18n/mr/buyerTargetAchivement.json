@@ -1,0 +1,42 @@
+{
+  "farmerBeApp": {
+    "buyerTargetAchivement": {
+      "home": {
+        "title": "Buyer Target Achivements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Buyer Target Achivement तयार करा",
+        "createOrEditLabel": "Buyer Target Achivement तयार किंवा संपादित करा",
+        "notFound": "No Buyer Target Achivements found"
+      },
+      "created": "Buyer Target Achivement [identifier: {{ param }}] तयार आहे",
+      "updated": "Buyer Target Achivement [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Buyer Target Achivement [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Buyer Target Achivement [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Buyer Target Achivement"
+      },
+      "id": "ID",
+      "labour": "Labour",
+      "farmVisit": "Farm Visit",
+      "totalCollection": "Total Collection",
+      "targetDate": "Target Date",
+      "attendenceHours": "Attendence Hours",
+      "achivementLabour": "Achivement Labour",
+      "achivementFarmVisit": "Achivement Farm Visit",
+      "achivementTotalCollection": "Achivement Total Collection",
+      "achivementAttendenceHours": "Achivement Attendence Hours",
+      "achivementScore": "Achivement Score",
+      "incentive": "Incentive",
+      "kmDriven": "Km Driven",
+      "conveyance": "Conveyance",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "buyer": "Buyer"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "farmerBeApp": {
+    "collectionCenter": {
+      "home": {
+        "title": "Collection Centers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Collection Center तयार करा",
+        "createOrEditLabel": "Collection Center तयार किंवा संपादित करा",
+        "notFound": "No Collection Centers found"
+      },
+      "created": "Collection Center [identifier: {{ param }}] तयार आहे",
+      "updated": "Collection Center [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Collection Center [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Collection Center [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Collection Center"
+      },
+      "id": "ID",
+      "name": "Name",
+      "ccId": "Cc Id",
+      "ffdcCode": "Ffdc Code",
+      "ffdcName": "Ffdc Name",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address",
+      "locationMapping": "Location Mapping",
+      "demandData": "Demand Data",
+      "farm": "Farm",
+      "buyer": "Buyer",
+      "crop": "Crop"
+    }
+  }
+}

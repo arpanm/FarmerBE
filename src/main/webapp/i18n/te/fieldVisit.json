@@ -1,0 +1,35 @@
+{
+  "farmerBeApp": {
+    "fieldVisit": {
+      "home": {
+        "title": "Field Visits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "కొత్త Field Visit  సృష్టించండి",
+        "createOrEditLabel": "Field Visit సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Field Visits found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Field Visit సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Field Visit సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Field Visit తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Field Visit {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Field Visit"
+      },
+      "id": "ID",
+      "fieldVisitDate": "Field Visit Date",
+      "fieldVisitTime": "Field Visit Time",
+      "lat": "Lat",
+      "lon": "Lon",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "document": "Document",
+      "buyer": "Buyer",
+      "farm": "Farm"
+    }
+  }
+}
