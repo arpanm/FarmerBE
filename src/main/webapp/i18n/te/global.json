@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "FarmerBE",
+    "title": "Farmer App Backoffice",
     "browsehappy": "మీది <strong>కాలం చెల్లిన</strong> బ్రౌజరు. దయచేసి <a href=\"http://browsehappy.com/?locale=en\">నవీకరణ చేసుకోండి</a> ",
     "menu": {
       "home": "ఇల్లు",
@@ -173,5 +173,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "ఇది మీ ఫుటరు"
+  "footer": "అన్ని హక్కులు మరియు రిజర్వ్ చేయబడ్డాయి"
 }
