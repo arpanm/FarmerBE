@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import HarvestPlanning from './pages/HarvestPlanning';
 import SelectProduce from './pages/SelectProduce';
 import Profile from './pages/Profile';
+import Ledger from './pages/Ledger';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/harvest-planning" element={<HarvestPlanning />} />
         <Route path="/select-produce" element={<SelectProduce />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/ledger" element={<Ledger />} />
       </Routes>
     </Router>
   );

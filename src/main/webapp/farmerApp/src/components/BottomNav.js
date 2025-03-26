@@ -22,7 +22,7 @@ function BottomNav() {
         <span className={styles.manageIcon}>🌾</span>
         <span>Manage crops</span>
       </button>
-      <button className={styles.navButton}>
+      <button className={`${styles.navButton} ${location.pathname === '/ledger' ? styles.active : ''}`} onClick={() => navigate('/ledger')}>
         <span className={styles.ledgerIcon}>📒</span>
         <span>Ledger</span>
       </button>

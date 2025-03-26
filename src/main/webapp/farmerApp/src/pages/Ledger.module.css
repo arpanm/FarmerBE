@@ -1,0 +1,173 @@
+.container {
+  padding: 16px;
+  padding-bottom: 80px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #666;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #006838;
+  border-bottom-color: #006838;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+}
+
+.filterIcon {
+  font-size: 1.2rem;
+}
+
+/* RCWS Styles */
+.rcwsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rcwsCard {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.rcwsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.rcwsInfo p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.paymentStatus {
+  color: #006838;
+  font-size: 0.9rem;
+}
+
+.rcwsItems {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rcwsItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cropInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cropName {
+  font-weight: 500;
+  color: #333;
+}
+
+.quantity {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.rcwsActions {
+  display: flex;
+  gap: 12px;
+}
+
+.viewButton,
+.downloadButton {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #006838;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.viewButton {
+  background: #fff;
+  color: #006838;
+}
+
+.downloadButton {
+  background: #006838;
+  color: #fff;
+}
+
+/* Passbook Styles */
+.passbookContainer {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.passbookTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.passbookTable th,
+.passbookTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.passbookTable th {
+  background: #f8f8f8;
+  font-weight: 500;
+  color: #333;
+}
+
+.passbookTable td {
+  color: #666;
+}
