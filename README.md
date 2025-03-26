@@ -54,6 +54,13 @@ auto-refreshes when files change on your hard drive.
 ./npmw start
 ```
 
+To Start the farmer app frontend, run the commands:
+
+```
+cd src/main/webapp/farmerApp/
+npm start
+```
+
 Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
 specifying a newer version in [package.json](package.json). You can also run `./npmw update` and `./npmw install` to manage dependencies.
 Add the `help` flag on any command to see how you can use it. For example, `./npmw help update`.
