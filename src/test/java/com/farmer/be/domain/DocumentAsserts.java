@@ -70,6 +70,7 @@ public class DocumentAsserts {
             .satisfies(a -> assertThat(a.getFarm()).as("check farm").isEqualTo(expected.getFarm()))
             .satisfies(a -> assertThat(a.getAddress()).as("check address").isEqualTo(expected.getAddress()))
             .satisfies(a -> assertThat(a.getPanDetails()).as("check panDetails").isEqualTo(expected.getPanDetails()))
-            .satisfies(a -> assertThat(a.getBankDetails()).as("check bankDetails").isEqualTo(expected.getBankDetails()));
+            .satisfies(a -> assertThat(a.getBankDetails()).as("check bankDetails").isEqualTo(expected.getBankDetails()))
+            .satisfies(a -> assertThat(a.getFieldVisit()).as("check fieldVisit").isEqualTo(expected.getFieldVisit()));
     }
 }

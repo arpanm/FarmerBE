@@ -1,6 +1,7 @@
 package com.farmer.be.domain;
 
 import static com.farmer.be.domain.CategoryTestSamples.*;
+import static com.farmer.be.domain.CollectionCenterTestSamples.*;
 import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.DemandTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
@@ -196,5 +197,27 @@ class CropTest {
         crop.setFarms(new HashSet<>());
         assertThat(crop.getFarms()).doesNotContain(farmBack);
         assertThat(farmBack.getCrops()).doesNotContain(crop);
+    }
+
+    @Test
+    void collectionCenterTest() {
+        Crop crop = getCropRandomSampleGenerator();
+        CollectionCenter collectionCenterBack = getCollectionCenterRandomSampleGenerator();
+
+        crop.addCollectionCenter(collectionCenterBack);
+        assertThat(crop.getCollectionCenters()).containsOnly(collectionCenterBack);
+        assertThat(collectionCenterBack.getCrops()).containsOnly(crop);
+
+        crop.removeCollectionCenter(collectionCenterBack);
+        assertThat(crop.getCollectionCenters()).doesNotContain(collectionCenterBack);
+        assertThat(collectionCenterBack.getCrops()).doesNotContain(crop);
+
+        crop.collectionCenters(new HashSet<>(Set.of(collectionCenterBack)));
+        assertThat(crop.getCollectionCenters()).containsOnly(collectionCenterBack);
+        assertThat(collectionCenterBack.getCrops()).containsOnly(crop);
+
+        crop.setCollectionCenters(new HashSet<>());
+        assertThat(crop.getCollectionCenters()).doesNotContain(collectionCenterBack);
+        assertThat(collectionCenterBack.getCrops()).doesNotContain(crop);
     }
 }

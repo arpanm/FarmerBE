@@ -190,6 +190,10 @@ export const Address = () => {
                   <th>
                     <Translate contentKey="farmerBeApp.address.farm">Farm</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
+                  <th>
+                    <Translate contentKey="farmerBeApp.address.collectionCenter">Collection Center</Translate>{' '}
+                    <FontAwesomeIcon icon="sort" />
+                  </th>
                   <th />
                 </tr>
               </thead>
@@ -217,6 +221,13 @@ export const Address = () => {
                     <td>{address.updatedTime ? <TextFormat type="date" value={address.updatedTime} format={APP_DATE_FORMAT} /> : null}</td>
                     <td>{address.farmer ? <Link to={`/farmer/${address.farmer.id}`}>{address.farmer.id}</Link> : ''}</td>
                     <td>{address.farm ? <Link to={`/farm/${address.farm.id}`}>{address.farm.id}</Link> : ''}</td>
+                    <td>
+                      {address.collectionCenter ? (
+                        <Link to={`/collection-center/${address.collectionCenter.id}`}>{address.collectionCenter.id}</Link>
+                      ) : (
+                        ''
+                      )}
+                    </td>
                     <td className="text-end">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`/address/${address.id}`} color="info" size="sm" data-cy="entityDetailsButton">

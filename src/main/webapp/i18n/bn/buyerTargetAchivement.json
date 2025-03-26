@@ -1,0 +1,42 @@
+{
+  "farmerBeApp": {
+    "buyerTargetAchivement": {
+      "home": {
+        "title": "Buyer Target Achivements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Buyer Target Achivement",
+        "createOrEditLabel": "Create or edit a Buyer Target Achivement",
+        "notFound": "No Buyer Target Achivements found"
+      },
+      "created": "A new Buyer Target Achivement is created with identifier {{ param }}",
+      "updated": "A Buyer Target Achivement is updated with identifier {{ param }}",
+      "deleted": "A Buyer Target Achivement is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Buyer Target Achivement {{ id }}?"
+      },
+      "detail": {
+        "title": "Buyer Target Achivement"
+      },
+      "id": "ID",
+      "labour": "Labour",
+      "farmVisit": "Farm Visit",
+      "totalCollection": "Total Collection",
+      "targetDate": "Target Date",
+      "attendenceHours": "Attendence Hours",
+      "achivementLabour": "Achivement Labour",
+      "achivementFarmVisit": "Achivement Farm Visit",
+      "achivementTotalCollection": "Achivement Total Collection",
+      "achivementAttendenceHours": "Achivement Attendence Hours",
+      "achivementScore": "Achivement Score",
+      "incentive": "Incentive",
+      "kmDriven": "Km Driven",
+      "conveyance": "Conveyance",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "buyer": "Buyer"
+    }
+  }
+}

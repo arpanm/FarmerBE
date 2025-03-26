@@ -1,0 +1,38 @@
+{
+  "farmerBeApp": {
+    "buyer": {
+      "home": {
+        "title": "Buyers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Buyer",
+        "createOrEditLabel": "Create or edit a Buyer",
+        "notFound": "No Buyers found"
+      },
+      "created": "A new Buyer is created with identifier {{ param }}",
+      "updated": "A Buyer is updated with identifier {{ param }}",
+      "deleted": "A Buyer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Buyer {{ id }}?"
+      },
+      "detail": {
+        "title": "Buyer"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "isWhatsAppEnabled": "Is Whats App Enabled",
+      "preferedLanguage": "Prefered Language",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "attendence": "Attendence",
+      "fieldVisit": "Field Visit",
+      "buyerTargetAchivement": "Buyer Target Achivement",
+      "collectionCenter": "Collection Center"
+    }
+  }
+}

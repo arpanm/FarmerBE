@@ -4,7 +4,6 @@
     "browsehappy": "आप एक <strong>पुराने</strong> ब्राउज़र का उपयोग कर रहें हैं। कृपया अपने अनुभव में सुधार करने के लिए अपने <a href=\"http://browsehappy.com/?locale=en\">ब्राउज़र को अपग्रेड करें</a>",
     "menu": {
       "home": "होम",
-      "farmerApp": "किसान ऐप",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "एंटिटीज़",
@@ -30,7 +29,15 @@
         "pickupPayment": "Pickup Payment",
         "bannerContent": "Banner Content",
         "carouselContent": "Carousel Content",
-        "hervestPlanRule": "Hervest Plan Rule"
+        "hervestPlanRule": "Hervest Plan Rule",
+        "collectionCenter": "Collection Center",
+        "locationMapping": "Location Mapping",
+        "demandData": "Demand Data",
+        "demandDataFile": "Demand Data File",
+        "buyer": "Buyer",
+        "attendence": "Attendence",
+        "fieldVisit": "Field Visit",
+        "buyerTargetAchivement": "Buyer Target Achivement"
       },
       "account": {
         "main": "खाता",

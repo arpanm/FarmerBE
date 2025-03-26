@@ -41,6 +41,14 @@
     <include file="config/liquibase/changelog/20250325141357_added_entity_BannerContent.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250325141358_added_entity_CarouselContent.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250325142637_added_entity_HervestPlanRule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184230_added_entity_CollectionCenter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184231_added_entity_LocationMapping.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184232_added_entity_DemandData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184233_added_entity_DemandDataFile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184234_added_entity_Buyer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184235_added_entity_Attendence.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184236_added_entity_FieldVisit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184237_added_entity_BuyerTargetAchivement.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20250324171916_added_entity_constraints_Address.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250324172305_added_entity_constraints_Document.xml" relativeToChangelogFile="false"/>
@@ -59,6 +67,13 @@
     <include file="config/liquibase/changelog/20250325135624_added_entity_constraints_PickUpConfirmation.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250325141357_added_entity_constraints_BannerContent.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250325142637_added_entity_constraints_HervestPlanRule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184230_added_entity_constraints_CollectionCenter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184231_added_entity_constraints_LocationMapping.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184232_added_entity_constraints_DemandData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184234_added_entity_constraints_Buyer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184235_added_entity_constraints_Attendence.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184236_added_entity_constraints_FieldVisit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250326184237_added_entity_constraints_BuyerTargetAchivement.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

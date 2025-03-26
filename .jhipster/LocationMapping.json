@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "changelogDate": "20250326184231"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "areaName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "areaType",
+      "fieldType": "AreaType",
+      "fieldValues": "Pincode,Village,City,District,State,Country,Other"
+    },
+    {
+      "fieldName": "pincode",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "LocationMapping",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "collectionCenter",
+      "relationshipName": "collectionCenter",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

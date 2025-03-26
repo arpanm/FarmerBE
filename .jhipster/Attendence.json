@@ -1,0 +1,66 @@
+{
+  "annotations": {
+    "changelogDate": "20250326184235"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "attendenceType",
+      "fieldType": "AttendenceType",
+      "fieldValues": "CheckIn,CheckOut,Holiday,Regularization,PaidLeave,UnpaidLeave,FieldVisit,Other"
+    },
+    {
+      "fieldName": "attendenceDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "attendenceTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lat",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "lon",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Attendence",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "buyer",
+      "relationshipName": "buyer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

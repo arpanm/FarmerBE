@@ -68,7 +68,7 @@ public class BankDetails implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "bankDetails")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "farmer", "farm", "address", "panDetails", "bankDetails", "fieldVisit" }, allowSetters = true)
     private Set<Document> documents = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)

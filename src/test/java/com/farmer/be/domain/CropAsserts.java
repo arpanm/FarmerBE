@@ -69,6 +69,7 @@ public class CropAsserts {
         assertThat(actual)
             .as("Verify Crop relationships")
             .satisfies(a -> assertThat(a.getCategory()).as("check category").isEqualTo(expected.getCategory()))
-            .satisfies(a -> assertThat(a.getFarms()).as("check farms").isEqualTo(expected.getFarms()));
+            .satisfies(a -> assertThat(a.getFarms()).as("check farms").isEqualTo(expected.getFarms()))
+            .satisfies(a -> assertThat(a.getCollectionCenters()).as("check collectionCenters").isEqualTo(expected.getCollectionCenters()));
     }
 }

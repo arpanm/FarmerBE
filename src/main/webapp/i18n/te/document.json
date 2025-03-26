@@ -30,7 +30,8 @@
       "farm": "Farm",
       "address": "Address",
       "panDetails": "Pan Details",
-      "bankDetails": "Bank Details"
+      "bankDetails": "Bank Details",
+      "fieldVisit": "Field Visit"
     }
   }
 }

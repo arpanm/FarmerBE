@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import { ICategory } from 'app/shared/model/category.model';
 import { IFarm } from 'app/shared/model/farm.model';
+import { ICollectionCenter } from 'app/shared/model/collection-center.model';
 
 export interface ICrop {
   id?: number;
@@ -16,6 +17,7 @@ export interface ICrop {
   updatedTime?: dayjs.Dayjs;
   category?: ICategory | null;
   farms?: IFarm[] | null;
+  collectionCenters?: ICollectionCenter[] | null;
 }
 
 export const defaultValue: Readonly<ICrop> = {

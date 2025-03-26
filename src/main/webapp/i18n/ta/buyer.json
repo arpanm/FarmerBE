@@ -1,0 +1,38 @@
+{
+  "farmerBeApp": {
+    "buyer": {
+      "home": {
+        "title": "Buyers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buyer-ஐ உருவாக்கு",
+        "createOrEditLabel": "Buyer -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Buyers found"
+      },
+      "created": "Buyer புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Buyer மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Buyer நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Buyer {{ id }}?"
+      },
+      "detail": {
+        "title": "Buyer"
+      },
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "isWhatsAppEnabled": "Is Whats App Enabled",
+      "preferedLanguage": "Prefered Language",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "farm": "Farm",
+      "attendence": "Attendence",
+      "fieldVisit": "Field Visit",
+      "buyerTargetAchivement": "Buyer Target Achivement",
+      "collectionCenter": "Collection Center"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "annotations": {
+    "changelogDate": "20250326184234"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMax": "9999999999",
+      "fieldValidateRulesMin": "1000000000"
+    },
+    {
+      "fieldName": "isWhatsAppEnabled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "preferedLanguage",
+      "fieldType": "Language",
+      "fieldValues": "English,Hindi,Bengali,Marathi,Tamil,Telegu,Kanada,Malyalam,Panjabi,Kashmiri"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Buyer",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "farm",
+      "otherEntityRelationshipName": "buyer",
+      "relationshipName": "farm",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "attendence",
+      "otherEntityRelationshipName": "buyer",
+      "relationshipName": "attendence",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "fieldVisit",
+      "otherEntityRelationshipName": "buyer",
+      "relationshipName": "fieldVisit",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "buyerTargetAchivement",
+      "otherEntityRelationshipName": "buyer",
+      "relationshipName": "buyerTargetAchivement",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "collectionCenter",
+      "relationshipName": "collectionCenter",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

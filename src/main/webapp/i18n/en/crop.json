@@ -35,7 +35,8 @@
       "supplyConfirmation": "Supply Confirmation",
       "pickUpConfirmation": "Pick Up Confirmation",
       "category": "Category",
-      "farm": "Farm"
+      "farm": "Farm",
+      "collectionCenter": "Collection Center"
     }
   }
 }

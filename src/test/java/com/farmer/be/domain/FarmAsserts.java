@@ -72,6 +72,8 @@ public class FarmAsserts {
             .as("Verify Farm relationships")
             .satisfies(a -> assertThat(a.getCrops()).as("check crops").isEqualTo(expected.getCrops()))
             .satisfies(a -> assertThat(a.getAccessories()).as("check accessories").isEqualTo(expected.getAccessories()))
-            .satisfies(a -> assertThat(a.getFarmer()).as("check farmer").isEqualTo(expected.getFarmer()));
+            .satisfies(a -> assertThat(a.getFarmer()).as("check farmer").isEqualTo(expected.getFarmer()))
+            .satisfies(a -> assertThat(a.getCollectionCenter()).as("check collectionCenter").isEqualTo(expected.getCollectionCenter()))
+            .satisfies(a -> assertThat(a.getBuyer()).as("check buyer").isEqualTo(expected.getBuyer()));
     }
 }

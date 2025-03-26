@@ -104,13 +104,21 @@ public class Crop implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "fieldVisits",
             "crops",
             "accessories",
             "farmer",
+            "collectionCenter",
+            "buyer",
         },
         allowSetters = true
     )
     private Set<Farm> farms = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "crops")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "addresses", "locationMappings", "demandData", "farms", "buyers", "crops" }, allowSetters = true)
+    private Set<CollectionCenter> collectionCenters = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -484,6 +492,37 @@ public class Crop implements Serializable {
     public Crop removeFarm(Farm farm) {
         this.farms.remove(farm);
         farm.getCrops().remove(this);
+        return this;
+    }
+
+    public Set<CollectionCenter> getCollectionCenters() {
+        return this.collectionCenters;
+    }
+
+    public void setCollectionCenters(Set<CollectionCenter> collectionCenters) {
+        if (this.collectionCenters != null) {
+            this.collectionCenters.forEach(i -> i.removeCrop(this));
+        }
+        if (collectionCenters != null) {
+            collectionCenters.forEach(i -> i.addCrop(this));
+        }
+        this.collectionCenters = collectionCenters;
+    }
+
+    public Crop collectionCenters(Set<CollectionCenter> collectionCenters) {
+        this.setCollectionCenters(collectionCenters);
+        return this;
+    }
+
+    public Crop addCollectionCenter(CollectionCenter collectionCenter) {
+        this.collectionCenters.add(collectionCenter);
+        collectionCenter.getCrops().add(this);
+        return this;
+    }
+
+    public Crop removeCollectionCenter(CollectionCenter collectionCenter) {
+        this.collectionCenters.remove(collectionCenter);
+        collectionCenter.getCrops().remove(this);
         return this;
     }
 

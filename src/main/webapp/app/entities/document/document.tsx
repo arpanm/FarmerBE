@@ -177,6 +177,9 @@ export const Document = () => {
                   <th>
                     <Translate contentKey="farmerBeApp.document.bankDetails">Bank Details</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
+                  <th>
+                    <Translate contentKey="farmerBeApp.document.fieldVisit">Field Visit</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
                   <th />
                 </tr>
               </thead>
@@ -212,6 +215,9 @@ export const Document = () => {
                     </td>
                     <td>
                       {document.bankDetails ? <Link to={`/bank-details/${document.bankDetails.id}`}>{document.bankDetails.id}</Link> : ''}
+                    </td>
+                    <td>
+                      {document.fieldVisit ? <Link to={`/field-visit/${document.fieldVisit.id}`}>{document.fieldVisit.id}</Link> : ''}
                     </td>
                     <td className="text-end">
                       <div className="btn-group flex-btn-group-container">

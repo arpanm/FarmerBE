@@ -107,6 +107,13 @@
       "relationshipName": "farm",
       "relationshipSide": "right",
       "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "collectionCenter",
+      "otherEntityRelationshipName": "crop",
+      "relationshipName": "collectionCenter",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
     }
   ],
   "searchEngine": "no",

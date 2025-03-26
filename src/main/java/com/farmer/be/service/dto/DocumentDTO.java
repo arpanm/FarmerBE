@@ -45,6 +45,8 @@ public class DocumentDTO implements Serializable {
 
     private BankDetailsDTO bankDetails;
 
+    private FieldVisitDTO fieldVisit;
+
     public Long getId() {
         return id;
     }
@@ -157,6 +159,14 @@ public class DocumentDTO implements Serializable {
         this.bankDetails = bankDetails;
     }
 
+    public FieldVisitDTO getFieldVisit() {
+        return fieldVisit;
+    }
+
+    public void setFieldVisit(FieldVisitDTO fieldVisit) {
+        this.fieldVisit = fieldVisit;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -196,6 +206,7 @@ public class DocumentDTO implements Serializable {
             ", address=" + getAddress() +
             ", panDetails=" + getPanDetails() +
             ", bankDetails=" + getBankDetails() +
+            ", fieldVisit=" + getFieldVisit() +
             "}";
     }
 }

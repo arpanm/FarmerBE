@@ -44,5 +44,12 @@
                                  referencedColumnNames="id"
                                  referencedTableName="bank_details"
                                  />
+
+        <addForeignKeyConstraint baseColumnNames="field_visit_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__field_visit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="field_visit"
+                                 />
     </changeSet>
 </databaseChangeLog>

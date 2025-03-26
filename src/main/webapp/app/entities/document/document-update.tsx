@@ -12,6 +12,7 @@ import { getEntities as getFarms } from 'app/entities/farm/farm.reducer';
 import { getEntities as getAddresses } from 'app/entities/address/address.reducer';
 import { getEntities as getPanDetails } from 'app/entities/pan-details/pan-details.reducer';
 import { getEntities as getBankDetails } from 'app/entities/bank-details/bank-details.reducer';
+import { getEntities as getFieldVisits } from 'app/entities/field-visit/field-visit.reducer';
 import { DocumentType } from 'app/shared/model/enumerations/document-type.model';
 import { DocumentFormat } from 'app/shared/model/enumerations/document-format.model';
 import { createEntity, getEntity, updateEntity } from './document.reducer';
@@ -29,6 +30,7 @@ export const DocumentUpdate = () => {
   const addresses = useAppSelector(state => state.address.entities);
   const panDetails = useAppSelector(state => state.panDetails.entities);
   const bankDetails = useAppSelector(state => state.bankDetails.entities);
+  const fieldVisits = useAppSelector(state => state.fieldVisit.entities);
   const documentEntity = useAppSelector(state => state.document.entity);
   const loading = useAppSelector(state => state.document.loading);
   const updating = useAppSelector(state => state.document.updating);
@@ -50,6 +52,7 @@ export const DocumentUpdate = () => {
     dispatch(getAddresses({}));
     dispatch(getPanDetails({}));
     dispatch(getBankDetails({}));
+    dispatch(getFieldVisits({}));
   }, []);
 
   useEffect(() => {
@@ -73,6 +76,7 @@ export const DocumentUpdate = () => {
       address: addresses.find(it => it.id.toString() === values.address?.toString()),
       panDetails: panDetails.find(it => it.id.toString() === values.panDetails?.toString()),
       bankDetails: bankDetails.find(it => it.id.toString() === values.bankDetails?.toString()),
+      fieldVisit: fieldVisits.find(it => it.id.toString() === values.fieldVisit?.toString()),
     };
 
     if (isNew) {
@@ -99,6 +103,7 @@ export const DocumentUpdate = () => {
           address: documentEntity?.address?.id,
           panDetails: documentEntity?.panDetails?.id,
           bankDetails: documentEntity?.bankDetails?.id,
+          fieldVisit: documentEntity?.fieldVisit?.id,
         };
 
   return (
@@ -277,6 +282,22 @@ export const DocumentUpdate = () => {
                 <option value="" key="0" />
                 {bankDetails
                   ? bankDetails.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                id="document-fieldVisit"
+                name="fieldVisit"
+                data-cy="fieldVisit"
+                label={translate('farmerBeApp.document.fieldVisit')}
+                type="select"
+              >
+                <option value="" key="0" />
+                {fieldVisits
+                  ? fieldVisits.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

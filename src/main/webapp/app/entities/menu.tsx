@@ -73,6 +73,30 @@ const EntitiesMenu = () => {
       <MenuItem icon="asterisk" to="/hervest-plan-rule">
         <Translate contentKey="global.menu.entities.hervestPlanRule" />
       </MenuItem>
+      <MenuItem icon="asterisk" to="/collection-center">
+        <Translate contentKey="global.menu.entities.collectionCenter" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/location-mapping">
+        <Translate contentKey="global.menu.entities.locationMapping" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/demand-data">
+        <Translate contentKey="global.menu.entities.demandData" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/demand-data-file">
+        <Translate contentKey="global.menu.entities.demandDataFile" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/buyer">
+        <Translate contentKey="global.menu.entities.buyer" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/attendence">
+        <Translate contentKey="global.menu.entities.attendence" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/field-visit">
+        <Translate contentKey="global.menu.entities.fieldVisit" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/buyer-target-achivement">
+        <Translate contentKey="global.menu.entities.buyerTargetAchivement" />
+      </MenuItem>
       {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
     </>
   );

@@ -19,8 +19,6 @@ public class AddressTestSamples {
             .state("state1")
             .country("country1")
             .pincode(1L)
-            .lat(1L)
-            .lon(1L)
             .createddBy("createddBy1")
             .updatedBy("updatedBy1");
     }
@@ -35,8 +33,6 @@ public class AddressTestSamples {
             .state("state2")
             .country("country2")
             .pincode(2L)
-            .lat(2L)
-            .lon(2L)
             .createddBy("createddBy2")
             .updatedBy("updatedBy2");
     }
@@ -51,8 +47,6 @@ public class AddressTestSamples {
             .state(UUID.randomUUID().toString())
             .country(UUID.randomUUID().toString())
             .pincode(longCount.incrementAndGet())
-            .lat(longCount.incrementAndGet())
-            .lon(longCount.incrementAndGet())
             .createddBy(UUID.randomUUID().toString())
             .updatedBy(UUID.randomUUID().toString());
     }

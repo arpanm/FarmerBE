@@ -1,0 +1,42 @@
+{
+  "farmerBeApp": {
+    "buyerTargetAchivement": {
+      "home": {
+        "title": "Buyer Target Achivements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buyer Target Achivement-ஐ உருவாக்கு",
+        "createOrEditLabel": "Buyer Target Achivement -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Buyer Target Achivements found"
+      },
+      "created": "Buyer Target Achivement புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Buyer Target Achivement மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Buyer Target Achivement நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Buyer Target Achivement {{ id }}?"
+      },
+      "detail": {
+        "title": "Buyer Target Achivement"
+      },
+      "id": "ID",
+      "labour": "Labour",
+      "farmVisit": "Farm Visit",
+      "totalCollection": "Total Collection",
+      "targetDate": "Target Date",
+      "attendenceHours": "Attendence Hours",
+      "achivementLabour": "Achivement Labour",
+      "achivementFarmVisit": "Achivement Farm Visit",
+      "achivementTotalCollection": "Achivement Total Collection",
+      "achivementAttendenceHours": "Achivement Attendence Hours",
+      "achivementScore": "Achivement Score",
+      "incentive": "Incentive",
+      "kmDriven": "Km Driven",
+      "conveyance": "Conveyance",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "buyer": "Buyer"
+    }
+  }
+}

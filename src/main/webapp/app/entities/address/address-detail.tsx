@@ -128,6 +128,10 @@ export const AddressDetail = () => {
             <Translate contentKey="farmerBeApp.address.farm">Farm</Translate>
           </dt>
           <dd>{addressEntity.farm ? addressEntity.farm.id : ''}</dd>
+          <dt>
+            <Translate contentKey="farmerBeApp.address.collectionCenter">Collection Center</Translate>
+          </dt>
+          <dd>{addressEntity.collectionCenter ? addressEntity.collectionCenter.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/address" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

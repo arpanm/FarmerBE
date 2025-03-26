@@ -34,9 +34,12 @@
       "hervestPlan": "Hervest Plan",
       "supplyConfirmation": "Supply Confirmation",
       "pickUpConfirmation": "Pick Up Confirmation",
+      "fieldVisit": "Field Visit",
       "crop": "Crop",
       "accessories": "Accessories",
-      "farmer": "Farmer"
+      "farmer": "Farmer",
+      "collectionCenter": "Collection Center",
+      "buyer": "Buyer"
     }
   }
 }

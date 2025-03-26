@@ -1,0 +1,97 @@
+{
+  "annotations": {
+    "changelogDate": "20250326184237"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "labour",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "farmVisit",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totalCollection",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "targetDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "attendenceHours",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "achivementLabour",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "achivementFarmVisit",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "achivementTotalCollection",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "achivementAttendenceHours",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "achivementScore",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "incentive",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "kmDriven",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "conveyance",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "BuyerTargetAchivement",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "buyer",
+      "relationshipName": "buyer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

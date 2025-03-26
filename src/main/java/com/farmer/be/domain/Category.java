@@ -63,7 +63,15 @@ public class Category implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
         value = {
-            "demands", "prices", "hervestPlanRules", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms",
+            "demands",
+            "prices",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "category",
+            "farms",
+            "collectionCenters",
         },
         allowSetters = true
     )

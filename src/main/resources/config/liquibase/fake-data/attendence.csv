@@ -1,0 +1,11 @@
+id;attendence_type;attendence_date;attendence_time;lat;lon;is_active;createdd_by;created_time;updated_by;updated_time
+1;CheckOut;2025-03-26;2025-03-26T14:23:35;7650.8;14902.14;false;state;2025-03-26T12:47:05;little;2025-03-26T16:24:50
+2;PaidLeave;2025-03-26;2025-03-26T10:05:19;22251.12;7665.06;false;popularize;2025-03-25T23:48:56;trolley;2025-03-26T18:09:54
+3;CheckOut;2025-03-25;2025-03-26T08:43:08;11485.8;22812.14;false;apud serve;2025-03-25T22:46:09;executor or;2025-03-26T03:09:03
+4;Holiday;2025-03-26;2025-03-25T22:14:39;21409.46;4832.18;false;meh pacemaker voluntarily;2025-03-26T11:19:22;quicker;2025-03-26T09:50:35
+5;Holiday;2025-03-26;2025-03-26T05:02:00;31982.83;12191.83;false;premise sinful weakly;2025-03-26T01:38:47;and very;2025-03-26T11:37:05
+6;Holiday;2025-03-26;2025-03-26T18:17:55;1949.64;26706.71;true;blacken deceivingly;2025-03-26T16:53:08;certainly properly mostly;2025-03-26T00:37:56
+7;Holiday;2025-03-26;2025-03-26T14:40:27;15612.41;17092.83;false;provided hence with;2025-03-26T00:26:44;nervously indeed;2025-03-26T03:15:26
+8;PaidLeave;2025-03-25;2025-03-26T05:04:11;27475.04;30865.09;false;toward mmm angrily;2025-03-26T02:24:49;gadzooks past briskly;2025-03-26T01:15:14
+9;Holiday;2025-03-26;2025-03-25T22:00:41;7454.11;16751.42;false;zowie;2025-03-25T22:24:34;scoop;2025-03-26T08:44:03
+10;CheckOut;2025-03-26;2025-03-26T02:57:24;16729.17;3383.53;true;alongside;2025-03-26T15:15:49;carefully without second;2025-03-26T00:34:04

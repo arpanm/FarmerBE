@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getFarmers } from 'app/entities/farmer/farmer.reducer';
 import { getEntities as getFarms } from 'app/entities/farm/farm.reducer';
+import { getEntities as getCollectionCenters } from 'app/entities/collection-center/collection-center.reducer';
 import { createEntity, getEntity, updateEntity } from './address.reducer';
 
 export const AddressUpdate = () => {
@@ -21,6 +22,7 @@ export const AddressUpdate = () => {
 
   const farmers = useAppSelector(state => state.farmer.entities);
   const farms = useAppSelector(state => state.farm.entities);
+  const collectionCenters = useAppSelector(state => state.collectionCenter.entities);
   const addressEntity = useAppSelector(state => state.address.entity);
   const loading = useAppSelector(state => state.address.loading);
   const updating = useAppSelector(state => state.address.updating);
@@ -37,6 +39,7 @@ export const AddressUpdate = () => {
 
     dispatch(getFarmers({}));
     dispatch(getFarms({}));
+    dispatch(getCollectionCenters({}));
   }, []);
 
   useEffect(() => {
@@ -66,6 +69,7 @@ export const AddressUpdate = () => {
       ...values,
       farmer: farmers.find(it => it.id.toString() === values.farmer?.toString()),
       farm: farms.find(it => it.id.toString() === values.farm?.toString()),
+      collectionCenter: collectionCenters.find(it => it.id.toString() === values.collectionCenter?.toString()),
     };
 
     if (isNew) {
@@ -87,6 +91,7 @@ export const AddressUpdate = () => {
           updatedTime: convertDateTimeFromServer(addressEntity.updatedTime),
           farmer: addressEntity?.farmer?.id,
           farm: addressEntity?.farm?.id,
+          collectionCenter: addressEntity?.collectionCenter?.id,
         };
 
   return (
@@ -236,6 +241,22 @@ export const AddressUpdate = () => {
                 <option value="" key="0" />
                 {farms
                   ? farms.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                id="address-collectionCenter"
+                name="collectionCenter"
+                data-cy="collectionCenter"
+                label={translate('farmerBeApp.address.collectionCenter')}
+                type="select"
+              >
+                <option value="" key="0" />
+                {collectionCenters
+                  ? collectionCenters.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

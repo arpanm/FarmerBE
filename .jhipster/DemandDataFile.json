@@ -1,0 +1,67 @@
+{
+  "annotations": {
+    "changelogDate": "20250326184233"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "uploadedDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "uploadedTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fileName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "uploadedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "UploadStatus",
+      "fieldValues": "Init,Success,ErrorInUpload,Processed,ErrorInProcess,Other"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "DemandDataFile",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "demandData",
+      "otherEntityRelationshipName": "file",
+      "relationshipName": "demandData",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
