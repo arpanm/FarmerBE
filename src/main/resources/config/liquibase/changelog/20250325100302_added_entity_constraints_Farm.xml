@@ -10,6 +10,13 @@
     -->
     <changeSet id="20250325100302-2" author="jhipster">
 
+        <addForeignKeyConstraint baseColumnNames="collection_center_id"
+                                 baseTableName="farm"
+                                 constraintName="fk_farm__collection_center_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="collection_center"
+                                 />
+
         <addForeignKeyConstraint baseColumnNames="farm_id"
                                  baseTableName="rel_farm__crop"
                                  constraintName="fk_rel_farm__crop__farm_id"

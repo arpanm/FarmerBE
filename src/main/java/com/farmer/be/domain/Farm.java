@@ -64,7 +64,7 @@ public class Farm implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "documents", "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "documents", "farmer", "farm", "collectionCenter" }, allowSetters = true)
     private Set<Address> addresses = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "farm")
@@ -92,12 +92,25 @@ public class Farm implements Serializable {
     @JsonIgnoreProperties(value = { "grade", "itemPayment", "farm", "crop" }, allowSetters = true)
     private Set<PickUpConfirmation> pickUpConfirmations = new HashSet<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "addresses", "locationMappings", "crops", "demandData" }, allowSetters = true)
+    private CollectionCenter collectionCenter;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "rel_farm__crop", joinColumns = @JoinColumn(name = "farm_id"), inverseJoinColumns = @JoinColumn(name = "crop_id"))
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
         value = {
-            "demands", "prices", "hervestPlanRules", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms",
+            "demands",
+            "prices",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "demandData",
+            "category",
+            "farms",
+            "collectionCenters",
         },
         allowSetters = true
     )
@@ -448,6 +461,19 @@ public class Farm implements Serializable {
     public Farm removePickUpConfirmation(PickUpConfirmation pickUpConfirmation) {
         this.pickUpConfirmations.remove(pickUpConfirmation);
         pickUpConfirmation.setFarm(null);
+        return this;
+    }
+
+    public CollectionCenter getCollectionCenter() {
+        return this.collectionCenter;
+    }
+
+    public void setCollectionCenter(CollectionCenter collectionCenter) {
+        this.collectionCenter = collectionCenter;
+    }
+
+    public Farm collectionCenter(CollectionCenter collectionCenter) {
+        this.setCollectionCenter(collectionCenter);
         return this;
     }
 

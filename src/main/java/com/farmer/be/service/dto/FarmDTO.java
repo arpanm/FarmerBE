@@ -40,6 +40,8 @@ public class FarmDTO implements Serializable {
     @NotNull
     private Instant updatedTime;
 
+    private CollectionCenterDTO collectionCenter;
+
     private Set<CropDTO> crops = new HashSet<>();
 
     private Set<AccessoriesDTO> accessories = new HashSet<>();
@@ -134,6 +136,14 @@ public class FarmDTO implements Serializable {
         this.updatedTime = updatedTime;
     }
 
+    public CollectionCenterDTO getCollectionCenter() {
+        return collectionCenter;
+    }
+
+    public void setCollectionCenter(CollectionCenterDTO collectionCenter) {
+        this.collectionCenter = collectionCenter;
+    }
+
     public Set<CropDTO> getCrops() {
         return crops;
     }
@@ -194,6 +204,7 @@ public class FarmDTO implements Serializable {
             ", createdTime='" + getCreatedTime() + "'" +
             ", updatedBy='" + getUpdatedBy() + "'" +
             ", updatedTime='" + getUpdatedTime() + "'" +
+            ", collectionCenter=" + getCollectionCenter() +
             ", crops=" + getCrops() +
             ", accessories=" + getAccessories() +
             ", farmer=" + getFarmer() +

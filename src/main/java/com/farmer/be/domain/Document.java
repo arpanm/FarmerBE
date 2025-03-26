@@ -72,6 +72,7 @@ public class Document implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "collectionCenter",
             "crops",
             "accessories",
             "farmer",
@@ -81,7 +82,7 @@ public class Document implements Serializable {
     private Farm farm;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "documents", "farmer", "farm" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "documents", "farmer", "farm", "collectionCenter" }, allowSetters = true)
     private Address address;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import { IFarmer } from 'app/shared/model/farmer.model';
 import { IFarm } from 'app/shared/model/farm.model';
+import { ICollectionCenter } from 'app/shared/model/collection-center.model';
 
 export interface IAddress {
   id?: number;
@@ -20,6 +21,7 @@ export interface IAddress {
   updatedTime?: dayjs.Dayjs;
   farmer?: IFarmer | null;
   farm?: IFarm | null;
+  collectionCenter?: ICollectionCenter | null;
 }
 
 export const defaultValue: Readonly<IAddress> = {

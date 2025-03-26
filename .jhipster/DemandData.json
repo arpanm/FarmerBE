@@ -1,0 +1,99 @@
+{
+  "annotations": {
+    "changelogDate": "20250326165601"
+  },
+  "applications": ["FarmerBE"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "fromCPC",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "toCC",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "article",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "uom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "netWeightGrams",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "crateSize",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "indentUom",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "indentKg",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createddBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "DemandData",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "crop",
+      "otherEntityRelationshipName": "demandData",
+      "relationshipName": "crop",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "collectionCenter",
+      "otherEntityRelationshipName": "demandData",
+      "relationshipName": "collectionCenter",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "demandDataFile",
+      "relationshipName": "file",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,36 @@
+{
+  "farmerBeApp": {
+    "collectionCenter": {
+      "home": {
+        "title": "Collection Centers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Collection Center",
+        "createOrEditLabel": "Create or edit a Collection Center",
+        "notFound": "No Collection Centers found"
+      },
+      "created": "A new Collection Center is created with identifier {{ param }}",
+      "updated": "A Collection Center is updated with identifier {{ param }}",
+      "deleted": "A Collection Center is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Collection Center {{ id }}?"
+      },
+      "detail": {
+        "title": "Collection Center"
+      },
+      "id": "ID",
+      "name": "Name",
+      "ccId": "Cc Id",
+      "ffdcCode": "Ffdc Code",
+      "ffdcName": "Ffdc Name",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address",
+      "locationMapping": "Location Mapping",
+      "crop": "Crop",
+      "demandData": "Demand Data"
+    }
+  }
+}

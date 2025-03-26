@@ -2,6 +2,7 @@ package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AccessoriesTestSamples.*;
 import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.CollectionCenterTestSamples.*;
 import static com.farmer.be.domain.CropTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
@@ -163,6 +164,18 @@ class FarmTest {
         farm.setPickUpConfirmations(new HashSet<>());
         assertThat(farm.getPickUpConfirmations()).doesNotContain(pickUpConfirmationBack);
         assertThat(pickUpConfirmationBack.getFarm()).isNull();
+    }
+
+    @Test
+    void collectionCenterTest() {
+        Farm farm = getFarmRandomSampleGenerator();
+        CollectionCenter collectionCenterBack = getCollectionCenterRandomSampleGenerator();
+
+        farm.setCollectionCenter(collectionCenterBack);
+        assertThat(farm.getCollectionCenter()).isEqualTo(collectionCenterBack);
+
+        farm.collectionCenter(null);
+        assertThat(farm.getCollectionCenter()).isNull();
     }
 
     @Test

@@ -1,6 +1,7 @@
 package com.farmer.be.service;
 
 import com.farmer.be.service.dto.CropDTO;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -40,6 +41,13 @@ public interface CropService {
      * @return the list of entities.
      */
     Page<CropDTO> findAll(Pageable pageable);
+
+    /**
+     * Get all the CropDTO where DemandData is {@code null}.
+     *
+     * @return the {@link List} of entities.
+     */
+    List<CropDTO> findAllWhereDemandDataIsNull();
 
     /**
      * Get the "id" crop.

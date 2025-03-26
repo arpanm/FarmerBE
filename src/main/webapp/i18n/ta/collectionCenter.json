@@ -1,0 +1,36 @@
+{
+  "farmerBeApp": {
+    "collectionCenter": {
+      "home": {
+        "title": "Collection Centers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Collection Center-ஐ உருவாக்கு",
+        "createOrEditLabel": "Collection Center -ஐ மாற்று (அ) உருவாக்கு",
+        "notFound": "No Collection Centers found"
+      },
+      "created": "Collection Center புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+      "updated": "Collection Center மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+      "deleted": "A Collection Center நீக்கப்பட்டது, அடையாளம {{ param }}",
+      "delete": {
+        "question": "நீக்குவதற்கு உறுதி செய் Collection Center {{ id }}?"
+      },
+      "detail": {
+        "title": "Collection Center"
+      },
+      "id": "ID",
+      "name": "Name",
+      "ccId": "Cc Id",
+      "ffdcCode": "Ffdc Code",
+      "ffdcName": "Ffdc Name",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "address": "Address",
+      "locationMapping": "Location Mapping",
+      "crop": "Crop",
+      "demandData": "Demand Data"
+    }
+  }
+}

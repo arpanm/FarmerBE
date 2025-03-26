@@ -87,6 +87,7 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.Crop.class.getName() + ".supplyConfirmations");
             createCache(cm, com.farmer.be.domain.Crop.class.getName() + ".pickUpConfirmations");
             createCache(cm, com.farmer.be.domain.Crop.class.getName() + ".farms");
+            createCache(cm, com.farmer.be.domain.Crop.class.getName() + ".collectionCenters");
             createCache(cm, com.farmer.be.domain.Accessories.class.getName());
             createCache(cm, com.farmer.be.domain.Accessories.class.getName() + ".farms");
             createCache(cm, com.farmer.be.domain.BankDetails.class.getName());
@@ -103,6 +104,14 @@ public class CacheConfiguration {
             createCache(cm, com.farmer.be.domain.CarouselContent.class.getName());
             createCache(cm, com.farmer.be.domain.CarouselContent.class.getName() + ".banners");
             createCache(cm, com.farmer.be.domain.HervestPlanRule.class.getName());
+            createCache(cm, com.farmer.be.domain.CollectionCenter.class.getName());
+            createCache(cm, com.farmer.be.domain.CollectionCenter.class.getName() + ".addresses");
+            createCache(cm, com.farmer.be.domain.CollectionCenter.class.getName() + ".locationMappings");
+            createCache(cm, com.farmer.be.domain.CollectionCenter.class.getName() + ".crops");
+            createCache(cm, com.farmer.be.domain.LocationMapping.class.getName());
+            createCache(cm, com.farmer.be.domain.DemandData.class.getName());
+            createCache(cm, com.farmer.be.domain.DemandDataFile.class.getName());
+            createCache(cm, com.farmer.be.domain.DemandDataFile.class.getName() + ".demandData");
             // jhipster-needle-ehcache-add-entry
         };
     }

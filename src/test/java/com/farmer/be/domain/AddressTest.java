@@ -1,6 +1,7 @@
 package com.farmer.be.domain;
 
 import static com.farmer.be.domain.AddressTestSamples.*;
+import static com.farmer.be.domain.CollectionCenterTestSamples.*;
 import static com.farmer.be.domain.DocumentTestSamples.*;
 import static com.farmer.be.domain.FarmTestSamples.*;
 import static com.farmer.be.domain.FarmerTestSamples.*;
@@ -71,5 +72,17 @@ class AddressTest {
 
         address.farm(null);
         assertThat(address.getFarm()).isNull();
+    }
+
+    @Test
+    void collectionCenterTest() {
+        Address address = getAddressRandomSampleGenerator();
+        CollectionCenter collectionCenterBack = getCollectionCenterRandomSampleGenerator();
+
+        address.setCollectionCenter(collectionCenterBack);
+        assertThat(address.getCollectionCenter()).isEqualTo(collectionCenterBack);
+
+        address.collectionCenter(null);
+        assertThat(address.getCollectionCenter()).isNull();
     }
 }

@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { ICollectionCenter } from 'app/shared/model/collection-center.model';
 import { ICrop } from 'app/shared/model/crop.model';
 import { IAccessories } from 'app/shared/model/accessories.model';
 import { IFarmer } from 'app/shared/model/farmer.model';
@@ -16,6 +17,7 @@ export interface IFarm {
   createdTime?: dayjs.Dayjs;
   updatedBy?: string;
   updatedTime?: dayjs.Dayjs;
+  collectionCenter?: ICollectionCenter | null;
   crops?: ICrop[] | null;
   accessories?: IAccessories[] | null;
   farmer?: IFarmer | null;

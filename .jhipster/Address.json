@@ -91,6 +91,12 @@
       "relationshipName": "farm",
       "relationshipSide": "right",
       "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "collectionCenter",
+      "relationshipName": "collectionCenter",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
     }
   ],
   "searchEngine": "no",

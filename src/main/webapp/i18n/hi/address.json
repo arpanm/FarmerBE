@@ -34,7 +34,8 @@
       "updatedTime": "Updated Time",
       "document": "Document",
       "farmer": "Farmer",
-      "farm": "Farm"
+      "farm": "Farm",
+      "collectionCenter": "Collection Center"
     }
   }
 }

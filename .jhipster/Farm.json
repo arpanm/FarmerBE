@@ -97,6 +97,12 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "collectionCenter",
+      "relationshipName": "collectionCenter",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
       "otherEntityName": "crop",
       "otherEntityRelationshipName": "farm",
       "relationshipName": "crop",

@@ -93,6 +93,10 @@ export const FarmDetail = () => {
           </dt>
           <dd>{farmEntity.updatedTime ? <TextFormat value={farmEntity.updatedTime} type="date" format={APP_DATE_FORMAT} /> : null}</dd>
           <dt>
+            <Translate contentKey="farmerBeApp.farm.collectionCenter">Collection Center</Translate>
+          </dt>
+          <dd>{farmEntity.collectionCenter ? farmEntity.collectionCenter.id : ''}</dd>
+          <dt>
             <Translate contentKey="farmerBeApp.farm.crop">Crop</Translate>
           </dt>
           <dd>

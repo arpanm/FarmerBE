@@ -53,6 +53,8 @@ public class AddressDTO implements Serializable {
 
     private FarmDTO farm;
 
+    private CollectionCenterDTO collectionCenter;
+
     public Long getId() {
         return id;
     }
@@ -189,6 +191,14 @@ public class AddressDTO implements Serializable {
         this.farm = farm;
     }
 
+    public CollectionCenterDTO getCollectionCenter() {
+        return collectionCenter;
+    }
+
+    public void setCollectionCenter(CollectionCenterDTO collectionCenter) {
+        this.collectionCenter = collectionCenter;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -231,6 +241,7 @@ public class AddressDTO implements Serializable {
             ", updatedTime='" + getUpdatedTime() + "'" +
             ", farmer=" + getFarmer() +
             ", farm=" + getFarm() +
+            ", collectionCenter=" + getCollectionCenter() +
             "}";
     }
 }

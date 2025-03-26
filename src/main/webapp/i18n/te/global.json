@@ -1,10 +1,9 @@
 {
   "global": {
-    "title": "Farmer App Backoffice",
+    "title": "FarmerBE",
     "browsehappy": "మీది <strong>కాలం చెల్లిన</strong> బ్రౌజరు. దయచేసి <a href=\"http://browsehappy.com/?locale=en\">నవీకరణ చేసుకోండి</a> ",
     "menu": {
       "home": "ఇల్లు",
-      "farmerApp": "రైతు యాప్",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "ఎంటిటీలు",
@@ -30,7 +29,11 @@
         "pickupPayment": "Pickup Payment",
         "bannerContent": "Banner Content",
         "carouselContent": "Carousel Content",
-        "hervestPlanRule": "Hervest Plan Rule"
+        "hervestPlanRule": "Hervest Plan Rule",
+        "collectionCenter": "Collection Center",
+        "locationMapping": "Location Mapping",
+        "demandData": "Demand Data",
+        "demandDataFile": "Demand Data File"
       },
       "account": {
         "main": "ఖాతా",
@@ -166,5 +169,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "అన్ని హక్కులు మరియు రిజర్వ్ చేయబడ్డాయి"
+  "footer": "ఇది మీ ఫుటరు"
 }

@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getCategories } from 'app/entities/category/category.reducer';
 import { getEntities as getFarms } from 'app/entities/farm/farm.reducer';
+import { getEntities as getCollectionCenters } from 'app/entities/collection-center/collection-center.reducer';
 import { createEntity, getEntity, updateEntity } from './crop.reducer';
 
 export const CropUpdate = () => {
@@ -22,6 +23,7 @@ export const CropUpdate = () => {
 
   const categories = useAppSelector(state => state.category.entities);
   const farms = useAppSelector(state => state.farm.entities);
+  const collectionCenters = useAppSelector(state => state.collectionCenter.entities);
   const cropEntity = useAppSelector(state => state.crop.entity);
   const loading = useAppSelector(state => state.crop.loading);
   const updating = useAppSelector(state => state.crop.updating);
@@ -38,6 +40,7 @@ export const CropUpdate = () => {
 
     dispatch(getCategories({}));
     dispatch(getFarms({}));
+    dispatch(getCollectionCenters({}));
   }, []);
 
   useEffect(() => {
@@ -61,6 +64,7 @@ export const CropUpdate = () => {
       ...values,
       category: categories.find(it => it.id.toString() === values.category?.toString()),
       farms: mapIdList(values.farms),
+      collectionCenters: mapIdList(values.collectionCenters),
     };
 
     if (isNew) {
@@ -82,6 +86,7 @@ export const CropUpdate = () => {
           updatedTime: convertDateTimeFromServer(cropEntity.updatedTime),
           category: cropEntity?.category?.id,
           farms: cropEntity?.farms?.map(e => e.id.toString()),
+          collectionCenters: cropEntity?.collectionCenters?.map(e => e.id.toString()),
         };
 
   return (
@@ -202,6 +207,23 @@ export const CropUpdate = () => {
                 <option value="" key="0" />
                 {farms
                   ? farms.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
+              <ValidatedField
+                label={translate('farmerBeApp.crop.collectionCenter')}
+                id="crop-collectionCenter"
+                data-cy="collectionCenter"
+                type="select"
+                multiple
+                name="collectionCenters"
+              >
+                <option value="" key="0" />
+                {collectionCenters
+                  ? collectionCenters.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

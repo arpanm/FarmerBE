@@ -90,6 +90,10 @@ public class Crop implements Serializable {
     @JsonIgnoreProperties(value = { "grade", "itemPayment", "farm", "crop" }, allowSetters = true)
     private Set<PickUpConfirmation> pickUpConfirmations = new HashSet<>();
 
+    @JsonIgnoreProperties(value = { "crop", "collectionCenter", "file" }, allowSetters = true)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "crop")
+    private DemandData demandData;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "categories", "crops", "accessories", "parent" }, allowSetters = true)
     private Category category;
@@ -104,6 +108,7 @@ public class Crop implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "collectionCenter",
             "crops",
             "accessories",
             "farmer",
@@ -111,6 +116,11 @@ public class Crop implements Serializable {
         allowSetters = true
     )
     private Set<Farm> farms = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "crops")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "addresses", "locationMappings", "crops", "demandData" }, allowSetters = true)
+    private Set<CollectionCenter> collectionCenters = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -443,6 +453,25 @@ public class Crop implements Serializable {
         return this;
     }
 
+    public DemandData getDemandData() {
+        return this.demandData;
+    }
+
+    public void setDemandData(DemandData demandData) {
+        if (this.demandData != null) {
+            this.demandData.setCrop(null);
+        }
+        if (demandData != null) {
+            demandData.setCrop(this);
+        }
+        this.demandData = demandData;
+    }
+
+    public Crop demandData(DemandData demandData) {
+        this.setDemandData(demandData);
+        return this;
+    }
+
     public Category getCategory() {
         return this.category;
     }
@@ -484,6 +513,37 @@ public class Crop implements Serializable {
     public Crop removeFarm(Farm farm) {
         this.farms.remove(farm);
         farm.getCrops().remove(this);
+        return this;
+    }
+
+    public Set<CollectionCenter> getCollectionCenters() {
+        return this.collectionCenters;
+    }
+
+    public void setCollectionCenters(Set<CollectionCenter> collectionCenters) {
+        if (this.collectionCenters != null) {
+            this.collectionCenters.forEach(i -> i.removeCrop(this));
+        }
+        if (collectionCenters != null) {
+            collectionCenters.forEach(i -> i.addCrop(this));
+        }
+        this.collectionCenters = collectionCenters;
+    }
+
+    public Crop collectionCenters(Set<CollectionCenter> collectionCenters) {
+        this.setCollectionCenters(collectionCenters);
+        return this;
+    }
+
+    public Crop addCollectionCenter(CollectionCenter collectionCenter) {
+        this.collectionCenters.add(collectionCenter);
+        collectionCenter.getCrops().add(this);
+        return this;
+    }
+
+    public Crop removeCollectionCenter(CollectionCenter collectionCenter) {
+        this.collectionCenters.remove(collectionCenter);
+        collectionCenter.getCrops().remove(this);
         return this;
     }
 

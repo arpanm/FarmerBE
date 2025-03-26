@@ -97,6 +97,7 @@ public class Address implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "collectionCenter",
             "crops",
             "accessories",
             "farmer",
@@ -104,6 +105,10 @@ public class Address implements Serializable {
         allowSetters = true
     )
     private Farm farm;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "addresses", "locationMappings", "crops", "demandData" }, allowSetters = true)
+    private CollectionCenter collectionCenter;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -356,6 +361,19 @@ public class Address implements Serializable {
 
     public Address farm(Farm farm) {
         this.setFarm(farm);
+        return this;
+    }
+
+    public CollectionCenter getCollectionCenter() {
+        return this.collectionCenter;
+    }
+
+    public void setCollectionCenter(CollectionCenter collectionCenter) {
+        this.collectionCenter = collectionCenter;
+    }
+
+    public Address collectionCenter(CollectionCenter collectionCenter) {
+        this.setCollectionCenter(collectionCenter);
         return this;
     }
 

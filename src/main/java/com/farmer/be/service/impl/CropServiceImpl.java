@@ -5,7 +5,11 @@ import com.farmer.be.repository.CropRepository;
 import com.farmer.be.service.CropService;
 import com.farmer.be.service.dto.CropDTO;
 import com.farmer.be.service.mapper.CropMapper;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -67,6 +71,19 @@ public class CropServiceImpl implements CropService {
     public Page<CropDTO> findAll(Pageable pageable) {
         LOG.debug("Request to get all Crops");
         return cropRepository.findAll(pageable).map(cropMapper::toDto);
+    }
+
+    /**
+     *  Get all the crops where DemandData is {@code null}.
+     *  @return the list of entities.
+     */
+    @Transactional(readOnly = true)
+    public List<CropDTO> findAllWhereDemandDataIsNull() {
+        LOG.debug("Request to get all crops where DemandData is null");
+        return StreamSupport.stream(cropRepository.findAll().spliterator(), false)
+            .filter(crop -> crop.getDemandData() == null)
+            .map(cropMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     @Override

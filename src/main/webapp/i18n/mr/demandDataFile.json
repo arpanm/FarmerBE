@@ -1,0 +1,33 @@
+{
+  "farmerBeApp": {
+    "demandDataFile": {
+      "home": {
+        "title": "Demand Data Files",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नवीन Demand Data File तयार करा",
+        "createOrEditLabel": "Demand Data File तयार किंवा संपादित करा",
+        "notFound": "No Demand Data Files found"
+      },
+      "created": "Demand Data File [identifier: {{ param }}] तयार आहे",
+      "updated": "Demand Data File [identifier: {{ param }}] सुधारित केले आहे",
+      "deleted": "Demand Data File [identifier: {{ param }}] हटविले आहे",
+      "delete": {
+        "question": "Demand Data File [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+      },
+      "detail": {
+        "title": "Demand Data File"
+      },
+      "id": "ID",
+      "uploadedDate": "Uploaded Date",
+      "fileName": "File Name",
+      "uploadedBy": "Uploaded By",
+      "status": "Status",
+      "isActive": "Is Active",
+      "createddBy": "Createdd By",
+      "createdTime": "Created Time",
+      "updatedBy": "Updated By",
+      "updatedTime": "Updated Time",
+      "demandData": "Demand Data"
+    }
+  }
+}

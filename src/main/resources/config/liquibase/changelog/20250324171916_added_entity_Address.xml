@@ -62,6 +62,9 @@
             <column name="farm_id" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="collection_center_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="address" columnName="created_time" columnDataType="${datetimeType}"/>

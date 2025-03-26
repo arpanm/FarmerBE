@@ -96,6 +96,13 @@
       "relationshipType": "one-to-many"
     },
     {
+      "otherEntityName": "demandData",
+      "otherEntityRelationshipName": "crop",
+      "relationshipName": "demandData",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    },
+    {
       "otherEntityName": "category",
       "relationshipName": "category",
       "relationshipSide": "right",
@@ -105,6 +112,13 @@
       "otherEntityName": "farm",
       "otherEntityRelationshipName": "crop",
       "relationshipName": "farm",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "collectionCenter",
+      "otherEntityRelationshipName": "crop",
+      "relationshipName": "collectionCenter",
       "relationshipSide": "right",
       "relationshipType": "many-to-many"
     }

@@ -25,6 +25,10 @@ import PickupPayment from './pickup-payment';
 import BannerContent from './banner-content';
 import CarouselContent from './carousel-content';
 import HervestPlanRule from './hervest-plan-rule';
+import CollectionCenter from './collection-center';
+import LocationMapping from './location-mapping';
+import DemandData from './demand-data';
+import DemandDataFile from './demand-data-file';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -54,6 +58,10 @@ export default () => {
         <Route path="banner-content/*" element={<BannerContent />} />
         <Route path="carousel-content/*" element={<CarouselContent />} />
         <Route path="hervest-plan-rule/*" element={<HervestPlanRule />} />
+        <Route path="collection-center/*" element={<CollectionCenter />} />
+        <Route path="location-mapping/*" element={<LocationMapping />} />
+        <Route path="demand-data/*" element={<DemandData />} />
+        <Route path="demand-data-file/*" element={<DemandDataFile />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

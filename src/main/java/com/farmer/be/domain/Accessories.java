@@ -74,6 +74,7 @@ public class Accessories implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "collectionCenter",
             "crops",
             "accessories",
             "farmer",

@@ -88,6 +88,7 @@ public class HervestPlanRule implements Serializable {
             "hervestPlans",
             "supplyConfirmations",
             "pickUpConfirmations",
+            "collectionCenter",
             "crops",
             "accessories",
             "farmer",
@@ -99,7 +100,16 @@ public class HervestPlanRule implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(
         value = {
-            "demands", "prices", "hervestPlanRules", "hervestPlans", "supplyConfirmations", "pickUpConfirmations", "category", "farms",
+            "demands",
+            "prices",
+            "hervestPlanRules",
+            "hervestPlans",
+            "supplyConfirmations",
+            "pickUpConfirmations",
+            "demandData",
+            "category",
+            "farms",
+            "collectionCenters",
         },
         allowSetters = true
     )

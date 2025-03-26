@@ -20,6 +20,10 @@ import pickupPayment from 'app/entities/pickup-payment/pickup-payment.reducer';
 import bannerContent from 'app/entities/banner-content/banner-content.reducer';
 import carouselContent from 'app/entities/carousel-content/carousel-content.reducer';
 import hervestPlanRule from 'app/entities/hervest-plan-rule/hervest-plan-rule.reducer';
+import collectionCenter from 'app/entities/collection-center/collection-center.reducer';
+import locationMapping from 'app/entities/location-mapping/location-mapping.reducer';
+import demandData from 'app/entities/demand-data/demand-data.reducer';
+import demandDataFile from 'app/entities/demand-data-file/demand-data-file.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -45,6 +49,10 @@ const entitiesReducers = {
   bannerContent,
   carouselContent,
   hervestPlanRule,
+  collectionCenter,
+  locationMapping,
+  demandData,
+  demandDataFile,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

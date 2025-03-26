@@ -73,6 +73,7 @@ public class AddressAsserts {
         assertThat(actual)
             .as("Verify Address relationships")
             .satisfies(a -> assertThat(a.getFarmer()).as("check farmer").isEqualTo(expected.getFarmer()))
-            .satisfies(a -> assertThat(a.getFarm()).as("check farm").isEqualTo(expected.getFarm()));
+            .satisfies(a -> assertThat(a.getFarm()).as("check farm").isEqualTo(expected.getFarm()))
+            .satisfies(a -> assertThat(a.getCollectionCenter()).as("check collectionCenter").isEqualTo(expected.getCollectionCenter()));
     }
 }

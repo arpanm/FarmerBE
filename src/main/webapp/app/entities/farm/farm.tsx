@@ -171,6 +171,9 @@ export const Farm = () => {
                     <FontAwesomeIcon icon={getSortIconByFieldName('updatedTime')} />
                   </th>
                   <th>
+                    <Translate contentKey="farmerBeApp.farm.collectionCenter">Collection Center</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
                     <Translate contentKey="farmerBeApp.farm.farmer">Farmer</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th />
@@ -196,6 +199,13 @@ export const Farm = () => {
                     <td>{farm.createdTime ? <TextFormat type="date" value={farm.createdTime} format={APP_DATE_FORMAT} /> : null}</td>
                     <td>{farm.updatedBy}</td>
                     <td>{farm.updatedTime ? <TextFormat type="date" value={farm.updatedTime} format={APP_DATE_FORMAT} /> : null}</td>
+                    <td>
+                      {farm.collectionCenter ? (
+                        <Link to={`/collection-center/${farm.collectionCenter.id}`}>{farm.collectionCenter.id}</Link>
+                      ) : (
+                        ''
+                      )}
+                    </td>
                     <td>{farm.farmer ? <Link to={`/farmer/${farm.farmer.id}`}>{farm.farmer.id}</Link> : ''}</td>
                     <td className="text-end">
                       <div className="btn-group flex-btn-group-container">
