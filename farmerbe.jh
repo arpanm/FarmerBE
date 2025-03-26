@@ -112,8 +112,8 @@ entity Address {
     state String required,
     country String required,
 	pincode Long required,
-	lat Long,
-    lon Long,
+	lat Float,
+    lon Float,
     isActive Boolean,
     createddBy String required,
     createdTime Instant required,
@@ -205,6 +205,7 @@ enum DocumentType {
     FarmDocument,
     IdProof,
     ProfileImage,
+    FarmImage,
     CanceledCheque,
     BankStatement,
     Other
@@ -484,6 +485,226 @@ enum PaymentStatus {
 
 relationship ManyToOne {
 	PickUpConfirmation{itemPayment} to PickupPayment{pickupItems}
+}
+
+
+entity CollectionCenter {
+	name String,
+    ccId String,
+    ffdcCode String,
+    ffdcName String,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	CollectionCenter to Address{collectionCenter}
+}
+
+entity LocationMapping {
+	areaName String,
+    areaType AreaType,
+    pincode Long,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum AreaType {
+	Pincode,
+    Village,
+    City,
+    District,
+    State,
+    Country,
+    Other
+}
+
+relationship OneToMany {
+	CollectionCenter to LocationMapping{collectionCenter}
+}
+
+relationship ManyToMany {
+	CollectionCenter to Crop
+}
+
+entity DemandData {
+	fromCPC String,
+    toCC String,
+    pCode String,
+    article String,
+    description String,
+    uom String,
+    netWeightGrams Float,
+    crateSize Float,
+    indentUom Float,
+    indentKg Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+entity DemandDataFile {
+	uploadedDate LocalDate,
+    fileName String,
+    uploadedBy String,
+    status UploadStatus,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum UploadStatus {
+	Init,
+    Success,
+    ErrorInUpload
+    Processed,
+    ErrorInProcess,
+    Other
+}
+
+relationship OneToMany {
+	DemandDataFile to DemandData{file}
+}
+
+relationship OneToOne {
+	DemandData{crop} to Crop{demandData}
+}
+
+relationship OneToOne {
+	DemandData{collectionCenter} to CollectionCenter{demandData}
+}
+
+relationship ManyToOne {
+	Farm{collectionCenter} to CollectionCenter
+}
+
+entity Buyer {
+	name String,
+    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+    phone Long required min (1000000000) max(9999999999),
+    isWhatsAppEnabled Boolean,
+    preferedLanguage Language,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Buyer to Farm{buyer}
+}
+
+relationship OneToMany {
+	CollectionCenter to Buyer{collectionCenter}
+}
+
+entity Labour {
+	name String,
+    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+    phone Long required min (1000000000) max(9999999999),
+    isWhatsAppEnabled Boolean,
+    preferedLanguage Language,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Buyer to Labour{buyer}
+}
+
+entity Attendence {
+	attendenceType AttendenceType,
+    attendenceDate LocalDate,
+    attendenceTime Instant,
+    lat Float,
+    lon Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum AttendenceType {
+	CheckIn,
+    CheckOut,
+    Holiday,
+    Regularization,
+    PaidLeave,
+    UnpaidLeave,
+    FieldVisit,
+    Other
+}
+
+relationship OneToMany {
+	Buyer to Attendence{buyer}
+}
+
+relationship OneToMany {
+	Labour to Attendence{buyer}
+}
+
+entity FieldVisit {
+	fieldVisitDate LocalDate,
+    fieldVisitTime Instant,
+    lat Float,
+    lon Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Buyer to FieldVisit{buyer}
+}
+
+relationship OneToMany {
+	Farm to FieldVisit{farm}
+}
+
+relationship OneToMany {
+	FieldVisit to Document{fieldVisit}
+}
+
+entity BuyerTargetAchivement {
+	labour Long,
+    farmVisit Long,
+    totalCollection Float,
+    targetDate LocalDate,
+    attendenceHours Float,
+    achivementLabour Long,
+    achivementFarmVisit Long,
+    achivementTotalCollection Float,
+    achivementAttendenceHours Float,
+    achivementScore Float,
+    incentive Float,
+    kmDriven Float,
+    conveyance Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	Buyer to BuyerTargetAchivement{buyer}
 }
 
 application {
