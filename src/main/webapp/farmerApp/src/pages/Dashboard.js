@@ -7,22 +7,22 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const deliveryItems = [
-    { id: 1, name: 'Cauliflower', quantity: '20 kg' },
-    { id: 2, name: 'Potato', quantity: '50 kg' },
-    { id: 3, name: 'Onion', quantity: '30 kg' },
+    { id: 1, name: 'Cauliflower', image: '🥦', quantity: '20 kg' },
+    { id: 2, name: 'Potato', image: '🥔', quantity: '50 kg' },
+    { id: 3, name: 'Onion', image: '🧅', quantity: '30 kg' },
   ];
 
   const priceTable = [
-    { id: 1, produce: 'Potato', price: '₹28.13/kg' },
-    { id: 2, produce: 'Cauliflower', price: '₹28.13/kg' },
-    { id: 3, produce: 'Peas', price: '₹28.13/bundle' },
-    { id: 4, produce: 'Onion', price: 'Price awaiting' },
+    { id: 1, produce: 'Potato', image: '🥔', price: '₹28.13/kg' },
+    { id: 2, produce: 'Cauliflower', image: '🥦', price: '₹28.13/kg' },
+    { id: 3, produce: 'Peas', image: '🫛', price: '₹28.13/bundle' },
+    { id: 4, produce: 'Onion', image: '🧅', price: 'Price awaiting' },
   ];
 
   const tomorrowDemand = [
-    { id: 1, name: 'Cauliflower', quantity: '20 kg' },
-    { id: 2, name: 'Potato', quantity: '50 kg' },
-    { id: 3, name: 'Onion', quantity: '30 kg' },
+    { id: 1, name: 'Cauliflower', image: '🥦', quantity: '20 kg' },
+    { id: 2, name: 'Potato', image: '🥔', quantity: '50 kg' },
+    { id: 3, name: 'Onion', image: '🧅', quantity: '30 kg' },
   ];
 
   const additionalProduce = [
@@ -61,7 +61,7 @@ function Dashboard() {
           <div className={styles.deliveryItems}>
             {deliveryItems.map(item => (
               <div key={item.id} className={styles.deliveryItem}>
-                <div className={styles.itemImage}></div>
+                <div className={styles.itemImage}>{item.image}</div>
                 <div className={styles.itemDetails}>
                   <span className={styles.quantity}>{item.quantity}</span>
                   <span className={styles.name}>{item.name}</span>
@@ -101,7 +101,7 @@ function Dashboard() {
           <div className={styles.demandItems}>
             {tomorrowDemand.map(item => (
               <div key={item.id} className={styles.demandItem}>
-                <div className={styles.itemImage}></div>
+                <div className={styles.itemImage}>{item.image}</div>
                 <div className={styles.itemDetails}>
                   <span className={styles.quantity}>{item.quantity}</span>
                   <span className={styles.name}>{item.name}</span>
@@ -119,7 +119,9 @@ function Dashboard() {
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2>Add more produce</h2>
-            <button className={styles.viewAllButton}>View all ›</button>
+            <button className={styles.viewAllButton} onClick={() => navigate('/select-produce')}>
+              View all ›
+            </button>
           </div>
           <div className={styles.produceGrid}>
             {additionalProduce.map(item => (

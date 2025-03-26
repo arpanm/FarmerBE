@@ -127,6 +127,8 @@
   height: 40px;
   background: #f0f0f0;
   border-radius: 8px;
+  font-size: 32px;
+  margin-bottom: 8px;
 }
 
 .itemDetails {
