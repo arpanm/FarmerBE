@@ -486,6 +486,107 @@ relationship ManyToOne {
 	PickUpConfirmation{itemPayment} to PickupPayment{pickupItems}
 }
 
+
+entity CollectionCenter {
+	name String,
+    ccId String,
+    ffdcCode String,
+    ffdcName String,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+relationship OneToMany {
+	CollectionCenter to Address{collectionCenter}
+}
+
+entity LocationMapping {
+	areaName String,
+    areaType AreaType,
+    pincode Long,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum AreaType {
+	Pincode,
+    Village,
+    City,
+    District,
+    State,
+    Country,
+    Other
+}
+
+relationship OneToMany {
+	CollectionCenter to LocationMapping{collectionCenter}
+}
+
+relationship ManyToMany {
+	CollectionCenter to Crop
+}
+
+entity DemandData {
+	fromCPC String,
+    toCC String,
+    pCode String,
+    article String,
+    description String,
+    uom String,
+    netWeightGrams Float,
+    crateSize Float,
+    indentUom Float,
+    indentKg Float,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+entity DemandDataFile {
+	uploadedDate LocalDate,
+    fileName String,
+    uploadedBy String,
+    status UploadStatus,
+    isActive Boolean,
+    createddBy String required,
+    createdTime Instant required,
+    updatedBy String required,
+    updatedTime Instant required
+}
+
+enum UploadStatus {
+	Init,
+    Success,
+    ErrorInUpload
+    Processed,
+    ErrorInProcess,
+    Other
+}
+
+relationship OneToMany {
+	DemandDataFile to DemandData{file}
+}
+
+relationship OneToOne {
+	DemandData{crop} to Crop{demandData}
+}
+
+relationship OneToOne {
+	DemandData{collectionCenter} to CollectionCenter{demandData}
+}
+
+relationship ManyToOne {
+	Farm{collectionCenter} to CollectionCenter
+}
+
 application {
   config {
     baseName FarmerBE
